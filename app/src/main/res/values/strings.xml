@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">Muscle Tracker</string>
+    <string name="title_home">Home</string>
+    <string name="title_workouts">Workouts</string>
+    <string name="title_record">Record</string>
+    <string name="title_exercises">Exercises</string>
+    <string name="title_settings">Settings</string>
+</resources>
