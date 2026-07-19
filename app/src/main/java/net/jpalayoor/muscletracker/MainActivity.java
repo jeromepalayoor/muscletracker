@@ -15,6 +15,7 @@ import androidx.navigation.ui.NavigationUI;
 import net.jpalayoor.muscletracker.data.AppDatabase;
 import net.jpalayoor.muscletracker.data.Exercise;
 import net.jpalayoor.muscletracker.databinding.ActivityMainBinding;
+import net.jpalayoor.muscletracker.util.InsetUtils;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -51,6 +52,7 @@ public class MainActivity extends AppCompatActivity {
         }).start();
 
         BottomNavigationView navView = findViewById(R.id.nav_view);
+        InsetUtils.captureBottomInset(navView);
         appBarConfiguration = new AppBarConfiguration.Builder(
                 R.id.navigation_home, R.id.navigation_workouts, R.id.navigation_record,
                 R.id.navigation_exercises, R.id.navigation_settings)
@@ -59,6 +61,12 @@ public class MainActivity extends AppCompatActivity {
                 R.id.nav_host_fragment_activity_main);
         NavigationUI.setupActionBarWithNavController(this, navController, appBarConfiguration);
         NavigationUI.setupWithNavController(binding.navView, navController);
+
+        binding.navView.setOnItemReselectedListener(item -> {
+            if (item.getItemId() == R.id.navigation_exercises) {
+                navController.popBackStack(R.id.navigation_exercises, false);
+            }
+        });
     }
 
     @Override

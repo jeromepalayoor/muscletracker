@@ -52,7 +52,7 @@ public class ExerciseDetailFragment extends Fragment {
             viewModel.loadExercise(exerciseId);
         }
 
-        InsetUtils.applyBottomInsetPadding(view);
+        InsetUtils.applySharedBottomInset(view);
     }
 
     private void loadImageFromAssets(ImageView imageView, String relativePath) {
