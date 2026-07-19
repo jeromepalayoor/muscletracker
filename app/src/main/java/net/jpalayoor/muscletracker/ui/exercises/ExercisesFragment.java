@@ -14,7 +14,6 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import net.jpalayoor.muscletracker.R;
-import net.jpalayoor.muscletracker.util.InsetUtils;
 
 public class ExercisesFragment extends Fragment {
 
@@ -40,8 +39,6 @@ public class ExercisesFragment extends Fragment {
         RecyclerView recyclerView = view.findViewById(R.id.recyclerExercises);
         recyclerView.setLayoutManager(new LinearLayoutManager(requireContext()));
         recyclerView.setAdapter(adapter);
-
-        InsetUtils.applySharedBottomInset(recyclerView);
 
         viewModel.getAllExercises().observe(getViewLifecycleOwner(), adapter::setExercises);
     }

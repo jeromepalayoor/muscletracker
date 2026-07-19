@@ -16,7 +16,6 @@ import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProvider;
 
 import net.jpalayoor.muscletracker.R;
-import net.jpalayoor.muscletracker.util.InsetUtils;
 
 import java.io.IOException;
 import java.io.InputStream;
@@ -51,8 +50,6 @@ public class ExerciseDetailFragment extends Fragment {
         if (exerciseId != null) {
             viewModel.loadExercise(exerciseId);
         }
-
-        InsetUtils.applySharedBottomInset(view);
     }
 
     private void loadImageFromAssets(ImageView imageView, String relativePath) {
