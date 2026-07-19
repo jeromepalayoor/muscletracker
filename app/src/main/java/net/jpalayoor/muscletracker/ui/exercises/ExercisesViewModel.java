@@ -1,19 +1,26 @@
 package net.jpalayoor.muscletracker.ui.exercises;
 
+import android.app.Application;
+
+import androidx.annotation.NonNull;
+import androidx.lifecycle.AndroidViewModel;
 import androidx.lifecycle.LiveData;
-import androidx.lifecycle.MutableLiveData;
-import androidx.lifecycle.ViewModel;
 
-public class ExercisesViewModel extends ViewModel {
+import net.jpalayoor.muscletracker.data.AppDatabase;
+import net.jpalayoor.muscletracker.data.Exercise;
 
-    private final MutableLiveData<String> mText;
+import java.util.List;
 
-    public ExercisesViewModel() {
-        mText = new MutableLiveData<>();
-        mText.setValue("This is exercises fragment");
+public class ExercisesViewModel extends AndroidViewModel {
+
+    private final LiveData<List<Exercise>> allExercises;
+
+    public ExercisesViewModel(@NonNull Application application) {
+        super(application);
+        allExercises = AppDatabase.getInstance(application).exerciseDao().getAllLive();
     }
 
-    public LiveData<String> getText() {
-        return mText;
+    public LiveData<List<Exercise>> getAllExercises() {
+        return allExercises;
     }
 }
