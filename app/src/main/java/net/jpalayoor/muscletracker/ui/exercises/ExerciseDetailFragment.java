@@ -42,7 +42,7 @@ public class ExerciseDetailFragment extends Fragment {
         viewModel.getExercise().observe(getViewLifecycleOwner(), exercise -> {
             if (exercise == null) return;
             textName.setText(exercise.name);
-            textInstructions.setText(exercise.instructions.replace(",", "\n\n"));
+            textInstructions.setText(exercise.instructions.replace("|", "\n\n"));
             loadImageFromAssets(imageView, exercise.image1);
         });
 

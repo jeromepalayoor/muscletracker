@@ -46,6 +46,9 @@ public class MainActivity extends AppCompatActivity {
             return insets;
         });
 
+        binding.navView.setOnApplyWindowInsetsListener(null);
+        binding.navView.setPadding(0, 0, 0, 0);
+
         AppDatabase db = AppDatabase.getInstance(this);
 
         new Thread(() -> {
@@ -72,6 +75,12 @@ public class MainActivity extends AppCompatActivity {
         binding.navView.setOnItemReselectedListener(item -> {
             if (item.getItemId() == R.id.navigation_exercises) {
                 navController.popBackStack(R.id.navigation_exercises, false);
+            }
+        });
+
+        navController.addOnDestinationChangedListener((controller, destination, arguments) -> {
+            if (destination.getId() == R.id.navigation_exercise_detail) {
+                binding.navView.getMenu().findItem(R.id.navigation_exercises).setChecked(true);
             }
         });
     }
@@ -131,7 +140,7 @@ public class MainActivity extends AppCompatActivity {
         for (int i = 0; i < arr.length(); i++) {
             items.add(arr.getString(i));
         }
-        return String.join(",", items);
+        return String.join("|", items);
     }
 
     private String safeString(JSONObject obj, String key) throws JSONException {
