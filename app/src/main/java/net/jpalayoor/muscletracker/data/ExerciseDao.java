@@ -23,4 +23,7 @@ public interface ExerciseDao {
 
     @Query("SELECT * FROM exercises WHERE exerciseId = :exerciseId LIMIT 1")
     Exercise getById(String exerciseId);
+
+    @Query("SELECT * FROM exercises WHERE name LIKE '%' || :query || '%' ORDER BY name ASC")
+    List<Exercise> searchByName(String query);
 }

@@ -13,6 +13,7 @@ import androidx.annotation.Nullable;
 import androidx.core.view.MenuProvider;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProvider;
+import androidx.navigation.Navigation;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -65,7 +66,9 @@ public class WorkoutsFragment extends Fragment {
         }, getViewLifecycleOwner());
 
         TemplateAdapter adapter = new TemplateAdapter(template -> {
-            // click handling — wired up in the next wave
+            Bundle args = new Bundle();
+            args.putInt("templateId", template.id);
+            Navigation.findNavController(view).navigate(R.id.action_template_to_detail, args);
         });
 
         RecyclerView recyclerView = view.findViewById(R.id.recyclerTemplates);

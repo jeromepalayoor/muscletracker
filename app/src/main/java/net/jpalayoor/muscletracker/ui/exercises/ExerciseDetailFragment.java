@@ -21,7 +21,6 @@ import java.io.IOException;
 import java.io.InputStream;
 
 public class ExerciseDetailFragment extends Fragment {
-
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container,

@@ -1,4 +1,4 @@
-package net.jpalayoor.muscletracker.ui.exercises;
+package net.jpalayoor.muscletracker.ui.workouts;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -9,36 +9,36 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProvider;
-import androidx.navigation.Navigation;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import net.jpalayoor.muscletracker.R;
 
-public class ExercisesFragment extends Fragment {
+public class TemplateDetailFragment extends Fragment {
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container,
                              @Nullable Bundle savedInstanceState) {
-        return inflater.inflate(R.layout.fragment_exercises, container, false);
+        return inflater.inflate(R.layout.fragment_template_detail, container, false);
     }
 
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
-        ExercisesViewModel viewModel = new ViewModelProvider(this).get(ExercisesViewModel.class);
+        TemplateDetailViewModel viewModel = new ViewModelProvider(this).get(TemplateDetailViewModel.class);
 
-        ExerciseAdapter adapter = new ExerciseAdapter(exercise -> {
-            Bundle args = new Bundle();
-            args.putString("exerciseId", exercise.exerciseId);
-            Navigation.findNavController(view).navigate(R.id.action_exercises_to_detail, args);
+        TemplateExerciseAdapter adapter = new TemplateExerciseAdapter(templateExercise -> {
+            // click handling — later wave, reusing ExerciseDetailFragment
         });
 
-        RecyclerView recyclerView = view.findViewById(R.id.recyclerExercises);
+        RecyclerView recyclerView = view.findViewById(R.id.recyclerTemplateExercises);
         recyclerView.setLayoutManager(new LinearLayoutManager(requireContext()));
         recyclerView.setAdapter(adapter);
 
-        viewModel.getAllExercises().observe(getViewLifecycleOwner(), adapter::setExercises);
+        int templateId = getArguments() != null ? getArguments().getInt("templateId") : -1;
+        if (templateId != -1) {
+            viewModel.getExercisesForTemplate(templateId).observe(getViewLifecycleOwner(), adapter::setItems);
+        }
     }
 }

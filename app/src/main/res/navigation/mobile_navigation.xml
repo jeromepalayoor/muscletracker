@@ -15,7 +15,12 @@
         android:id="@+id/navigation_workouts"
         android:name="net.jpalayoor.muscletracker.ui.workouts.WorkoutsFragment"
         android:label="@string/title_workouts"
-        tools:layout="@layout/fragment_workouts" />
+        tools:layout="@layout/fragment_workouts">
+
+        <action
+            android:id="@+id/action_template_to_detail"
+            app:destination="@id/navigation_template_detail" />
+    </fragment>
 
     <fragment
         android:id="@+id/navigation_record"
@@ -45,4 +50,10 @@
         android:name="net.jpalayoor.muscletracker.ui.exercises.ExerciseDetailFragment"
         android:label="Exercise Detail"
         tools:layout="@layout/fragment_exercise_detail" />
+
+    <fragment
+        android:id="@+id/navigation_template_detail"
+        android:name="net.jpalayoor.muscletracker.ui.workouts.TemplateDetailFragment"
+        android:label="Template Detail"
+        tools:layout="@layout/fragment_template_detail" />
 </navigation>

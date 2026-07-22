@@ -83,11 +83,17 @@ public class MainActivity extends AppCompatActivity {
             if (item.getItemId() == R.id.navigation_exercises) {
                 navController.popBackStack(R.id.navigation_exercises, false);
             }
+            else if (item.getItemId() == R.id.navigation_workouts) {
+                navController.popBackStack(R.id.navigation_workouts, false);
+            }
         });
 
         navController.addOnDestinationChangedListener((controller, destination, arguments) -> {
             if (destination.getId() == R.id.navigation_exercise_detail) {
                 binding.navView.getMenu().findItem(R.id.navigation_exercises).setChecked(true);
+            }
+            else if (destination.getId() == R.id.navigation_template_detail) {
+                binding.navView.getMenu().findItem(R.id.navigation_workouts).setChecked(true);
             }
         });
     }
