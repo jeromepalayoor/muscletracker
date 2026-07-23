@@ -95,11 +95,6 @@ public class MainActivity extends AppCompatActivity {
             else if (destination.getId() == R.id.navigation_template_detail || destination.getId() == R.id.navigation_exercise_picker) {
                 binding.navView.getMenu().findItem(R.id.navigation_workouts).setChecked(true);
             }
-
-            if (arguments != null && arguments.getString("templateName") != null) {
-                String suffix = destination.getId() == R.id.navigation_exercise_picker ? " Exercises" : "";
-                setTitle(arguments.getString("templateName") + suffix);
-            }
         });
     }
 

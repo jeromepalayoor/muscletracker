@@ -10,6 +10,7 @@ import android.view.ViewGroup;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.view.MenuProvider;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProvider;
@@ -18,6 +19,8 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import net.jpalayoor.muscletracker.R;
+
+import java.util.Objects;
 
 public class TemplateDetailFragment extends Fragment {
     private int templateId;
@@ -49,6 +52,7 @@ public class TemplateDetailFragment extends Fragment {
         }
 
         String templateName = getArguments() != null ? getArguments().getString("templateName") : "";
+        Objects.requireNonNull(((AppCompatActivity) requireActivity()).getSupportActionBar()).setTitle(templateName);
 
         requireActivity().addMenuProvider(new MenuProvider() {
             @Override

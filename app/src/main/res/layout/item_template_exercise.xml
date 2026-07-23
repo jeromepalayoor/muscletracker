@@ -19,5 +19,7 @@
         android:layout_height="24dp"
         android:id="@+id/dragHandle"
         android:src="@drawable/ic_drag_handle_24dp"
-        android:contentDescription="drag handle" />
+        android:contentDescription="drag handle"
+        android:layout_gravity="center_vertical"
+        android:layout_marginEnd="20dp"/>
 </LinearLayout>

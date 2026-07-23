@@ -13,6 +13,7 @@ import android.widget.EditText;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.view.MenuProvider;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProvider;
@@ -21,6 +22,8 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import net.jpalayoor.muscletracker.R;
+
+import java.util.Objects;
 
 public class ExercisePickerFragment extends Fragment {
     private int templateId;
@@ -65,6 +68,7 @@ public class ExercisePickerFragment extends Fragment {
 
         templateId = getArguments() != null ? getArguments().getInt("templateId") : -1;
         String templateName = getArguments() != null ? getArguments().getString("templateName") : "";
+        Objects.requireNonNull(((AppCompatActivity) requireActivity()).getSupportActionBar()).setTitle(templateName + " Exercises");
 
         requireActivity().addMenuProvider(new MenuProvider() {
             @Override
