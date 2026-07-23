@@ -49,7 +49,6 @@ public class TemplateDetailFragment extends Fragment {
         }
 
         String templateName = getArguments() != null ? getArguments().getString("templateName") : "";
-        requireActivity().setTitle(templateName);
 
         requireActivity().addMenuProvider(new MenuProvider() {
             @Override
