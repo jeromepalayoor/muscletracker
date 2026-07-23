@@ -51,7 +51,6 @@ public class TemplateDetailFragment extends Fragment {
 
         ItemTouchHelper touchHelper = new ItemTouchHelper(new ItemTouchHelper.SimpleCallback(
                 ItemTouchHelper.UP | ItemTouchHelper.DOWN, ItemTouchHelper.LEFT) {
-
             @Override
             public boolean onMove(@NonNull RecyclerView recyclerView, @NonNull RecyclerView.ViewHolder viewHolder,
                                   @NonNull RecyclerView.ViewHolder target) {
@@ -66,8 +65,20 @@ public class TemplateDetailFragment extends Fragment {
                 viewModel.deleteById(item.id);
                 adapter.deleteItem(position);
             }
+
+            @Override
+            public void clearView(@NonNull RecyclerView recyclerView, @NonNull RecyclerView.ViewHolder viewHolder) {
+                super.clearView(recyclerView, viewHolder);
+                viewModel.updateOrder(adapter.getItems());
+            }
+
+            @Override
+            public boolean isLongPressDragEnabled() {
+                return false;
+            }
         });
         touchHelper.attachToRecyclerView(recyclerView);
+        adapter.setTouchHelper(touchHelper);
 
         templateId = getArguments() != null ? getArguments().getInt("templateId") : -1;
         if (templateId != -1) {

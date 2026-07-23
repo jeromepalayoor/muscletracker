@@ -1,12 +1,15 @@
 package net.jpalayoor.muscletracker.ui.workouts;
 
+import android.annotation.SuppressLint;
 import android.view.LayoutInflater;
+import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
+import androidx.recyclerview.widget.ItemTouchHelper;
 import androidx.recyclerview.widget.RecyclerView;
 
 import net.jpalayoor.muscletracker.R;
@@ -23,9 +26,14 @@ public class TemplateExerciseAdapter extends RecyclerView.Adapter<TemplateExerci
 
     private List<TemplateExerciseWithName> templateExerciseWithNames = new ArrayList<>();
     private final TemplateExerciseAdapter.OnTemplateExerciseClickListener listener;
+    private ItemTouchHelper touchHelper;
 
     public TemplateExerciseAdapter(OnTemplateExerciseClickListener listener) {
         this.listener = listener;
+    }
+
+    public void setTouchHelper(ItemTouchHelper touchHelper) {
+        this.touchHelper = touchHelper;
     }
 
     public void setItems(List<TemplateExerciseWithName> newItems) {
@@ -56,11 +64,18 @@ public class TemplateExerciseAdapter extends RecyclerView.Adapter<TemplateExerci
         return new TemplateExerciseViewHolder(view);
     }
 
+    @SuppressLint("ClickableViewAccessibility")
     @Override
     public void onBindViewHolder(@NonNull TemplateExerciseViewHolder holder, int position) {
         TemplateExerciseWithName templateExerciseWithName = templateExerciseWithNames.get(position);
         holder.textName.setText(templateExerciseWithName.name);
         holder.itemView.setOnClickListener(v -> listener.onTemplateClick(templateExerciseWithName));
+        holder.dragHandle.setOnTouchListener((v, event) -> {
+            if (event.getActionMasked() == MotionEvent.ACTION_DOWN) {
+                touchHelper.startDrag(holder);
+            }
+            return false;
+        });
     }
 
     @Override
