@@ -68,6 +68,7 @@ public class WorkoutsFragment extends Fragment {
         TemplateAdapter adapter = new TemplateAdapter(template -> {
             Bundle args = new Bundle();
             args.putInt("templateId", template.id);
+            args.putString("templateName", template.name);
             Navigation.findNavController(view).navigate(R.id.action_template_to_detail, args);
         });
 

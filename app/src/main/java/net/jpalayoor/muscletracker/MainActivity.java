@@ -92,7 +92,7 @@ public class MainActivity extends AppCompatActivity {
             if (destination.getId() == R.id.navigation_exercise_detail) {
                 binding.navView.getMenu().findItem(R.id.navigation_exercises).setChecked(true);
             }
-            else if (destination.getId() == R.id.navigation_template_detail) {
+            else if (destination.getId() == R.id.navigation_template_detail || destination.getId() == R.id.navigation_exercise_picker) {
                 binding.navView.getMenu().findItem(R.id.navigation_workouts).setChecked(true);
             }
         });

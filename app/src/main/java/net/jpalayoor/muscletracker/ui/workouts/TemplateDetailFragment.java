@@ -48,6 +48,9 @@ public class TemplateDetailFragment extends Fragment {
             viewModel.getExercisesForTemplate(templateId).observe(getViewLifecycleOwner(), adapter::setItems);
         }
 
+        String templateName = getArguments() != null ? getArguments().getString("templateName") : "";
+        requireActivity().setTitle(templateName);
+
         requireActivity().addMenuProvider(new MenuProvider() {
             @Override
             public void onCreateMenu(@NonNull Menu menu, @NonNull MenuInflater menuInflater) {
@@ -59,6 +62,7 @@ public class TemplateDetailFragment extends Fragment {
                 if (menuItem.getItemId() == R.id.action_add_exercise) {
                     Bundle args = new Bundle();
                     args.putInt("templateId", templateId);
+                    args.putString("templateName", templateName);
                     Navigation.findNavController(view).navigate(R.id.action_template_detail_to_exercise_picker, args);
                     return true;
                 }

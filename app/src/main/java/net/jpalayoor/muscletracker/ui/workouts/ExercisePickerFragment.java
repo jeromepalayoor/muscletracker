@@ -64,6 +64,8 @@ public class ExercisePickerFragment extends Fragment {
         });
 
         templateId = getArguments() != null ? getArguments().getInt("templateId") : -1;
+        String templateName = getArguments() != null ? getArguments().getString("templateName") : "";
+        requireActivity().setTitle(templateName + " Exercises");
 
         requireActivity().addMenuProvider(new MenuProvider() {
             @Override
