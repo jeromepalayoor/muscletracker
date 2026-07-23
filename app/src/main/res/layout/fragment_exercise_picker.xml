@@ -11,7 +11,8 @@
         android:id="@+id/editSearchExercises"
         android:autofillHints="no"
         android:hint="@string/search_exercises_hint"
-        android:inputType="text" />
+        android:inputType="text"
+        android:paddingHorizontal="20dp"/>
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerExercisePicker"

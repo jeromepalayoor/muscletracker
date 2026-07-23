@@ -31,7 +31,7 @@ public class ExercisePickerViewModel extends AndroidViewModel {
 
     public void search(String query) {
         executor.execute(() -> {
-            List<Exercise> results = db.exerciseDao().searchByName(query);
+            List<Exercise> results = db.exerciseDao().searchRanked(query);
             searchResults.postValue(results);
         });
     }

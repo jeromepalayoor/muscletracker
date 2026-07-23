@@ -1,9 +1,12 @@
 package net.jpalayoor.muscletracker.ui.exercises;
 
 import android.os.Bundle;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.EditText;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -39,6 +42,21 @@ public class ExercisesFragment extends Fragment {
         recyclerView.setLayoutManager(new LinearLayoutManager(requireContext()));
         recyclerView.setAdapter(adapter);
 
-        viewModel.getAllExercises().observe(getViewLifecycleOwner(), adapter::setExercises);
+        viewModel.getSearchResults().observe(getViewLifecycleOwner(), adapter::setExercises);
+        viewModel.search("");
+
+        EditText editSearch = view.findViewById(R.id.editSearchExercises);
+        editSearch.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {}
+
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
+                viewModel.search(s.toString());
+            }
+
+            @Override
+            public void afterTextChanged(Editable s) {}
+        });
     }
 }
