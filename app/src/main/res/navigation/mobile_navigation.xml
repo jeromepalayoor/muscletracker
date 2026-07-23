@@ -55,5 +55,16 @@
         android:id="@+id/navigation_template_detail"
         android:name="net.jpalayoor.muscletracker.ui.workouts.TemplateDetailFragment"
         android:label="Template Detail"
-        tools:layout="@layout/fragment_template_detail" />
+        tools:layout="@layout/fragment_template_detail">
+
+        <action
+            android:id="@+id/action_template_detail_to_exercise_picker"
+            app:destination="@id/navigation_exercise_picker" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/navigation_exercise_picker"
+        android:name="net.jpalayoor.muscletracker.ui.workouts.ExercisePickerFragment"
+        android:label="Exercise Picker"
+        tools:layout="@layout/fragment_exercise_picker" />
 </navigation>

@@ -8,4 +8,6 @@
     <string name="exercise_image">Exercise image</string>
     <string name="plus_sign">+</string>
     <string name="template_name_hint">Template name</string>
+    <string name="search_exercises_hint">Search Exercises</string>
+    <string name="add_text">Add</string>
 </resources>

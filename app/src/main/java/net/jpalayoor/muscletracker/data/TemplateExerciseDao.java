@@ -28,4 +28,7 @@ public interface TemplateExerciseDao {
             "WHERE template_exercise.templateId = :templateId " +
             "ORDER BY template_exercise.exerciseOrder ASC")
     LiveData<List<TemplateExerciseWithName>> getExercisesWithNamesLive(int templateId);
+
+    @Query("SELECT COUNT(*) FROM template_exercise WHERE templateId = :templateId")
+    int countForTemplate(int templateId);
 }
