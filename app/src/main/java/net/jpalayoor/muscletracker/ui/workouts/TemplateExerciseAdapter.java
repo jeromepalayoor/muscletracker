@@ -33,6 +33,21 @@ public class TemplateExerciseAdapter extends RecyclerView.Adapter<TemplateExerci
         notifyDataSetChanged();
     }
 
+    public List<TemplateExerciseWithName> getItems() {
+        return this.templateExerciseWithNames;
+    }
+
+    public void moveItem(int from, int to) {
+        TemplateExerciseWithName item = this.templateExerciseWithNames.remove(from);
+        this.templateExerciseWithNames.add(to, item);
+        notifyItemMoved(from, to);
+    }
+
+    public void deleteItem(int position) {
+        this.templateExerciseWithNames.remove(position);
+        notifyItemRemoved(position);
+    }
+
     @NonNull
     @Override
     public TemplateExerciseViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
@@ -43,8 +58,6 @@ public class TemplateExerciseAdapter extends RecyclerView.Adapter<TemplateExerci
 
     @Override
     public void onBindViewHolder(@NonNull TemplateExerciseViewHolder holder, int position) {
-        // TODO 5: get the item at this position, set the TextView's text to its name,
-        //         set the itemView's click listener to call listener.onTemplateClick(...)
         TemplateExerciseWithName templateExerciseWithName = templateExerciseWithNames.get(position);
         holder.textName.setText(templateExerciseWithName.name);
         holder.itemView.setOnClickListener(v -> listener.onTemplateClick(templateExerciseWithName));

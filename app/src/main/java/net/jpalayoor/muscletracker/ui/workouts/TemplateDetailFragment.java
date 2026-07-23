@@ -15,15 +15,19 @@ import androidx.core.view.MenuProvider;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProvider;
 import androidx.navigation.Navigation;
+import androidx.recyclerview.widget.ItemTouchHelper;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import net.jpalayoor.muscletracker.R;
+import net.jpalayoor.muscletracker.data.TemplateExerciseWithName;
 
 import java.util.Objects;
 
 public class TemplateDetailFragment extends Fragment {
     private int templateId;
+    private TemplateExerciseAdapter adapter;
+    private TemplateDetailViewModel viewModel;
 
     @Nullable
     @Override
@@ -36,15 +40,34 @@ public class TemplateDetailFragment extends Fragment {
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
-        TemplateDetailViewModel viewModel = new ViewModelProvider(this).get(TemplateDetailViewModel.class);
-
-        TemplateExerciseAdapter adapter = new TemplateExerciseAdapter(templateExercise -> {
+        viewModel = new ViewModelProvider(this).get(TemplateDetailViewModel.class);
+        adapter = new TemplateExerciseAdapter(templateExercise -> {
             // click handling — later wave, reusing ExerciseDetailFragment
         });
 
         RecyclerView recyclerView = view.findViewById(R.id.recyclerTemplateExercises);
         recyclerView.setLayoutManager(new LinearLayoutManager(requireContext()));
         recyclerView.setAdapter(adapter);
+
+        ItemTouchHelper touchHelper = new ItemTouchHelper(new ItemTouchHelper.SimpleCallback(
+                ItemTouchHelper.UP | ItemTouchHelper.DOWN, ItemTouchHelper.LEFT) {
+
+            @Override
+            public boolean onMove(@NonNull RecyclerView recyclerView, @NonNull RecyclerView.ViewHolder viewHolder,
+                                  @NonNull RecyclerView.ViewHolder target) {
+                adapter.moveItem(viewHolder.getBindingAdapterPosition(), target.getBindingAdapterPosition());
+                return true;
+            }
+
+            @Override
+            public void onSwiped(@NonNull RecyclerView.ViewHolder viewHolder, int direction) {
+                int position = viewHolder.getBindingAdapterPosition();
+                TemplateExerciseWithName item = adapter.getItems().get(position);
+                viewModel.deleteById(item.id);
+                adapter.deleteItem(position);
+            }
+        });
+        touchHelper.attachToRecyclerView(recyclerView);
 
         templateId = getArguments() != null ? getArguments().getInt("templateId") : -1;
         if (templateId != -1) {

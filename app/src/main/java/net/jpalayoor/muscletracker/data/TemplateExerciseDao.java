@@ -31,4 +31,10 @@ public interface TemplateExerciseDao {
 
     @Query("SELECT COUNT(*) FROM template_exercise WHERE templateId = :templateId")
     int countForTemplate(int templateId);
+
+    @Query("UPDATE template_exercise SET exerciseOrder = :order WHERE id = :id")
+    void updateOrder(int id, int order);
+
+    @Query("DELETE FROM template_exercise WHERE id = :id")
+    void deleteById(int id);
 }

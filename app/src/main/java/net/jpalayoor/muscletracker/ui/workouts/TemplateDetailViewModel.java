@@ -41,4 +41,18 @@ public class TemplateDetailViewModel extends AndroidViewModel {
             }
         });
     }
+
+    public void updateOrder(List<TemplateExerciseWithName> items) {
+        executor.execute(() -> {
+            for (int i = 0; i < items.size(); i++) {
+                db.templateExerciseDao().updateOrder(items.get(i).id, i);
+            }
+        });
+    }
+
+    public void deleteById(int id) {
+        executor.execute(() -> {
+            db.templateExerciseDao().deleteById(id);
+        });
+    }
 }
