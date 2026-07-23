@@ -14,10 +14,13 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.view.MenuProvider;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProvider;
+import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
 import androidx.recyclerview.widget.ItemTouchHelper;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
+
+import com.google.android.material.dialog.MaterialAlertDialogBuilder;
 
 import net.jpalayoor.muscletracker.R;
 import net.jpalayoor.muscletracker.data.TemplateExerciseWithName;
@@ -41,6 +44,7 @@ public class TemplateDetailFragment extends Fragment {
         super.onViewCreated(view, savedInstanceState);
 
         viewModel = new ViewModelProvider(this).get(TemplateDetailViewModel.class);
+        WorkoutsViewModel workoutsViewModel = new ViewModelProvider(this).get(WorkoutsViewModel.class);
         adapter = new TemplateExerciseAdapter(templateExercise -> {
             // click handling — later wave, reusing ExerciseDetailFragment
         });
@@ -101,6 +105,18 @@ public class TemplateDetailFragment extends Fragment {
                     args.putInt("templateId", templateId);
                     args.putString("templateName", templateName);
                     Navigation.findNavController(view).navigate(R.id.action_template_detail_to_exercise_picker, args);
+                    return true;
+                }
+                else if (menuItem.getItemId() == R.id.action_delete_template) {
+                    new MaterialAlertDialogBuilder(requireContext())
+                            .setTitle("Delete " + templateName + " workout?")
+                            .setMessage("This cannot be undone.")
+                            .setPositiveButton("Delete", (dialog, which) -> {
+                                workoutsViewModel.deleteTemplate(templateId);
+                                Navigation.findNavController(view).popBackStack();
+                            })
+                            .setNegativeButton("Cancel", null)
+                            .show();
                     return true;
                 }
                 return false;

@@ -37,4 +37,7 @@ public interface TemplateExerciseDao {
 
     @Query("DELETE FROM template_exercise WHERE id = :id")
     void deleteById(int id);
+
+    @Query("DELETE FROM template_exercise WHERE templateId = :templateId")
+    void deleteAllForTemplate(int templateId);
 }

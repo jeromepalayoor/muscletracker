@@ -36,4 +36,11 @@ public class WorkoutsViewModel extends AndroidViewModel {
             db.workoutTemplateDao().insert(template);
         });
     }
+
+    public void deleteTemplate(int templateId) {
+        executor.execute(() -> {
+            db.templateExerciseDao().deleteAllForTemplate(templateId);
+            db.workoutTemplateDao().deleteById(templateId);
+        });
+    }
 }

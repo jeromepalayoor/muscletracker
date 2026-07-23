@@ -18,4 +18,7 @@ public interface WorkoutTemplateDao {
 
     @Query("SELECT * FROM workout_template ORDER BY name ASC")
     LiveData<List<WorkoutTemplate>> getAllLive();
+
+    @Query("DELETE FROM workout_template WHERE id = :id")
+    void deleteById(int id);
 }
