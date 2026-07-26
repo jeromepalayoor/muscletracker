@@ -26,7 +26,16 @@
         android:id="@+id/navigation_record"
         android:name="net.jpalayoor.muscletracker.ui.record.RecordFragment"
         android:label="@string/title_record"
-        tools:layout="@layout/fragment_record" />
+        tools:layout="@layout/fragment_record">
+
+        <action
+            android:id="@+id/action_record_to_session"
+            app:destination="@id/navigation_session_detail" />
+
+        <action
+            android:id="@+id/action_record_to_start_workout"
+            app:destination="@id/navigation_start_workout" />
+    </fragment>
 
     <fragment
         android:id="@+id/navigation_exercises"
@@ -67,4 +76,27 @@
         android:name="net.jpalayoor.muscletracker.ui.workouts.ExercisePickerFragment"
         android:label="Exercise Picker"
         tools:layout="@layout/fragment_exercise_picker" />
+
+    <fragment
+        android:id="@+id/navigation_session_detail"
+        android:name="net.jpalayoor.muscletracker.ui.record.SessionDetailFragment"
+        android:label="Session Detail"
+        tools:layout="@layout/fragment_session_detail" />
+
+    <fragment
+        android:id="@+id/navigation_start_workout"
+        android:name="net.jpalayoor.muscletracker.ui.record.StartWorkoutFragment"
+        android:label="Choose Template Workout"
+        tools:layout="@layout/fragment_start_workout">
+
+        <action
+            android:id="@+id/action_start_workout_to_live_session"
+            app:destination="@+id/navigation_live_session"/>
+    </fragment>
+
+    <fragment
+        android:id="@+id/navigation_live_session"
+        android:name="net.jpalayoor.muscletracker.ui.record.LiveSessionFragment"
+        android:label="Live Session"
+        tools:layout="@layout/fragment_live_session" />
 </navigation>

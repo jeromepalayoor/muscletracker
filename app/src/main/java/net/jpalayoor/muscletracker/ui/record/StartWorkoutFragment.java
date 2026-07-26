@@ -4,7 +4,6 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -15,36 +14,37 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import net.jpalayoor.muscletracker.R;
+import net.jpalayoor.muscletracker.ui.workouts.TemplateAdapter;
 
-public class RecordFragment extends Fragment {
+public class StartWorkoutFragment extends Fragment {
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container,
                              @Nullable Bundle savedInstanceState) {
-        return inflater.inflate(R.layout.fragment_record, container, false);
+        return inflater.inflate(R.layout.fragment_start_workout, container, false);
     }
 
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
-        RecordViewModel viewModel = new ViewModelProvider(this).get(RecordViewModel.class);
+        StartWorkoutViewModel viewModel = new ViewModelProvider(this).get(StartWorkoutViewModel.class);
 
-        SessionAdapter adapter = new SessionAdapter(session -> {
-            Bundle args = new Bundle();
-            args.putInt("sessionId", session.id);
-            Navigation.findNavController(view).navigate(R.id.action_record_to_session, args);
+
+        viewModel.getNewSessionId().observe(getViewLifecycleOwner(), sessionId -> {
+            if (sessionId != null) {
+                Bundle args = new Bundle();
+                args.putLong("sessionId", sessionId);
+                Navigation.findNavController(view).navigate(R.id.action_start_workout_to_live_session, args);
+            }
         });
 
-        RecyclerView recyclerView = view.findViewById(R.id.recyclerSessions);
+        TemplateAdapter adapter = new TemplateAdapter(viewModel::createSession);
+
+        RecyclerView recyclerView = view.findViewById(R.id.recyclerStartWorkoutTemplates);
         recyclerView.setLayoutManager(new LinearLayoutManager(requireContext()));
         recyclerView.setAdapter(adapter);
 
-        viewModel.getAllSessions().observe(getViewLifecycleOwner(), adapter::setSessions);
-
-        Button btnStartWorkout = view.findViewById(R.id.btnStartWorkout);
-        btnStartWorkout.setOnClickListener(v -> {
-
-        });
+        viewModel.getAllTemplates().observe(getViewLifecycleOwner(), adapter::setTemplates);
     }
 }

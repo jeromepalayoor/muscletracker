@@ -4,6 +4,7 @@ import android.content.Context;
 import android.content.res.Configuration;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
@@ -94,6 +95,13 @@ public class MainActivity extends AppCompatActivity {
             }
             else if (destination.getId() == R.id.navigation_template_detail || destination.getId() == R.id.navigation_exercise_picker) {
                 binding.navView.getMenu().findItem(R.id.navigation_workouts).setChecked(true);
+            }
+
+            if (destination.getId() == R.id.navigation_live_session) {
+                binding.navView.setVisibility(View.GONE);
+            }
+            else {
+                binding.navView.setVisibility(View.VISIBLE);
             }
         });
     }
