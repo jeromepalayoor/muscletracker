@@ -25,4 +25,7 @@ public interface WorkoutSessionDao {
 
     @Update
     void update(WorkoutSession session);
+
+    @Query("DELETE FROM workout_session WHERE id = :id")
+    void deleteById(int id);
 }

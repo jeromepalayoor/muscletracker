@@ -30,7 +30,6 @@ public class StartWorkoutFragment extends Fragment {
 
         StartWorkoutViewModel viewModel = new ViewModelProvider(this).get(StartWorkoutViewModel.class);
 
-
         viewModel.getNewSessionId().observe(getViewLifecycleOwner(), sessionId -> {
             if (sessionId != null) {
                 Bundle args = new Bundle();

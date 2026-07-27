@@ -17,4 +17,7 @@ public interface SetLogDao {
 
     @Query("SELECT * FROM set_log WHERE exerciseId = :exerciseId ORDER BY timestamp DESC LIMIT 1")
     SetLog getMostRecentForExercise(String exerciseId);
+
+    @Query("DELETE FROM set_log WHERE sessionId = :sessionId")
+    void deleteAllForSession(int sessionId);
 }

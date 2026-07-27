@@ -44,7 +44,7 @@ public class RecordFragment extends Fragment {
 
         Button btnStartWorkout = view.findViewById(R.id.btnStartWorkout);
         btnStartWorkout.setOnClickListener(v -> {
-
+            Navigation.findNavController(view).navigate(R.id.action_record_to_start_workout);
         });
     }
 }

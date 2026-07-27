@@ -9,6 +9,7 @@ import androidx.activity.OnBackPressedCallback;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+import androidx.lifecycle.ViewModelProvider;
 import androidx.navigation.Navigation;
 
 import com.google.android.material.dialog.MaterialAlertDialogBuilder;
@@ -27,6 +28,10 @@ public class LiveSessionFragment extends Fragment {
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
+        LiveSessionViewModel viewModel = new ViewModelProvider(this).get(LiveSessionViewModel.class);
+
+        int sessionId = getArguments() != null ? getArguments().getInt("sessionId") : -1;
+
         requireActivity().getOnBackPressedDispatcher().addCallback(getViewLifecycleOwner(), new OnBackPressedCallback(true) {
             @Override
             public void handleOnBackPressed() {
@@ -34,6 +39,7 @@ public class LiveSessionFragment extends Fragment {
                         .setTitle("Cancel workout?")
                         .setMessage("This workout won't be saved.")
                         .setPositiveButton("Yes, cancel", (dialog, which) -> {
+                            viewModel.cancelSession(sessionId);
                             Navigation.findNavController(requireView()).popBackStack(R.id.navigation_record, false);
                         })
                         .setNegativeButton("No", null)
