@@ -33,7 +33,7 @@ public class StartWorkoutFragment extends Fragment {
         viewModel.getNewSessionId().observe(getViewLifecycleOwner(), sessionId -> {
             if (sessionId != null) {
                 Bundle args = new Bundle();
-                args.putLong("sessionId", sessionId);
+                args.putInt("sessionId", sessionId.intValue());
                 Navigation.findNavController(view).navigate(R.id.action_start_workout_to_live_session, args);
             }
         });

@@ -17,7 +17,7 @@ public interface WorkoutSessionDao {
     @Delete
     void delete(WorkoutSession template);
 
-    @Query("SELECT * FROM workout_session ORDER BY startTime DESC")
+    @Query("SELECT * FROM workout_session WHERE endTime IS NOT NULL ORDER BY startTime DESC")
     LiveData<List<WorkoutSession>> getAllSessionsLive();
 
     @Query("SELECT * FROM workout_session WHERE id = :id LIMIT 1")
@@ -28,4 +28,7 @@ public interface WorkoutSessionDao {
 
     @Query("DELETE FROM workout_session WHERE id = :id")
     void deleteById(int id);
+
+    @Query("SELECT * FROM workout_session WHERE endTime IS NULL LIMIT 1")
+    WorkoutSession getInProgressSession();
 }

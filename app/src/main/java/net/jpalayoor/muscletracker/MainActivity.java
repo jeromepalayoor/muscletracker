@@ -21,6 +21,7 @@ import androidx.navigation.ui.NavigationUI;
 
 import net.jpalayoor.muscletracker.data.AppDatabase;
 import net.jpalayoor.muscletracker.data.Exercise;
+import net.jpalayoor.muscletracker.data.WorkoutSession;
 import net.jpalayoor.muscletracker.databinding.ActivityMainBinding;
 
 import org.json.JSONArray;
@@ -80,6 +81,18 @@ public class MainActivity extends AppCompatActivity {
         NavigationUI.setupActionBarWithNavController(this, navController, appBarConfiguration);
         NavigationUI.setupWithNavController(binding.navView, navController);
 
+        new Thread(() -> {
+            WorkoutSession inProgress = db.workoutSessionDao().getInProgressSession();
+            if (inProgress != null) {
+                runOnUiThread(() -> {
+                    Bundle args = new Bundle();
+                    args.putInt("sessionId", inProgress.id);
+                    navController.navigate(R.id.navigation_record, args);
+                    navController.navigate(R.id.navigation_live_session, args);
+                });
+            }
+        }).start();
+
         binding.navView.setOnItemReselectedListener(item -> {
             if (item.getItemId() == R.id.navigation_exercises) {
                 navController.popBackStack(R.id.navigation_exercises, false);
@@ -90,6 +103,7 @@ public class MainActivity extends AppCompatActivity {
         });
 
         navController.addOnDestinationChangedListener((controller, destination, arguments) -> {
+            Log.d("navdebug", "destination changed to: " + destination.getLabel());
             if (destination.getId() == R.id.navigation_exercise_detail) {
                 binding.navView.getMenu().findItem(R.id.navigation_exercises).setChecked(true);
             }
