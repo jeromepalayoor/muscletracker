@@ -109,6 +109,11 @@ public class MainActivity extends AppCompatActivity {
     @Override
     public boolean onSupportNavigateUp() {
         NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment_activity_main);
+        if (navController.getCurrentDestination() != null
+                && navController.getCurrentDestination().getId() == R.id.navigation_live_session) {
+            getOnBackPressedDispatcher().onBackPressed();
+            return true;
+        }
         return NavigationUI.navigateUp(navController, appBarConfiguration) || super.onSupportNavigateUp();
     }
 
