@@ -10,6 +10,8 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProvider;
+import androidx.navigation.NavController;
+import androidx.navigation.NavOptions;
 import androidx.navigation.Navigation;
 
 import com.google.android.material.dialog.MaterialAlertDialogBuilder;
@@ -40,7 +42,11 @@ public class LiveSessionFragment extends Fragment {
                         .setMessage("This workout won't be saved.")
                         .setPositiveButton("Yes, cancel", (dialog, which) -> {
                             viewModel.cancelSession(sessionId);
-                            Navigation.findNavController(requireView()).popBackStack(R.id.navigation_record, false);
+                            NavController nc = Navigation.findNavController(requireView());
+                            NavOptions options = new NavOptions.Builder()
+                                    .setPopUpTo(nc.getGraph().getStartDestinationId(), false)
+                                    .build();
+                            nc.navigate(R.id.navigation_record, null, options);
                         })
                         .setNegativeButton("No", null)
                         .show();

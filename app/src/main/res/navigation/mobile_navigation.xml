@@ -86,7 +86,7 @@
     <fragment
         android:id="@+id/navigation_start_workout"
         android:name="net.jpalayoor.muscletracker.ui.record.StartWorkoutFragment"
-        android:label="Choose Template Workout"
+        android:label="Choose Workout To Start"
         tools:layout="@layout/fragment_start_workout">
 
         <action

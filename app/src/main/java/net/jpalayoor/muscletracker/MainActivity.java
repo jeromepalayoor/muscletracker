@@ -15,6 +15,7 @@ import androidx.core.view.WindowCompat;
 import androidx.core.view.WindowInsetsCompat;
 import androidx.core.view.WindowInsetsControllerCompat;
 import androidx.navigation.NavController;
+import androidx.navigation.NavOptions;
 import androidx.navigation.Navigation;
 import androidx.navigation.ui.AppBarConfiguration;
 import androidx.navigation.ui.NavigationUI;
@@ -81,13 +82,20 @@ public class MainActivity extends AppCompatActivity {
         NavigationUI.setupActionBarWithNavController(this, navController, appBarConfiguration);
         NavigationUI.setupWithNavController(binding.navView, navController);
 
+        binding.navView.setOnItemSelectedListener(item -> {
+            NavOptions options = new NavOptions.Builder()
+                    .setPopUpTo(navController.getGraph().getStartDestinationId(), false)
+                    .build();
+            navController.navigate(item.getItemId(), null, options);
+            return true;
+        });
+
         new Thread(() -> {
             WorkoutSession inProgress = db.workoutSessionDao().getInProgressSession();
             if (inProgress != null) {
                 runOnUiThread(() -> {
                     Bundle args = new Bundle();
                     args.putInt("sessionId", inProgress.id);
-                    navController.navigate(R.id.navigation_record, args);
                     navController.navigate(R.id.navigation_live_session, args);
                 });
             }
@@ -103,7 +111,6 @@ public class MainActivity extends AppCompatActivity {
         });
 
         navController.addOnDestinationChangedListener((controller, destination, arguments) -> {
-            Log.d("navdebug", "destination changed to: " + destination.getLabel());
             if (destination.getId() == R.id.navigation_exercise_detail) {
                 binding.navView.getMenu().findItem(R.id.navigation_exercises).setChecked(true);
             }
