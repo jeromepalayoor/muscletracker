@@ -70,12 +70,17 @@ public class TemplateExerciseAdapter extends RecyclerView.Adapter<TemplateExerci
         TemplateExerciseWithName templateExerciseWithName = templateExerciseWithNames.get(position);
         holder.textName.setText(templateExerciseWithName.name);
         holder.itemView.setOnClickListener(v -> listener.onTemplateClick(templateExerciseWithName));
-        holder.dragHandle.setOnTouchListener((v, event) -> {
-            if (event.getActionMasked() == MotionEvent.ACTION_DOWN) {
-                touchHelper.startDrag(holder);
-            }
-            return false;
-        });
+        if (touchHelper != null) {
+            holder.dragHandle.setVisibility(View.VISIBLE);
+            holder.dragHandle.setOnTouchListener((v, event) -> {
+                if (event.getActionMasked() == MotionEvent.ACTION_DOWN) {
+                    touchHelper.startDrag(holder);
+                }
+                return false;
+            });
+        } else {
+            holder.dragHandle.setVisibility(View.GONE);
+        }
     }
 
     @Override

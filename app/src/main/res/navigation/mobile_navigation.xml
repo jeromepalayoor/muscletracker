@@ -98,5 +98,16 @@
         android:id="@+id/navigation_live_session"
         android:name="net.jpalayoor.muscletracker.ui.record.LiveSessionFragment"
         android:label="Live Session"
-        tools:layout="@layout/fragment_live_session" />
+        tools:layout="@layout/fragment_live_session">
+
+        <action
+            android:id="@+id/action_live_session_to_exercise"
+            app:destination="@+id/navigation_exercise_log"/>
+    </fragment>
+
+    <fragment
+        android:id="@+id/navigation_exercise_log"
+        android:name="net.jpalayoor.muscletracker.ui.record.ExerciseLogFragment"
+        android:label="Exercise Log"
+        tools:layout="@layout/fragment_live_exercise_log" />
 </navigation>

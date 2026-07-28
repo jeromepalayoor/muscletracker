@@ -13,12 +13,18 @@ import androidx.lifecycle.ViewModelProvider;
 import androidx.navigation.NavController;
 import androidx.navigation.NavOptions;
 import androidx.navigation.Navigation;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import com.google.android.material.dialog.MaterialAlertDialogBuilder;
 
 import net.jpalayoor.muscletracker.R;
+import net.jpalayoor.muscletracker.ui.workouts.TemplateExerciseAdapter;
 
 public class LiveSessionFragment extends Fragment {
+    private int sessionId;
+    private TemplateExerciseAdapter adapter;
+
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container,
@@ -32,7 +38,21 @@ public class LiveSessionFragment extends Fragment {
 
         LiveSessionViewModel viewModel = new ViewModelProvider(this).get(LiveSessionViewModel.class);
 
-        int sessionId = getArguments() != null ? getArguments().getInt("sessionId") : -1;
+        sessionId = getArguments() != null ? getArguments().getInt("sessionId") : -1;
+
+        adapter = new TemplateExerciseAdapter(templateExercise -> {
+            Bundle args = new Bundle();
+            args.putInt("sessionId", sessionId);
+            args.putString("exerciseId", templateExercise.exerciseId);
+            Navigation.findNavController(view).navigate(R.id.action_live_session_to_exercise, args);
+        });
+
+        RecyclerView recyclerView = view.findViewById(R.id.recyclerLiveSessionExercises);
+        recyclerView.setLayoutManager(new LinearLayoutManager(requireContext()));
+        recyclerView.setAdapter(adapter);
+
+        viewModel.getSessionExercises().observe(getViewLifecycleOwner(), adapter::setItems);
+        viewModel.loadExercisesForSession(sessionId);
 
         requireActivity().getOnBackPressedDispatcher().addCallback(getViewLifecycleOwner(), new OnBackPressedCallback(true) {
             @Override

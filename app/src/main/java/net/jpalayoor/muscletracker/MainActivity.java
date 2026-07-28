@@ -118,7 +118,7 @@ public class MainActivity extends AppCompatActivity {
                 binding.navView.getMenu().findItem(R.id.navigation_workouts).setChecked(true);
             }
 
-            if (destination.getId() == R.id.navigation_live_session) {
+            if (destination.getId() == R.id.navigation_live_session || destination.getId() == R.id.navigation_exercise_log) {
                 binding.navView.setVisibility(View.GONE);
             }
             else {
