@@ -20,7 +20,6 @@ public class LiveSessionViewModel extends AndroidViewModel {
     private final ExecutorService executor = Executors.newSingleThreadExecutor();
     private final MutableLiveData<List<TemplateExerciseWithName>> sessionExercises = new MutableLiveData<>();
 
-
     public LiveSessionViewModel(@NonNull Application application) {
         super(application);
         db = AppDatabase.getInstance(application);

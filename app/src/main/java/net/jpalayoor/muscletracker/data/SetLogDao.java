@@ -20,4 +20,10 @@ public interface SetLogDao {
 
     @Query("DELETE FROM set_log WHERE sessionId = :sessionId")
     void deleteAllForSession(int sessionId);
+
+    @Query("SELECT COUNT(*) FROM set_log WHERE sessionId = :sessionId AND exerciseId = :exerciseId")
+    int countForExerciseInSession(int sessionId, String exerciseId);
+
+    @Query("SELECT * FROM set_log WHERE sessionId = :sessionId AND exerciseId = :exerciseId ORDER BY setNumber ASC")
+    LiveData<List<SetLog>> getForSessionAndExerciseLive(int sessionId, String exerciseId);
 }

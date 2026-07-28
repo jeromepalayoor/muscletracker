@@ -1,7 +1,71 @@
 <?xml version="1.0" encoding="utf-8"?>
-<TextView xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:text="Exercise Log"
-    android:textColor="?android:attr/textColorPrimary"
-    android:gravity="center" />
+    android:orientation="vertical">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/textLogExerciseName"
+        android:textColor="?android:attr/textColorPrimary"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/textLogPrevious"
+        android:textColor="?android:attr/textColorPrimary"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <EditText
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:id="@+id/editWeight"
+            android:autofillHints="no"
+            android:hint="@string/weight_kg_text"
+            android:inputType="numberDecimal"
+            android:paddingHorizontal="20dp"/>
+
+        <EditText
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:id="@+id/editReps"
+            android:autofillHints="no"
+            android:hint="@string/reps"
+            android:inputType="number"
+            android:paddingHorizontal="20dp"/>
+    </LinearLayout>
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/btnLogSet"
+        android:text="@string/log_set"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/thisSession"
+        android:textColor="?android:attr/textColorPrimary"
+        android:text="@string/this_session_text"/>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerLoggedSets"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:clipToPadding="false"/>
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/btnFinishExercise"
+        android:text="@string/finish_exercise"/>
+</LinearLayout>

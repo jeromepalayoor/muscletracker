@@ -10,4 +10,12 @@
     <string name="template_name_hint">Template name</string>
     <string name="search_exercises_hint">Search Exercises</string>
     <string name="add_text">Add</string>
+    <string name="weight_kg_text">Weight (kg)</string>
+    <string name="reps">Reps</string>
+    <string name="log_set">Log set</string>
+    <string name="this_session_text">This session</string>
+    <string name="finish_exercise">Finish exercise</string>
+    <string name="set_number_format">Set %1$d</string>
+    <string name="reps_format">%1$d reps</string>
+    <string name="weight_kg_format">%1$.2fkg</string>
 </resources>
