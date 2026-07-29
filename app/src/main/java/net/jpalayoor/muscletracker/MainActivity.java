@@ -108,15 +108,24 @@ public class MainActivity extends AppCompatActivity {
             else if (item.getItemId() == R.id.navigation_workouts) {
                 navController.popBackStack(R.id.navigation_workouts, false);
             }
+            else if (item.getItemId() == R.id.navigation_record) {
+                NavOptions options = new NavOptions.Builder()
+                        .setPopUpTo(navController.getGraph().getStartDestinationId(), false)
+                        .build();
+                navController.navigate(R.id.navigation_record, null, options);
+            }
         });
 
         navController.addOnDestinationChangedListener((controller, destination, arguments) -> {
-            Log.d("navdebug", "destination changed to: " + destination.getLabel());
             if (destination.getId() == R.id.navigation_exercise_detail) {
                 binding.navView.getMenu().findItem(R.id.navigation_exercises).setChecked(true);
             }
             else if (destination.getId() == R.id.navigation_template_detail || destination.getId() == R.id.navigation_exercise_picker) {
                 binding.navView.getMenu().findItem(R.id.navigation_workouts).setChecked(true);
+            }
+            else if (destination.getId() == R.id.navigation_start_workout || destination.getId() == R.id.navigation_live_session
+                    || destination.getId() == R.id.navigation_exercise_log || destination.getId() == R.id.navigation_session_detail) {
+                binding.navView.getMenu().findItem(R.id.navigation_record).setChecked(true);
             }
 
             if (destination.getId() == R.id.navigation_live_session || destination.getId() == R.id.navigation_exercise_log) {
