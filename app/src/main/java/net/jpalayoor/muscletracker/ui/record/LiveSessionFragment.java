@@ -63,7 +63,11 @@ public class LiveSessionFragment extends Fragment {
             if (ended) {
                 Bundle args = new Bundle();
                 args.putInt("sessionId", sessionId);
-                Navigation.findNavController(view).navigate(R.id.action_live_session_to_detail, args);
+                NavController nc = Navigation.findNavController(view);
+                NavOptions options = new NavOptions.Builder()
+                        .setPopUpTo(R.id.navigation_record, false)
+                        .build();
+                nc.navigate(R.id.navigation_session_detail, args, options);
             }
         });
 
@@ -76,7 +80,13 @@ public class LiveSessionFragment extends Fragment {
             @Override
             public boolean onMenuItemSelected(@NonNull MenuItem menuItem) {
                 if (menuItem.getItemId() == R.id.action_end_workout) {
-                    viewModel.endWorkout(sessionId);
+                    new MaterialAlertDialogBuilder(requireContext())
+                            .setTitle("End workout?")
+                            .setPositiveButton("Yes", (dialog, which) -> {
+                                viewModel.endWorkout(sessionId);
+                            })
+                            .setNegativeButton("No", null)
+                            .show();
                     return true;
                 }
                 return false;

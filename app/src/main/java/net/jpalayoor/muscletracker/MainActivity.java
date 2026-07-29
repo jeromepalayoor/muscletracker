@@ -111,6 +111,7 @@ public class MainActivity extends AppCompatActivity {
         });
 
         navController.addOnDestinationChangedListener((controller, destination, arguments) -> {
+            Log.d("navdebug", "destination changed to: " + destination.getLabel());
             if (destination.getId() == R.id.navigation_exercise_detail) {
                 binding.navView.getMenu().findItem(R.id.navigation_exercises).setChecked(true);
             }
