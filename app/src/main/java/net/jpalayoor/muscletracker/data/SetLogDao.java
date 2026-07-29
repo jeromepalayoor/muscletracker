@@ -26,4 +26,30 @@ public interface SetLogDao {
 
     @Query("SELECT * FROM set_log WHERE sessionId = :sessionId AND exerciseId = :exerciseId ORDER BY setNumber ASC")
     LiveData<List<SetLog>> getForSessionAndExerciseLive(int sessionId, String exerciseId);
+
+    @Query("SELECT set_log.id AS id, " +
+            "set_log.exerciseId AS exerciseId, " +
+            "exercises.name AS name, " +
+            "set_log.weight AS weight, " +
+            "set_log.reps AS reps, " +
+            "set_log.setNumber AS setNumber, " +
+            "set_log.timestamp AS timestamp " +
+            "FROM set_log " +
+            "JOIN exercises ON set_log.exerciseId = exercises.exerciseId " +
+            "WHERE set_log.sessionId = :sessionId " +
+            "ORDER BY set_log.exerciseId ASC, set_log.setNumber ASC")
+    List<SetLogWithName> getSetLogWithNameByExercise(int sessionId);
+
+    @Query("SELECT set_log.id AS id, " +
+            "set_log.exerciseId AS exerciseId, " +
+            "exercises.name AS name, " +
+            "set_log.weight AS weight, " +
+            "set_log.reps AS reps, " +
+            "set_log.setNumber AS setNumber, " +
+            "set_log.timestamp AS timestamp " +
+            "FROM set_log " +
+            "JOIN exercises ON set_log.exerciseId = exercises.exerciseId " +
+            "WHERE set_log.sessionId = :sessionId " +
+            "ORDER BY set_log.timestamp ASC")
+    List<SetLogWithName> getSetLogWithNameByTime(int sessionId);
 }

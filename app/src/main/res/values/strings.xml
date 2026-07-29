@@ -20,4 +20,7 @@
     <string name="weight_kg_format">%1$.2fkg</string>
     <string name="skip">Skip</string>
     <string name="finish">Finish</string>
+    <string name="volume_format">Volume: %.2fkg</string>
+    <string name="total_sets_format">Total sets: %d</string>
+    <string name="total_reps_format">Total reps: %d</string>
 </resources>

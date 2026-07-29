@@ -80,7 +80,7 @@
     <fragment
         android:id="@+id/navigation_session_detail"
         android:name="net.jpalayoor.muscletracker.ui.record.SessionDetailFragment"
-        android:label="Session Detail"
+        android:label="Workout Session Detail"
         tools:layout="@layout/fragment_session_detail" />
 
     <fragment
