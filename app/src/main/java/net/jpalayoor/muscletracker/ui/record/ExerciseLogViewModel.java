@@ -49,4 +49,17 @@ public class ExerciseLogViewModel extends AndroidViewModel {
             }
         });
     }
+
+    public void logSet(int sessionId, String exerciseId, float weight, int reps) {
+        executor.execute(() -> {
+            SetLog log = new SetLog();
+            log.sessionId = sessionId;
+            log.exerciseId = exerciseId;
+            log.weight = weight;
+            log.reps = reps;
+            log.setNumber = db.setLogDao().countForExerciseInSession(sessionId, exerciseId);
+            log.timestamp = System.currentTimeMillis();
+            db.setLogDao().insert(log);
+        });
+    }
 }

@@ -2,12 +2,16 @@ package net.jpalayoor.muscletracker.ui.record;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 
 import androidx.activity.OnBackPressedCallback;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.core.view.MenuProvider;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProvider;
 import androidx.navigation.NavController;
@@ -17,6 +21,8 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.google.android.material.dialog.MaterialAlertDialogBuilder;
+import com.google.android.material.textfield.TextInputEditText;
+import com.google.android.material.textfield.TextInputLayout;
 
 import net.jpalayoor.muscletracker.R;
 import net.jpalayoor.muscletracker.ui.workouts.TemplateExerciseAdapter;
@@ -53,6 +59,29 @@ public class LiveSessionFragment extends Fragment {
 
         viewModel.getSessionExercises().observe(getViewLifecycleOwner(), adapter::setItems);
         viewModel.loadExercisesForSession(sessionId);
+        viewModel.getWorkoutEnded().observe(getViewLifecycleOwner(), ended -> {
+            if (ended) {
+                Bundle args = new Bundle();
+                args.putInt("sessionId", sessionId);
+                Navigation.findNavController(view).navigate(R.id.action_live_session_to_detail, args);
+            }
+        });
+
+        requireActivity().addMenuProvider(new MenuProvider() {
+            @Override
+            public void onCreateMenu(@NonNull Menu menu, @NonNull MenuInflater menuInflater) {
+                menuInflater.inflate(R.menu.live_session_menu, menu);
+            }
+
+            @Override
+            public boolean onMenuItemSelected(@NonNull MenuItem menuItem) {
+                if (menuItem.getItemId() == R.id.action_end_workout) {
+                    viewModel.endWorkout(sessionId);
+                    return true;
+                }
+                return false;
+            }
+        }, getViewLifecycleOwner());
 
         requireActivity().getOnBackPressedDispatcher().addCallback(getViewLifecycleOwner(), new OnBackPressedCallback(true) {
             @Override

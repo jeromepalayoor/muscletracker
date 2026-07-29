@@ -18,4 +18,6 @@
     <string name="set_number_format">Set %1$d</string>
     <string name="reps_format">%1$d reps</string>
     <string name="weight_kg_format">%1$.2fkg</string>
+    <string name="skip">Skip</string>
+    <string name="finish">Finish</string>
 </resources>

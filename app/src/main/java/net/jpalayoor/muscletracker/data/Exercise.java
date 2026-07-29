@@ -1,7 +1,6 @@
 package net.jpalayoor.muscletracker.data;
 
 import androidx.annotation.NonNull;
-import androidx.lifecycle.MutableLiveData;
 import androidx.room.Entity;
 import androidx.room.PrimaryKey;
 
@@ -10,7 +9,7 @@ import androidx.room.PrimaryKey;
 public class Exercise {
     @PrimaryKey @NonNull
     public String exerciseId;
-    public MutableLiveData<String> name;
+    public String name;
     public String muscleGroupsPrimary;
     public String muscleGroupsSecondary;
     public String specificMusclesPrimary;

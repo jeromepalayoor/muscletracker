@@ -28,7 +28,7 @@ public class LoggedSetAdapter extends RecyclerView.Adapter<LoggedSetAdapter.Logg
     @Override
     public void onBindViewHolder(@NonNull LoggedSetAdapter.LoggedSetViewHolder holder, int position) {
         SetLog setLog = setLogs.get(position);
-        holder.textSetNumber.setText(holder.itemView.getContext().getString(R.string.set_number_format, setLog.setNumber));
+        holder.textSetNumber.setText(holder.itemView.getContext().getString(R.string.set_number_format, setLog.setNumber + 1));
         holder.textSetWeight.setText(holder.itemView.getContext().getString(R.string.weight_kg_format, setLog.weight));
         holder.textSetReps.setText(holder.itemView.getContext().getString(R.string.reps_format, setLog.reps));
     }

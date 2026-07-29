@@ -31,4 +31,7 @@ public interface WorkoutSessionDao {
 
     @Query("SELECT * FROM workout_session WHERE endTime IS NULL LIMIT 1")
     WorkoutSession getInProgressSession();
+
+    @Query("UPDATE workout_session SET endTime = :endTime WHERE id = :id")
+    void endSession(int id, long endTime);
 }
