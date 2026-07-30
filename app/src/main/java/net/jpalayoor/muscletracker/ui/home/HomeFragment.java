@@ -1,8 +1,6 @@
 package net.jpalayoor.muscletracker.ui.home;
 
-import android.content.DialogInterface;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -19,14 +17,9 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.google.android.material.dialog.MaterialAlertDialogBuilder;
 
 import net.jpalayoor.muscletracker.R;
-import net.jpalayoor.muscletracker.data.CalendarDay;
-import net.jpalayoor.muscletracker.data.WorkoutSession;
 
 import java.text.SimpleDateFormat;
-import java.time.LocalDate;
-import java.time.Year;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.List;
@@ -47,7 +40,6 @@ public class HomeFragment extends Fragment {
         HomeViewModel viewModel = new ViewModelProvider(this).get(HomeViewModel.class);
 
         CalendarDayAdapter adapter = new CalendarDayAdapter(calendarDay -> {
-            // handle single or multiple, for now single
             if (!calendarDay.sessionIds.isEmpty()) {
                 if (calendarDay.sessionIds.size() == 1) {
                     Bundle args = new Bundle();
@@ -60,7 +52,6 @@ public class HomeFragment extends Fragment {
                         sessionOptions.add(viewModel.getSessionById(calendarDay.sessionIds.get(i)));
                     }
                     CharSequence[] options = sessionOptions.toArray(new CharSequence[0]);
-                    Log.d("bruh", Arrays.toString(options));
                     new MaterialAlertDialogBuilder(requireContext())
                             .setTitle("Sessions recorded:")
                             .setItems(options, (dialog, which) -> {

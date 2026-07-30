@@ -58,8 +58,9 @@ public class HomeViewModel extends AndroidViewModel {
         return sessionsByDay;
     }
 
-    public String getSessionById (int sessionId) {
-        return sessionDetails.getValue().get(sessionId);
+    public String getSessionById(int sessionId) {
+        Map<Integer, String> details = sessionDetails.getValue();
+        return details != null && details.containsKey(sessionId) ? details.get(sessionId) : "Unknown session";
     }
 
     public void groupSessionsByDay(int year, int month) {
