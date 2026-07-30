@@ -40,4 +40,7 @@ public interface WorkoutSessionDao {
 
     @Query("SELECT COUNT(*) FROM workout_session WHERE endTime IS NOT NULL AND startTime >= :cutoffTime")
     int countSessionsSince(long cutoffTime);
+
+    @Query("SELECT * FROM workout_session WHERE endTime IS NOT NULL AND startTime >= :monthStart AND startTime < :monthEnd ORDER BY startTime ASC")
+    List<WorkoutSession> getSessionsInRange(long monthStart, long monthEnd);
 }

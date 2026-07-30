@@ -9,7 +9,12 @@
         android:id="@+id/navigation_home"
         android:name="net.jpalayoor.muscletracker.ui.home.HomeFragment"
         android:label="@string/title_home"
-        tools:layout="@layout/fragment_home" />
+        tools:layout="@layout/fragment_home">
+
+        <action
+            android:id="@+id/action_home_to_session"
+            app:destination="@id/navigation_session_detail" />
+    </fragment>
 
     <fragment
         android:id="@+id/navigation_workouts"

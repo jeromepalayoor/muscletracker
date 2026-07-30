@@ -8,10 +8,15 @@ import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
 
 import net.jpalayoor.muscletracker.data.AppDatabase;
+import net.jpalayoor.muscletracker.data.CalendarDay;
 import net.jpalayoor.muscletracker.data.WorkoutSession;
 import net.jpalayoor.muscletracker.data.WorkoutTemplate;
 
+import java.util.ArrayList;
 import java.util.Calendar;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
@@ -21,7 +26,8 @@ public class HomeViewModel extends AndroidViewModel {
     private final MutableLiveData<String> daysSinceLastText = new MutableLiveData<>();
     private final MutableLiveData<Integer> sessionsThisWeek = new MutableLiveData<>();
     private final MutableLiveData<Integer> sessionsThisMonth = new MutableLiveData<>();
-    private MutableLiveData<String> suggested = new MutableLiveData<>();
+    private final MutableLiveData<String> suggested = new MutableLiveData<>();
+    private final MutableLiveData<Map<Integer, List<Integer>>> sessionsByDay = new MutableLiveData<>();
 
     public HomeViewModel(@NonNull Application application) {
         super(application);
@@ -42,6 +48,69 @@ public class HomeViewModel extends AndroidViewModel {
 
     public LiveData<String> getSuggested() {
         return suggested;
+    }
+
+    public LiveData<Map<Integer, List<Integer>>> getSessionsByDay() {
+        return sessionsByDay;
+    }
+
+    public void groupSessionsByDay(int year, int month) {
+        Calendar cal = Calendar.getInstance();
+        cal.set(Calendar.YEAR, year);
+        cal.set(Calendar.MONTH, month);
+        long start = cal.getTimeInMillis();
+        cal.set(Calendar.MONTH, month + 1);
+        long end = cal.getTimeInMillis();
+
+        executor.execute(() -> {
+            List<WorkoutSession> sessions = db.workoutSessionDao().getSessionsInRange(start, end);
+            Map<Integer, List<Integer>> grouped = new HashMap<>();
+
+            for (WorkoutSession session : sessions) {
+                cal.setTimeInMillis(session.startTime);
+                int day = cal.get(Calendar.DAY_OF_MONTH);
+
+                if (!grouped.containsKey(day)) {
+                    grouped.put(day, new ArrayList<>());
+                }
+                grouped.get(day).add(session.id);
+            }
+
+            sessionsByDay.postValue(grouped);
+        });
+    }
+
+    public List<CalendarDay> buildCalendarDays(int year, int month, Map<Integer, List<Integer>> sessionsByDay) {
+        Calendar cal = Calendar.getInstance();
+        cal.set(Calendar.YEAR, year);
+        cal.set(Calendar.MONTH, month);
+        cal.set(Calendar.DAY_OF_MONTH, 1);
+
+        int daysInMonth = cal.getActualMaximum(Calendar.DAY_OF_MONTH);
+        int startDayOfWeek = cal.get(Calendar.DAY_OF_WEEK);
+
+
+        List<CalendarDay> calendarDays = new ArrayList<>();
+        for (int i = 0; i < startDayOfWeek-1; i++) {
+            CalendarDay day = new CalendarDay();
+            day.isBlank = true;
+            calendarDays.add(day);
+        }
+
+        for (int i = 1; i <= daysInMonth; i++) {
+            CalendarDay day = new CalendarDay();
+            day.isBlank = false;
+            day.day = i;
+            if (sessionsByDay.containsKey(day.day)) {
+                day.sessionIds = sessionsByDay.get(day.day);
+            }
+            else {
+                day.sessionIds = new ArrayList<>();
+            }
+            calendarDays.add(day);
+        }
+
+        return calendarDays;
     }
 
     public void loadStats() {
