@@ -47,10 +47,16 @@ public class CalendarDayAdapter extends RecyclerView.Adapter<CalendarDayAdapter.
             holder.textCalendarDay.setText("");
             holder.dotCalendarDay.setVisibility(View.GONE);
             holder.itemView.setOnClickListener(null);
-        } else {
+        } else if (calendarDay.isHeader){
+            holder.textCalendarDay.setText(calendarDay.header);
+            holder.dotCalendarDay.setVisibility(View.GONE);
+            holder.itemView.setOnClickListener(null);
+        }
+        else {
             holder.textCalendarDay.setText(String.valueOf(calendarDay.day));
-            holder.dotCalendarDay.setVisibility(calendarDay.sessionIds.isEmpty() ? View.GONE : View.VISIBLE);
-            holder.itemView.setOnClickListener(v -> listener.onDayClick(calendarDay));
+            boolean hasSession = !calendarDay.sessionIds.isEmpty();
+            holder.dotCalendarDay.setVisibility(hasSession ? View.VISIBLE : View.GONE);
+            holder.itemView.setOnClickListener(hasSession ? v -> listener.onDayClick(calendarDay) : null);
         }
     }
 

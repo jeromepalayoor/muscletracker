@@ -14,8 +14,9 @@
         android:textColor="?android:attr/textColorPrimary"/>
 
     <View
-        android:layout_width="4dp"
-        android:layout_height="4dp"
+        android:layout_width="8dp"
+        android:layout_height="8dp"
+        android:layout_gravity="center"
         android:background="@drawable/dot_circle"
         android:id="@+id/dotCalendarDay"
         android:visibility="gone"/>

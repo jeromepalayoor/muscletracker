@@ -13,6 +13,7 @@ import net.jpalayoor.muscletracker.data.WorkoutSession;
 import net.jpalayoor.muscletracker.data.WorkoutTemplate;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Calendar;
 import java.util.HashMap;
 import java.util.List;
@@ -58,6 +59,10 @@ public class HomeViewModel extends AndroidViewModel {
         Calendar cal = Calendar.getInstance();
         cal.set(Calendar.YEAR, year);
         cal.set(Calendar.MONTH, month);
+        cal.set(Calendar.DAY_OF_MONTH, 1);
+        cal.set(Calendar.HOUR_OF_DAY, 0);
+        cal.set(Calendar.MINUTE, 0);
+        cal.set(Calendar.SECOND, 0);
         long start = cal.getTimeInMillis();
         cal.set(Calendar.MONTH, month + 1);
         long end = cal.getTimeInMillis();
@@ -91,6 +96,16 @@ public class HomeViewModel extends AndroidViewModel {
 
 
         List<CalendarDay> calendarDays = new ArrayList<>();
+
+        List<String> list = Arrays.asList("Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat");
+
+        for (String item : list) {
+            CalendarDay day = new CalendarDay();
+            day.isHeader = true;
+            day.header = item;
+            calendarDays.add(day);
+        }
+
         for (int i = 0; i < startDayOfWeek-1; i++) {
             CalendarDay day = new CalendarDay();
             day.isBlank = true;
