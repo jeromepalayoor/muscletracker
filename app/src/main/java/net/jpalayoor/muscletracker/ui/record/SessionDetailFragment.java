@@ -2,16 +2,23 @@ package net.jpalayoor.muscletracker.ui.record;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.core.view.MenuProvider;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProvider;
+import androidx.navigation.Navigation;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
+
+import com.google.android.material.dialog.MaterialAlertDialogBuilder;
 
 import net.jpalayoor.muscletracker.R;
 
@@ -71,5 +78,33 @@ public class SessionDetailFragment extends Fragment {
         RecyclerView recyclerView = view.findViewById(R.id.recyclerDetailLoggedSets);
         recyclerView.setLayoutManager(new LinearLayoutManager(requireContext()));
         recyclerView.setAdapter(adapter);
+
+        requireActivity().addMenuProvider(new MenuProvider() {
+            @Override
+            public void onCreateMenu(@NonNull Menu menu, @NonNull MenuInflater menuInflater) {
+                menuInflater.inflate(R.menu.past_session_menu, menu);
+            }
+
+            @Override
+            public boolean onMenuItemSelected(@NonNull MenuItem menuItem) {
+                if (menuItem.getItemId() == R.id.action_delete_session) {
+                    new MaterialAlertDialogBuilder(requireContext())
+                            .setTitle("Delete session?")
+                            .setMessage("This cannot be undone.")
+                            .setPositiveButton("Delete", (dialog, which) -> {
+                                viewModel.deleteById(sessionId);
+                                Navigation.findNavController(view).popBackStack();
+                            })
+                            .setNegativeButton("Cancel", null)
+                            .show();
+                    return true;
+                }
+                else if (menuItem.getItemId() == R.id.action_share_session) {
+                    // future feature
+                    return true;
+                }
+                return false;
+            }
+        }, getViewLifecycleOwner());
     }
 }

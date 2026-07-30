@@ -47,9 +47,17 @@ public class SessionAdapter extends RecyclerView.Adapter<SessionAdapter.SessionV
         WorkoutSession session = sessions.get(position);
         SimpleDateFormat sdf = new SimpleDateFormat("MMM d, yyyy", Locale.getDefault());
         String formattedDate = sdf.format(new Date(session.startTime));
+        long minutes = ((session.endTime - session.startTime) / 1000) / 60;
+        String duration = "Duration: ";
+        if (minutes >= 60) {
+            duration += minutes / 60;
+            duration += "h ";
+            minutes %= 60;
+        }
+        duration += minutes + "min";
         holder.date.setText(formattedDate);
         holder.name.setText(session.templateName);
-        holder.volume.setText("-");
+        holder.duration.setText(duration);
         holder.itemView.setOnClickListener(v -> listener.onSessionClick(session));
     }
 
@@ -61,13 +69,13 @@ public class SessionAdapter extends RecyclerView.Adapter<SessionAdapter.SessionV
     public static class SessionViewHolder extends RecyclerView.ViewHolder {
         TextView name;
         TextView date;
-        TextView volume;
+        TextView duration;
 
         SessionViewHolder(@NonNull View itemView) {
             super(itemView);
             name = itemView.findViewById(R.id.textSessionTemplateName);
             date = itemView.findViewById(R.id.textSessionDate);
-            volume = itemView.findViewById(R.id.textSessionVolume);
+            duration = itemView.findViewById(R.id.textSessionDuration);
         }
     }
 }

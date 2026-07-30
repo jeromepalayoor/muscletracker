@@ -56,4 +56,11 @@ public class SessionDetailViewModel extends AndroidViewModel {
         }
         return total;
     }
+
+    public void deleteById(int sessionId) {
+        executor.execute(() -> {
+            db.setLogDao().deleteAllForSession(sessionId);
+            db.workoutSessionDao().deleteById(sessionId);
+        });
+    }
 }
