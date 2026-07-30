@@ -1,5 +1,6 @@
 package net.jpalayoor.muscletracker.ui.home;
 
+import android.graphics.Typeface;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -51,12 +52,20 @@ public class CalendarDayAdapter extends RecyclerView.Adapter<CalendarDayAdapter.
             holder.textCalendarDay.setText(calendarDay.header);
             holder.dotCalendarDay.setVisibility(View.GONE);
             holder.itemView.setOnClickListener(null);
+            holder.textCalendarDay.setTypeface(null, Typeface.BOLD_ITALIC);
         }
         else {
             holder.textCalendarDay.setText(String.valueOf(calendarDay.day));
             boolean hasSession = !calendarDay.sessionIds.isEmpty();
             holder.dotCalendarDay.setVisibility(hasSession ? View.VISIBLE : View.GONE);
             holder.itemView.setOnClickListener(hasSession ? v -> listener.onDayClick(calendarDay) : null);
+        }
+
+        if (calendarDay.isToday) {
+            holder.textCalendarDay.setBackgroundResource(R.drawable.today_ring);
+        }
+        else {
+            holder.textCalendarDay.setBackgroundResource(0);
         }
     }
 

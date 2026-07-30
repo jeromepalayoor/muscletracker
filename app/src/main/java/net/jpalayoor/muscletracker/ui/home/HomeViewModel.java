@@ -103,12 +103,17 @@ public class HomeViewModel extends AndroidViewModel {
         cal.set(Calendar.MONTH, month);
         cal.set(Calendar.DAY_OF_MONTH, 1);
 
+        Calendar today = Calendar.getInstance();
+        int todayYear = today.get(Calendar.YEAR);
+        int todayMonth = today.get(Calendar.MONTH);
+        int todayDay = today.get(Calendar.DAY_OF_MONTH);
+
         int daysInMonth = cal.getActualMaximum(Calendar.DAY_OF_MONTH);
         int startDayOfWeek = cal.get(Calendar.DAY_OF_WEEK);
 
         List<CalendarDay> calendarDays = new ArrayList<>();
 
-        List<String> list = Arrays.asList("Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat");
+        List<String> list = Arrays.asList("S", "M", "T", "W", "T", "F", "S");
 
         for (String item : list) {
             CalendarDay day = new CalendarDay();
@@ -129,10 +134,12 @@ public class HomeViewModel extends AndroidViewModel {
             day.day = i;
             if (sessionsByDay.containsKey(day.day)) {
                 day.sessionIds = sessionsByDay.get(day.day);
-
             }
             else {
                 day.sessionIds = new ArrayList<>();
+            }
+            if (year == todayYear && month == todayMonth && i == todayDay) {
+                day.isToday = true;
             }
             calendarDays.add(day);
         }

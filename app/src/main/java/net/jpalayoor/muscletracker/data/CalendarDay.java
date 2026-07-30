@@ -8,4 +8,5 @@ public class CalendarDay {
     public List<Integer> sessionIds;
     public boolean isHeader = false;
     public String header;
+    public boolean isToday;
 }
