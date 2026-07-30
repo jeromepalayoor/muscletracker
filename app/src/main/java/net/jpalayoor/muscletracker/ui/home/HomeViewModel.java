@@ -12,11 +12,13 @@ import net.jpalayoor.muscletracker.data.CalendarDay;
 import net.jpalayoor.muscletracker.data.WorkoutSession;
 import net.jpalayoor.muscletracker.data.WorkoutTemplate;
 
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Calendar;
 import java.util.HashMap;
 import java.util.List;
+import java.util.Locale;
 import java.util.Map;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
@@ -29,6 +31,7 @@ public class HomeViewModel extends AndroidViewModel {
     private final MutableLiveData<Integer> sessionsThisMonth = new MutableLiveData<>();
     private final MutableLiveData<String> suggested = new MutableLiveData<>();
     private final MutableLiveData<Map<Integer, List<Integer>>> sessionsByDay = new MutableLiveData<>();
+    private final MutableLiveData<Map<Integer, String>> sessionDetails = new MutableLiveData<Map<Integer, String>>();
 
     public HomeViewModel(@NonNull Application application) {
         super(application);
@@ -55,6 +58,10 @@ public class HomeViewModel extends AndroidViewModel {
         return sessionsByDay;
     }
 
+    public String getSessionById (int sessionId) {
+        return sessionDetails.getValue().get(sessionId);
+    }
+
     public void groupSessionsByDay(int year, int month) {
         Calendar cal = Calendar.getInstance();
         cal.set(Calendar.YEAR, year);
@@ -70,6 +77,7 @@ public class HomeViewModel extends AndroidViewModel {
         executor.execute(() -> {
             List<WorkoutSession> sessions = db.workoutSessionDao().getSessionsInRange(start, end);
             Map<Integer, List<Integer>> grouped = new HashMap<>();
+            Map<Integer, String> sessionDetail = new HashMap<>();
 
             for (WorkoutSession session : sessions) {
                 cal.setTimeInMillis(session.startTime);
@@ -79,9 +87,12 @@ public class HomeViewModel extends AndroidViewModel {
                     grouped.put(day, new ArrayList<>());
                 }
                 grouped.get(day).add(session.id);
+                SimpleDateFormat sdf = new SimpleDateFormat("HH:mm", Locale.getDefault());
+                String time = sdf.format(session.startTime);
+                sessionDetail.put(session.id, session.templateName + " at " + time);
             }
-
             sessionsByDay.postValue(grouped);
+            sessionDetails.postValue(sessionDetail);
         });
     }
 
@@ -93,7 +104,6 @@ public class HomeViewModel extends AndroidViewModel {
 
         int daysInMonth = cal.getActualMaximum(Calendar.DAY_OF_MONTH);
         int startDayOfWeek = cal.get(Calendar.DAY_OF_WEEK);
-
 
         List<CalendarDay> calendarDays = new ArrayList<>();
 
@@ -118,6 +128,7 @@ public class HomeViewModel extends AndroidViewModel {
             day.day = i;
             if (sessionsByDay.containsKey(day.day)) {
                 day.sessionIds = sessionsByDay.get(day.day);
+
             }
             else {
                 day.sessionIds = new ArrayList<>();

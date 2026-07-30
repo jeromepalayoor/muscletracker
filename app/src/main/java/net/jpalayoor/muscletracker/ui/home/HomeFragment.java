@@ -1,6 +1,8 @@
 package net.jpalayoor.muscletracker.ui.home;
 
+import android.content.DialogInterface;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -14,12 +16,17 @@ import androidx.navigation.Navigation;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.google.android.material.dialog.MaterialAlertDialogBuilder;
+
 import net.jpalayoor.muscletracker.R;
 import net.jpalayoor.muscletracker.data.CalendarDay;
+import net.jpalayoor.muscletracker.data.WorkoutSession;
 
 import java.text.SimpleDateFormat;
 import java.time.LocalDate;
 import java.time.Year;
+import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.List;
@@ -41,9 +48,31 @@ public class HomeFragment extends Fragment {
 
         CalendarDayAdapter adapter = new CalendarDayAdapter(calendarDay -> {
             // handle single or multiple, for now single
-            Bundle args = new Bundle();
-            args.putInt("sessionId", calendarDay.sessionIds.get(0));
-            Navigation.findNavController(view).navigate(R.id.action_home_to_session, args);
+            if (!calendarDay.sessionIds.isEmpty()) {
+                if (calendarDay.sessionIds.size() == 1) {
+                    Bundle args = new Bundle();
+                    args.putInt("sessionId", calendarDay.sessionIds.get(0));
+                    Navigation.findNavController(view).navigate(R.id.action_home_to_session, args);
+                }
+                else {
+                    List<String> sessionOptions = new ArrayList<>();
+                    for (int i = 0; i < calendarDay.sessionIds.size(); i++) {
+                        sessionOptions.add(viewModel.getSessionById(calendarDay.sessionIds.get(i)));
+                    }
+                    CharSequence[] options = sessionOptions.toArray(new CharSequence[0]);
+                    Log.d("bruh", Arrays.toString(options));
+                    new MaterialAlertDialogBuilder(requireContext())
+                            .setTitle("Sessions recorded:")
+                            .setItems(options, (dialog, which) -> {
+                                int selectedSessionId = calendarDay.sessionIds.get(which);
+                                Bundle args = new Bundle();
+                                args.putInt("sessionId", selectedSessionId);
+                                Navigation.findNavController(view).navigate(R.id.action_home_to_session, args);
+                            })
+                            .setNegativeButton("Cancel", null)
+                            .show();
+                }
+            }
         });
 
         RecyclerView recyclerView = view.findViewById(R.id.recyclerCalendar);
