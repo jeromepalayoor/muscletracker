@@ -23,4 +23,9 @@
     <string name="volume_format">Volume: %.2fkg</string>
     <string name="total_sets_format">Total sets: %d</string>
     <string name="total_reps_format">Total reps: %d</string>
+    <string name="since_last">since last</string>
+    <string name="this_week">this week</string>
+    <string name="this_month">this month</string>
+    <string name="suggested_for_today">SUGGESTED FOR TODAY</string>
+    <string name="start_workout_session">Start workout session</string>
 </resources>

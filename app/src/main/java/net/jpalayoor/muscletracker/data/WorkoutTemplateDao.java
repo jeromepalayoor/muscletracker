@@ -21,4 +21,11 @@ public interface WorkoutTemplateDao {
 
     @Query("DELETE FROM workout_template WHERE id = :id")
     void deleteById(int id);
+
+    @Query("SELECT workout_template.* FROM workout_template " +
+            "LEFT JOIN workout_session ON workout_template.id = workout_session.templateId " +
+            "GROUP BY workout_template.id " +
+            "ORDER BY MAX(workout_session.startTime) ASC " +
+            "LIMIT 1")
+    WorkoutTemplate getSuggestedTemplate();
 }

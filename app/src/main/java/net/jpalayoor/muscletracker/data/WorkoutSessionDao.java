@@ -34,4 +34,10 @@ public interface WorkoutSessionDao {
 
     @Query("UPDATE workout_session SET endTime = :endTime WHERE id = :id")
     void endSession(int id, long endTime);
+
+    @Query("SELECT * FROM workout_session WHERE endTime IS NOT NULL ORDER BY startTime DESC LIMIT 1")
+    WorkoutSession getMostRecentSession();
+
+    @Query("SELECT COUNT(*) FROM workout_session WHERE endTime IS NOT NULL AND startTime >= :cutoffTime")
+    int countSessionsSince(long cutoffTime);
 }
