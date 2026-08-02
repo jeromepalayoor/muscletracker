@@ -14,6 +14,10 @@
         <action
             android:id="@+id/action_home_to_session"
             app:destination="@id/navigation_session_detail" />
+
+        <action
+            android:id="@+id/action_home_to_live_session"
+            app:destination="@id/navigation_live_session" />
     </fragment>
 
     <fragment

@@ -7,6 +7,7 @@ import android.util.TypedValue;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
@@ -51,6 +52,7 @@ public class HomeFragment extends Fragment {
         TextView thisMonth = view.findViewById(R.id.thisMonth);
         TextView suggested = view.findViewById(R.id.suggested);
         TextView currentMonth = view.findViewById(R.id.currentMonth);
+        Button btnStartWorkout = view.findViewById(R.id.btnStartWorkout);
 
         viewModel.loadStats();
         viewModel.getDaysSinceLastText().observe(getViewLifecycleOwner(), sinceLast::setText);
@@ -59,6 +61,15 @@ public class HomeFragment extends Fragment {
         viewModel.getSessionsThisMonth().observe(getViewLifecycleOwner(),
                 count -> thisMonth.setText(String.valueOf(count)));
         viewModel.getSuggested().observe(getViewLifecycleOwner(), suggested::setText);
+        btnStartWorkout.setOnClickListener(v -> viewModel.startSuggestedWorkout());
+        viewModel.getNewSessionId().observe(getViewLifecycleOwner(), sessionId -> {
+            if (sessionId != null) {
+                Bundle args = new Bundle();
+                args.putInt("sessionId", sessionId.intValue());
+                Navigation.findNavController(view).navigate(R.id.action_home_to_live_session, args);
+                viewModel.clearNewSessionId();
+            }
+        });
         SimpleDateFormat sdf = new SimpleDateFormat("EEEE MMMM d, yyyy", Locale.getDefault());
         String date = sdf.format(new Date(System.currentTimeMillis()));
         homeDate.setText(date);

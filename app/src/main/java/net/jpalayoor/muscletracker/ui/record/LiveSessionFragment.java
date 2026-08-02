@@ -63,7 +63,7 @@ public class LiveSessionFragment extends Fragment {
                 args.putInt("sessionId", sessionId);
                 NavController nc = Navigation.findNavController(view);
                 NavOptions options = new NavOptions.Builder()
-                        .setPopUpTo(R.id.navigation_record, false)
+                        .setPopUpTo(nc.getGraph().getStartDestinationId(), false)
                         .build();
                 nc.navigate(R.id.navigation_session_detail, args, options);
             }

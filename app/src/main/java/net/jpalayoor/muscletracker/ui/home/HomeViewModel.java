@@ -30,6 +30,8 @@ public class HomeViewModel extends AndroidViewModel {
     private final MutableLiveData<Integer> sessionsThisWeek = new MutableLiveData<>();
     private final MutableLiveData<Integer> sessionsThisMonth = new MutableLiveData<>();
     private final MutableLiveData<String> suggested = new MutableLiveData<>();
+    private WorkoutTemplate suggestedTemplate;
+    private final MutableLiveData<Long> newSessionId = new MutableLiveData<>();
     private final MutableLiveData<Map<Integer, List<Integer>>> sessionsByDay = new MutableLiveData<>();
     private final MutableLiveData<Map<Integer, String>> sessionDetails = new MutableLiveData<Map<Integer, String>>();
 
@@ -52,6 +54,14 @@ public class HomeViewModel extends AndroidViewModel {
 
     public LiveData<String> getSuggested() {
         return suggested;
+    }
+
+    public LiveData<Long> getNewSessionId() {
+        return newSessionId;
+    }
+
+    public void clearNewSessionId() {
+        newSessionId.setValue(null);
     }
 
     public LiveData<Map<Integer, List<Integer>>> getSessionsByDay() {
@@ -156,6 +166,18 @@ public class HomeViewModel extends AndroidViewModel {
         return calendarDays;
     }
 
+    public void startSuggestedWorkout() {
+        executor.execute(() -> {
+            if (suggestedTemplate == null) return;
+            WorkoutSession session = new WorkoutSession();
+            session.templateId = suggestedTemplate.id;
+            session.templateName = suggestedTemplate.name;
+            session.startTime = System.currentTimeMillis();
+            long id = db.workoutSessionDao().insert(session);
+            newSessionId.postValue(id);
+        });
+    }
+
     public void loadStats() {
         executor.execute(() -> {
             WorkoutSession last = db.workoutSessionDao().getMostRecentSession();
@@ -166,18 +188,24 @@ public class HomeViewModel extends AndroidViewModel {
                 daysSinceLastText.postValue("No workouts yet");
             }
 
-            long weekAgo = System.currentTimeMillis() - (7L * 24 * 60 * 60 * 1000);
-            sessionsThisWeek.postValue(db.workoutSessionDao().countSessionsSince(weekAgo));
+            Calendar cal1 = Calendar.getInstance();
+            int dayOfWeek = cal1.get(Calendar.DAY_OF_WEEK);
+            cal1.add(Calendar.DAY_OF_MONTH, -(dayOfWeek - 1));
+            cal1.set(Calendar.HOUR_OF_DAY, 0);
+            cal1.set(Calendar.MINUTE, 0);
+            cal1.set(Calendar.SECOND, 0);
+            sessionsThisWeek.postValue(db.workoutSessionDao().countSessionsSince(cal1.getTimeInMillis()));
 
-            Calendar cal = Calendar.getInstance();
-            cal.set(Calendar.DAY_OF_MONTH, 1);
-            cal.set(Calendar.HOUR_OF_DAY, 0);
-            cal.set(Calendar.MINUTE, 0);
-            cal.set(Calendar.SECOND, 0);
-            sessionsThisMonth.postValue(db.workoutSessionDao().countSessionsSince(cal.getTimeInMillis()));
+            Calendar cal2 = Calendar.getInstance();
+            cal2.set(Calendar.DAY_OF_MONTH, 1);
+            cal2.set(Calendar.HOUR_OF_DAY, 0);
+            cal2.set(Calendar.MINUTE, 0);
+            cal2.set(Calendar.SECOND, 0);
+            sessionsThisMonth.postValue(db.workoutSessionDao().countSessionsSince(cal2.getTimeInMillis()));
 
             WorkoutTemplate template = db.workoutTemplateDao().getSuggestedTemplate();
             suggested.postValue(template != null ? template.name : "Create a template to get started");
+            suggestedTemplate = template;
         });
     }
 }
