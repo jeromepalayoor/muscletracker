@@ -9,6 +9,7 @@ import android.widget.TextView;
 import android.content.Context;
 
 import androidx.annotation.NonNull;
+import androidx.core.content.ContextCompat;
 import androidx.recyclerview.widget.RecyclerView;
 
 import net.jpalayoor.muscletracker.R;
@@ -77,6 +78,9 @@ public class CalendarDayAdapter extends RecyclerView.Adapter<CalendarDayAdapter.
     private int resolveThemeColor(Context context, int attr) {
         TypedValue typedValue = new TypedValue();
         context.getTheme().resolveAttribute(attr, typedValue, true);
+        if (typedValue.resourceId != 0) {
+            return ContextCompat.getColor(context, typedValue.resourceId);
+        }
         return typedValue.data;
     }
 
