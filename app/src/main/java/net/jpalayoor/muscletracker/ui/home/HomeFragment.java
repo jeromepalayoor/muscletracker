@@ -69,6 +69,7 @@ public class HomeFragment extends Fragment {
         RecyclerView recyclerView = view.findViewById(R.id.recyclerCalendar);
         recyclerView.setLayoutManager(new GridLayoutManager(requireContext(), 7));
         recyclerView.setAdapter(adapter);
+        recyclerView.setHasFixedSize(true);
 
         TextView homeDate = view.findViewById(R.id.homeDate);
         TextView sinceLast = view.findViewById(R.id.sinceLast);
