@@ -29,4 +29,10 @@
     <string name="suggested_for_today">SUGGESTED FOR TODAY</string>
     <string name="start_workout_session">Start workout session</string>
     <string name="instructions_text">Instructions</string>
+    <string name="stats_text">Stats</string>
+    <string name="arrow_text">arrow</string>
+    <string name="max_weight_empty_text">Max Weight: -</string>
+    <string name="max_volume_empty_text">Max Volume: -</string>
+    <string name="estimated_one_rep_max_empty_text">Estimated One Rep Max: -</string>
+    <string name="past_sets_text">Past Sets</string>
 </resources>

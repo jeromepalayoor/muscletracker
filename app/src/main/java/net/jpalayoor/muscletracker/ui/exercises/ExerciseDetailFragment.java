@@ -19,14 +19,15 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProvider;
-import androidx.recyclerview.widget.LinearLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
 
 import net.jpalayoor.muscletracker.R;
 import net.jpalayoor.muscletracker.data.Exercise;
+import net.jpalayoor.muscletracker.data.SetLog;
 
 import java.io.IOException;
 import java.io.InputStream;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.Locale;
 
 public class ExerciseDetailFragment extends Fragment {
@@ -81,11 +82,22 @@ public class ExerciseDetailFragment extends Fragment {
         LinearLayout pastSetsSection = view.findViewById(R.id.pastSetsSection);
         LinearLayout pastSetsAccordion = view.findViewById(R.id.pastSetsAccordion);
         ImageView pastSetsArrow = view.findViewById(R.id.pastSetsArrow);
-        RecyclerView recyclerView = view.findViewById(R.id.recyclerPastSets);
+        LinearLayout pastSetsContainer = view.findViewById(R.id.pastSetsContainer);
 
-        PastSetAdapter adapter = new PastSetAdapter();
-        recyclerView.setLayoutManager(new LinearLayoutManager(requireContext()));
-        recyclerView.setAdapter(adapter);
+        viewModel.getPastSets().observe(getViewLifecycleOwner(), sets -> {
+            pastSetsContainer.removeAllViews();
+            SimpleDateFormat dateFormat = new SimpleDateFormat("MMM d, yyyy", Locale.getDefault());
+            SimpleDateFormat timeFormat = new SimpleDateFormat("HH:mm", Locale.getDefault());
+
+            for (SetLog log : sets) {
+                View row = LayoutInflater.from(requireContext()).inflate(R.layout.item_past_set, pastSetsContainer, false);
+                ((TextView) row.findViewById(R.id.textDetailSetDate)).setText(dateFormat.format(new Date(log.timestamp)));
+                ((TextView) row.findViewById(R.id.textDetailSetTime)).setText(timeFormat.format(new Date(log.timestamp)));
+                ((TextView) row.findViewById(R.id.textDetailSetWeight)).setText(getString(R.string.weight_kg_format, log.weight));
+                ((TextView) row.findViewById(R.id.textDetailSetReps)).setText(getString(R.string.reps_format, log.reps));
+                pastSetsContainer.addView(row);
+            }
+        });
 
         String exerciseId = getArguments() != null ? getArguments().getString("exerciseId") : null;
         if (exerciseId != null) {
@@ -123,8 +135,6 @@ public class ExerciseDetailFragment extends Fragment {
             }
         });
 
-        viewModel.getPastSets().observe(getViewLifecycleOwner(), adapter::setItems);
-
         maxWeight.setVisibility(View.GONE);
         maxVolume.setVisibility(View.GONE);
         oneRM.setVisibility(View.GONE);
@@ -143,10 +153,10 @@ public class ExerciseDetailFragment extends Fragment {
             instructionsArrow.animate().rotation(instructionsArrow.getRotation() == 0 ? 180 : 0).setDuration(500).start();
         });
 
-        recyclerView.setVisibility(View.GONE);
+        pastSetsContainer.setVisibility(View.GONE);
         pastSetsAccordion.setOnClickListener(v -> {
             TransitionManager.beginDelayedTransition(pastSetsSection, new ChangeBounds());
-            recyclerView.setVisibility(recyclerView.getVisibility() == View.VISIBLE ? View.GONE : View.VISIBLE);
+            pastSetsContainer.setVisibility(pastSetsContainer.getVisibility() == View.VISIBLE ? View.GONE : View.VISIBLE);
             pastSetsArrow.animate().rotation(pastSetsArrow.getRotation() == 0 ? 180 : 0).setDuration(500).start();
         });
     }

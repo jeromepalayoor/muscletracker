@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:clipToPadding="false">
@@ -38,7 +39,8 @@
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
                 android:id="@+id/StatsAccordion"
-                android:padding="16dp">
+                android:padding="16dp"
+                tools:ignore="UseCompoundDrawables">
 
                 <TextView
                     android:id="@+id/detailStatsHeader"
@@ -48,7 +50,7 @@
                     android:layout_marginTop="16dp"
                     android:textSize="22sp"
                     android:textStyle="bold"
-                    android:text="Stats"
+                    android:text="@string/stats_text"
                     android:textColor="?android:attr/textColorPrimary" />
 
                 <ImageView
@@ -56,7 +58,7 @@
                     android:layout_height="24dp"
                     android:id="@+id/detailStatsArrow"
                     android:src="@drawable/ic_arrow_24dp"
-                    android:contentDescription="arrow" />
+                    android:contentDescription="@string/arrow_text" />
             </LinearLayout>
 
             <TextView
@@ -65,7 +67,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="12dp"
                 android:textSize="15sp"
-                android:text="Max Weight: -"
+                android:text="@string/max_weight_empty_text"
                 android:textColor="?android:attr/textColorPrimary" />
 
             <TextView
@@ -74,7 +76,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="12dp"
                 android:textSize="15sp"
-                android:text="Max Volume: -"
+                android:text="@string/max_volume_empty_text"
                 android:textColor="?android:attr/textColorPrimary" />
 
             <TextView
@@ -83,7 +85,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="12dp"
                 android:textSize="15sp"
-                android:text="Estimated One Rep Max: -"
+                android:text="@string/estimated_one_rep_max_empty_text"
                 android:textColor="?android:attr/textColorPrimary" />
         </LinearLayout>
 
@@ -99,7 +101,8 @@
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
                 android:id="@+id/instructionsAccordion"
-                android:padding="16dp">
+                android:padding="16dp"
+                tools:ignore="UseCompoundDrawables">
 
                 <TextView
                     android:id="@+id/detailInstructionsHeader"
@@ -117,7 +120,7 @@
                     android:layout_height="24dp"
                     android:id="@+id/detailInstructionsArrow"
                     android:src="@drawable/ic_arrow_24dp"
-                    android:contentDescription="arrow" />
+                    android:contentDescription="@string/arrow_text" />
             </LinearLayout>
 
             <TextView
@@ -141,7 +144,8 @@
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
                 android:id="@+id/pastSetsAccordion"
-                android:padding="16dp">
+                android:padding="16dp"
+                tools:ignore="UseCompoundDrawables">
 
                 <TextView
                     android:id="@+id/pastSetsHeader"
@@ -151,7 +155,7 @@
                     android:layout_marginTop="16dp"
                     android:textSize="22sp"
                     android:textStyle="bold"
-                    android:text="Past Sets"
+                    android:text="@string/past_sets_text"
                     android:textColor="?android:attr/textColorPrimary" />
 
                 <ImageView
@@ -159,14 +163,15 @@
                     android:layout_height="24dp"
                     android:id="@+id/pastSetsArrow"
                     android:src="@drawable/ic_arrow_24dp"
-                    android:contentDescription="arrow" />
+                    android:contentDescription="@string/arrow_text" />
             </LinearLayout>
 
-            <androidx.recyclerview.widget.RecyclerView
-                android:id="@+id/recyclerPastSets"
+            <LinearLayout
+                android:id="@+id/pastSetsContainer"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="12dp"/>
+                android:layout_marginTop="12dp"
+                android:orientation="vertical"/>
         </LinearLayout>
     </LinearLayout>
 </ScrollView>

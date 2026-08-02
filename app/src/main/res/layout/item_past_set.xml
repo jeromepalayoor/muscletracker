@@ -13,15 +13,17 @@
 
         <TextView
             android:id="@+id/textDetailSetDate"
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
+            android:layout_weight="1"
             android:textSize="16sp"
             android:textColor="?android:attr/textColorPrimary" />
 
         <TextView
             android:id="@+id/textDetailSetTime"
-            android:layout_width="60dp"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
+            android:layout_weight="1"
             android:textSize="16sp"
             android:textColor="?android:attr/textColorPrimary"
             android:gravity="end" />
@@ -35,15 +37,17 @@
 
         <TextView
             android:id="@+id/textDetailSetWeight"
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
+            android:layout_weight="1"
             android:textSize="16sp"
             android:textColor="?android:attr/textColorPrimary" />
 
         <TextView
             android:id="@+id/textDetailSetReps"
-            android:layout_width="60dp"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
+            android:layout_weight="1"
             android:textSize="16sp"
             android:textColor="?android:attr/textColorPrimary"
             android:gravity="end" />
