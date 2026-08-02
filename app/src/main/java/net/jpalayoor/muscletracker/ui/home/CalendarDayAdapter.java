@@ -1,10 +1,12 @@
 package net.jpalayoor.muscletracker.ui.home;
 
 import android.graphics.Typeface;
+import android.util.TypedValue;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
+import android.content.Context;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
@@ -53,6 +55,7 @@ public class CalendarDayAdapter extends RecyclerView.Adapter<CalendarDayAdapter.
             holder.dotCalendarDay.setVisibility(View.GONE);
             holder.itemView.setOnClickListener(null);
             holder.textCalendarDay.setTypeface(null, Typeface.BOLD_ITALIC);
+            holder.textCalendarDay.setTextColor(resolveThemeColor(holder.itemView.getContext(), android.R.attr.textColorSecondary));
         }
         else {
             holder.textCalendarDay.setText(String.valueOf(calendarDay.day));
@@ -60,6 +63,7 @@ public class CalendarDayAdapter extends RecyclerView.Adapter<CalendarDayAdapter.
             holder.dotCalendarDay.setVisibility(hasSession ? View.VISIBLE : View.GONE);
             holder.itemView.setOnClickListener(hasSession ? v -> listener.onDayClick(calendarDay) : null);
             holder.textCalendarDay.setTypeface(null, Typeface.NORMAL);
+            holder.textCalendarDay.setTextColor(resolveThemeColor(holder.itemView.getContext(), android.R.attr.textColorPrimary));
         }
 
         if (calendarDay.isToday) {
@@ -68,6 +72,12 @@ public class CalendarDayAdapter extends RecyclerView.Adapter<CalendarDayAdapter.
         else {
             holder.textCalendarDay.setBackgroundResource(0);
         }
+    }
+
+    private int resolveThemeColor(Context context, int attr) {
+        TypedValue typedValue = new TypedValue();
+        context.getTheme().resolveAttribute(attr, typedValue, true);
+        return typedValue.data;
     }
 
     @Override
