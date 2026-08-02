@@ -59,6 +59,7 @@ public class CalendarDayAdapter extends RecyclerView.Adapter<CalendarDayAdapter.
             boolean hasSession = !calendarDay.sessionIds.isEmpty();
             holder.dotCalendarDay.setVisibility(hasSession ? View.VISIBLE : View.GONE);
             holder.itemView.setOnClickListener(hasSession ? v -> listener.onDayClick(calendarDay) : null);
+            holder.textCalendarDay.setTypeface(null, Typeface.NORMAL);
         }
 
         if (calendarDay.isToday) {

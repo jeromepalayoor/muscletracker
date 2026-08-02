@@ -52,4 +52,19 @@ public interface SetLogDao {
             "WHERE set_log.sessionId = :sessionId " +
             "ORDER BY set_log.timestamp ASC")
     List<SetLogWithName> getSetLogWithNameByTime(int sessionId);
+
+    @Query("SELECT MAX(weight) FROM set_log WHERE exerciseId = :exerciseId")
+    Float getMaxWeight(String exerciseId);
+
+    @Query("SELECT MAX(weight * reps) FROM set_log WHERE exerciseId = :exerciseId")
+    Float getMaxVolume(String exerciseId);
+
+    @Query("SELECT MAX(" +
+            "CASE WHEN reps < 10 THEN weight * (36.0 / (37 - reps)) " +
+            "ELSE weight * (1 + reps / 30.0) END" +
+            ") FROM set_log WHERE exerciseId = :exerciseId")
+    Float getBestEstimatedOneRepMax(String exerciseId);
+
+    @Query("SELECT * FROM set_log WHERE exerciseId = :exerciseId ORDER BY timestamp DESC")
+    List<SetLog> getAllForExercise(String exerciseId);
 }

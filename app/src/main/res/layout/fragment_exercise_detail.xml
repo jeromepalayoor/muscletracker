@@ -7,8 +7,7 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:padding="16dp">
+        android:orientation="vertical">
 
         <ImageView
             android:id="@+id/detailImage"
@@ -27,13 +26,147 @@
             android:textStyle="bold"
             android:textColor="?android:attr/textColorPrimary" />
 
-        <TextView
-            android:id="@+id/detailInstructions"
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="12dp"
-            android:textSize="15sp"
-            android:textColor="?android:attr/textColorPrimary" />
+            android:orientation="vertical"
+            android:id="@+id/statsSection"
+            android:padding="16dp">
 
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:id="@+id/StatsAccordion"
+                android:padding="16dp">
+
+                <TextView
+                    android:id="@+id/detailStatsHeader"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:textSize="22sp"
+                    android:textStyle="bold"
+                    android:text="Stats"
+                    android:textColor="?android:attr/textColorPrimary" />
+
+                <ImageView
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:id="@+id/detailStatsArrow"
+                    android:src="@drawable/ic_arrow_24dp"
+                    android:contentDescription="arrow" />
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/detailMaxWeight"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:textSize="15sp"
+                android:text="Max Weight: -"
+                android:textColor="?android:attr/textColorPrimary" />
+
+            <TextView
+                android:id="@+id/detailMaxVolume"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:textSize="15sp"
+                android:text="Max Volume: -"
+                android:textColor="?android:attr/textColorPrimary" />
+
+            <TextView
+                android:id="@+id/detailOneRM"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:textSize="15sp"
+                android:text="Estimated One Rep Max: -"
+                android:textColor="?android:attr/textColorPrimary" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:id="@+id/instructionsSection"
+            android:padding="16dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:id="@+id/instructionsAccordion"
+                android:padding="16dp">
+
+                <TextView
+                    android:id="@+id/detailInstructionsHeader"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:textSize="22sp"
+                    android:textStyle="bold"
+                    android:text="@string/instructions_text"
+                    android:textColor="?android:attr/textColorPrimary" />
+
+                <ImageView
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:id="@+id/detailInstructionsArrow"
+                    android:src="@drawable/ic_arrow_24dp"
+                    android:contentDescription="arrow" />
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/detailInstructions"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:textSize="15sp"
+                android:textColor="?android:attr/textColorPrimary" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:id="@+id/pastSetsSection"
+            android:padding="16dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:id="@+id/pastSetsAccordion"
+                android:padding="16dp">
+
+                <TextView
+                    android:id="@+id/pastSetsHeader"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:textSize="22sp"
+                    android:textStyle="bold"
+                    android:text="Past Sets"
+                    android:textColor="?android:attr/textColorPrimary" />
+
+                <ImageView
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:id="@+id/pastSetsArrow"
+                    android:src="@drawable/ic_arrow_24dp"
+                    android:contentDescription="arrow" />
+            </LinearLayout>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recyclerPastSets"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"/>
+        </LinearLayout>
     </LinearLayout>
 </ScrollView>

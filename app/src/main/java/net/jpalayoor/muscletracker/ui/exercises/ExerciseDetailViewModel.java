@@ -9,7 +9,9 @@ import androidx.lifecycle.MutableLiveData;
 
 import net.jpalayoor.muscletracker.data.AppDatabase;
 import net.jpalayoor.muscletracker.data.Exercise;
+import net.jpalayoor.muscletracker.data.SetLog;
 
+import java.util.List;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
@@ -18,6 +20,10 @@ public class ExerciseDetailViewModel extends AndroidViewModel {
     private final AppDatabase db;
     private final MutableLiveData<Exercise> exercise = new MutableLiveData<>();
     private final ExecutorService executor = Executors.newSingleThreadExecutor();
+    private final MutableLiveData<Float> maxWeight = new MutableLiveData<>();
+    private final MutableLiveData<Float> maxVolume = new MutableLiveData<>();
+    private final MutableLiveData<Float> oneRM = new MutableLiveData<>();
+    private final MutableLiveData<List<SetLog>> pastSets = new MutableLiveData<>();
 
     public ExerciseDetailViewModel(@NonNull Application application) {
         super(application);
@@ -29,6 +35,28 @@ public class ExerciseDetailViewModel extends AndroidViewModel {
     }
 
     public void loadExercise(String exerciseId) {
-        executor.execute(() -> exercise.postValue(db.exerciseDao().getById(exerciseId)));
+        executor.execute(() -> {
+            exercise.postValue(db.exerciseDao().getById(exerciseId));
+            maxWeight.postValue(db.setLogDao().getMaxWeight(exerciseId));
+            maxVolume.postValue(db.setLogDao().getMaxVolume(exerciseId));
+            oneRM.postValue(db.setLogDao().getBestEstimatedOneRepMax(exerciseId));
+            pastSets.postValue(db.setLogDao().getAllForExercise(exerciseId));
+        });
+    }
+
+    public LiveData<Float> getMaxWeight() {
+        return maxWeight;
+    }
+
+    public LiveData<Float> getMaxVolume() {
+        return maxVolume;
+    }
+
+    public LiveData<Float> getOneRM() {
+        return oneRM;
+    }
+
+    public LiveData<List<SetLog>> getPastSets() {
+        return pastSets;
     }
 }

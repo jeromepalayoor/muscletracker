@@ -28,4 +28,5 @@
     <string name="this_month">this month</string>
     <string name="suggested_for_today">SUGGESTED FOR TODAY</string>
     <string name="start_workout_session">Start workout session</string>
+    <string name="instructions_text">Instructions</string>
 </resources>
