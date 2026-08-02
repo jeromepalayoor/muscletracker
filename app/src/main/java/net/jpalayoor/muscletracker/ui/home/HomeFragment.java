@@ -87,18 +87,18 @@ public class HomeFragment extends Fragment {
 
                 if (day.isBlank) {
                     textCalendarDay.setText("");
-                    dotCalendarDay.setVisibility(View.GONE);
+                    dotCalendarDay.setVisibility(View.INVISIBLE);
                     cell.setOnClickListener(null);
                 } else if (day.isHeader) {
                     textCalendarDay.setText(day.header);
-                    dotCalendarDay.setVisibility(View.GONE);
+                    dotCalendarDay.setVisibility(View.INVISIBLE);
                     cell.setOnClickListener(null);
                     textCalendarDay.setTypeface(null, Typeface.BOLD_ITALIC);
                     textCalendarDay.setTextColor(resolveThemeColor(requireContext(), android.R.attr.textColorSecondary));
                 } else {
                     textCalendarDay.setText(String.valueOf(day.day));
                     boolean hasSession = !day.sessionIds.isEmpty();
-                    dotCalendarDay.setVisibility(hasSession ? View.VISIBLE : View.GONE);
+                    dotCalendarDay.setVisibility(hasSession ? View.VISIBLE : View.INVISIBLE);
                     cell.setOnClickListener(hasSession ? v -> {
                         if (!day.sessionIds.isEmpty()) {
                             if (day.sessionIds.size() == 1) {
