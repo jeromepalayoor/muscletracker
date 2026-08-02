@@ -149,11 +149,11 @@
                 android:layout_marginBottom="10dp"
                 android:textColor="?android:attr/textColorPrimary" />
 
-            <GridLayout
+            <LinearLayout
                 android:id="@+id/calendarGrid"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:columnCount="7" />
+                android:orientation="vertical" />
         </LinearLayout>
     </LinearLayout>
 </ScrollView>

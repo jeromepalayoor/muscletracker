@@ -144,6 +144,15 @@ public class HomeViewModel extends AndroidViewModel {
             calendarDays.add(day);
         }
 
+        int totalDayCells = (startDayOfWeek - 1) + daysInMonth;
+        int trailingBlanks = (7 - (totalDayCells % 7)) % 7;
+
+        for (int i = 0; i < trailingBlanks; i++) {
+            CalendarDay day = new CalendarDay();
+            day.isBlank = true;
+            calendarDays.add(day);
+        }
+
         return calendarDays;
     }
 

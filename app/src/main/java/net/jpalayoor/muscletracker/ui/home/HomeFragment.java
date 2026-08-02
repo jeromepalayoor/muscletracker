@@ -7,7 +7,7 @@ import android.util.TypedValue;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.GridLayout;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -16,8 +16,6 @@ import androidx.core.content.ContextCompat;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProvider;
 import androidx.navigation.Navigation;
-import androidx.recyclerview.widget.GridLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
 
 import com.google.android.material.dialog.MaterialAlertDialogBuilder;
 
@@ -45,7 +43,7 @@ public class HomeFragment extends Fragment {
 
         HomeViewModel viewModel = new ViewModelProvider(this).get(HomeViewModel.class);
 
-        GridLayout calendarGrid = view.findViewById(R.id.calendarGrid);
+        LinearLayout calendarGrid = view.findViewById(R.id.calendarGrid);
 
         TextView homeDate = view.findViewById(R.id.homeDate);
         TextView sinceLast = view.findViewById(R.id.sinceLast);
@@ -72,9 +70,19 @@ public class HomeFragment extends Fragment {
         viewModel.getSessionsByDay().observe(getViewLifecycleOwner(), sessionsByDay -> {
             calendarGrid.removeAllViews();
             List<CalendarDay> days = viewModel.buildCalendarDays(year, month, sessionsByDay);
-            for (CalendarDay day : days) {
-                View cell = LayoutInflater.from(requireContext()).inflate(R.layout.item_calendar_day, calendarGrid, false);
-                TextView textCalendarDay = cell.findViewById(R.id.textCalendarDay);
+
+            LinearLayout currentRow = null;
+            for (int j = 0; j < days.size(); j++) {
+                if (j % 7 == 0) {
+                    currentRow = new LinearLayout(requireContext());
+                    currentRow.setOrientation(LinearLayout.HORIZONTAL);
+                    currentRow.setLayoutParams(new LinearLayout.LayoutParams(
+                            LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.WRAP_CONTENT));
+                    calendarGrid.addView(currentRow);
+                }
+
+                CalendarDay day = days.get(j);
+                View cell = LayoutInflater.from(requireContext()).inflate(R.layout.item_calendar_day, currentRow, false);                TextView textCalendarDay = cell.findViewById(R.id.textCalendarDay);
                 View dotCalendarDay = cell.findViewById(R.id.dotCalendarDay);
 
                 if (day.isBlank) {
@@ -127,7 +135,7 @@ public class HomeFragment extends Fragment {
                     textCalendarDay.setBackgroundResource(0);
                 }
 
-                calendarGrid.addView(cell);
+                currentRow.addView(cell);
             }
         });
     }
