@@ -19,6 +19,7 @@ public class ExerciseLogViewModel extends AndroidViewModel {
     private final ExecutorService executor = Executors.newSingleThreadExecutor();
     private final MutableLiveData<String> exerciseName = new MutableLiveData<>();
     private final MutableLiveData<String> prev = new MutableLiveData<>();
+    private final MutableLiveData<Double> suggestedWeight = new MutableLiveData<Double>();
 
     public ExerciseLogViewModel(@NonNull Application application) {
         super(application);
@@ -29,11 +30,11 @@ public class ExerciseLogViewModel extends AndroidViewModel {
         return db.setLogDao().getForSessionAndExerciseLive(sessionId, exerciseId);
     }
 
-    public MutableLiveData<String> getExerciseName() {
+    public LiveData<String> getExerciseName() {
         return exerciseName;
     }
 
-    public MutableLiveData<String> getPreviousSetText() {
+    public LiveData<String> getPreviousSetText() {
         return prev;
     }
 
@@ -46,6 +47,13 @@ public class ExerciseLogViewModel extends AndroidViewModel {
             }
             else {
                 prev.postValue("Previous: -");
+            }
+            Float recentOneRM = db.setLogDao().getRecentEstimatedOneRepMax(exerciseId);
+            if (recentOneRM != null) {
+                suggestedWeight.postValue(Math.round(recentOneRM * 0.85 / 5.0) * 5.0);
+            }
+            else {
+                suggestedWeight.postValue(null);
             }
         });
     }
@@ -60,6 +68,17 @@ public class ExerciseLogViewModel extends AndroidViewModel {
             log.setNumber = db.setLogDao().countForExerciseInSession(sessionId, exerciseId);
             log.timestamp = System.currentTimeMillis();
             db.setLogDao().insert(log);
+            Float recentOneRM = db.setLogDao().getRecentEstimatedOneRepMax(exerciseId);
+            if (recentOneRM != null) {
+                suggestedWeight.postValue(Math.round(recentOneRM * 0.85 / 5.0) * 5.0);
+            }
+            else {
+                suggestedWeight.postValue(null);
+            }
         });
+    }
+
+    public LiveData<Double> getSuggestedWeight() {
+        return suggestedWeight;
     }
 }

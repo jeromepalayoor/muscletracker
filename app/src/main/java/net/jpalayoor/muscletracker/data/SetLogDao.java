@@ -67,4 +67,13 @@ public interface SetLogDao {
 
     @Query("SELECT * FROM set_log WHERE exerciseId = :exerciseId ORDER BY timestamp DESC")
     List<SetLog> getAllForExercise(String exerciseId);
+
+    @Query("SELECT MAX(one_rm) FROM (" +
+            "SELECT weight * (" +
+            "CASE WHEN reps < 10 THEN 36.0/(37-reps)" +
+            "ELSE 1+reps/30.0 END) AS one_rm " +
+            "FROM set_log " +
+            "WHERE exerciseId = :exerciseId " +
+            "ORDER BY timestamp DESC LIMIT 10)")
+    Float getRecentEstimatedOneRepMax(String exerciseId);
 }

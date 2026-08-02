@@ -75,6 +75,7 @@ public class HomeFragment extends Fragment {
         TextView thisWeek = view.findViewById(R.id.thisWeek);
         TextView thisMonth = view.findViewById(R.id.thisMonth);
         TextView suggested = view.findViewById(R.id.suggested);
+        TextView currentMonth = view.findViewById(R.id.currentMonth);
 
         viewModel.loadStats();
         viewModel.getDaysSinceLastText().observe(getViewLifecycleOwner(), sinceLast::setText);
@@ -83,9 +84,11 @@ public class HomeFragment extends Fragment {
         viewModel.getSessionsThisMonth().observe(getViewLifecycleOwner(),
                 count -> thisMonth.setText(String.valueOf(count)));
         viewModel.getSuggested().observe(getViewLifecycleOwner(), suggested::setText);
-        SimpleDateFormat sdf = new SimpleDateFormat("MMM d, yyyy", Locale.getDefault());
+        SimpleDateFormat sdf = new SimpleDateFormat("EEEE MMMM d, yyyy", Locale.getDefault());
         String date = sdf.format(new Date(System.currentTimeMillis()));
         homeDate.setText(date);
+        SimpleDateFormat monthFormat = new SimpleDateFormat("MMMM yyyy", Locale.getDefault());
+        currentMonth.setText(monthFormat.format(new Date(System.currentTimeMillis())));
         int year = Calendar.getInstance().get(Calendar.YEAR);
         int month = Calendar.getInstance().get(Calendar.MONTH);
         viewModel.groupSessionsByDay(year, month);

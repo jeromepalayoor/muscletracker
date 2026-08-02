@@ -152,7 +152,7 @@ public class HomeViewModel extends AndroidViewModel {
             WorkoutSession last = db.workoutSessionDao().getMostRecentSession();
             if (last != null) {
                 long daysSince = ((System.currentTimeMillis() - last.startTime) / 1000 / 60 / 60 / 24);
-                daysSinceLastText.postValue(daysSince + " day" + (daysSince == 1 ? "" : "s") + " since last");
+                daysSinceLastText.postValue(daysSince + " day" + (daysSince == 1 ? "" : "s"));
             } else {
                 daysSinceLastText.postValue("No workouts yet");
             }

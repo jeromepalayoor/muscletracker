@@ -17,6 +17,12 @@
         android:id="@+id/textLogPrevious"
         android:textColor="?android:attr/textColorPrimary"/>
 
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/textSuggestedWeight"
+        android:textColor="?android:attr/textColorPrimary"/>
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"

@@ -33,6 +33,7 @@ public class ExerciseLogFragment extends Fragment {
     private int secondsRemaining;
     private TextView textRestTimer;
     private LinearLayout rowRestTimer;
+    private Double suggestedWeight;
 
     private final Runnable timerRunnable = new Runnable() {
         @Override
@@ -58,6 +59,7 @@ public class ExerciseLogFragment extends Fragment {
 
         TextView textLogExerciseName = view.findViewById(R.id.textLogExerciseName);
         TextView textLogPrevious = view.findViewById(R.id.textLogPrevious);
+        TextView textSuggestedWeight = view.findViewById(R.id.textSuggestedWeight);
         Button btnLogSet = view.findViewById(R.id.btnLogSet);
         EditText editWeight = view.findViewById(R.id.editWeight);
         EditText editReps = view.findViewById(R.id.editReps);
@@ -79,6 +81,16 @@ public class ExerciseLogFragment extends Fragment {
         rowRestTimer.setVisibility(View.GONE);
 
         viewModel.getLoggedSets(sessionId, exerciseId).observe(getViewLifecycleOwner(), adapter::setItems);
+        viewModel.getSuggestedWeight().observe(getViewLifecycleOwner(), weight -> {
+                textSuggestedWeight.setText(weight != null ? "Suggested: " + weight + "kg" : "Suggested: -");
+                suggestedWeight = weight;
+        });
+
+        textSuggestedWeight.setOnClickListener(v -> {
+            if (suggestedWeight != null) {
+                editWeight.setText(String.valueOf(suggestedWeight));
+            }
+        });
 
         btnLogSet.setOnClickListener(v -> {
             String weightText = editWeight.getText().toString();

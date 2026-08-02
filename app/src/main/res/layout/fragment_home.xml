@@ -8,12 +8,15 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:textSize="14sp"
+        android:layout_margin="14dp"
         android:id="@+id/homeDate"
         android:textColor="?android:attr/textColorPrimary"/>
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_margin="14dp"
         android:baselineAligned="false"
         android:orientation="horizontal">
 
@@ -21,19 +24,23 @@
             android:layout_width="0dp"
             android:layout_weight="1"
             android:layout_height="wrap_content"
+            android:background="@color/cardBackground"
+            android:padding="10dp"
             android:orientation="vertical">
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:id="@+id/sinceLast"
+                android:gravity="center"
                 android:textColor="?android:attr/textColorPrimary"/>
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:id="@+id/sinceLastText"
-                android:textColor="?android:attr/textColorPrimary"
+                android:gravity="center"
+                android:textColor="?android:attr/textColorSecondary"
                 android:text="@string/since_last"/>
         </LinearLayout>
 
@@ -41,19 +48,24 @@
             android:layout_width="0dp"
             android:layout_weight="1"
             android:layout_height="wrap_content"
+            android:background="@color/cardBackground"
+            android:padding="10dp"
+            android:layout_marginHorizontal="10dp"
             android:orientation="vertical">
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:id="@+id/thisWeek"
+                android:gravity="center"
                 android:textColor="?android:attr/textColorPrimary"/>
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:id="@+id/thisWeekText"
-                android:textColor="?android:attr/textColorPrimary"
+                android:gravity="center"
+                android:textColor="?android:attr/textColorSecondary"
                 android:text="@string/this_week"/>
         </LinearLayout>
 
@@ -61,19 +73,23 @@
             android:layout_width="0dp"
             android:layout_weight="1"
             android:layout_height="wrap_content"
+            android:background="@color/cardBackground"
+            android:padding="10dp"
             android:orientation="vertical">
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:id="@+id/thisMonth"
+                android:gravity="center"
                 android:textColor="?android:attr/textColorPrimary"/>
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:id="@+id/thisMonthText"
-                android:textColor="?android:attr/textColorPrimary"
+                android:gravity="center"
+                android:textColor="?android:attr/textColorSecondary"
                 android:text="@string/this_month"/>
         </LinearLayout>
     </LinearLayout>
@@ -81,12 +97,16 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:background="@color/cardBackground"
+        android:padding="20dp"
+        android:layout_margin="14dp"
         android:orientation="vertical">
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:id="@+id/suggestedText"
+            android:textSize="14sp"
             android:textColor="?android:attr/textColorPrimary"
             android:text="@string/suggested_for_today"/>
 
@@ -94,18 +114,30 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:id="@+id/suggested"
-            android:textColor="?android:attr/textColorPrimary"/>
+            android:textSize="25sp"
+            android:layout_marginBottom="5dp"
+            android:textColor="?android:attr/textColorSecondary"/>
 
         <Button
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:padding="10dp"
             android:text="@string/start_workout_session"/>
     </LinearLayout>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="14sp"
+        android:layout_margin="14dp"
+        android:id="@+id/currentMonth"
+        android:textColor="?android:attr/textColorPrimary"/>
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerCalendar"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="1"
+        android:layout_margin="14dp"
         android:clipToPadding="false"/>
 </LinearLayout>
