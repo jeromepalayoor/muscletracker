@@ -13,6 +13,7 @@ import net.jpalayoor.muscletracker.data.SetLogWithName;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 
 public class SessionDetailAdapter extends RecyclerView.Adapter<SessionDetailAdapter.SessionDetailViewHolder>{
     private List<SetLogWithName> setLogs = new ArrayList<>();
@@ -32,6 +33,11 @@ public class SessionDetailAdapter extends RecyclerView.Adapter<SessionDetailAdap
         holder.textDetailSetNumber.setText(holder.itemView.getContext().getString(R.string.set_number_format, setLog.setNumber + 1));
         holder.textDetailSetWeight.setText(holder.itemView.getContext().getString(R.string.weight_kg_format, setLog.weight));
         holder.textDetailSetReps.setText(holder.itemView.getContext().getString(R.string.reps_format, setLog.reps));
+        if (position > 0 && Objects.equals(setLogs.get(position - 1).name, setLog.name)) {
+            holder.textDetailSetExercise.setVisibility(View.GONE);
+        } else {
+            holder.textDetailSetExercise.setVisibility(View.VISIBLE);
+        }
     }
 
     @Override

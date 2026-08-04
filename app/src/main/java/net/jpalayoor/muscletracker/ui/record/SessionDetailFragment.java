@@ -52,8 +52,8 @@ public class SessionDetailFragment extends Fragment {
 
         viewModel.loadSession(sessionId);
         viewModel.getSession().observe(getViewLifecycleOwner(), ws -> {
-            SimpleDateFormat sdf = new SimpleDateFormat("MMM d, yyyy", Locale.getDefault());
-            String date = sdf.format(new Date(ws.startTime));
+            SimpleDateFormat sdf = new SimpleDateFormat("MMM d yyyy, hh:mm aa", Locale.getDefault());
+            String date = "Date: " + sdf.format(new Date(ws.startTime));
             long minutes = ((ws.endTime - ws.startTime) / 1000) / 60;
             String duration = "Duration: ";
             if (minutes >= 60) {
@@ -62,7 +62,8 @@ public class SessionDetailFragment extends Fragment {
                 minutes %= 60;
             }
             duration += minutes + "min";
-            textSessionDetailName.setText(ws.templateName);
+            String name = ws.templateName + " Session";
+            textSessionDetailName.setText(name);
             textSessionDetailDate.setText(date);
             textSessionDetailDuration.setText(duration);
         });
@@ -70,9 +71,9 @@ public class SessionDetailFragment extends Fragment {
             adapter.setItems(logSets);
             int reps = viewModel.getTotalReps(logSets);
             float volume = viewModel.getTotalVolume(logSets);
-            textSessionDetailReps.setText(getString(R.string.total_reps_format, reps));
-            textSessionDetailVolume.setText(getString(R.string.volume_format, volume));
-            textSessionDetailSets.setText(getString(R.string.total_sets_format, logSets.size()));
+            textSessionDetailReps.setText(String.valueOf(reps));
+            textSessionDetailVolume.setText(getString(R.string.weight_kg_format, volume));
+            textSessionDetailSets.setText(String.valueOf(logSets.size()));
         });
 
         RecyclerView recyclerView = view.findViewById(R.id.recyclerDetailLoggedSets);
