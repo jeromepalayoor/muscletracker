@@ -7,6 +7,7 @@ import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -15,16 +16,16 @@ import androidx.core.view.MenuProvider;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProvider;
 import androidx.navigation.Navigation;
-import androidx.recyclerview.widget.LinearLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
 
 import com.google.android.material.dialog.MaterialAlertDialogBuilder;
 
 import net.jpalayoor.muscletracker.R;
+import net.jpalayoor.muscletracker.data.SetLogWithName;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.Locale;
+import java.util.Objects;
 
 public class SessionDetailFragment extends Fragment {
     @Nullable
@@ -39,7 +40,6 @@ public class SessionDetailFragment extends Fragment {
         super.onViewCreated(view, savedInstanceState);
 
         SessionDetailViewModel viewModel = new ViewModelProvider(this).get(SessionDetailViewModel.class);
-        SessionDetailAdapter adapter = new SessionDetailAdapter();
 
         TextView textSessionDetailName = view.findViewById(R.id.textSessionDetailName);
         TextView textSessionDetailDate = view.findViewById(R.id.textSessionDetailDate);
@@ -47,6 +47,7 @@ public class SessionDetailFragment extends Fragment {
         TextView textSessionDetailVolume = view.findViewById(R.id.textSessionDetailVolume);
         TextView textSessionDetailSets = view.findViewById(R.id.textSessionDetailSets);
         TextView textSessionDetailReps = view.findViewById(R.id.textSessionDetailReps);
+        LinearLayout setsContainer = view.findViewById(R.id.setsContainer);
 
         int sessionId = getArguments() != null ? getArguments().getInt("sessionId") : -1;
 
@@ -67,18 +68,41 @@ public class SessionDetailFragment extends Fragment {
             textSessionDetailDate.setText(date);
             textSessionDetailDuration.setText(duration);
         });
+
         viewModel.getSets().observe(getViewLifecycleOwner(), logSets -> {
-            adapter.setItems(logSets);
             int reps = viewModel.getTotalReps(logSets);
             float volume = viewModel.getTotalVolume(logSets);
             textSessionDetailReps.setText(String.valueOf(reps));
             textSessionDetailVolume.setText(getString(R.string.weight_kg_format, volume));
             textSessionDetailSets.setText(String.valueOf(logSets.size()));
-        });
 
-        RecyclerView recyclerView = view.findViewById(R.id.recyclerDetailLoggedSets);
-        recyclerView.setLayoutManager(new LinearLayoutManager(requireContext()));
-        recyclerView.setAdapter(adapter);
+            setsContainer.removeAllViews();
+            for (int i = 0; i < logSets.size(); i++) {
+                SetLogWithName setLog = logSets.get(i);
+                View row = LayoutInflater.from(requireContext()).inflate(R.layout.item_detail_set, setsContainer, false);
+
+                TextView textDetailSetExercise = row.findViewById(R.id.textDetailSetExercise);
+                TextView textDetailSetNumber = row.findViewById(R.id.textDetailSetNumber);
+                TextView textDetailSetWeight = row.findViewById(R.id.textDetailSetWeight);
+                TextView textDetailSetReps = row.findViewById(R.id.textDetailSetReps);
+                TextView textDetailPR = row.findViewById(R.id.textDetailPR);
+
+                textDetailSetExercise.setText(setLog.name);
+                textDetailSetNumber.setText(getString(R.string.set_number_format, setLog.setNumber + 1));
+                textDetailSetWeight.setText(getString(R.string.weight_kg_format, setLog.weight));
+                textDetailSetReps.setText(getString(R.string.reps_format, setLog.reps));
+
+                if (i > 0 && Objects.equals(logSets.get(i - 1).name, setLog.name)) {
+                    textDetailSetExercise.setVisibility(View.GONE);
+                } else {
+                    textDetailSetExercise.setVisibility(View.VISIBLE);
+                }
+
+                textDetailPR.setVisibility(setLog.isPR ? View.VISIBLE : View.GONE);
+
+                setsContainer.addView(row);
+            }
+        });
 
         requireActivity().addMenuProvider(new MenuProvider() {
             @Override
