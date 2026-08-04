@@ -27,14 +27,14 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:textSize="12sp"
+                android:textSize="14sp"
                 android:id="@+id/textSessionDetailDate"
                 android:textColor="?android:attr/textColorPrimary"/>
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:textSize="12sp"
+                android:textSize="14sp"
                 android:id="@+id/textSessionDetailDuration"
                 android:textColor="?android:attr/textColorPrimary"/>
         </LinearLayout>
@@ -75,6 +75,7 @@
                 android:layout_weight="1"
                 android:layout_height="match_parent"
                 android:background="@drawable/card_rounded"
+                android:layout_marginHorizontal="10dp"
                 android:padding="10dp"
                 android:orientation="vertical">
 

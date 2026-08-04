@@ -38,6 +38,7 @@ public class SessionDetailAdapter extends RecyclerView.Adapter<SessionDetailAdap
         } else {
             holder.textDetailSetExercise.setVisibility(View.VISIBLE);
         }
+        holder.textDetailPR.setVisibility(setLog.isPR ? View.VISIBLE : View.GONE);
     }
 
     @Override
@@ -55,6 +56,7 @@ public class SessionDetailAdapter extends RecyclerView.Adapter<SessionDetailAdap
         TextView textDetailSetNumber;
         TextView textDetailSetWeight;
         TextView textDetailSetReps;
+        TextView textDetailPR;
 
         SessionDetailViewHolder(@NonNull View itemView) {
             super(itemView);
@@ -62,6 +64,7 @@ public class SessionDetailAdapter extends RecyclerView.Adapter<SessionDetailAdap
             textDetailSetNumber = itemView.findViewById(R.id.textDetailSetNumber);
             textDetailSetWeight = itemView.findViewById(R.id.textDetailSetWeight);
             textDetailSetReps = itemView.findViewById(R.id.textDetailSetReps);
+            textDetailPR = itemView.findViewById(R.id.textDetailPR);
         }
     }
 }

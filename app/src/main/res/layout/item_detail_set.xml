@@ -12,6 +12,14 @@
         android:textSize="16sp"
         android:textColor="?android:attr/textColorPrimary" />
 
+    <TextView
+        android:id="@+id/textDetailPR"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="16sp"
+        android:text="@string/new_pr_text"
+        android:textColor="?android:attr/textColorPrimary" />
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"

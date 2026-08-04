@@ -7,5 +7,5 @@ public class SetLogWithName {
     public float weight;
     public int reps;
     public int setNumber;
-    public long timestamp;
+    public boolean isPR;
 }

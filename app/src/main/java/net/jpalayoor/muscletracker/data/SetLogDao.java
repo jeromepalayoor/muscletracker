@@ -32,8 +32,12 @@ public interface SetLogDao {
             "exercises.name AS name, " +
             "set_log.weight AS weight, " +
             "set_log.reps AS reps, " +
-            "set_log.setNumber AS setNumber, " +
-            "set_log.timestamp AS timestamp " +
+            "set_log.setNumber AS setNumber," +
+            "(set_log.weight >= COALESCE(" +
+            "(SELECT MAX(sl2.weight) FROM set_log sl2 " +
+            "WHERE sl2.exerciseId = set_log.exerciseId " +
+            "AND sl2.timestamp < set_log.timestamp), 0)" +
+            ") AS isPR " +
             "FROM set_log " +
             "JOIN exercises ON set_log.exerciseId = exercises.exerciseId " +
             "WHERE set_log.sessionId = :sessionId " +
@@ -46,7 +50,11 @@ public interface SetLogDao {
             "set_log.weight AS weight, " +
             "set_log.reps AS reps, " +
             "set_log.setNumber AS setNumber, " +
-            "set_log.timestamp AS timestamp " +
+            "(set_log.weight >= COALESCE(" +
+            "(SELECT MAX(sl2.weight) FROM set_log sl2 " +
+            "WHERE sl2.exerciseId = set_log.exerciseId " +
+            "AND sl2.timestamp < set_log.timestamp), 0)" +
+            ") AS isPR " +
             "FROM set_log " +
             "JOIN exercises ON set_log.exerciseId = exercises.exerciseId " +
             "WHERE set_log.sessionId = :sessionId " +
