@@ -27,7 +27,6 @@ import net.jpalayoor.muscletracker.ui.workouts.TemplateExerciseAdapter;
 
 public class LiveSessionFragment extends Fragment {
     private int sessionId;
-    private TemplateExerciseAdapter adapter;
 
     @Nullable
     @Override
@@ -44,7 +43,7 @@ public class LiveSessionFragment extends Fragment {
 
         sessionId = getArguments() != null ? getArguments().getInt("sessionId") : -1;
 
-        adapter = new TemplateExerciseAdapter(templateExercise -> {
+        LiveExerciseAdapter adapter = new LiveExerciseAdapter(templateExercise -> {
             Bundle args = new Bundle();
             args.putInt("sessionId", sessionId);
             args.putString("exerciseId", templateExercise.exerciseId);

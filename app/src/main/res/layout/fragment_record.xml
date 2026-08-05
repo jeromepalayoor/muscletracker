@@ -27,6 +27,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/noPastSessionText"
+        android:visibility="gone"
         android:textSize="24sp"
         android:layout_marginHorizontal="14dp"
         android:gravity="center"

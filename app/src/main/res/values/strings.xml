@@ -43,4 +43,6 @@
     <string name="start_new_workout_session_text">Start new Workout Session</string>
     <string name="past_session_text">Past sessions</string>
     <string name="no_sessions_recorded_yet_text">No Sessions Recorded Yet!</string>
+    <string name="exercises_text">Exercises</string>
+    <string name="zero_sets_text">0 Sets</string>
 </resources>
