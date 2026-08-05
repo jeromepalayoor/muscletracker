@@ -40,7 +40,14 @@ public class RecordFragment extends Fragment {
         recyclerView.setLayoutManager(new LinearLayoutManager(requireContext()));
         recyclerView.setAdapter(adapter);
 
-        viewModel.getAllSessions().observe(getViewLifecycleOwner(), adapter::setSessions);
+        viewModel.getAllSessions().observe(getViewLifecycleOwner(), sessions -> {
+            adapter.setSessions(sessions);
+            if (sessions.isEmpty()) {
+                view.findViewById(R.id.noPastSessionText).setVisibility(View.VISIBLE);
+            } else {
+                view.findViewById(R.id.noPastSessionText).setVisibility(View.GONE);
+            }
+        });
 
         Button btnStartWorkout = view.findViewById(R.id.btnStartWorkout);
         btnStartWorkout.setOnClickListener(v -> {
