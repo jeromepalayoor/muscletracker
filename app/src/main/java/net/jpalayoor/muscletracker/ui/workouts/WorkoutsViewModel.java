@@ -8,6 +8,7 @@ import androidx.lifecycle.LiveData;
 
 import net.jpalayoor.muscletracker.data.AppDatabase;
 import net.jpalayoor.muscletracker.data.WorkoutTemplate;
+import net.jpalayoor.muscletracker.data.WorkoutTemplateWithCount;
 
 import java.util.List;
 import java.util.concurrent.ExecutorService;
@@ -16,16 +17,16 @@ import java.util.concurrent.Executors;
 public class WorkoutsViewModel extends AndroidViewModel {
 
     private final AppDatabase db;
-    private final LiveData<List<WorkoutTemplate>> allTemplates;
+    private final LiveData<List<WorkoutTemplateWithCount>> allTemplates;
     private final ExecutorService executor = Executors.newSingleThreadExecutor();
 
     public WorkoutsViewModel(@NonNull Application application) {
         super(application);
         db = AppDatabase.getInstance(application);
-        allTemplates = db.workoutTemplateDao().getAllLive();
+        allTemplates = db.workoutTemplateDao().getAllTemplatesWithCount();
     }
 
-    public LiveData<List<WorkoutTemplate>> getAllTemplates() {
+    public LiveData<List<WorkoutTemplateWithCount>> getAllTemplates() {
         return allTemplates;
     }
 

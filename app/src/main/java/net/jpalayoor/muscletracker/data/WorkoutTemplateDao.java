@@ -28,4 +28,13 @@ public interface WorkoutTemplateDao {
             "ORDER BY MAX(workout_session.startTime) ASC " +
             "LIMIT 1")
     WorkoutTemplate getSuggestedTemplate();
+
+    @Query("SELECT workout_template.id AS id, " +
+            "workout_template.name AS name, " +
+            "COUNT(template_exercise.id) AS count " +
+            "FROM workout_template " +
+            "LEFT JOIN template_exercise ON template_exercise.templateId = workout_template.id " +
+            "GROUP BY workout_template.id " +
+            "ORDER BY workout_template.name ASC")
+    LiveData<List<WorkoutTemplateWithCount>> getAllTemplatesWithCount();
 }
