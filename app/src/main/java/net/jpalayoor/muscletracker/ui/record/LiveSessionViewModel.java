@@ -8,7 +8,7 @@ import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
 
 import net.jpalayoor.muscletracker.data.AppDatabase;
-import net.jpalayoor.muscletracker.data.TemplateExerciseWithName;
+import net.jpalayoor.muscletracker.data.LiveSessionExercise;
 import net.jpalayoor.muscletracker.data.WorkoutSession;
 
 import java.util.List;
@@ -18,7 +18,7 @@ import java.util.concurrent.Executors;
 public class LiveSessionViewModel extends AndroidViewModel {
     private final AppDatabase db;
     private final ExecutorService executor = Executors.newSingleThreadExecutor();
-    private final MutableLiveData<List<TemplateExerciseWithName>> sessionExercises = new MutableLiveData<>();
+    private final MutableLiveData<List<LiveSessionExercise>> sessionExercises = new MutableLiveData<>();
     private final MutableLiveData<Boolean> workoutEnded = new MutableLiveData<>();
 
     public LiveSessionViewModel(@NonNull Application application) {
@@ -45,7 +45,7 @@ public class LiveSessionViewModel extends AndroidViewModel {
     }
 
 
-    public LiveData<List<TemplateExerciseWithName>> getSessionExercises() {
+    public LiveData<List<LiveSessionExercise>> getSessionExercises() {
         return sessionExercises;
     }
 
@@ -53,7 +53,7 @@ public class LiveSessionViewModel extends AndroidViewModel {
         executor.execute(() -> {
             WorkoutSession session = db.workoutSessionDao().getById(sessionId);
             if (session != null) {
-                List<TemplateExerciseWithName> exercises = db.templateExerciseDao().getExercisesWithNames(session.templateId);
+                List<LiveSessionExercise> exercises = db.templateExerciseDao().getExercisesWithSetCounts(session.templateId, sessionId);
                 sessionExercises.postValue(exercises);
             }
         });

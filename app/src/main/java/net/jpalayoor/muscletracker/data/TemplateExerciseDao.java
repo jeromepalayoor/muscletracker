@@ -50,4 +50,17 @@ public interface TemplateExerciseDao {
 
     @Query("DELETE FROM template_exercise WHERE templateId = :templateId")
     void deleteAllForTemplate(int templateId);
+
+    @Query("SELECT template_exercise.id AS id, " +
+            "template_exercise.exerciseId AS exerciseId, " +
+            "exercises.name AS name, " +
+            "COUNT(set_log.id) AS setCount " +
+            "FROM template_exercise " +
+            "JOIN exercises ON template_exercise.exerciseId = exercises.exerciseId " +
+            "LEFT JOIN set_log ON set_log.exerciseId = template_exercise.exerciseId " +
+            "AND set_log.sessionId = :sessionId " +
+            "WHERE template_exercise.templateId = :templateId " +
+            "GROUP BY template_exercise.id " +
+            "ORDER BY template_exercise.exerciseOrder ASC")
+    List<LiveSessionExercise> getExercisesWithSetCounts(int templateId, int sessionId);
 }
