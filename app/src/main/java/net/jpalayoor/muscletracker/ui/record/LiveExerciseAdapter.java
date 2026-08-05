@@ -11,7 +11,6 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import net.jpalayoor.muscletracker.R;
 import net.jpalayoor.muscletracker.data.LiveSessionExercise;
-import net.jpalayoor.muscletracker.data.TemplateExerciseWithName;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -19,7 +18,7 @@ import java.util.List;
 
 public class LiveExerciseAdapter extends RecyclerView.Adapter<LiveExerciseAdapter.LiveExerciseViewHolder> {
     public interface OnTemplateExerciseClickListener {
-        void onTemplateClick(TemplateExerciseWithName templateExerciseWithName);
+        void onTemplateClick(LiveSessionExercise liveSessionExercise);
     }
 
     private List<LiveSessionExercise> templateExerciseWithNames = new ArrayList<>();
@@ -53,6 +52,7 @@ public class LiveExerciseAdapter extends RecyclerView.Adapter<LiveExerciseAdapte
         holder.liveExerciseName.setText(templateExerciseWithName.name);
         String setCount = templateExerciseWithName.setCount + " Sets";
         holder.liveSetCount.setText(setCount);
+        holder.itemView.setOnClickListener(v -> listener.onTemplateClick(templateExerciseWithName));
     }
 
     @Override
