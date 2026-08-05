@@ -6,6 +6,16 @@
     android:layout_margin="14dp"
     android:orientation="vertical">
 
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/noWorkout"
+        android:visibility="visible"
+        android:text="@string/no_workout_templates_created_text"
+        android:textColor="?android:attr/textColorSecondary"
+        android:textSize="24sp"
+        android:gravity="center"/>
+
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerTemplates"
         android:layout_width="match_parent"

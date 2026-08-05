@@ -7,6 +7,7 @@ import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -76,6 +77,15 @@ public class WorkoutsFragment extends Fragment {
         recyclerView.setLayoutManager(new LinearLayoutManager(requireContext()));
         recyclerView.setAdapter(adapter);
 
-        viewModel.getAllTemplates().observe(getViewLifecycleOwner(), adapter::setTemplates);
+        TextView noWorkout = view.findViewById(R.id.noWorkout);
+
+        viewModel.getAllTemplates().observe(getViewLifecycleOwner(), templates -> {
+            adapter.setTemplates(templates);
+            if (templates.isEmpty()) {
+                noWorkout.setVisibility(View.VISIBLE);
+            } else {
+                noWorkout.setVisibility(View.GONE);
+            }
+        });
     }
 }
