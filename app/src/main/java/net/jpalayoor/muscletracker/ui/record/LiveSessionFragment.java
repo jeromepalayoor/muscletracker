@@ -11,6 +11,7 @@ import android.view.ViewGroup;
 import androidx.activity.OnBackPressedCallback;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.view.MenuProvider;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProvider;
@@ -24,6 +25,8 @@ import com.google.android.material.dialog.MaterialAlertDialogBuilder;
 
 import net.jpalayoor.muscletracker.R;
 import net.jpalayoor.muscletracker.ui.workouts.TemplateExerciseAdapter;
+
+import java.util.Objects;
 
 public class LiveSessionFragment extends Fragment {
     private int sessionId;
@@ -67,6 +70,9 @@ public class LiveSessionFragment extends Fragment {
                 nc.navigate(R.id.navigation_session_detail, args, options);
             }
         });
+        viewModel.getSessionName().observe(getViewLifecycleOwner(), name ->
+                Objects.requireNonNull(((AppCompatActivity) requireActivity())
+                        .getSupportActionBar()).setTitle(name));
 
         requireActivity().addMenuProvider(new MenuProvider() {
             @Override

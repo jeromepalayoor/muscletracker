@@ -20,6 +20,7 @@ public class LiveSessionViewModel extends AndroidViewModel {
     private final ExecutorService executor = Executors.newSingleThreadExecutor();
     private final MutableLiveData<List<LiveSessionExercise>> sessionExercises = new MutableLiveData<>();
     private final MutableLiveData<Boolean> workoutEnded = new MutableLiveData<>();
+    private final MutableLiveData<String> sessionName = new MutableLiveData<>();
 
     public LiveSessionViewModel(@NonNull Application application) {
         super(application);
@@ -44,6 +45,10 @@ public class LiveSessionViewModel extends AndroidViewModel {
         return workoutEnded;
     }
 
+    public LiveData<String> getSessionName() {
+        return sessionName;
+    }
+
 
     public LiveData<List<LiveSessionExercise>> getSessionExercises() {
         return sessionExercises;
@@ -55,6 +60,7 @@ public class LiveSessionViewModel extends AndroidViewModel {
             if (session != null) {
                 List<LiveSessionExercise> exercises = db.templateExerciseDao().getExercisesWithSetCounts(session.templateId, sessionId);
                 sessionExercises.postValue(exercises);
+                sessionName.postValue(session.templateName + " Session");
             }
         });
     }

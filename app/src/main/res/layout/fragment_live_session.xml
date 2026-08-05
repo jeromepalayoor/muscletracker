@@ -3,17 +3,8 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:layout_margin="14dp"
     android:orientation="vertical">
-
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/exercisesText"
-        android:textSize="16sp"
-        android:layout_marginHorizontal="14dp"
-        android:padding="10dp"
-        android:textColor="?android:attr/textColorSecondary"
-        android:text="@string/exercises_text"/>
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerLiveSessionExercises"
