@@ -16,10 +16,12 @@ import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProvider;
 import androidx.navigation.Navigation;
-import androidx.recyclerview.widget.LinearLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
 
 import net.jpalayoor.muscletracker.R;
+import net.jpalayoor.muscletracker.data.SetLog;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class ExerciseLogFragment extends Fragment {
     @Nullable
@@ -34,6 +36,7 @@ public class ExerciseLogFragment extends Fragment {
     private TextView textRestTimer;
     private LinearLayout rowRestTimer;
     private Double suggestedWeight;
+    private List<SetLog> currentLoggedSets = new ArrayList<>();
 
     private final Runnable timerRunnable = new Runnable() {
         @Override
@@ -42,7 +45,8 @@ public class ExerciseLogFragment extends Fragment {
                 rowRestTimer.setVisibility(View.GONE);
                 return;
             }
-            textRestTimer.setText("Rest: " + secondsRemaining + "s");
+            String timerText = "Rest: " + secondsRemaining + "s";
+            textRestTimer.setText(timerText);
             secondsRemaining--;
             timerHandler.postDelayed(this, 1000);
         }
@@ -65,6 +69,8 @@ public class ExerciseLogFragment extends Fragment {
         EditText editReps = view.findViewById(R.id.editReps);
         Button btnFinishExercise = view.findViewById(R.id.btnFinishExercise);
         TextView textSkipTimer = view.findViewById(R.id.textSkipTimer);
+        TextView undoText = view.findViewById(R.id.undoText);
+        LinearLayout loggedSetsContainer = view.findViewById(R.id.loggedSetsContainer);
         rowRestTimer = view.findViewById(R.id.rowRestTimer);
         textRestTimer = view.findViewById(R.id.textRestTimer);
 
@@ -72,18 +78,23 @@ public class ExerciseLogFragment extends Fragment {
         viewModel.getExerciseName().observe(getViewLifecycleOwner(), textLogExerciseName::setText);
         viewModel.getPreviousSetText().observe(getViewLifecycleOwner(), textLogPrevious::setText);
 
-        LoggedSetAdapter adapter = new LoggedSetAdapter();
-
-        RecyclerView recyclerView = view.findViewById(R.id.recyclerLoggedSets);
-        recyclerView.setLayoutManager(new LinearLayoutManager(requireContext()));
-        recyclerView.setAdapter(adapter);
-
         rowRestTimer.setVisibility(View.GONE);
 
-        viewModel.getLoggedSets(sessionId, exerciseId).observe(getViewLifecycleOwner(), adapter::setItems);
+        viewModel.getLoggedSets(sessionId, exerciseId).observe(getViewLifecycleOwner(), sets -> {
+            loggedSetsContainer.removeAllViews();
+            currentLoggedSets = sets;
+            for (SetLog log : sets) {
+                View row = LayoutInflater.from(requireContext()).inflate(R.layout.item_logged_set, loggedSetsContainer, false);
+                ((TextView) row.findViewById(R.id.textSetNumber)).setText(getString(R.string.set_number_format, log.setNumber + 1));
+                ((TextView) row.findViewById(R.id.textSetWeight)).setText(getString(R.string.weight_kg_format, log.weight));
+                ((TextView) row.findViewById(R.id.textSetReps)).setText(getString(R.string.reps_format, log.reps));
+                loggedSetsContainer.addView(row);
+            }
+        });
+
         viewModel.getSuggestedWeight().observe(getViewLifecycleOwner(), weight -> {
-                textSuggestedWeight.setText(weight != null ? "Suggested: " + weight + "kg" : "Suggested: -");
-                suggestedWeight = weight;
+            textSuggestedWeight.setText(weight != null ? "Suggested: " + weight + "kg" : "Suggested: -");
+            suggestedWeight = weight;
         });
 
         textSuggestedWeight.setOnClickListener(v -> {
@@ -115,6 +126,13 @@ public class ExerciseLogFragment extends Fragment {
 
         btnFinishExercise.setOnClickListener(v -> {
             Navigation.findNavController(view).popBackStack();
+        });
+
+        undoText.setOnClickListener(v -> {
+            if (!currentLoggedSets.isEmpty()) {
+                SetLog last = currentLoggedSets.get(currentLoggedSets.size() - 1);
+                viewModel.deleteSet(last.id);
+            }
         });
     }
 

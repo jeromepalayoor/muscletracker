@@ -2,6 +2,7 @@ package net.jpalayoor.muscletracker.data;
 
 import androidx.lifecycle.LiveData;
 import androidx.room.Dao;
+import androidx.room.Delete;
 import androidx.room.Insert;
 import androidx.room.Query;
 
@@ -11,6 +12,9 @@ import java.util.List;
 public interface SetLogDao {
     @Insert
     void insert(SetLog log);
+
+    @Query("DELETE FROM set_log WHERE id = :id")
+    void deleteById(int id);
 
     @Query("SELECT * FROM set_log WHERE sessionId = :sessionId ORDER BY timestamp ASC, setNumber ASC")
     LiveData<List<SetLog>> getAllForSessionLive(int sessionId);

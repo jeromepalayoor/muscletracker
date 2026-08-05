@@ -10,6 +10,7 @@ import androidx.lifecycle.MutableLiveData;
 import net.jpalayoor.muscletracker.data.AppDatabase;
 import net.jpalayoor.muscletracker.data.SetLog;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
@@ -75,6 +76,12 @@ public class ExerciseLogViewModel extends AndroidViewModel {
             else {
                 suggestedWeight.postValue(null);
             }
+        });
+    }
+
+    public void deleteSet(int id) {
+        executor.execute(() -> {
+            db.setLogDao().deleteById(id);
         });
     }
 

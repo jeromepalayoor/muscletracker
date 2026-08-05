@@ -1,102 +1,157 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
+<ScrollView
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="vertical">
-
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/textLogExerciseName"
-        android:textColor="?android:attr/textColorPrimary"/>
-
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/textLogPrevious"
-        android:textColor="?android:attr/textColorPrimary"/>
-
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/textSuggestedWeight"
-        android:textColor="?android:attr/textColorPrimary"/>
+    android:layout_height="match_parent">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal">
-
-        <EditText
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:id="@+id/editWeight"
-            android:autofillHints="no"
-            android:hint="@string/weight_kg_text"
-            android:inputType="numberDecimal"
-            android:paddingHorizontal="20dp"/>
-
-        <EditText
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:id="@+id/editReps"
-            android:autofillHints="no"
-            android:hint="@string/reps"
-            android:inputType="number"
-            android:paddingHorizontal="20dp"/>
-    </LinearLayout>
-
-    <Button
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/btnLogSet"
-        android:text="@string/log_set"/>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:id="@+id/rowRestTimer"
-        android:visibility="gone"
-        android:padding="16dp">
+        android:layout_margin="14dp"
+        android:orientation="vertical">
 
         <TextView
-            android:id="@+id/textRestTimer"
-            android:layout_width="0dp"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:textSize="16sp"
-            android:textColor="?android:attr/textColorPrimary" />
+            android:id="@+id/textLogExerciseName"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            android:textColor="?android:attr/textColorPrimary"/>
 
         <TextView
-            android:id="@+id/textSkipTimer"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:textSize="16sp"
-            android:textColor="?android:attr/textColorPrimary"
-            android:text="@string/skip" />
+            android:layout_marginTop="4dp"
+            android:id="@+id/textLogPrevious"
+            android:textColor="?android:attr/textColorSecondary"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/textSuggestedWeight"
+            android:textColor="?android:attr/textColorSecondary"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:orientation="horizontal">
+
+            <EditText
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:id="@+id/editWeight"
+                android:autofillHints="no"
+                android:hint="@string/weight_kg_text"
+                android:inputType="numberDecimal"
+                android:paddingHorizontal="20dp"
+                android:paddingVertical="30dp"
+                android:gravity="center"
+                android:layout_margin="10dp"
+                android:textSize="20sp"
+                android:textColor="?android:attr/textColorPrimary"
+                android:background="@drawable/card_rounded"/>
+
+            <EditText
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:id="@+id/editReps"
+                android:autofillHints="no"
+                android:hint="@string/reps"
+                android:inputType="number"
+                android:paddingHorizontal="20dp"
+                android:paddingVertical="30dp"
+                android:gravity="center"
+                android:layout_margin="10dp"
+                android:textSize="20sp"
+                android:textColor="?android:attr/textColorPrimary"
+                android:background="@drawable/card_rounded"/>
+        </LinearLayout>
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/btnLogSet"
+            android:layout_marginVertical="10dp"
+            android:padding="20dp"
+            android:text="@string/log_set"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:id="@+id/rowRestTimer"
+            android:visibility="gone"
+            android:padding="20dp"
+            android:layout_marginBottom="10dp"
+            android:background="@drawable/card_rounded">
+
+            <TextView
+                android:id="@+id/textRestTimer"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:textSize="16sp"
+                android:textColor="?android:attr/textColorSecondary" />
+
+            <TextView
+                android:id="@+id/textSkipTimer"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="16sp"
+                android:textColor="?android:attr/textColorSecondary"
+                android:text="@string/skip" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="20dp"
+            android:background="@drawable/card_rounded">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/thisSession"
+                    android:textSize="18sp"
+                    android:textColor="?android:attr/textColorSecondary"
+                    android:text="@string/this_session_text"/>
+
+                <View
+                    android:layout_width="0dp"
+                    android:layout_height="1dp"
+                    android:layout_weight="1" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/undoText"
+                    android:textSize="18sp"
+                    android:textColor="?android:attr/textColorSecondary"
+                    android:text="@string/undo_last_set_text"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/loggedSetsContainer"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical" />
+        </LinearLayout>
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/btnFinishExercise"
+            android:layout_marginTop="10dp"
+            android:padding="20dp"
+            android:text="@string/finish_exercise"/>
     </LinearLayout>
-
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/thisSession"
-        android:textColor="?android:attr/textColorPrimary"
-        android:text="@string/this_session_text"/>
-
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/recyclerLoggedSets"
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="1"
-        android:clipToPadding="false"/>
-
-    <Button
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/btnFinishExercise"
-        android:text="@string/finish_exercise"/>
-</LinearLayout>
+</ScrollView>
