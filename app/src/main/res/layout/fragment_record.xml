@@ -9,19 +9,25 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/btnStartWorkout"
-        android:text="Start new Workout Session"/>
+        android:layout_margin="14dp"
+        android:padding="10dp"
+        android:text="@string/start_new_workout_session_text"/>
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/pastSessionText"
-        android:textColor="?android:attr/textColorPrimary"
-        android:text="Past session:"/>
+        android:textSize="16sp"
+        android:layout_marginHorizontal="14dp"
+        android:padding="10dp"
+        android:textColor="?android:attr/textColorSecondary"
+        android:text="@string/past_session_text"/>
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerSessions"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="1"
+        android:layout_marginHorizontal="14dp"
         android:clipToPadding="false"/>
 </LinearLayout>
