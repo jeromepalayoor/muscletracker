@@ -9,7 +9,7 @@ import androidx.lifecycle.MutableLiveData;
 
 import net.jpalayoor.muscletracker.data.AppDatabase;
 import net.jpalayoor.muscletracker.data.WorkoutSession;
-import net.jpalayoor.muscletracker.data.WorkoutTemplate;
+import net.jpalayoor.muscletracker.data.WorkoutTemplateWithCount;
 
 import java.util.List;
 import java.util.concurrent.ExecutorService;
@@ -19,15 +19,15 @@ public class StartWorkoutViewModel extends AndroidViewModel {
     private final AppDatabase db;
     private final ExecutorService executor = Executors.newSingleThreadExecutor();
     private final MutableLiveData<Long> newSessionId = new MutableLiveData<>();
-    private final LiveData<List<WorkoutTemplate>> allTemplates;
+    private final LiveData<List<WorkoutTemplateWithCount>> allTemplates;
 
     public StartWorkoutViewModel(@NonNull Application application) {
         super(application);
         db = AppDatabase.getInstance(application);
-        allTemplates = db.workoutTemplateDao().getAllLive();
+        allTemplates = db.workoutTemplateDao().getAllTemplatesWithCount();
     }
 
-    public LiveData<List<WorkoutTemplate>> getAllTemplates() {
+    public LiveData<List<WorkoutTemplateWithCount>> getAllTemplates() {
         return allTemplates;
     }
 
@@ -35,7 +35,7 @@ public class StartWorkoutViewModel extends AndroidViewModel {
         return newSessionId;
     }
 
-    public void createSession(WorkoutTemplate template) {
+    public void createSession(WorkoutTemplateWithCount template) {
         executor.execute(() -> {
             WorkoutSession session = new WorkoutSession();
             session.templateId = template.id;
