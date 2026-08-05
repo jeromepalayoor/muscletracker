@@ -18,6 +18,7 @@
         android:layout_height="wrap_content"
         android:textSize="16sp"
         android:text="@string/new_pr_text"
+        android:layout_gravity="center"
         android:textColor="?android:attr/textColorPrimary" />
 
     <LinearLayout
