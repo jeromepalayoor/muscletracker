@@ -7,6 +7,7 @@ import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Toast;
 
 import androidx.activity.OnBackPressedCallback;
 import androidx.annotation.NonNull;
@@ -24,12 +25,13 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.google.android.material.dialog.MaterialAlertDialogBuilder;
 
 import net.jpalayoor.muscletracker.R;
-import net.jpalayoor.muscletracker.ui.workouts.TemplateExerciseAdapter;
 
 import java.util.Objects;
+import java.util.concurrent.atomic.AtomicInteger;
 
 public class LiveSessionFragment extends Fragment {
     private int sessionId;
+    private int setCount;
 
     @Nullable
     @Override
@@ -74,6 +76,10 @@ public class LiveSessionFragment extends Fragment {
                 Objects.requireNonNull(((AppCompatActivity) requireActivity())
                         .getSupportActionBar()).setTitle(name));
 
+        viewModel.getLoggedSets(sessionId).observe(getViewLifecycleOwner(), sets -> {
+            setCount = sets.size();
+        });
+
         requireActivity().addMenuProvider(new MenuProvider() {
             @Override
             public void onCreateMenu(@NonNull Menu menu, @NonNull MenuInflater menuInflater) {
@@ -83,6 +89,10 @@ public class LiveSessionFragment extends Fragment {
             @Override
             public boolean onMenuItemSelected(@NonNull MenuItem menuItem) {
                 if (menuItem.getItemId() == R.id.action_end_workout) {
+                    if (setCount == 0) {
+                        Toast.makeText(requireContext(), "No sets recorded yet", Toast.LENGTH_SHORT).show();
+                        return true;
+                    }
                     new MaterialAlertDialogBuilder(requireContext())
                             .setTitle("End workout?")
                             .setPositiveButton("Yes", (dialog, which) -> {

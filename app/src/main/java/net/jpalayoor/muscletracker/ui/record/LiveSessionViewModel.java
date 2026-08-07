@@ -9,6 +9,7 @@ import androidx.lifecycle.MutableLiveData;
 
 import net.jpalayoor.muscletracker.data.AppDatabase;
 import net.jpalayoor.muscletracker.data.LiveSessionExercise;
+import net.jpalayoor.muscletracker.data.SetLog;
 import net.jpalayoor.muscletracker.data.WorkoutSession;
 
 import java.util.List;
@@ -49,6 +50,9 @@ public class LiveSessionViewModel extends AndroidViewModel {
         return sessionName;
     }
 
+    public LiveData<List<SetLog>> getLoggedSets(int sessionId) {
+        return db.setLogDao().getAllForSessionLive(sessionId);
+    }
 
     public LiveData<List<LiveSessionExercise>> getSessionExercises() {
         return sessionExercises;
