@@ -86,7 +86,14 @@ public class TemplateDetailFragment extends Fragment {
 
         templateId = getArguments() != null ? getArguments().getInt("templateId") : -1;
         if (templateId != -1) {
-            viewModel.getExercisesForTemplate(templateId).observe(getViewLifecycleOwner(), adapter::setItems);
+            viewModel.getExercisesForTemplate(templateId).observe(getViewLifecycleOwner(), exercises -> {
+                adapter.setItems(exercises);
+                if (exercises.isEmpty()) {
+                    view.findViewById(R.id.noExercisesText).setVisibility(View.VISIBLE);
+                } else {
+                    view.findViewById(R.id.noExercisesText).setVisibility(View.GONE);
+                }
+            });
         }
 
         String templateName = getArguments() != null ? getArguments().getString("templateName") : "";

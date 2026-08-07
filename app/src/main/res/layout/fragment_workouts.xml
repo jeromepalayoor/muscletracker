@@ -10,7 +10,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/noWorkout"
-        android:visibility="visible"
+        android:visibility="gone"
         android:text="@string/no_workout_templates_created_text"
         android:textColor="?android:attr/textColorSecondary"
         android:textSize="24sp"

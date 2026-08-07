@@ -47,4 +47,6 @@
     <string name="zero_sets_text">0 Sets</string>
     <string name="undo_last_set_text">Undo Last Set</string>
     <string name="no_workout_templates_created_text">No Workout Templates Created</string>
+    <string name="drag_handle_text">drag handle</string>
+    <string name="no_exercises_added_yet_text">No exercises yet, tap + to add one</string>
 </resources>
