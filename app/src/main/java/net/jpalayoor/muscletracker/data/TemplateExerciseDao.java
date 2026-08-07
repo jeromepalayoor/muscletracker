@@ -51,6 +51,9 @@ public interface TemplateExerciseDao {
     @Query("DELETE FROM template_exercise WHERE templateId = :templateId")
     void deleteAllForTemplate(int templateId);
 
+    @Query("SELECT exerciseId FROM template_exercise WHERE templateId = :templateId")
+    List<String> getExerciseIdsForTemplate(int templateId);
+
     @Query("SELECT template_exercise.id AS id, " +
             "template_exercise.exerciseId AS exerciseId, " +
             "exercises.name AS name, " +

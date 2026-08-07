@@ -40,6 +40,10 @@ public class ExercisePickerFragment extends Fragment {
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
+        templateId = getArguments() != null ? getArguments().getInt("templateId") : -1;
+        String templateName = getArguments() != null ? getArguments().getString("templateName") : "";
+        Objects.requireNonNull(((AppCompatActivity) requireActivity()).getSupportActionBar()).setTitle(templateName + " Exercises");
+
         ExercisePickerViewModel viewModel = new ViewModelProvider(this).get(ExercisePickerViewModel.class);
         TemplateDetailViewModel detailViewModel = new ViewModelProvider(this).get(TemplateDetailViewModel.class);
 
@@ -50,7 +54,8 @@ public class ExercisePickerFragment extends Fragment {
         recyclerView.setAdapter(adapter);
 
         viewModel.getSearchResults().observe(getViewLifecycleOwner(), adapter::setExercises);
-        viewModel.search("");
+        viewModel.getAlreadyAddedIds().observe(getViewLifecycleOwner(), adapter::setAdded);
+        viewModel.search("", templateId);
 
         EditText editSearch = view.findViewById(R.id.editSearchExercises);
         editSearch.addTextChangedListener(new TextWatcher() {
@@ -59,16 +64,12 @@ public class ExercisePickerFragment extends Fragment {
 
             @Override
             public void onTextChanged(CharSequence s, int start, int before, int count) {
-                viewModel.search(s.toString());
+                viewModel.search(s.toString(), templateId);
             }
 
             @Override
             public void afterTextChanged(Editable s) {}
         });
-
-        templateId = getArguments() != null ? getArguments().getInt("templateId") : -1;
-        String templateName = getArguments() != null ? getArguments().getString("templateName") : "";
-        Objects.requireNonNull(((AppCompatActivity) requireActivity()).getSupportActionBar()).setTitle(templateName + " Exercises");
 
         requireActivity().addMenuProvider(new MenuProvider() {
             @Override

@@ -19,6 +19,7 @@ public class ExercisePickerViewModel extends AndroidViewModel {
     private final AppDatabase db;
     private final ExecutorService executor = Executors.newSingleThreadExecutor();
     private final MutableLiveData<List<Exercise>> searchResults = new MutableLiveData<>();
+    private final MutableLiveData<List<String>> alreadyAddedIds = new MutableLiveData<>();
 
     public ExercisePickerViewModel(@NonNull Application application) {
         super(application);
@@ -29,10 +30,16 @@ public class ExercisePickerViewModel extends AndroidViewModel {
         return searchResults;
     }
 
-    public void search(String query) {
+    public LiveData<List<String>> getAlreadyAddedIds() {
+        return alreadyAddedIds;
+    }
+
+    public void search(String query, int templateId) {
         executor.execute(() -> {
             List<Exercise> results = db.exerciseDao().searchRanked(query);
             searchResults.postValue(results);
+            List<String> added = db.templateExerciseDao().getExerciseIdsForTemplate(templateId);
+            alreadyAddedIds.postValue(added);
         });
     }
 }

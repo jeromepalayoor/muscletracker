@@ -1,5 +1,7 @@
 package net.jpalayoor.muscletracker.ui.workouts;
 
+import android.content.Context;
+import android.util.TypedValue;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -7,6 +9,7 @@ import android.widget.CheckBox;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
+import androidx.core.content.ContextCompat;
 import androidx.recyclerview.widget.RecyclerView;
 
 import net.jpalayoor.muscletracker.R;
@@ -20,10 +23,17 @@ import java.util.Set;
 public class ExercisePickerAdapter extends RecyclerView.Adapter<ExercisePickerAdapter.PickerViewHolder> {
 
     private List<Exercise> exercises = new ArrayList<>();
+    private List<String> added = new ArrayList<>();
+
     private final Set<String> selectedIds = new HashSet<>();
 
     public void setExercises(List<Exercise> newExercises) {
         this.exercises = newExercises;
+        notifyDataSetChanged();
+    }
+
+    public void setAdded(List<String> newAdded) {
+        this.added = newAdded;
         notifyDataSetChanged();
     }
 
@@ -47,15 +57,31 @@ public class ExercisePickerAdapter extends RecyclerView.Adapter<ExercisePickerAd
         holder.checkbox.setOnCheckedChangeListener(null);
         holder.checkbox.setChecked(selectedIds.contains(exercise.exerciseId));
 
+        holder.checkbox.setEnabled(!added.contains(exercise.exerciseId));
+        holder.checkbox.setChecked(added.contains(exercise.exerciseId));
+
         holder.checkbox.setOnCheckedChangeListener((buttonView, isChecked) -> {
             if (isChecked) {
                 selectedIds.add(exercise.exerciseId);
+                holder.textName.setTextColor(resolveThemeColor(holder.itemView.getContext(),
+                        android.R.attr.textColorPrimary));
             } else {
                 selectedIds.remove(exercise.exerciseId);
+                holder.textName.setTextColor(resolveThemeColor(holder.itemView.getContext(),
+                        android.R.attr.textColorSecondary));
             }
         });
 
         holder.itemView.setOnClickListener(v -> holder.checkbox.setChecked(!holder.checkbox.isChecked()));
+    }
+
+    private int resolveThemeColor(Context context, int attr) {
+        TypedValue typedValue = new TypedValue();
+        context.getTheme().resolveAttribute(attr, typedValue, true);
+        if (typedValue.resourceId != 0) {
+            return ContextCompat.getColor(context, typedValue.resourceId);
+        }
+        return typedValue.data;
     }
 
     @Override

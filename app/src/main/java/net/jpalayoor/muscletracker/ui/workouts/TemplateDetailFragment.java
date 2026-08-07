@@ -88,11 +88,7 @@ public class TemplateDetailFragment extends Fragment {
         if (templateId != -1) {
             viewModel.getExercisesForTemplate(templateId).observe(getViewLifecycleOwner(), exercises -> {
                 adapter.setItems(exercises);
-                if (exercises.isEmpty()) {
-                    view.findViewById(R.id.noExercisesText).setVisibility(View.VISIBLE);
-                } else {
-                    view.findViewById(R.id.noExercisesText).setVisibility(View.GONE);
-                }
+                view.findViewById(R.id.noExercisesText).setVisibility(exercises.isEmpty() ? View.VISIBLE : View.GONE);
             });
         }
 
