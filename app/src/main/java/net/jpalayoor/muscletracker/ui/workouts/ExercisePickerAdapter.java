@@ -55,7 +55,6 @@ public class ExercisePickerAdapter extends RecyclerView.Adapter<ExercisePickerAd
         holder.textName.setText(exercise.name);
 
         holder.checkbox.setOnCheckedChangeListener(null);
-        holder.checkbox.setChecked(selectedIds.contains(exercise.exerciseId));
 
         holder.checkbox.setEnabled(!added.contains(exercise.exerciseId));
         holder.checkbox.setChecked(added.contains(exercise.exerciseId));
@@ -72,7 +71,11 @@ public class ExercisePickerAdapter extends RecyclerView.Adapter<ExercisePickerAd
             }
         });
 
-        holder.itemView.setOnClickListener(v -> holder.checkbox.setChecked(!holder.checkbox.isChecked()));
+        holder.itemView.setOnClickListener(v -> {
+            if (!added.contains(exercise.exerciseId)) {
+                holder.checkbox.setChecked(!holder.checkbox.isChecked());
+            }
+        });
     }
 
     private int resolveThemeColor(Context context, int attr) {
