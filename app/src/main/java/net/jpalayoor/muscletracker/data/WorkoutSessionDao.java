@@ -43,4 +43,10 @@ public interface WorkoutSessionDao {
 
     @Query("SELECT * FROM workout_session WHERE endTime IS NOT NULL AND startTime >= :monthStart AND startTime < :monthEnd ORDER BY startTime ASC")
     List<WorkoutSession> getSessionsInRange(long monthStart, long monthEnd);
+
+    @Query("DELETE FROM workout_session")
+    void deleteAll();
+
+    @Query("SELECT * FROM workout_session")
+    List<WorkoutSession> getAll();
 }

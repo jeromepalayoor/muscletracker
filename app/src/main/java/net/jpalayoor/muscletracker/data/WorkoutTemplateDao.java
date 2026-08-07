@@ -37,4 +37,10 @@ public interface WorkoutTemplateDao {
             "GROUP BY workout_template.id " +
             "ORDER BY workout_template.name ASC")
     LiveData<List<WorkoutTemplateWithCount>> getAllTemplatesWithCount();
+
+    @Query("DELETE FROM workout_template")
+    void deleteAll();
+
+    @Query("SELECT * FROM workout_template")
+    List<WorkoutTemplate> getAll();
 }

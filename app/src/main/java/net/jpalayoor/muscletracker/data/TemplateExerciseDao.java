@@ -66,4 +66,10 @@ public interface TemplateExerciseDao {
             "GROUP BY template_exercise.id " +
             "ORDER BY template_exercise.exerciseOrder ASC")
     List<LiveSessionExercise> getExercisesWithSetCounts(int templateId, int sessionId);
+
+    @Query("DELETE FROM template_exercise")
+    void deleteAll();
+
+    @Query("SELECT * FROM template_exercise")
+    List<TemplateExercise> getAll();
 }

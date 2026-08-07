@@ -94,4 +94,10 @@ public interface SetLogDao {
             "WHERE exerciseId = :exerciseId " +
             "ORDER BY timestamp DESC LIMIT 10)")
     Float getRecentEstimatedOneRepMax(String exerciseId);
+
+    @Query("DELETE FROM set_log")
+    void deleteAll();
+
+    @Query("SELECT * FROM set_log")
+    List<SetLog> getAll();
 }

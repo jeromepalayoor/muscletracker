@@ -56,7 +56,7 @@
     <string name="preferences_text">Preferences</string>
     <string name="weight_units_text">Weight Units</string>
     <string name="set_sort_order_text">Set Sort Order</string>
-    <string name="rest_timer_text">Rest Timer</string>
+    <string name="rest_timer_text">Rest Timer (s)</string>
     <string name="data_text">Data</string>
     <string name="about_text">About</string>
     <string name="how_to_use_text">How to Use</string>
@@ -66,4 +66,8 @@
     <string name="lb_text">LB</string>
     <string name="name_text">Name</string>
     <string name="time_text">Time</string>
+    <string name="export_data_text">Export Data</string>
+    <string name="load_backup_text">Load Backup</string>
+    <string name="delete_logs_text">Delete Logs</string>
+    <string name="reset_data_text">Reset Data</string>
 </resources>
