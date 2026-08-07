@@ -49,4 +49,5 @@
     <string name="no_workout_templates_created_text">No Workout Templates Created</string>
     <string name="drag_handle_text">drag handle</string>
     <string name="no_exercises_added_yet_text">No exercises yet, tap + to add one</string>
+    <string name="no_sets_recorded_yet_text">No Sets Recorded Yet</string>
 </resources>

@@ -42,6 +42,7 @@ public class ExerciseDetailFragment extends Fragment {
     private boolean showingFirstImage = true;
     private ImageView imageView;
     private Exercise exercise;
+    private boolean isNoSets = false;
 
     private final Runnable toggleRunnable = new Runnable() {
         @Override
@@ -82,6 +83,7 @@ public class ExerciseDetailFragment extends Fragment {
         LinearLayout pastSetsSection = view.findViewById(R.id.pastSetsSection);
         LinearLayout pastSetsAccordion = view.findViewById(R.id.pastSetsAccordion);
         ImageView pastSetsArrow = view.findViewById(R.id.pastSetsArrow);
+        TextView noPastSetsText = view.findViewById(R.id.noPastSetsText);
         LinearLayout pastSetsContainer = view.findViewById(R.id.pastSetsContainer);
 
         viewModel.getPastSets().observe(getViewLifecycleOwner(), sets -> {
@@ -96,6 +98,10 @@ public class ExerciseDetailFragment extends Fragment {
                 ((TextView) row.findViewById(R.id.textDetailSetWeight)).setText(getString(R.string.weight_kg_format, log.weight));
                 ((TextView) row.findViewById(R.id.textDetailSetReps)).setText(getString(R.string.reps_format, log.reps));
                 pastSetsContainer.addView(row);
+            }
+
+            if (sets.isEmpty()) {
+                isNoSets = true;
             }
         });
 
@@ -154,8 +160,14 @@ public class ExerciseDetailFragment extends Fragment {
         });
 
         pastSetsContainer.setVisibility(View.GONE);
+        noPastSetsText.setVisibility(View.GONE);
         pastSetsAccordion.setOnClickListener(v -> {
             TransitionManager.beginDelayedTransition(pastSetsSection, new ChangeBounds());
+            if (isNoSets) {
+                noPastSetsText.setVisibility(noPastSetsText.getVisibility() == View.VISIBLE ? View.GONE : View.VISIBLE);
+            } else {
+                noPastSetsText.setVisibility(View.GONE);
+            }
             pastSetsContainer.setVisibility(pastSetsContainer.getVisibility() == View.VISIBLE ? View.GONE : View.VISIBLE);
             pastSetsArrow.animate().rotation(pastSetsArrow.getRotation() == 0 ? 180 : 0).setDuration(500).start();
         });
