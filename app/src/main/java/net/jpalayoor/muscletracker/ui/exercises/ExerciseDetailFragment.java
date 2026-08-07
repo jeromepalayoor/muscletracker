@@ -100,9 +100,7 @@ public class ExerciseDetailFragment extends Fragment {
                 pastSetsContainer.addView(row);
             }
 
-            if (sets.isEmpty()) {
-                isNoSets = true;
-            }
+            isNoSets = sets.isEmpty();
         });
 
         String exerciseId = getArguments() != null ? getArguments().getString("exerciseId") : null;
