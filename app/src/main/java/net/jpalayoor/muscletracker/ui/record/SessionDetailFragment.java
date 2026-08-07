@@ -1,5 +1,7 @@
 package net.jpalayoor.muscletracker.ui.record;
 
+import android.content.Context;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.Menu;
@@ -40,6 +42,9 @@ public class SessionDetailFragment extends Fragment {
         super.onViewCreated(view, savedInstanceState);
 
         SessionDetailViewModel viewModel = new ViewModelProvider(this).get(SessionDetailViewModel.class);
+        SharedPreferences prefs = requireContext().getSharedPreferences("settings", Context.MODE_PRIVATE);
+        String savedUnit = prefs.getString("weight_unit", "kg");
+        String savedOrder = prefs.getString("sort_order", "time");
 
         TextView textSessionDetailName = view.findViewById(R.id.textSessionDetailName);
         TextView textSessionDetailDate = view.findViewById(R.id.textSessionDetailDate);
@@ -51,7 +56,7 @@ public class SessionDetailFragment extends Fragment {
 
         int sessionId = getArguments() != null ? getArguments().getInt("sessionId") : -1;
 
-        viewModel.loadSession(sessionId);
+        viewModel.loadSession(sessionId, savedOrder);
         viewModel.getSession().observe(getViewLifecycleOwner(), ws -> {
             SimpleDateFormat sdf = new SimpleDateFormat("MMM d yyyy, hh:mm aa", Locale.getDefault());
             String date = "Date: " + sdf.format(new Date(ws.startTime));
@@ -73,8 +78,12 @@ public class SessionDetailFragment extends Fragment {
             int reps = viewModel.getTotalReps(logSets);
             float volume = viewModel.getTotalVolume(logSets);
             textSessionDetailReps.setText(String.valueOf(reps));
-            textSessionDetailVolume.setText(getString(R.string.weight_kg_format, volume));
             textSessionDetailSets.setText(String.valueOf(logSets.size()));
+            if (savedUnit.equals("kg")) {
+                textSessionDetailVolume.setText(getString(R.string.weight_kg_format, volume));
+            } else {
+                textSessionDetailVolume.setText(getString(R.string.weight_lb_format, volume * 2.2));
+            }
 
             setsContainer.removeAllViews();
             for (int i = 0; i < logSets.size(); i++) {
@@ -89,8 +98,12 @@ public class SessionDetailFragment extends Fragment {
 
                 textDetailSetExercise.setText(setLog.name);
                 textDetailSetNumber.setText(getString(R.string.set_number_format, setLog.setNumber + 1));
-                textDetailSetWeight.setText(getString(R.string.weight_kg_format, setLog.weight));
                 textDetailSetReps.setText(getString(R.string.reps_format, setLog.reps));
+                if (savedUnit.equals("kg")) {
+                    textDetailSetWeight.setText(getString(R.string.weight_kg_format, setLog.weight));
+                } else {
+                    textDetailSetWeight.setText(getString(R.string.weight_lb_format, setLog.weight * 2.2));
+                }
 
                 if (i > 0 && Objects.equals(logSets.get(i - 1).name, setLog.name)) {
                     textDetailSetExercise.setVisibility(View.GONE);

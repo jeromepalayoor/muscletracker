@@ -1,5 +1,7 @@
 package net.jpalayoor.muscletracker.ui.exercises;
 
+import android.content.Context;
+import android.content.SharedPreferences;
 import android.content.res.AssetManager;
 import android.graphics.BitmapFactory;
 import android.os.Bundle;
@@ -64,6 +66,8 @@ public class ExerciseDetailFragment extends Fragment {
         super.onViewCreated(view, savedInstanceState);
 
         ExerciseDetailViewModel viewModel = new ViewModelProvider(this).get(ExerciseDetailViewModel.class);
+        SharedPreferences prefs = requireContext().getSharedPreferences("settings", Context.MODE_PRIVATE);
+        String savedUnit = prefs.getString("weight_unit", "kg");
 
         imageView = view.findViewById(R.id.detailImage);
         TextView textName = view.findViewById(R.id.detailExerciseName);
@@ -95,8 +99,12 @@ public class ExerciseDetailFragment extends Fragment {
                 View row = LayoutInflater.from(requireContext()).inflate(R.layout.item_past_set, pastSetsContainer, false);
                 ((TextView) row.findViewById(R.id.textDetailSetDate)).setText(dateFormat.format(new Date(log.timestamp)));
                 ((TextView) row.findViewById(R.id.textDetailSetTime)).setText(timeFormat.format(new Date(log.timestamp)));
-                ((TextView) row.findViewById(R.id.textDetailSetWeight)).setText(getString(R.string.weight_kg_format, log.weight));
                 ((TextView) row.findViewById(R.id.textDetailSetReps)).setText(getString(R.string.reps_format, log.reps));
+                if (savedUnit.equals("kg")) {
+                    ((TextView) row.findViewById(R.id.textDetailSetWeight)).setText(getString(R.string.weight_kg_format, log.weight));
+                } else {
+                    ((TextView) row.findViewById(R.id.textDetailSetWeight)).setText(getString(R.string.weight_lb_format, log.weight * 2.2));
+                }
                 pastSetsContainer.addView(row);
             }
 
@@ -119,24 +127,39 @@ public class ExerciseDetailFragment extends Fragment {
         });
 
         viewModel.getMaxWeight().observe(getViewLifecycleOwner(), weight -> {
-            maxWeight.setText("Max Weight: -");
+            String formatted = "Max Weight: -";
             if (weight != null && weight > 0.0f) {
-                maxWeight.setText("Max Weight: " + String.format(Locale.US, "%.2f", weight) + "kg");
+                if (savedUnit.equals("kg")) {
+                    formatted = "Max Weight: " + String.format(Locale.US, "%.2f", weight) + "kg";
+                } else {
+                    formatted = "Max Weight: " + String.format(Locale.US, "%.2f", weight * 2.2) + "lb";
+                }
             }
+            maxWeight.setText(formatted);
         });
 
         viewModel.getMaxVolume().observe(getViewLifecycleOwner(), volume -> {
-            maxVolume.setText("Max Volume: -");
+            String formatted = "Max Volume: -";
             if (volume != null && volume > 0.0f) {
-                maxVolume.setText("Max Volume: " + String.format(Locale.US, "%.2f", volume) + "kg");
+                if (savedUnit.equals("kg")) {
+                    formatted = "Max Volume: " + String.format(Locale.US, "%.2f", volume) + "kg";
+                } else {
+                    formatted = "Max Volume: " + String.format(Locale.US, "%.2f", volume * 2.2) + "lb";
+                }
             }
+            maxVolume.setText(formatted);
         });
 
         viewModel.getOneRM().observe(getViewLifecycleOwner(), weight -> {
-            oneRM.setText("Estimated One Rep Max: -");
+            String formatted = "Estimated One Rep Max: -";
             if (weight != null && weight > 0.0f) {
-                oneRM.setText("Estimated One Rep Max: " + String.format(Locale.US, "%.2f", weight) + "kg");
+                if (savedUnit.equals("kg")) {
+                    formatted = "Estimated One Rep Max: " + String.format(Locale.US, "%.2f", weight) + "kg";
+                } else {
+                    formatted = "Estimated One Rep Max: " + String.format(Locale.US, "%.2f", weight * 2.2) + "lb";
+                }
             }
+            oneRM.setText(formatted);
         });
 
         maxWeight.setVisibility(View.GONE);

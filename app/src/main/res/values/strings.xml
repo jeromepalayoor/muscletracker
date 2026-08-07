@@ -11,6 +11,7 @@
     <string name="search_exercises_hint">Search Exercises</string>
     <string name="add_text">Add</string>
     <string name="weight_kg_text">Weight (kg)</string>
+    <string name="weight_lb_text">Weight (lb)</string>
     <string name="reps">Reps</string>
     <string name="log_set">Log set</string>
     <string name="this_session_text">This session</string>
@@ -18,9 +19,11 @@
     <string name="set_number_format">Set %1$d</string>
     <string name="reps_format">%1$d reps</string>
     <string name="weight_kg_format">%1$.2fkg</string>
+    <string name="weight_lb_format">%1$.2flb</string>
     <string name="skip">Skip</string>
     <string name="finish">Finish</string>
-    <string name="volume_format">Volume: %.2fkg</string>
+    <string name="volume_kg_format">Volume: %.2fkg</string>
+    <string name="volume_lb_format">Volume: %.2flb</string>
     <string name="total_sets_format">Total sets: %d</string>
     <string name="total_reps_format">Total reps: %d</string>
     <string name="since_last">since last</string>
@@ -50,4 +53,17 @@
     <string name="drag_handle_text">drag handle</string>
     <string name="no_exercises_added_yet_text">No exercises yet, tap + to add one</string>
     <string name="no_sets_recorded_yet_text">No Sets Recorded Yet</string>
+    <string name="preferences_text">Preferences</string>
+    <string name="weight_units_text">Weight Units</string>
+    <string name="set_sort_order_text">Set Sort Order</string>
+    <string name="rest_timer_text">Rest Timer</string>
+    <string name="data_text">Data</string>
+    <string name="about_text">About</string>
+    <string name="how_to_use_text">How to Use</string>
+    <string name="about_app_text">About App</string>
+    <string name="privacy_policy_text">Privacy Policy</string>
+    <string name="kg_text">KG</string>
+    <string name="lb_text">LB</string>
+    <string name="name_text">Name</string>
+    <string name="time_text">Time</string>
 </resources>

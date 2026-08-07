@@ -34,10 +34,14 @@ public class SessionDetailViewModel extends AndroidViewModel {
         return sets;
     }
 
-    public void loadSession(int sessionId) {
+    public void loadSession(int sessionId, String order) {
         executor.execute(() -> {
             session.postValue(db.workoutSessionDao().getById(sessionId));
-            sets.postValue(db.setLogDao().getSetLogWithNameByTime(sessionId));
+            if (order.equals("time")) {
+                sets.postValue(db.setLogDao().getSetLogWithNameByTime(sessionId));
+            } else {
+                sets.postValue(db.setLogDao().getSetLogWithNameByExercise(sessionId));
+            }
         });
     }
 

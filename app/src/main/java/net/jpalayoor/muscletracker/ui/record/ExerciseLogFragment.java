@@ -1,5 +1,7 @@
 package net.jpalayoor.muscletracker.ui.record;
 
+import android.content.Context;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Looper;
@@ -57,6 +59,9 @@ public class ExerciseLogFragment extends Fragment {
         super.onViewCreated(view, savedInstanceState);
 
         ExerciseLogViewModel viewModel = new ViewModelProvider(this).get(ExerciseLogViewModel.class);
+        SharedPreferences prefs = requireContext().getSharedPreferences("settings", Context.MODE_PRIVATE);
+        String savedUnit = prefs.getString("weight_unit", "kg");
+        int savedRest = prefs.getInt("rest_timer_seconds", 90);
 
         String exerciseId = getArguments() != null ? getArguments().getString("exerciseId") : null;
         int sessionId = getArguments() != null ? getArguments().getInt("sessionId") : -1;
@@ -76,9 +81,23 @@ public class ExerciseLogFragment extends Fragment {
 
         viewModel.loadExerciseData(exerciseId);
         viewModel.getExerciseName().observe(getViewLifecycleOwner(), textLogExerciseName::setText);
-        viewModel.getPreviousSetText().observe(getViewLifecycleOwner(), textLogPrevious::setText);
+        viewModel.getPreviousSet().observe(getViewLifecycleOwner(), prev -> {
+            String previous;
+            if (prev != null) {
+                if (savedUnit.equals("kg")) {
+                    previous = "Previous: " + getString(R.string.weight_kg_format, prev.weight) + " · " + prev.reps + " reps";
+                } else {
+                    previous = "Previous: " + getString(R.string.weight_lb_format, prev.weight * 2.2) + " · " + prev.reps + " reps";
+                }
+            } else {
+                previous = "Previous: -";
+            }
+            textLogPrevious.setText(previous);
+        });
 
         rowRestTimer.setVisibility(View.GONE);
+
+        editWeight.setHint(savedUnit.equals("kg") ? getString(R.string.weight_kg_text) : getString(R.string.weight_lb_text));
 
         viewModel.getLoggedSets(sessionId, exerciseId).observe(getViewLifecycleOwner(), sets -> {
             loggedSetsContainer.removeAllViews();
@@ -86,15 +105,30 @@ public class ExerciseLogFragment extends Fragment {
             for (SetLog log : sets) {
                 View row = LayoutInflater.from(requireContext()).inflate(R.layout.item_logged_set, loggedSetsContainer, false);
                 ((TextView) row.findViewById(R.id.textSetNumber)).setText(getString(R.string.set_number_format, log.setNumber + 1));
-                ((TextView) row.findViewById(R.id.textSetWeight)).setText(getString(R.string.weight_kg_format, log.weight));
+                if (savedUnit.equals("kg")) {
+                    ((TextView) row.findViewById(R.id.textSetWeight)).setText(getString(R.string.weight_kg_format, log.weight));
+                } else {
+                    ((TextView) row.findViewById(R.id.textSetWeight)).setText(getString(R.string.weight_lb_format, log.weight * 2.2));
+                }
                 ((TextView) row.findViewById(R.id.textSetReps)).setText(getString(R.string.reps_format, log.reps));
                 loggedSetsContainer.addView(row);
             }
         });
 
         viewModel.getSuggestedWeight().observe(getViewLifecycleOwner(), weight -> {
-            textSuggestedWeight.setText(weight != null ? "Suggested: " + weight + "kg" : "Suggested: -");
-            suggestedWeight = weight;
+            if (weight != null) {
+                double displayWeight = savedUnit.equals("kg") ? weight : weight * 2.2;
+                String formatted = savedUnit.equals("kg")
+                        ? getString(R.string.weight_kg_format, displayWeight)
+                        : getString(R.string.weight_lb_format, displayWeight);
+                String suggested = "Suggested: " + formatted;
+                textSuggestedWeight.setText(suggested);
+                suggestedWeight = displayWeight;
+            } else {
+                String suggested = "Suggested: -";
+                textSuggestedWeight.setText(suggested);
+                suggestedWeight = null;
+            }
         });
 
         textSuggestedWeight.setOnClickListener(v -> {
@@ -110,10 +144,11 @@ public class ExerciseLogFragment extends Fragment {
             float weight = Float.parseFloat(weightText);
             int reps = Integer.parseInt(repsText);
             if (weight <= 0.0 || reps <= 0) return;
+            weight = savedUnit.equals("kg") ? weight : (float) (weight / 2.2);
             viewModel.logSet(sessionId, exerciseId, weight, reps);
             editWeight.setText("");
             editReps.setText("");
-            secondsRemaining = 90;
+            secondsRemaining = savedRest;
             rowRestTimer.setVisibility(View.VISIBLE);
             timerHandler.removeCallbacks(timerRunnable);
             timerHandler.post(timerRunnable);
