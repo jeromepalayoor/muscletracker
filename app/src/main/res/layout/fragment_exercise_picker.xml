@@ -3,7 +3,8 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:layout_margin="14dp"
+    android:layout_marginHorizontal="14dp"
+    android:layout_marginTop="14dp"
     android:orientation="vertical">
 
     <EditText
@@ -13,7 +14,12 @@
         android:autofillHints="no"
         android:hint="@string/search_exercises_hint"
         android:inputType="text"
-        android:paddingHorizontal="20dp"/>
+        android:paddingHorizontal="20dp"
+        android:paddingVertical="16dp"
+        android:layout_marginBottom="10dp"
+        android:textSize="16sp"
+        android:textColor="?android:attr/textColorPrimary"
+        android:background="@drawable/card_rounded"/>
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerExercisePicker"
