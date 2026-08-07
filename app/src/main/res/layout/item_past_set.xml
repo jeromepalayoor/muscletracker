@@ -9,7 +9,8 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        android:padding="16dp">
+        android:layout_marginTop="12dp"
+        android:layout_marginBottom="6dp">
 
         <TextView
             android:id="@+id/textDetailSetDate"
@@ -17,7 +18,7 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:textSize="16sp"
-            android:textColor="?android:attr/textColorPrimary" />
+            android:textColor="?android:attr/textColorSecondary" />
 
         <TextView
             android:id="@+id/textDetailSetTime"
@@ -25,7 +26,7 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:textSize="16sp"
-            android:textColor="?android:attr/textColorPrimary"
+            android:textColor="?android:attr/textColorSecondary"
             android:gravity="end" />
     </LinearLayout>
 
@@ -33,7 +34,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        android:padding="16dp">
+        android:layout_marginBottom="6dp">
 
         <TextView
             android:id="@+id/textDetailSetWeight"
@@ -41,7 +42,7 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:textSize="16sp"
-            android:textColor="?android:attr/textColorPrimary" />
+            android:textColor="?android:attr/textColorSecondary" />
 
         <TextView
             android:id="@+id/textDetailSetReps"
@@ -49,7 +50,7 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:textSize="16sp"
-            android:textColor="?android:attr/textColorPrimary"
+            android:textColor="?android:attr/textColorSecondary"
             android:gravity="end" />
     </LinearLayout>
 </LinearLayout>

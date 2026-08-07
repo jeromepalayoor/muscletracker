@@ -3,9 +3,9 @@
     android:id="@+id/textExerciseName"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:padding="16dp"
     android:textSize="16sp"
     android:textColor="?android:attr/textColorPrimary"
-    android:clickable="true"
-    android:focusable="true"
-    android:background="?attr/selectableItemBackground" />
+    android:paddingVertical="12dp"
+    android:paddingHorizontal="20dp"
+    android:layout_marginVertical="5dp"
+    android:background="@drawable/card_rounded"/>

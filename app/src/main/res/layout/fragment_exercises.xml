@@ -1,23 +1,30 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout
-xmlns:android="http://schemas.android.com/apk/res/android"
-android:layout_width="match_parent"
-android:layout_height="match_parent"
-android:orientation="vertical">
-
-<EditText
+    xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:id="@+id/editSearchExercises"
-    android:autofillHints="no"
-    android:hint="@string/search_exercises_hint"
-    android:inputType="text"
-    android:paddingHorizontal="20dp"/>
+    android:layout_height="match_parent"
+    android:layout_marginHorizontal="14dp"
+    android:layout_marginTop="14dp"
+    android:orientation="vertical">
 
-<androidx.recyclerview.widget.RecyclerView
-    android:id="@+id/recyclerExercises"
-    android:layout_width="match_parent"
-    android:layout_height="0dp"
-    android:layout_weight="1"
-    android:clipToPadding="false"/>
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/editSearchExercises"
+        android:autofillHints="no"
+        android:hint="@string/search_exercises_hint"
+        android:inputType="text"
+        android:paddingHorizontal="20dp"
+        android:paddingVertical="16dp"
+        android:layout_marginBottom="10dp"
+        android:textSize="16sp"
+        android:textColor="?android:attr/textColorPrimary"
+        android:background="@drawable/card_rounded"/>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerExercises"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:clipToPadding="false"/>
 </LinearLayout>
