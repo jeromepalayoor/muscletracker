@@ -19,6 +19,7 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProvider;
+import androidx.navigation.Navigation;
 
 import com.google.android.material.button.MaterialButtonToggleGroup;
 import com.google.android.material.dialog.MaterialAlertDialogBuilder;
@@ -69,10 +70,16 @@ public class SettingsFragment extends Fragment {
         MaterialButtonToggleGroup unitsToggle = view.findViewById(R.id.unitsToggle);
         MaterialButtonToggleGroup sortToggle = view.findViewById(R.id.sortToggle);
         Spinner restTimerSpinner = view.findViewById(R.id.restTimerSpinner);
+
         TextView btnExportData = view.findViewById(R.id.btnExportData);
         TextView btnLoadBackup = view.findViewById(R.id.btnLoadBackup);
         TextView btnDeleteLogs = view.findViewById(R.id.btnDeleteLogs);
         TextView btnResetData = view.findViewById(R.id.btnResetData);
+
+        TextView btnHowToUse = view.findViewById(R.id.btnHowToUse);
+        TextView btnAboutApp = view.findViewById(R.id.btnAboutApp);
+        TextView btnPrivacyPolicy = view.findViewById(R.id.btnPrivacyPolicy);
+
 
         String savedUnit = prefs.getString("weight_unit", "kg");
         unitsToggle.check(savedUnit.equals("lb") ? R.id.btnLb : R.id.btnKg);
@@ -142,6 +149,10 @@ public class SettingsFragment extends Fragment {
                 .setPositiveButton("Reset Everything", (dialog, which) -> viewModel.resetEverything())
                 .setNegativeButton("Cancel", null)
                 .show());
+
+        btnAboutApp.setOnClickListener(v -> Navigation.findNavController(view).navigate(R.id.action_settings_to_about));
+        btnPrivacyPolicy.setOnClickListener(v -> Navigation.findNavController(view).navigate(R.id.action_settings_to_privacy));
+        btnHowToUse.setOnClickListener(v -> Navigation.findNavController(view).navigate(R.id.action_settings_to_use));
     }
 
     private void writeCsvToUri(Uri uri, String csv) {

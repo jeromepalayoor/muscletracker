@@ -70,4 +70,10 @@
     <string name="load_backup_text">Load Backup</string>
     <string name="delete_logs_text">Delete Logs</string>
     <string name="reset_data_text">Reset Data</string>
+    <string name="app_logo_desc">Muscle Tracker app icon</string>
+    <string name="version_text">Version 1.0</string>
+    <string name="about_body_text">Muscle Tracker is a minimalistic workout tracker built for lifting. Create custom workouts, log sets as you train, and see your progress over time. With features including rest timers, weight suggestions, PR tracking, and one rep maximum estimates.\n\nEverything stays on your device. No accounts, no ads — just a straightforward way to record what you lift.\n\nBuilt by jpalayoor.</string>
+    <string name="feedback_prompt_text">Questions or feedback? Feedback here:</string>
+    <string name="email_text">muscletracker@jpalayoor.com</string>
+    <string name="privacy_body_text">Muscle Tracker does not collect, transmit, retain or share any of your data.\n\nEverything you enter — templates, workout sessions, sets, weights, reps — is stored only in a local database on this device. Nothing is sent to a server, because this app doesn\'t have one.\n\nThere are no accounts, no analytics, no ads, and no third-party tracking of any kind.\n\nThe only way your data ever leaves this device is if you choose to use the Export feature in Settings, which lets you save a backup file yourself. That file goes wherever you choose to save it — it is never sent anywhere automatically.\n\nUninstalling the app permanently deletes everything, since nothing exists outside of it.</string>
 </resources>

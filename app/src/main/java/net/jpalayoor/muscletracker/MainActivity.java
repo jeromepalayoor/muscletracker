@@ -126,9 +126,12 @@ public class MainActivity extends AppCompatActivity {
             else if (destination.getId() == R.id.navigation_start_workout || destination.getId() == R.id.navigation_live_session
                     || destination.getId() == R.id.navigation_exercise_log || destination.getId() == R.id.navigation_session_detail) {
                 binding.navView.getMenu().findItem(R.id.navigation_record).setChecked(true);
+            } else if (destination.getId() == R.id.navigation_about_detail || destination.getId() == R.id.navigation_privacy_detail
+                    || destination.getId() == R.id.navigation_use_detail) {
+                binding.navView.getMenu().findItem(R.id.navigation_settings).setChecked(true);
             }
 
-            if (destination.getId() == R.id.navigation_live_session || destination.getId() == R.id.navigation_exercise_log) {
+            if (destination.getId() == R.id.navigation_live_session || destination.getId() == R.id.navigation_exercise_log || destination.getId() == R.id.navigation_about_detail || destination.getId() == R.id.navigation_privacy_detail || destination.getId() == R.id.navigation_use_detail) {
                 binding.navView.setVisibility(View.GONE);
             }
             else {

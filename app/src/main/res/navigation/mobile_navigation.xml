@@ -61,7 +61,20 @@
         android:id="@+id/navigation_settings"
         android:name="net.jpalayoor.muscletracker.ui.settings.SettingsFragment"
         android:label="@string/title_settings"
-        tools:layout="@layout/fragment_settings" />
+        tools:layout="@layout/fragment_settings">
+
+        <action
+            android:id="@+id/action_settings_to_about"
+            app:destination="@id/navigation_about_detail" />
+
+        <action
+            android:id="@+id/action_settings_to_privacy"
+            app:destination="@id/navigation_privacy_detail" />
+
+        <action
+            android:id="@+id/action_settings_to_use"
+            app:destination="@id/navigation_use_detail" />
+    </fragment>
 
     <fragment
         android:id="@+id/navigation_exercise_detail"
@@ -123,4 +136,22 @@
         android:name="net.jpalayoor.muscletracker.ui.record.ExerciseLogFragment"
         android:label="Exercise Log"
         tools:layout="@layout/fragment_live_exercise_log" />
+
+    <fragment
+        android:id="@+id/navigation_about_detail"
+        android:name="net.jpalayoor.muscletracker.ui.settings.AboutFragment"
+        android:label="About App"
+        tools:layout="@layout/fragment_about" />
+
+    <fragment
+        android:id="@+id/navigation_privacy_detail"
+        android:name="net.jpalayoor.muscletracker.ui.settings.PrivacyFragment"
+        android:label="Privacy Policy"
+        tools:layout="@layout/fragment_privacy" />
+
+    <fragment
+        android:id="@+id/navigation_use_detail"
+        android:name="net.jpalayoor.muscletracker.ui.settings.UseFragment"
+        android:label="How to Use"
+        tools:layout="@layout/fragment_use" />
 </navigation>
