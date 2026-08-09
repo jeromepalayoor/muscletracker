@@ -166,9 +166,11 @@ public class HomeViewModel extends AndroidViewModel {
         return calendarDays;
     }
 
-    public void startSuggestedWorkout() {
+    public boolean startSuggestedWorkout() {
+        if (suggestedTemplate == null) {
+            return false;
+        }
         executor.execute(() -> {
-            if (suggestedTemplate == null) return;
             WorkoutSession session = new WorkoutSession();
             session.templateId = suggestedTemplate.id;
             session.templateName = suggestedTemplate.name;
@@ -176,6 +178,7 @@ public class HomeViewModel extends AndroidViewModel {
             long id = db.workoutSessionDao().insert(session);
             newSessionId.postValue(id);
         });
+        return true;
     }
 
     public void loadStats() {

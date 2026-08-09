@@ -10,6 +10,7 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -61,7 +62,11 @@ public class HomeFragment extends Fragment {
         viewModel.getSessionsThisMonth().observe(getViewLifecycleOwner(),
                 count -> thisMonth.setText(String.valueOf(count)));
         viewModel.getSuggested().observe(getViewLifecycleOwner(), suggested::setText);
-        btnStartWorkout.setOnClickListener(v -> viewModel.startSuggestedWorkout());
+        btnStartWorkout.setOnClickListener(v -> {
+            if (!viewModel.startSuggestedWorkout()) {
+                Toast.makeText(requireContext(), "Create workout template to start", Toast.LENGTH_SHORT).show();
+            }
+        });
         viewModel.getNewSessionId().observe(getViewLifecycleOwner(), sessionId -> {
             if (sessionId != null) {
                 Bundle args = new Bundle();

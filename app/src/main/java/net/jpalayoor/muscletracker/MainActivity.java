@@ -1,6 +1,7 @@
 package net.jpalayoor.muscletracker;
 
 import android.content.Context;
+import android.content.SharedPreferences;
 import android.content.res.Configuration;
 import android.os.Bundle;
 import android.util.Log;
@@ -85,6 +86,7 @@ public class MainActivity extends AppCompatActivity {
         binding.navView.setOnItemSelectedListener(item -> {
             NavOptions options = new NavOptions.Builder()
                     .setPopUpTo(navController.getGraph().getStartDestinationId(), false)
+                    .setLaunchSingleTop(true)
                     .build();
             navController.navigate(item.getItemId(), null, options);
             return true;
@@ -100,6 +102,12 @@ public class MainActivity extends AppCompatActivity {
                 });
             }
         }).start();
+
+        SharedPreferences prefs = getSharedPreferences("settings", MODE_PRIVATE);
+        if (!prefs.getBoolean("has_seen_how_to_use", false)) {
+            navController.navigate(R.id.navigation_use_detail);
+            prefs.edit().putBoolean("has_seen_how_to_use", true).apply();
+        }
 
         binding.navView.setOnItemReselectedListener(item -> {
             if (item.getItemId() == R.id.navigation_exercises) {
