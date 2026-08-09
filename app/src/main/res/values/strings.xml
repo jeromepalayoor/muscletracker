@@ -76,4 +76,16 @@
     <string name="feedback_prompt_text">Questions or feedback? Feedback here:</string>
     <string name="email_text">muscletracker@jpalayoor.com</string>
     <string name="privacy_body_text">Muscle Tracker does not collect, transmit, retain or share any of your data.\n\nEverything you enter — templates, workout sessions, sets, weights, reps — is stored only in a local database on this device. Nothing is sent to a server, because this app doesn\'t have one.\n\nThere are no accounts, no analytics, no ads, and no third-party tracking of any kind.\n\nThe only way your data ever leaves this device is if you choose to use the Export feature in Settings, which lets you save a backup file yourself. That file goes wherever you choose to save it — it is never sent anywhere automatically.\n\nUninstalling the app permanently deletes everything, since nothing exists outside of it.</string>
+    <string name="step1_title">1. Create a template</string>
+    <string name="step1_body">Go to Workouts and tap + to name a new template, like "Push."</string>
+    <string name="step2_title">2. Add exercises</string>
+    <string name="step2_body">Tap into your template, then tap + to search and select the exercises you want in it.</string>
+    <string name="step3_title">3. Start a workout</string>
+    <string name="step3_body">From Home or Record, tap Start Workout and pick a template to begin a session.</string>
+    <string name="step4_title">4. Log your sets</string>
+    <string name="step4_body">Tap an exercise, enter your weight and reps, and tap Log Set. Your previous performance and a suggested weight show up automatically, and a rest timer starts after each set.</string>
+    <string name="step5_title">5. Finish and move on</string>
+    <string name="step5_body">Tap Finish Exercise to return to the list, and repeat for each exercise. When you\'re done, tap the checkmark in the header to end the workout.</string>
+    <string name="step6_title">6. Review your history</string>
+    <string name="step6_body">Your stats, personal records, and full workout history are always available on Home and Record.</string>
 </resources>
