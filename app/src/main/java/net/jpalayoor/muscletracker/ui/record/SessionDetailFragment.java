@@ -60,14 +60,18 @@ public class SessionDetailFragment extends Fragment {
         viewModel.getSession().observe(getViewLifecycleOwner(), ws -> {
             SimpleDateFormat sdf = new SimpleDateFormat("MMM d yyyy, hh:mm aa", Locale.getDefault());
             String date = "Date: " + sdf.format(new Date(ws.startTime));
-            long minutes = ((ws.endTime - ws.startTime) / 1000) / 60;
             String duration = "Duration: ";
-            if (minutes >= 60) {
-                duration += minutes / 60;
-                duration += "h ";
-                minutes %= 60;
+            if (ws.endTime != null) {
+                long minutes = ((ws.endTime - ws.startTime) / 1000) / 60;
+                if (minutes >= 60) {
+                    duration += minutes / 60;
+                    duration += "h ";
+                    minutes %= 60;
+                }
+                duration += minutes + "min";
+            } else {
+                duration += "-";
             }
-            duration += minutes + "min";
             String name = ws.templateName + " Session";
             textSessionDetailName.setText(name);
             textSessionDetailDate.setText(date);

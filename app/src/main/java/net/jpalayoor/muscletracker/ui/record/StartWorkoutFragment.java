@@ -4,6 +4,7 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -44,6 +45,17 @@ public class StartWorkoutFragment extends Fragment {
         recyclerView.setLayoutManager(new LinearLayoutManager(requireContext()));
         recyclerView.setAdapter(adapter);
 
-        viewModel.getAllTemplates().observe(getViewLifecycleOwner(), adapter::setTemplates);
+        TextView noTemplates = view.findViewById(R.id.noTemplates);
+
+        viewModel.getAllTemplates().observe(getViewLifecycleOwner(), templates -> {
+            adapter.setTemplates(templates);
+            if (templates.isEmpty()) {
+                noTemplates.setVisibility(View.VISIBLE);
+                recyclerView.setVisibility(View.GONE);
+            } else {
+                noTemplates.setVisibility(View.GONE);
+                recyclerView.setVisibility(View.VISIBLE);
+            }
+        });
     }
 }

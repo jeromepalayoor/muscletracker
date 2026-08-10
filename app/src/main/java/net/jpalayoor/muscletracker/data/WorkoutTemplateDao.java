@@ -24,6 +24,7 @@ public interface WorkoutTemplateDao {
 
     @Query("SELECT workout_template.* FROM workout_template " +
             "LEFT JOIN workout_session ON workout_template.id = workout_session.templateId " +
+            "WHERE workout_session.endTime != NULL " +
             "GROUP BY workout_template.id " +
             "ORDER BY MAX(workout_session.startTime) ASC " +
             "LIMIT 1")

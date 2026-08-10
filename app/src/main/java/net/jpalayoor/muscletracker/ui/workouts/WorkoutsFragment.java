@@ -53,7 +53,7 @@ public class WorkoutsFragment extends Fragment {
                             .setTitle("New template")
                             .setView(input)
                             .setPositiveButton("Create", (dialog, which) -> {
-                                String name = editText.getText().toString();
+                                String name = editText.getText().toString().strip();
                                 if (!name.isEmpty()) {
                                     viewModel.createTemplate(name);
                                 }

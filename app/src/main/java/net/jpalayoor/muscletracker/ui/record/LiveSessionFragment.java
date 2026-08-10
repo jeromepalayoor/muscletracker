@@ -27,7 +27,6 @@ import com.google.android.material.dialog.MaterialAlertDialogBuilder;
 import net.jpalayoor.muscletracker.R;
 
 import java.util.Objects;
-import java.util.concurrent.atomic.AtomicInteger;
 
 public class LiveSessionFragment extends Fragment {
     private int sessionId;

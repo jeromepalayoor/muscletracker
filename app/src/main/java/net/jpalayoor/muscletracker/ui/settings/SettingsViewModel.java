@@ -6,6 +6,7 @@ import androidx.annotation.NonNull;
 import androidx.lifecycle.AndroidViewModel;
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
+import androidx.room.Transaction;
 
 import net.jpalayoor.muscletracker.data.AppDatabase;
 import net.jpalayoor.muscletracker.data.SetLog;
@@ -135,6 +136,7 @@ public class SettingsViewModel extends AndroidViewModel {
         return fields;
     }
 
+    @Transaction
     public void importCsv(String content) {
         executor.execute(() -> {
             try {

@@ -22,10 +22,6 @@
     <string name="weight_lb_format">%1$.2flb</string>
     <string name="skip">Skip</string>
     <string name="finish">Finish</string>
-    <string name="volume_kg_format">Volume: %.2fkg</string>
-    <string name="volume_lb_format">Volume: %.2flb</string>
-    <string name="total_sets_format">Total sets: %d</string>
-    <string name="total_reps_format">Total reps: %d</string>
     <string name="since_last">since last</string>
     <string name="this_week">this week</string>
     <string name="this_month">this month</string>
@@ -88,4 +84,5 @@
     <string name="step5_body">Tap Finish Exercise to return to the list, and repeat for each exercise. When you\'re done, tap the checkmark in the header to end the workout.</string>
     <string name="step6_title">6. Review your history</string>
     <string name="step6_body">Your stats, personal records, and full workout history are always available on Home and Record.</string>
+    <string name="no_templates_created_yet_text">No templates created yet</string>
 </resources>

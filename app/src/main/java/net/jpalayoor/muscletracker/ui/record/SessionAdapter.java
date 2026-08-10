@@ -47,14 +47,16 @@ public class SessionAdapter extends RecyclerView.Adapter<SessionAdapter.SessionV
         WorkoutSession session = sessions.get(position);
         SimpleDateFormat sdf = new SimpleDateFormat("MMM d, yyyy", Locale.getDefault());
         String formattedDate = sdf.format(new Date(session.startTime));
-        long minutes = ((session.endTime - session.startTime) / 1000) / 60;
-        formattedDate += " · ";
-        if (minutes >= 60) {
-            formattedDate += minutes / 60;
-            formattedDate += "h ";
-            minutes %= 60;
+        if (session.endTime != null) {
+            long minutes = ((session.endTime - session.startTime) / 1000) / 60;
+            formattedDate += " · ";
+            if (minutes >= 60) {
+                formattedDate += minutes / 60;
+                formattedDate += "h ";
+                minutes %= 60;
+            }
+            formattedDate += minutes + "min";
         }
-        formattedDate += minutes + "min";
         holder.date.setText(formattedDate);
         holder.name.setText(session.templateName);
         holder.itemView.setOnClickListener(v -> listener.onSessionClick(session));
