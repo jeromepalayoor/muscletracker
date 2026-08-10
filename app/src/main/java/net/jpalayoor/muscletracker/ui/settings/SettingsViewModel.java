@@ -6,7 +6,6 @@ import androidx.annotation.NonNull;
 import androidx.lifecycle.AndroidViewModel;
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
-import androidx.room.Transaction;
 
 import net.jpalayoor.muscletracker.data.AppDatabase;
 import net.jpalayoor.muscletracker.data.SetLog;
@@ -136,82 +135,82 @@ public class SettingsViewModel extends AndroidViewModel {
         return fields;
     }
 
-    @Transaction
     public void importCsv(String content) {
         executor.execute(() -> {
             try {
-                Map<Integer, Integer> templateIdMap = new HashMap<>();
-                Map<Integer, Integer> sessionIdMap = new HashMap<>();
+                db.runInTransaction(() -> {
+                    Map<Integer, Integer> templateIdMap = new HashMap<>();
+                    Map<Integer, Integer> sessionIdMap = new HashMap<>();
 
-                String currentSection = null;
-                boolean expectHeader = false;
+                    String currentSection = null;
+                    boolean expectHeader = false;
 
-                for (String rawLine : content.split("\n")) {
-                    String line = rawLine.replace("\r", "");
-                    if (line.isEmpty()) continue;
+                    for (String rawLine : content.split("\n")) {
+                        String line = rawLine.replace("\r", "");
+                        if (line.isEmpty()) continue;
 
-                    if (line.startsWith("#")) {
-                        currentSection = line.substring(1).trim();
-                        expectHeader = true;
-                        continue;
+                        if (line.startsWith("#")) {
+                            currentSection = line.substring(1).trim();
+                            expectHeader = true;
+                            continue;
+                        }
+                        if (expectHeader) {
+                            expectHeader = false;
+                            continue;
+                        }
+                        if (currentSection == null) continue;
+
+                        List<String> fields = parseCsvLine(line);
+
+                        switch (currentSection) {
+                            case "TEMPLATES": {
+                                int oldId = Integer.parseInt(fields.get(0));
+                                WorkoutTemplate t = new WorkoutTemplate();
+                                t.name = fields.get(1);
+                                long newId = db.workoutTemplateDao().insert(t);
+                                templateIdMap.put(oldId, (int) newId);
+                                break;
+                            }
+                            case "TEMPLATE_EXERCISES": {
+                                Integer newTemplateId = templateIdMap.get(Integer.parseInt(fields.get(1)));
+                                if (newTemplateId == null) continue;
+                                TemplateExercise te = new TemplateExercise();
+                                te.templateId = newTemplateId;
+                                te.exerciseId = fields.get(2);
+                                te.exerciseOrder = Integer.parseInt(fields.get(3));
+                                db.templateExerciseDao().insert(te);
+                                break;
+                            }
+                            case "SESSIONS": {
+                                int oldId = Integer.parseInt(fields.get(0));
+                                Integer newTemplateId = templateIdMap.get(Integer.parseInt(fields.get(1)));
+                                WorkoutSession s = new WorkoutSession();
+                                s.templateId = newTemplateId != null ? newTemplateId : 0;
+                                s.templateName = fields.get(2);
+                                s.startTime = Long.parseLong(fields.get(3));
+                                String endTimeStr = fields.get(4);
+                                s.endTime = (endTimeStr.isEmpty() || endTimeStr.equals("null"))
+                                        ? null : Long.parseLong(endTimeStr);
+                                long newId = db.workoutSessionDao().insert(s);
+                                sessionIdMap.put(oldId, (int) newId);
+                                break;
+                            }
+                            case "LOGS": {
+                                Integer newSessionId = sessionIdMap.get(Integer.parseInt(fields.get(1)));
+                                if (newSessionId == null) continue;
+                                SetLog log = new SetLog();
+                                log.sessionId = newSessionId;
+                                log.exerciseId = fields.get(2);
+                                log.weight = Float.parseFloat(fields.get(3));
+                                log.reps = Integer.parseInt(fields.get(4));
+                                log.setNumber = Integer.parseInt(fields.get(5));
+                                log.timestamp = Long.parseLong(fields.get(6));
+                                db.setLogDao().insert(log);
+                                break;
+                            }
+                        }
                     }
-                    if (expectHeader) {
-                        expectHeader = false;
-                        continue;
-                    }
-                    if (currentSection == null) continue;
-
-                    List<String> fields = parseCsvLine(line);
-
-                    switch (currentSection) {
-                        case "TEMPLATES": {
-                            int oldId = Integer.parseInt(fields.get(0));
-                            WorkoutTemplate t = new WorkoutTemplate();
-                            t.name = fields.get(1);
-                            long newId = db.workoutTemplateDao().insert(t);
-                            templateIdMap.put(oldId, (int) newId);
-                            break;
-                        }
-                        case "TEMPLATE_EXERCISES": {
-                            Integer newTemplateId = templateIdMap.get(Integer.parseInt(fields.get(1)));
-                            if (newTemplateId == null) continue;
-                            TemplateExercise te = new TemplateExercise();
-                            te.templateId = newTemplateId;
-                            te.exerciseId = fields.get(2);
-                            te.exerciseOrder = Integer.parseInt(fields.get(3));
-                            db.templateExerciseDao().insert(te);
-                            break;
-                        }
-                        case "SESSIONS": {
-                            int oldId = Integer.parseInt(fields.get(0));
-                            Integer newTemplateId = templateIdMap.get(Integer.parseInt(fields.get(1)));
-                            WorkoutSession s = new WorkoutSession();
-                            s.templateId = newTemplateId != null ? newTemplateId : 0;
-                            s.templateName = fields.get(2);
-                            s.startTime = Long.parseLong(fields.get(3));
-                            String endTimeStr = fields.get(4);
-                            s.endTime = (endTimeStr.isEmpty() || endTimeStr.equals("null"))
-                                    ? null : Long.parseLong(endTimeStr);
-                            long newId = db.workoutSessionDao().insert(s);
-                            sessionIdMap.put(oldId, (int) newId);
-                            break;
-                        }
-                        case "LOGS": {
-                            Integer newSessionId = sessionIdMap.get(Integer.parseInt(fields.get(1)));
-                            if (newSessionId == null) continue;
-                            SetLog log = new SetLog();
-                            log.sessionId = newSessionId;
-                            log.exerciseId = fields.get(2);
-                            log.weight = Float.parseFloat(fields.get(3));
-                            log.reps = Integer.parseInt(fields.get(4));
-                            log.setNumber = Integer.parseInt(fields.get(5));
-                            log.timestamp = Long.parseLong(fields.get(6));
-                            db.setLogDao().insert(log);
-                            break;
-                        }
-                    }
-                }
-
+                });
                 importResult.postValue("Backup loaded successfully");
             } catch (Exception e) {
                 importResult.postValue("Failed to load backup — file format not recognized");
