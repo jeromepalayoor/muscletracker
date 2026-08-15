@@ -45,6 +45,7 @@ public class ExerciseDetailFragment extends Fragment {
     private ImageView imageView;
     private Exercise exercise;
     private boolean isNoSets = false;
+    private String currentTrackingType = "weight";
 
     private final Runnable toggleRunnable = new Runnable() {
         @Override
@@ -61,6 +62,15 @@ public class ExerciseDetailFragment extends Fragment {
         }
     };
 
+    private String formatDuration(int totalSeconds) {
+        int hours = totalSeconds / 3600;
+        int minutes = (totalSeconds % 3600) / 60;
+        int seconds = totalSeconds % 60;
+        if (hours > 0) return hours + "h " + minutes + "m";
+        if (minutes > 0) return minutes + "m " + seconds + "s";
+        return seconds + "s";
+    }
+
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
@@ -75,9 +85,12 @@ public class ExerciseDetailFragment extends Fragment {
         LinearLayout statsSection = view.findViewById(R.id.statsSection);
         LinearLayout statsAccordion = view.findViewById(R.id.StatsAccordion);
         ImageView statsArrow = view.findViewById(R.id.detailStatsArrow);
+        LinearLayout statsWeightGroup = view.findViewById(R.id.statsWeightGroup);
         TextView maxWeight = view.findViewById(R.id.detailMaxWeight);
         TextView maxVolume = view.findViewById(R.id.detailMaxVolume);
         TextView oneRM = view.findViewById(R.id.detailOneRM);
+        TextView maxReps = view.findViewById(R.id.detailMaxReps);
+        TextView maxDuration = view.findViewById(R.id.detailMaxDuration);
 
         LinearLayout instructionsSection = view.findViewById(R.id.instructionsSection);
         LinearLayout instructionsAccordion = view.findViewById(R.id.instructionsAccordion);
@@ -99,12 +112,27 @@ public class ExerciseDetailFragment extends Fragment {
                 View row = LayoutInflater.from(requireContext()).inflate(R.layout.item_past_set, pastSetsContainer, false);
                 ((TextView) row.findViewById(R.id.textDetailSetDate)).setText(dateFormat.format(new Date(log.timestamp)));
                 ((TextView) row.findViewById(R.id.textDetailSetTime)).setText(timeFormat.format(new Date(log.timestamp)));
-                ((TextView) row.findViewById(R.id.textDetailSetReps)).setText(getString(R.string.reps_format, log.reps));
-                if (savedUnit.equals("kg")) {
-                    ((TextView) row.findViewById(R.id.textDetailSetWeight)).setText(getString(R.string.weight_kg_format, log.weight));
+
+                TextView textDetailSetWeight = row.findViewById(R.id.textDetailSetWeight);
+                TextView textDetailSetReps = row.findViewById(R.id.textDetailSetReps);
+
+                if ("reps".equals(currentTrackingType)) {
+                    textDetailSetWeight.setVisibility(View.GONE);
+                    textDetailSetReps.setText(getString(R.string.reps_format, log.reps));
+                } else if ("time".equals(currentTrackingType)) {
+                    textDetailSetWeight.setVisibility(View.GONE);
+                    int dur = log.durationSeconds != null ? log.durationSeconds : 0;
+                    textDetailSetReps.setText(formatDuration(dur));
                 } else {
-                    ((TextView) row.findViewById(R.id.textDetailSetWeight)).setText(getString(R.string.weight_lb_format, log.weight * 2.2));
+                    textDetailSetWeight.setVisibility(View.VISIBLE);
+                    if (savedUnit.equals("kg")) {
+                        textDetailSetWeight.setText(getString(R.string.weight_kg_format, log.weight));
+                    } else {
+                        textDetailSetWeight.setText(getString(R.string.weight_lb_format, log.weight * 2.2));
+                    }
+                    textDetailSetReps.setText(getString(R.string.reps_format, log.reps));
                 }
+
                 pastSetsContainer.addView(row);
             }
 
@@ -119,6 +147,7 @@ public class ExerciseDetailFragment extends Fragment {
         viewModel.getExercise().observe(getViewLifecycleOwner(), exercise -> {
             if (exercise == null) return;
             this.exercise = exercise;
+            currentTrackingType = exercise.trackingType != null ? exercise.trackingType : "weight";
             textName.setText(exercise.name);
             instructions.setText(exercise.instructions.replace("|", "\n\n"));
             loadImageFromAssets(imageView, exercise.image1);
@@ -162,14 +191,24 @@ public class ExerciseDetailFragment extends Fragment {
             oneRM.setText(formatted);
         });
 
-        maxWeight.setVisibility(View.GONE);
-        maxVolume.setVisibility(View.GONE);
-        oneRM.setVisibility(View.GONE);
+        viewModel.getMaxReps().observe(getViewLifecycleOwner(), reps ->
+                maxReps.setText(reps != null ? "Max Reps: " + reps : "Max Reps: -"));
+
+        viewModel.getMaxDuration().observe(getViewLifecycleOwner(), duration ->
+                maxDuration.setText(duration != null ? "Longest Hold: " + formatDuration(duration) : "Longest Hold: -"));
+
+        statsWeightGroup.setVisibility(View.GONE);
+        maxReps.setVisibility(View.GONE);
+        maxDuration.setVisibility(View.GONE);
         statsAccordion.setOnClickListener(v -> {
             TransitionManager.beginDelayedTransition(statsSection, new ChangeBounds());
-            maxWeight.setVisibility(maxWeight.getVisibility() == View.VISIBLE ? View.GONE : View.VISIBLE);
-            maxVolume.setVisibility(maxVolume.getVisibility() == View.VISIBLE ? View.GONE : View.VISIBLE);
-            oneRM.setVisibility(oneRM.getVisibility() == View.VISIBLE ? View.GONE : View.VISIBLE);
+            if ("reps".equals(currentTrackingType)) {
+                maxReps.setVisibility(maxReps.getVisibility() == View.VISIBLE ? View.GONE : View.VISIBLE);
+            } else if ("time".equals(currentTrackingType)) {
+                maxDuration.setVisibility(maxDuration.getVisibility() == View.VISIBLE ? View.GONE : View.VISIBLE);
+            } else {
+                statsWeightGroup.setVisibility(statsWeightGroup.getVisibility() == View.VISIBLE ? View.GONE : View.VISIBLE);
+            }
             statsArrow.animate().rotation(statsArrow.getRotation() == 0 ? 180 : 0).setDuration(500).start();
         });
 

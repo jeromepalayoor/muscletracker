@@ -23,6 +23,8 @@ public class ExerciseDetailViewModel extends AndroidViewModel {
     private final MutableLiveData<Float> maxWeight = new MutableLiveData<>();
     private final MutableLiveData<Float> maxVolume = new MutableLiveData<>();
     private final MutableLiveData<Float> oneRM = new MutableLiveData<>();
+    private final MutableLiveData<Integer> maxReps = new MutableLiveData<>();
+    private final MutableLiveData<Integer> maxDuration = new MutableLiveData<>();
     private final MutableLiveData<List<SetLog>> pastSets = new MutableLiveData<>();
 
     public ExerciseDetailViewModel(@NonNull Application application) {
@@ -40,6 +42,8 @@ public class ExerciseDetailViewModel extends AndroidViewModel {
             maxWeight.postValue(db.setLogDao().getMaxWeight(exerciseId));
             maxVolume.postValue(db.setLogDao().getMaxVolume(exerciseId));
             oneRM.postValue(db.setLogDao().getBestEstimatedOneRepMax(exerciseId));
+            maxReps.postValue(db.setLogDao().getMaxReps(exerciseId));
+            maxDuration.postValue(db.setLogDao().getMaxDuration(exerciseId));
             pastSets.postValue(db.setLogDao().getAllForExercise(exerciseId));
         });
     }
@@ -54,6 +58,14 @@ public class ExerciseDetailViewModel extends AndroidViewModel {
 
     public LiveData<Float> getOneRM() {
         return oneRM;
+    }
+
+    public LiveData<Integer> getMaxReps() {
+        return maxReps;
+    }
+
+    public LiveData<Integer> getMaxDuration() {
+        return maxDuration;
     }
 
     public LiveData<List<SetLog>> getPastSets() {

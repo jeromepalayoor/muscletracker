@@ -65,32 +65,55 @@
                     android:contentDescription="@string/arrow_text" />
             </LinearLayout>
 
-            <TextView
-                android:id="@+id/detailMaxWeight"
+            <LinearLayout
+                android:id="@+id/statsWeightGroup"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="12dp"
-                android:textSize="16sp"
-                android:text="@string/max_weight_empty_text"
-                android:textColor="?android:attr/textColorSecondary" />
+                android:orientation="vertical"
+                android:visibility="gone">
+
+                <TextView
+                    android:id="@+id/detailMaxWeight"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:textSize="16sp"
+                    android:textColor="?android:attr/textColorPrimary" />
+
+                <TextView
+                    android:id="@+id/detailMaxVolume"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="4dp"
+                    android:textSize="16sp"
+                    android:textColor="?android:attr/textColorPrimary" />
+
+                <TextView
+                    android:id="@+id/detailOneRM"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="4dp"
+                    android:textSize="16sp"
+                    android:textColor="?android:attr/textColorPrimary" />
+            </LinearLayout>
 
             <TextView
-                android:id="@+id/detailMaxVolume"
+                android:id="@+id/detailMaxReps"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="12dp"
+                android:layout_marginTop="10dp"
                 android:textSize="16sp"
-                android:text="@string/max_volume_empty_text"
-                android:textColor="?android:attr/textColorSecondary" />
+                android:visibility="gone"
+                android:textColor="?android:attr/textColorPrimary" />
 
             <TextView
-                android:id="@+id/detailOneRM"
+                android:id="@+id/detailMaxDuration"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="12dp"
+                android:layout_marginTop="10dp"
                 android:textSize="16sp"
-                android:text="@string/estimated_one_rep_max_empty_text"
-                android:textColor="?android:attr/textColorSecondary" />
+                android:visibility="gone"
+                android:textColor="?android:attr/textColorPrimary" />
         </LinearLayout>
 
         <LinearLayout
