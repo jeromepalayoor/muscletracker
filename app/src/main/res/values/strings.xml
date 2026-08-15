@@ -85,4 +85,7 @@
     <string name="step6_title">6. Review your history</string>
     <string name="step6_body">Your stats, personal records, and full workout history are always available on Home and Record.</string>
     <string name="no_templates_created_yet_text">No templates created yet</string>
+    <string name="zero_seconds_text">0s</string>
+    <string name="start_text">Start</string>
+    <string name="stop_text">Stop</string>
 </resources>

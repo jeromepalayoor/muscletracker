@@ -100,4 +100,16 @@ public interface SetLogDao {
 
     @Query("SELECT * FROM set_log")
     List<SetLog> getAll();
+
+    @Query("SELECT MAX(reps) FROM (" +
+            "SELECT reps FROM set_log " +
+            "WHERE exerciseId = :exerciseId " +
+            "ORDER BY timestamp DESC LIMIT 10)")
+    Integer getRecentMaxReps(String exerciseId);
+
+    @Query("SELECT MAX(durationSeconds) FROM (" +
+            "SELECT durationSeconds FROM set_log " +
+            "WHERE exerciseId = :exerciseId " +
+            "ORDER BY timestamp DESC LIMIT 10)")
+    Integer getRecentMaxDuration(String exerciseId);
 }
