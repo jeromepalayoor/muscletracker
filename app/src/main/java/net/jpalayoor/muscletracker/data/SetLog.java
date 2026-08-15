@@ -13,4 +13,5 @@ public class SetLog {
     public int reps;
     public int setNumber;
     public long timestamp;
+    public Integer durationSeconds;
 }

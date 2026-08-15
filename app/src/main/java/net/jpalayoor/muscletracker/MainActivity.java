@@ -198,6 +198,8 @@ public class MainActivity extends AppCompatActivity {
             ex.image1 = images.length() > 0 ? images.getString(0) : null;
             ex.image2 = images.length() > 1 ? images.getString(1) : null;
 
+            ex.trackingType = safeString(obj, "trackingType");
+
             result.add(ex);
         }
         return result;

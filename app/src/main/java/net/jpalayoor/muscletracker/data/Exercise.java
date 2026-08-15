@@ -26,4 +26,5 @@ public class Exercise {
     public String instructions;
     public String image1;
     public String image2;
+    public String trackingType;
 }

@@ -8,7 +8,7 @@ import androidx.room.RoomDatabase;
 
 // creating the database
 @Database(entities = {Exercise.class, WorkoutTemplate.class, TemplateExercise.class,
-        WorkoutSession.class, SetLog.class}, version = 3)
+        WorkoutSession.class, SetLog.class}, version = 4)
 public abstract class AppDatabase extends RoomDatabase {
     private static AppDatabase instance;
     public abstract ExerciseDao exerciseDao();
