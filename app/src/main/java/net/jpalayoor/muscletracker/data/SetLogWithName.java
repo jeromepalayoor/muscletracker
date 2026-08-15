@@ -8,4 +8,6 @@ public class SetLogWithName {
     public int reps;
     public int setNumber;
     public boolean isPR;
+    public String trackingType;
+    public Integer durationSeconds;
 }

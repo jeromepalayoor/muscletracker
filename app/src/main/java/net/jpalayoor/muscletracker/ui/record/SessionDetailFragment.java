@@ -37,6 +37,15 @@ public class SessionDetailFragment extends Fragment {
         return inflater.inflate(R.layout.fragment_session_detail, container, false);
     }
 
+    private String formatDuration(int totalSeconds) {
+        int hours = totalSeconds / 3600;
+        int minutes = (totalSeconds % 3600) / 60;
+        int seconds = totalSeconds % 60;
+        if (hours > 0) return hours + "h " + minutes + "m";
+        if (minutes > 0) return minutes + "m " + seconds + "s";
+        return seconds + "s";
+    }
+
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
@@ -102,11 +111,22 @@ public class SessionDetailFragment extends Fragment {
 
                 textDetailSetExercise.setText(setLog.name);
                 textDetailSetNumber.setText(getString(R.string.set_number_format, setLog.setNumber + 1));
-                textDetailSetReps.setText(getString(R.string.reps_format, setLog.reps));
-                if (savedUnit.equals("kg")) {
-                    textDetailSetWeight.setText(getString(R.string.weight_kg_format, setLog.weight));
+
+                if ("reps".equals(setLog.trackingType)) {
+                    textDetailSetWeight.setVisibility(View.GONE);
+                    textDetailSetReps.setText(getString(R.string.reps_format, setLog.reps));
+                } else if ("time".equals(setLog.trackingType)) {
+                    textDetailSetWeight.setVisibility(View.GONE);
+                    int dur = setLog.durationSeconds != null ? setLog.durationSeconds : 0;
+                    textDetailSetReps.setText(formatDuration(dur));
                 } else {
-                    textDetailSetWeight.setText(getString(R.string.weight_lb_format, setLog.weight * 2.2));
+                    textDetailSetWeight.setVisibility(View.VISIBLE);
+                    if (savedUnit.equals("kg")) {
+                        textDetailSetWeight.setText(getString(R.string.weight_kg_format, setLog.weight));
+                    } else {
+                        textDetailSetWeight.setText(getString(R.string.weight_lb_format, setLog.weight * 2.2));
+                    }
+                    textDetailSetReps.setText(getString(R.string.reps_format, setLog.reps));
                 }
 
                 if (i > 0 && Objects.equals(logSets.get(i - 1).name, setLog.name)) {
