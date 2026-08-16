@@ -31,7 +31,11 @@
       "0002_1.jpg",
       "0002_2.jpg"
     ],
-    "trackingType": "weight"
+    "trackingType": "weight",
+    "fitCategory": "CRUNCH",
+    "fitCategoryValue": 6,
+    "fitSubtype": null,
+    "fitSubtypeValue": null
   },
   {
     "exerciseId": "0003",
@@ -71,7 +75,11 @@
       "0003_1.jpg",
       "0003_2.jpg"
     ],
-    "trackingType": "reps"
+    "trackingType": "reps",
+    "fitCategory": "CORE",
+    "fitCategoryValue": 5,
+    "fitSubtype": null,
+    "fitSubtypeValue": null
   },
   {
     "exerciseId": "0005",
@@ -107,7 +115,11 @@
       "0005_1.jpg",
       "0005_2.jpg"
     ],
-    "trackingType": "reps"
+    "trackingType": "reps",
+    "fitCategory": "CORE",
+    "fitCategoryValue": 5,
+    "fitSubtype": "BICYCLE",
+    "fitSubtypeValue": 49
   },
   {
     "exerciseId": "0006",
@@ -149,7 +161,11 @@
       "0006_1.jpg",
       "0006_2.jpg"
     ],
-    "trackingType": "weight"
+    "trackingType": "weight",
+    "fitCategory": "CURL",
+    "fitCategoryValue": 7,
+    "fitSubtype": "CABLE_HAMMER_CURL",
+    "fitSubtypeValue": 9
   },
   {
     "exerciseId": "0007",
@@ -184,7 +200,11 @@
       "0007_1.jpg",
       "0007_2.jpg"
     ],
-    "trackingType": "reps"
+    "trackingType": "reps",
+    "fitCategory": "CORE",
+    "fitCategoryValue": 5,
+    "fitSubtype": null,
+    "fitSubtypeValue": null
   },
   {
     "exerciseId": "0008",
@@ -225,7 +245,11 @@
       "0008_1.jpg",
       "0008_2.jpg"
     ],
-    "trackingType": "weight"
+    "trackingType": "weight",
+    "fitCategory": "CURL",
+    "fitCategoryValue": 7,
+    "fitSubtype": "INCLINE_DUMBBELL_BICEPS_CURL",
+    "fitSubtypeValue": 22
   },
   {
     "exerciseId": "0009",
@@ -265,7 +289,11 @@
       "0009_1.jpg",
       "0009_2.jpg"
     ],
-    "trackingType": "weight"
+    "trackingType": "weight",
+    "fitCategory": "SHOULDER_PRESS",
+    "fitCategoryValue": 24,
+    "fitSubtype": "INVERTED_SHOULDER_PRESS",
+    "fitSubtypeValue": 11
   },
   {
     "exerciseId": "0010",
@@ -300,7 +328,11 @@
       "0010_1.jpg",
       "0010_2.jpg"
     ],
-    "trackingType": "weight"
+    "trackingType": "weight",
+    "fitCategory": "LATERAL_RAISE",
+    "fitCategoryValue": 14,
+    "fitSubtype": null,
+    "fitSubtypeValue": null
   },
   {
     "exerciseId": "0013",
@@ -339,7 +371,11 @@
       "0013_1.jpg",
       "0013_2.jpg"
     ],
-    "trackingType": "weight"
+    "trackingType": "weight",
+    "fitCategory": "SHOULDER_PRESS",
+    "fitCategoryValue": 24,
+    "fitSubtype": null,
+    "fitSubtypeValue": null
   },
   {
     "exerciseId": "0014",
@@ -381,7 +417,11 @@
       "0014_1.jpg",
       "0014_2.jpg"
     ],
-    "trackingType": "weight"
+    "trackingType": "weight",
+    "fitCategory": "ROW",
+    "fitCategoryValue": 23,
+    "fitSubtype": "KETTLEBELL_ROW",
+    "fitSubtypeValue": 9
   },
   {
     "exerciseId": "0015",
@@ -431,7 +471,11 @@
       "0015_1.jpg",
       "0015_2.jpg"
     ],
-    "trackingType": "weight"
+    "trackingType": "weight",
+    "fitCategory": "ROW",
+    "fitCategoryValue": 23,
+    "fitSubtype": "RENEGADE_ROW",
+    "fitSubtypeValue": 15
   },
   {
     "exerciseId": "0017",
@@ -472,7 +516,11 @@
       "0017_1.jpg",
       "0017_2.jpg"
     ],
-    "trackingType": "weight"
+    "trackingType": "weight",
+    "fitCategory": "SHOULDER_PRESS",
+    "fitCategoryValue": 24,
+    "fitSubtype": "ARNOLD_PRESS",
+    "fitSubtypeValue": 1
   },
   {
     "exerciseId": "0019",
@@ -517,48 +565,11 @@
       "0019_1.jpg",
       "0019_2.jpg"
     ],
-    "trackingType": "weight"
-  },
-  {
-    "exerciseId": "0020",
-    "name": "Balance Board",
-    "muscleGroupsPrimary": [
-      "calves"
-    ],
-    "muscleGroupsSecondary": [
-      "hamstrings",
-      "quadriceps"
-    ],
-    "specificMusclesPrimary": [
-      "Calves"
-    ],
-    "specificMusclesSecondary": [
-      "Hamstrings",
-      "Quadriceps"
-    ],
-    "anatomicalRegionsPrimary": [
-      "Legs"
-    ],
-    "anatomicalRegionsSecondary": [
-      "Legs"
-    ],
-    "splitCategory": "Legs",
-    "upperLower": "Lower",
-    "force": null,
-    "mechanic": "compound",
-    "equipment": "other",
-    "level": "beginner",
-    "exerciseType": "strength",
-    "instructions": [
-      "Place a balance board in front of you.",
-      "Stand up on it and try to balance yourself.",
-      "Hold the balance for as long as desired."
-    ],
-    "images": [
-      "0020_1.jpg",
-      "0020_2.jpg"
-    ],
-    "trackingType": "time"
+    "trackingType": "weight",
+    "fitCategory": "FLYE",
+    "fitCategoryValue": 9,
+    "fitSubtype": null,
+    "fitSubtypeValue": null
   },
   {
     "exerciseId": "0022",
@@ -604,7 +615,11 @@
       "0022_1.jpg",
       "0022_2.jpg"
     ],
-    "trackingType": "reps"
+    "trackingType": "reps",
+    "fitCategory": "PULL_UP",
+    "fitCategoryValue": 21,
+    "fitSubtype": "BAND_ASSISTED_PULL_UP",
+    "fitSubtypeValue": 42
   },
   {
     "exerciseId": "0023",
@@ -640,7 +655,11 @@
       "0023_1.jpg",
       "0023_2.jpg"
     ],
-    "trackingType": "reps"
+    "trackingType": "reps",
+    "fitCategory": "HIP_STABILITY",
+    "fitCategoryValue": 11,
+    "fitSubtype": "SLIDING_HIP_ADDUCTION",
+    "fitSubtypeValue": 23
   },
   {
     "exerciseId": "0028",
@@ -684,7 +703,11 @@
       "0028_1.jpg",
       "0028_2.jpg"
     ],
-    "trackingType": "weight"
+    "trackingType": "weight",
+    "fitCategory": "BENCH_PRESS",
+    "fitCategoryValue": 0,
+    "fitSubtype": "BARBELL_BENCH_PRESS",
+    "fitSubtypeValue": 1
   },
   {
     "exerciseId": "0029",
@@ -725,7 +748,11 @@
       "0029_1.jpg",
       "0029_2.jpg"
     ],
-    "trackingType": "weight"
+    "trackingType": "weight",
+    "fitCategory": "CURL",
+    "fitCategoryValue": 7,
+    "fitSubtype": "BARBELL_BICEPS_CURL",
+    "fitSubtypeValue": 3
   },
   {
     "exerciseId": "0030",
@@ -759,7 +786,11 @@
       "0030_1.jpg",
       "0030_2.jpg"
     ],
-    "trackingType": "weight"
+    "trackingType": "weight",
+    "fitCategory": "CURL",
+    "fitCategoryValue": 7,
+    "fitSubtype": null,
+    "fitSubtypeValue": null
   },
   {
     "exerciseId": "0031",
@@ -816,7 +847,11 @@
       "0031_1.jpg",
       "0031_2.jpg"
     ],
-    "trackingType": "weight"
+    "trackingType": "weight",
+    "fitCategory": "DEADLIFT",
+    "fitCategoryValue": 8,
+    "fitSubtype": "BARBELL_DEADLIFT",
+    "fitSubtypeValue": 0
   },
   {
     "exerciseId": "0033",
@@ -860,7 +895,11 @@
       "0033_1.jpg",
       "0033_2.jpg"
     ],
-    "trackingType": "weight"
+    "trackingType": "weight",
+    "fitCategory": "BENCH_PRESS",
+    "fitCategoryValue": 0,
+    "fitSubtype": "BARBELL_BENCH_PRESS",
+    "fitSubtypeValue": 1
   },
   {
     "exerciseId": "0034",
@@ -905,7 +944,11 @@
       "0034_1.jpg",
       "0034_2.jpg"
     ],
-    "trackingType": "weight"
+    "trackingType": "weight",
+    "fitCategory": "SQUAT",
+    "fitCategoryValue": 28,
+    "fitSubtype": "BARBELL_HACK_SQUAT",
+    "fitSubtypeValue": 9
   },
   {
     "exerciseId": "0035",
@@ -949,7 +992,11 @@
       "0035_1.jpg",
       "0035_2.jpg"
     ],
-    "trackingType": "weight"
+    "trackingType": "weight",
+    "fitCategory": "BENCH_PRESS",
+    "fitCategoryValue": 0,
+    "fitSubtype": "INCLINE_BARBELL_BENCH_PRESS",
+    "fitSubtypeValue": 8
   },
   {
     "exerciseId": "0037",
@@ -994,7 +1041,11 @@
       "0037_1.jpg",
       "0037_2.jpg"
     ],
-    "trackingType": "weight"
+    "trackingType": "weight",
+    "fitCategory": "LUNGE",
+    "fitCategoryValue": 17,
+    "fitSubtype": "BARBELL_LUNGE",
+    "fitSubtypeValue": 10
   },
   {
     "exerciseId": "0038",
@@ -1040,7 +1091,11 @@
       "0038_1.jpg",
       "0038_2.jpg"
     ],
-    "trackingType": "weight"
+    "trackingType": "weight",
+    "fitCategory": "ROW",
+    "fitCategoryValue": 23,
+    "fitSubtype": "BARBELL_ROW",
+    "fitSubtypeValue": 45
   },
   {
     "exerciseId": "0040",
@@ -1076,7 +1131,11 @@
       "0040_1.jpg",
       "0040_2.jpg"
     ],
-    "trackingType": "weight"
+    "trackingType": "weight",
+    "fitCategory": "CALF_RAISE",
+    "fitCategoryValue": 1,
+    "fitSubtype": "SEATED_CALF_RAISE",
+    "fitSubtypeValue": 6
   },
   {
     "exerciseId": "0041",
@@ -1120,7 +1179,11 @@
       "0041_1.jpg",
       "0041_2.jpg"
     ],
-    "trackingType": "weight"
+    "trackingType": "weight",
+    "fitCategory": "SHOULDER_PRESS",
+    "fitCategoryValue": 24,
+    "fitSubtype": "BARBELL_SHOULDER_PRESS",
+    "fitSubtypeValue": 4
   },
   {
     "exerciseId": "0042",
@@ -1154,7 +1217,11 @@
       "0042_1.jpg",
       "0042_2.jpg"
     ],
-    "trackingType": "weight"
+    "trackingType": "weight",
+    "fitCategory": "SHRUG",
+    "fitCategoryValue": 26,
+    "fitSubtype": "BARBELL_SHRUG",
+    "fitSubtypeValue": 1
   },
   {
     "exerciseId": "0044",
@@ -1194,7 +1261,11 @@
       "0044_1.jpg",
       "0044_2.jpg"
     ],
-    "trackingType": "weight"
+    "trackingType": "weight",
+    "fitCategory": "CORE",
+    "fitCategoryValue": 5,
+    "fitSubtype": "SIDE_BEND",
+    "fitSubtypeValue": 8
   },
   {
     "exerciseId": "0045",
@@ -1239,7 +1310,11 @@
       "0045_1.jpg",
       "0045_2.jpg"
     ],
-    "trackingType": "weight"
+    "trackingType": "weight",
+    "fitCategory": "SQUAT",
+    "fitCategoryValue": 28,
+    "fitSubtype": "BARBELL_BACK_SQUAT",
+    "fitSubtypeValue": 6
   },
   {
     "exerciseId": "0046",
@@ -1288,7 +1363,11 @@
       "0046_1.jpg",
       "0046_2.jpg"
     ],
-    "trackingType": "weight"
+    "trackingType": "weight",
+    "fitCategory": "SQUAT",
+    "fitCategoryValue": 28,
+    "fitSubtype": "BARBELL_BACK_SQUAT",
+    "fitSubtypeValue": 6
   },
   {
     "exerciseId": "0047",
@@ -1339,7 +1418,11 @@
       "0047_1.jpg",
       "0047_2.jpg"
     ],
-    "trackingType": "weight"
+    "trackingType": "weight",
+    "fitCategory": "SQUAT",
+    "fitCategoryValue": 28,
+    "fitSubtype": "BARBELL_BACK_SQUAT",
+    "fitSubtypeValue": 6
   },
   {
     "exerciseId": "0048",
@@ -1385,7 +1468,11 @@
       "0048_1.jpg",
       "0048_2.jpg"
     ],
-    "trackingType": "weight"
+    "trackingType": "weight",
+    "fitCategory": "SQUAT",
+    "fitCategoryValue": 28,
+    "fitSubtype": "BARBELL_STEP_UP",
+    "fitSubtypeValue": 17
   },
   {
     "exerciseId": "0049",
@@ -1429,7 +1516,11 @@
       "0049_1.jpg",
       "0049_2.jpg"
     ],
-    "trackingType": "weight"
+    "trackingType": "weight",
+    "fitCategory": "LUNGE",
+    "fitCategoryValue": 17,
+    "fitSubtype": "WALKING_BARBELL_LUNGE",
+    "fitSubtypeValue": 76
   },
   {
     "exerciseId": "0050",
@@ -1472,7 +1563,11 @@
       "0050_1.jpg",
       "0050_2.jpg"
     ],
-    "trackingType": "reps"
+    "trackingType": "reps",
+    "fitCategory": "BATTLE_ROPE",
+    "fitCategoryValue": 38,
+    "fitSubtype": null,
+    "fitSubtypeValue": null
   },
   {
     "exerciseId": "0051",
@@ -1515,7 +1610,11 @@
       "0051_1.jpg",
       "0051_2.jpg"
     ],
-    "trackingType": "reps"
+    "trackingType": "reps",
+    "fitCategory": "TRICEPS_EXTENSION",
+    "fitCategoryValue": 30,
+    "fitSubtype": "BENCH_DIP",
+    "fitSubtypeValue": 0
   },
   {
     "exerciseId": "0052",
@@ -1561,7 +1660,11 @@
       "0052_1.jpg",
       "0052_2.jpg"
     ],
-    "trackingType": "weight"
+    "trackingType": "weight",
+    "fitCategory": "BENCH_PRESS",
+    "fitCategoryValue": 0,
+    "fitSubtype": null,
+    "fitSubtypeValue": null
   },
   {
     "exerciseId": "0053",
@@ -1607,7 +1710,11 @@
       "0053_1.jpg",
       "0053_2.jpg"
     ],
-    "trackingType": "weight"
+    "trackingType": "weight",
+    "fitCategory": "ROW",
+    "fitCategoryValue": 23,
+    "fitSubtype": "BENT_OVER_ROW_WITH_BARBELL",
+    "fitSubtypeValue": 46
   },
   {
     "exerciseId": "0054",
@@ -1642,7 +1749,11 @@
       "0054_1.jpg",
       "0054_2.jpg"
     ],
-    "trackingType": "weight"
+    "trackingType": "weight",
+    "fitCategory": "LATERAL_RAISE",
+    "fitCategoryValue": 14,
+    "fitSubtype": "BENT_OVER_LATERAL_RAISE",
+    "fitSubtypeValue": 3
   },
   {
     "exerciseId": "0055",
@@ -1687,7 +1798,11 @@
       "0055_1.jpg",
       "0055_2.jpg"
     ],
-    "trackingType": "weight"
+    "trackingType": "weight",
+    "fitCategory": "LATERAL_RAISE",
+    "fitCategoryValue": 14,
+    "fitSubtype": "BENT_OVER_LATERAL_RAISE",
+    "fitSubtypeValue": 3
   },
   {
     "exerciseId": "0057",
@@ -1732,7 +1847,11 @@
       "0057_1.jpg",
       "0057_2.jpg"
     ],
-    "trackingType": "weight"
+    "trackingType": "weight",
+    "fitCategory": "ROW",
+    "fitCategoryValue": 23,
+    "fitSubtype": "BENT_OVER_ROW_WITH_BARBELL",
+    "fitSubtypeValue": 46
   },
   {
     "exerciseId": "0058",
@@ -1778,7 +1897,11 @@
       "0058_1.jpg",
       "0058_2.jpg"
     ],
-    "trackingType": "weight"
+    "trackingType": "weight",
+    "fitCategory": "ROW",
+    "fitCategoryValue": 23,
+    "fitSubtype": "RDL_BENT_OVER_ROW_WITH_BARBELL_DUMBBELL",
+    "fitSubtypeValue": 43
   },
   {
     "exerciseId": "0060",
@@ -1830,7 +1953,11 @@
       "0060_1.jpg",
       "0060_2.jpg"
     ],
-    "trackingType": "weight"
+    "trackingType": "weight",
+    "fitCategory": "CORE",
+    "fitCategoryValue": 5,
+    "fitSubtype": null,
+    "fitSubtypeValue": null
   },
   {
     "exerciseId": "0061",
@@ -1880,7 +2007,11 @@
       "0061_1.jpg",
       "0061_2.jpg"
     ],
-    "trackingType": "weight"
+    "trackingType": "weight",
+    "fitCategory": "PULL_UP",
+    "fitCategoryValue": 21,
+    "fitSubtype": "EZ_BAR_PULLOVER",
+    "fitSubtypeValue": 8
   },
   {
     "exerciseId": "0062",
@@ -1928,7 +2059,11 @@
       "0062_1.jpg",
       "0062_2.jpg"
     ],
-    "trackingType": "weight"
+    "trackingType": "weight",
+    "fitCategory": "PULL_UP",
+    "fitCategoryValue": 21,
+    "fitSubtype": null,
+    "fitSubtypeValue": null
   },
   {
     "exerciseId": "0063",
@@ -1963,7 +2098,11 @@
       "0063_1.jpg",
       "0063_2.jpg"
     ],
-    "trackingType": "reps"
+    "trackingType": "reps",
+    "fitCategory": "HIP_RAISE",
+    "fitCategoryValue": 10,
+    "fitSubtype": "HIP_RAISE_WITH_KNEE_SQUEEZE",
+    "fitSubtypeValue": 19
   },
   {
     "exerciseId": "0065",
@@ -2006,7 +2145,11 @@
       "0065_1.jpg",
       "0065_2.jpg"
     ],
-    "trackingType": "reps"
+    "trackingType": "reps",
+    "fitCategory": "PLANK",
+    "fitCategoryValue": 19,
+    "fitSubtype": "PLANK_TO_STAND_UP",
+    "fitSubtypeValue": 52
   },
   {
     "exerciseId": "0068",
@@ -2047,7 +2190,11 @@
       "0068_1.jpg",
       "0068_2.jpg"
     ],
-    "trackingType": "reps"
+    "trackingType": "reps",
+    "fitCategory": "SQUAT",
+    "fitCategoryValue": 28,
+    "fitSubtype": "SQUAT",
+    "fitSubtypeValue": 61
   },
   {
     "exerciseId": "0069",
@@ -2091,7 +2238,11 @@
       "0069_1.jpg",
       "0069_2.jpg"
     ],
-    "trackingType": "reps"
+    "trackingType": "reps",
+    "fitCategory": "LUNGE",
+    "fitCategoryValue": 17,
+    "fitSubtype": "WALKING_LUNGE",
+    "fitSubtypeValue": 78
   },
   {
     "exerciseId": "0071",
@@ -2124,7 +2275,11 @@
       "0071_1.jpg",
       "0071_2.jpg"
     ],
-    "trackingType": "reps"
+    "trackingType": "reps",
+    "fitCategory": "CORE",
+    "fitCategoryValue": 5,
+    "fitSubtype": "OPEN_KNEE_TUCKS",
+    "fitSubtypeValue": 21
   },
   {
     "exerciseId": "0073",
@@ -2176,7 +2331,11 @@
       "0073_1.jpg",
       "0073_2.jpg"
     ],
-    "trackingType": "weight"
+    "trackingType": "weight",
+    "fitCategory": "SQUAT",
+    "fitCategoryValue": 28,
+    "fitSubtype": "BARBELL_BOX_SQUAT",
+    "fitSubtypeValue": 7
   },
   {
     "exerciseId": "0074",
@@ -2218,7 +2377,11 @@
       "0074_1.jpg",
       "0074_2.jpg"
     ],
-    "trackingType": "weight"
+    "trackingType": "weight",
+    "fitCategory": "SHOULDER_PRESS",
+    "fitCategoryValue": 24,
+    "fitSubtype": null,
+    "fitSubtypeValue": null
   },
   {
     "exerciseId": "0075",
@@ -2257,7 +2420,11 @@
       "0075_1.jpg",
       "0075_2.jpg"
     ],
-    "trackingType": "reps"
+    "trackingType": "reps",
+    "fitCategory": "HIP_RAISE",
+    "fitCategoryValue": 10,
+    "fitSubtype": null,
+    "fitSubtypeValue": null
   },
   {
     "exerciseId": "0077",
@@ -2292,7 +2459,11 @@
       "0077_1.jpg",
       "0077_2.jpg"
     ],
-    "trackingType": "weight"
+    "trackingType": "weight",
+    "fitCategory": "FLYE",
+    "fitCategoryValue": 9,
+    "fitSubtype": null,
+    "fitSubtypeValue": null
   },
   {
     "exerciseId": "0078",
@@ -2335,7 +2506,11 @@
       "0078_1.jpg",
       "0078_2.jpg"
     ],
-    "trackingType": "weight"
+    "trackingType": "weight",
+    "fitCategory": "BENCH_PRESS",
+    "fitCategoryValue": 0,
+    "fitSubtype": "SINGLE_ARM_CABLE_CHEST_PRESS",
+    "fitSubtypeValue": 20
   },
   {
     "exerciseId": "0079",
@@ -2376,7 +2551,11 @@
       "0079_1.jpg",
       "0079_2.jpg"
     ],
-    "trackingType": "weight"
+    "trackingType": "weight",
+    "fitCategory": "FLYE",
+    "fitCategoryValue": 9,
+    "fitSubtype": "CABLE_CROSSOVER",
+    "fitSubtypeValue": 0
   },
   {
     "exerciseId": "0080",
@@ -2412,7 +2591,11 @@
       "0080_1.jpg",
       "0080_2.jpg"
     ],
-    "trackingType": "weight"
+    "trackingType": "weight",
+    "fitCategory": "CRUNCH",
+    "fitCategoryValue": 6,
+    "fitSubtype": "CABLE_CRUNCH",
+    "fitSubtypeValue": 1
   },
   {
     "exerciseId": "0081",
@@ -2460,7 +2643,11 @@
       "0081_1.jpg",
       "0081_2.jpg"
     ],
-    "trackingType": "weight"
+    "trackingType": "weight",
+    "fitCategory": "DEADLIFT",
+    "fitCategoryValue": 8,
+    "fitSubtype": null,
+    "fitSubtypeValue": null
   },
   {
     "exerciseId": "0082",
@@ -2496,7 +2683,11 @@
       "0082_1.jpg",
       "0082_2.jpg"
     ],
-    "trackingType": "weight"
+    "trackingType": "weight",
+    "fitCategory": "CURL",
+    "fitCategoryValue": 7,
+    "fitSubtype": "CABLE_HAMMER_CURL",
+    "fitSubtypeValue": 9
   },
   {
     "exerciseId": "0083",
@@ -2533,7 +2724,11 @@
       "0083_1.jpg",
       "0083_2.jpg"
     ],
-    "trackingType": "weight"
+    "trackingType": "weight",
+    "fitCategory": "HIP_STABILITY",
+    "fitCategoryValue": 11,
+    "fitSubtype": "SLIDING_HIP_ADDUCTION",
+    "fitSubtypeValue": 23
   },
   {
     "exerciseId": "0084",
@@ -2568,7 +2763,11 @@
       "0084_1.jpg",
       "0084_2.jpg"
     ],
-    "trackingType": "weight"
+    "trackingType": "weight",
+    "fitCategory": "TRICEPS_EXTENSION",
+    "fitCategoryValue": 30,
+    "fitSubtype": null,
+    "fitSubtypeValue": null
   },
   {
     "exerciseId": "0085",
@@ -2603,7 +2802,11 @@
       "0085_1.jpg",
       "0085_2.jpg"
     ],
-    "trackingType": "weight"
+    "trackingType": "weight",
+    "fitCategory": "TRICEPS_EXTENSION",
+    "fitCategoryValue": 30,
+    "fitSubtype": "CABLE_LYING_TRICEPS_EXTENSION",
+    "fitSubtypeValue": 4
   },
   {
     "exerciseId": "0086",
@@ -2638,7 +2841,11 @@
       "0086_1.jpg",
       "0086_2.jpg"
     ],
-    "trackingType": "weight"
+    "trackingType": "weight",
+    "fitCategory": "SHOULDER_STABILITY",
+    "fitCategoryValue": 25,
+    "fitSubtype": "CABLE_INTERNAL_ROTATION",
+    "fitSubtypeValue": 33
   },
   {
     "exerciseId": "0087",
@@ -2673,7 +2880,11 @@
       "0087_1.jpg",
       "0087_2.jpg"
     ],
-    "trackingType": "weight"
+    "trackingType": "weight",
+    "fitCategory": "FLYE",
+    "fitCategoryValue": 9,
+    "fitSubtype": null,
+    "fitSubtypeValue": null
   },
   {
     "exerciseId": "0089",
@@ -2708,7 +2919,11 @@
       "0089_1.jpg",
       "0089_2.jpg"
     ],
-    "trackingType": "weight"
+    "trackingType": "weight",
+    "fitCategory": "TRICEPS_EXTENSION",
+    "fitCategoryValue": 30,
+    "fitSubtype": "CABLE_LYING_TRICEPS_EXTENSION",
+    "fitSubtypeValue": 4
   },
   {
     "exerciseId": "0090",
@@ -2744,7 +2959,11 @@
       "0090_1.jpg",
       "0090_2.jpg"
     ],
-    "trackingType": "weight"
+    "trackingType": "weight",
+    "fitCategory": "TRICEPS_EXTENSION",
+    "fitCategoryValue": 30,
+    "fitSubtype": null,
+    "fitSubtypeValue": null
   },
   {
     "exerciseId": "0091",
@@ -2787,7 +3006,11 @@
       "0091_1.jpg",
       "0091_2.jpg"
     ],
-    "trackingType": "weight"
+    "trackingType": "weight",
+    "fitCategory": "CURL",
+    "fitCategoryValue": 7,
+    "fitSubtype": "PREACHER_CURL_WITH_CABLE",
+    "fitSubtypeValue": 28
   },
   {
     "exerciseId": "0092",
@@ -2821,7 +3044,11 @@
       "0092_1.jpg",
       "0092_2.jpg"
     ],
-    "trackingType": "weight"
+    "trackingType": "weight",
+    "fitCategory": "FLYE",
+    "fitCategoryValue": 9,
+    "fitSubtype": null,
+    "fitSubtypeValue": null
   },
   {
     "exerciseId": "0093",
@@ -2857,7 +3084,11 @@
       "0093_1.jpg",
       "0093_2.jpg"
     ],
-    "trackingType": "weight"
+    "trackingType": "weight",
+    "fitCategory": "CRUNCH",
+    "fitCategoryValue": 6,
+    "fitSubtype": "CABLE_CRUNCH",
+    "fitSubtypeValue": 1
   },
   {
     "exerciseId": "0094",
@@ -2892,7 +3123,11 @@
       "0094_1.jpg",
       "0094_2.jpg"
     ],
-    "trackingType": "weight"
+    "trackingType": "weight",
+    "fitCategory": "TRICEPS_EXTENSION",
+    "fitCategoryValue": 30,
+    "fitSubtype": "CABLE_OVERHEAD_TRICEPS_EXTENSION",
+    "fitSubtypeValue": 5
   },
   {
     "exerciseId": "0095",
@@ -2937,7 +3172,11 @@
       "0095_1.jpg",
       "0095_2.jpg"
     ],
-    "trackingType": "weight"
+    "trackingType": "weight",
+    "fitCategory": "ROW",
+    "fitCategoryValue": 23,
+    "fitSubtype": "CABLE_ROW_STANDING",
+    "fitSubtypeValue": 1
   },
   {
     "exerciseId": "0097",
@@ -2972,7 +3211,11 @@
       "0097_1.jpg",
       "0097_2.jpg"
     ],
-    "trackingType": "weight"
+    "trackingType": "weight",
+    "fitCategory": "CRUNCH",
+    "fitCategoryValue": 6,
+    "fitSubtype": "CABLE_CRUNCH",
+    "fitSubtypeValue": 1
   },
   {
     "exerciseId": "0098",
@@ -3017,7 +3260,11 @@
       "0098_1.jpg",
       "0098_2.jpg"
     ],
-    "trackingType": "weight"
+    "trackingType": "weight",
+    "fitCategory": "LATERAL_RAISE",
+    "fitCategoryValue": 14,
+    "fitSubtype": "SEATED_LATERAL_RAISE",
+    "fitSubtypeValue": 24
   },
   {
     "exerciseId": "0099",
@@ -3057,7 +3304,11 @@
       "0099_1.jpg",
       "0099_2.jpg"
     ],
-    "trackingType": "weight"
+    "trackingType": "weight",
+    "fitCategory": "SHOULDER_PRESS",
+    "fitCategoryValue": 24,
+    "fitSubtype": "INVERTED_SHOULDER_PRESS",
+    "fitSubtypeValue": 11
   },
   {
     "exerciseId": "0100",
@@ -3092,7 +3343,11 @@
       "0100_1.jpg",
       "0100_2.jpg"
     ],
-    "trackingType": "weight"
+    "trackingType": "weight",
+    "fitCategory": "SHRUG",
+    "fitCategoryValue": 26,
+    "fitSubtype": null,
+    "fitSubtypeValue": null
   },
   {
     "exerciseId": "0101",
@@ -3128,7 +3383,11 @@
       "0101_1.jpg",
       "0101_2.jpg"
     ],
-    "trackingType": "weight"
+    "trackingType": "weight",
+    "fitCategory": "CURL",
+    "fitCategoryValue": 7,
+    "fitSubtype": null,
+    "fitSubtypeValue": null
   },
   {
     "exerciseId": "0102",
@@ -3162,7 +3421,11 @@
       "0102_1.jpg",
       "0102_2.jpg"
     ],
-    "trackingType": "weight"
+    "trackingType": "weight",
+    "fitCategory": "CALF_RAISE",
+    "fitCategoryValue": 1,
+    "fitSubtype": null,
+    "fitSubtypeValue": null
   },
   {
     "exerciseId": "0107",
@@ -3202,7 +3465,11 @@
       "0107_1.jpg",
       "0107_2.jpg"
     ],
-    "trackingType": "weight"
+    "trackingType": "weight",
+    "fitCategory": "CURL",
+    "fitCategoryValue": 7,
+    "fitSubtype": null,
+    "fitSubtypeValue": null
   },
   {
     "exerciseId": "0108",
@@ -3248,7 +3515,11 @@
       "0108_1.jpg",
       "0108_2.jpg"
     ],
-    "trackingType": "weight"
+    "trackingType": "weight",
+    "fitCategory": "SQUAT",
+    "fitCategoryValue": 28,
+    "fitSubtype": "SQUAT",
+    "fitSubtypeValue": 61
   },
   {
     "exerciseId": "0109",
@@ -3294,7 +3565,11 @@
       "0109_1.jpg",
       "0109_2.jpg"
     ],
-    "trackingType": "reps"
+    "trackingType": "reps",
+    "fitCategory": "PULL_UP",
+    "fitCategoryValue": 21,
+    "fitSubtype": "CHIN_UP",
+    "fitSubtypeValue": 39
   },
   {
     "exerciseId": "0112",
@@ -3338,7 +3613,11 @@
       "0112_1.jpg",
       "0112_2.jpg"
     ],
-    "trackingType": "weight"
+    "trackingType": "weight",
+    "fitCategory": "BENCH_PRESS",
+    "fitCategoryValue": 0,
+    "fitSubtype": "CLOSE_GRIP_BARBELL_BENCH_PRESS",
+    "fitSubtypeValue": 4
   },
   {
     "exerciseId": "0113",
@@ -3382,7 +3661,11 @@
       "0113_1.jpg",
       "0113_2.jpg"
     ],
-    "trackingType": "weight"
+    "trackingType": "weight",
+    "fitCategory": "BENCH_PRESS",
+    "fitCategoryValue": 0,
+    "fitSubtype": "DUMBBELL_BENCH_PRESS",
+    "fitSubtypeValue": 6
   },
   {
     "exerciseId": "0114",
@@ -3423,7 +3706,11 @@
       "0114_1.jpg",
       "0114_2.jpg"
     ],
-    "trackingType": "weight"
+    "trackingType": "weight",
+    "fitCategory": "CURL",
+    "fitCategoryValue": 7,
+    "fitSubtype": "CLOSE_GRIP_EZ_BAR_BICEPS_CURL",
+    "fitSubtypeValue": 11
   },
   {
     "exerciseId": "0116",
@@ -3467,7 +3754,11 @@
       "0116_1.jpg",
       "0116_2.jpg"
     ],
-    "trackingType": "weight"
+    "trackingType": "weight",
+    "fitCategory": "BENCH_PRESS",
+    "fitCategoryValue": 0,
+    "fitSubtype": "BARBELL_BENCH_PRESS",
+    "fitSubtypeValue": 1
   },
   {
     "exerciseId": "0117",
@@ -3515,7 +3806,11 @@
       "0117_1.jpg",
       "0117_2.jpg"
     ],
-    "trackingType": "weight"
+    "trackingType": "weight",
+    "fitCategory": "PULL_UP",
+    "fitCategoryValue": 21,
+    "fitSubtype": "CLOSE_GRIP_LAT_PULLDOWN",
+    "fitSubtypeValue": 5
   },
   {
     "exerciseId": "0119",
@@ -3556,7 +3851,11 @@
       "0119_1.jpg",
       "0119_2.jpg"
     ],
-    "trackingType": "weight"
+    "trackingType": "weight",
+    "fitCategory": "CURL",
+    "fitCategoryValue": 7,
+    "fitSubtype": "CLOSE_GRIP_EZ_BAR_BICEPS_CURL",
+    "fitSubtypeValue": 11
   },
   {
     "exerciseId": "0120",
@@ -3589,7 +3888,11 @@
       "0120_1.jpg",
       "0120_2.jpg"
     ],
-    "trackingType": "reps"
+    "trackingType": "reps",
+    "fitCategory": "CRUNCH",
+    "fitCategoryValue": 6,
+    "fitSubtype": "CRUNCH",
+    "fitSubtypeValue": 83
   },
   {
     "exerciseId": "0121",
@@ -3630,7 +3933,11 @@
       "0121_1.jpg",
       "0121_2.jpg"
     ],
-    "trackingType": "weight"
+    "trackingType": "weight",
+    "fitCategory": "CURL",
+    "fitCategoryValue": 7,
+    "fitSubtype": "LYING_CONCENTRATION_CABLE_CURL",
+    "fitSubtypeValue": 25
   },
   {
     "exerciseId": "0122",
@@ -3670,7 +3977,11 @@
       "0122_1.jpg",
       "0122_2.jpg"
     ],
-    "trackingType": "weight"
+    "trackingType": "weight",
+    "fitCategory": "CURL",
+    "fitCategoryValue": 7,
+    "fitSubtype": "CROSS_BODY_DUMBBELL_HAMMER_CURL",
+    "fitSubtypeValue": 12
   },
   {
     "exerciseId": "0124",
@@ -3705,7 +4016,11 @@
       "0124_1.jpg",
       "0124_2.jpg"
     ],
-    "trackingType": "reps"
+    "trackingType": "reps",
+    "fitCategory": "CRUNCH",
+    "fitCategoryValue": 6,
+    "fitSubtype": "KNEELING_CROSS_CRUNCH",
+    "fitSubtypeValue": 29
   },
   {
     "exerciseId": "0125",
@@ -3740,7 +4055,11 @@
       "0125_1.jpg",
       "0125_2.jpg"
     ],
-    "trackingType": "reps"
+    "trackingType": "reps",
+    "fitCategory": "CRUNCH",
+    "fitCategoryValue": 6,
+    "fitSubtype": null,
+    "fitSubtypeValue": null
   },
   {
     "exerciseId": "0127",
@@ -3776,7 +4095,11 @@
       "0127_1.jpg",
       "0127_2.jpg"
     ],
-    "trackingType": "reps"
+    "trackingType": "reps",
+    "fitCategory": "CRUNCH",
+    "fitCategoryValue": 6,
+    "fitSubtype": "CRUNCH",
+    "fitSubtypeValue": 83
   },
   {
     "exerciseId": "0128",
@@ -3817,7 +4140,11 @@
       "0128_1.jpg",
       "0128_2.jpg"
     ],
-    "trackingType": "weight"
+    "trackingType": "weight",
+    "fitCategory": "SHOULDER_STABILITY",
+    "fitCategoryValue": 25,
+    "fitSubtype": null,
+    "fitSubtypeValue": null
   },
   {
     "exerciseId": "0129",
@@ -3854,7 +4181,11 @@
       "0129_1.jpg",
       "0129_2.jpg"
     ],
-    "trackingType": "reps"
+    "trackingType": "reps",
+    "fitCategory": "CORE",
+    "fitCategoryValue": 5,
+    "fitSubtype": null,
+    "fitSubtypeValue": null
   },
   {
     "exerciseId": "0130",
@@ -3899,7 +4230,11 @@
       "0130_1.jpg",
       "0130_2.jpg"
     ],
-    "trackingType": "weight"
+    "trackingType": "weight",
+    "fitCategory": "BENCH_PRESS",
+    "fitCategoryValue": 0,
+    "fitSubtype": "BARBELL_BENCH_PRESS",
+    "fitSubtypeValue": 1
   },
   {
     "exerciseId": "0132",
@@ -3935,7 +4270,11 @@
       "0132_1.jpg",
       "0132_2.jpg"
     ],
-    "trackingType": "reps"
+    "trackingType": "reps",
+    "fitCategory": "CRUNCH",
+    "fitCategoryValue": 6,
+    "fitSubtype": "CRUNCH",
+    "fitSubtypeValue": 83
   },
   {
     "exerciseId": "0133",
@@ -3980,7 +4319,11 @@
       "0133_1.jpg",
       "0133_2.jpg"
     ],
-    "trackingType": "weight"
+    "trackingType": "weight",
+    "fitCategory": "BENCH_PRESS",
+    "fitCategoryValue": 0,
+    "fitSubtype": "DECLINE_DUMBBELL_BENCH_PRESS",
+    "fitSubtypeValue": 5
   },
   {
     "exerciseId": "0134",
@@ -4015,7 +4358,11 @@
       "0134_1.jpg",
       "0134_2.jpg"
     ],
-    "trackingType": "weight"
+    "trackingType": "weight",
+    "fitCategory": "FLYE",
+    "fitCategoryValue": 9,
+    "fitSubtype": "DECLINE_DUMBBELL_FLYE",
+    "fitSubtypeValue": 1
   },
   {
     "exerciseId": "0135",
@@ -4050,7 +4397,11 @@
       "0135_1.jpg",
       "0135_2.jpg"
     ],
-    "trackingType": "weight"
+    "trackingType": "weight",
+    "fitCategory": "TRICEPS_EXTENSION",
+    "fitCategoryValue": 30,
+    "fitSubtype": "DUMBBELL_LYING_TRICEPS_EXTENSION",
+    "fitSubtypeValue": 7
   },
   {
     "exerciseId": "0136",
@@ -4085,7 +4436,11 @@
       "0136_1.jpg",
       "0136_2.jpg"
     ],
-    "trackingType": "weight"
+    "trackingType": "weight",
+    "fitCategory": "TRICEPS_EXTENSION",
+    "fitCategoryValue": 30,
+    "fitSubtype": "EZ_BAR_OVERHEAD_TRICEPS_EXTENSION",
+    "fitSubtypeValue": 8
   },
   {
     "exerciseId": "0137",
@@ -4121,7 +4476,11 @@
       "0137_1.jpg",
       "0137_2.jpg"
     ],
-    "trackingType": "reps"
+    "trackingType": "reps",
+    "fitCategory": "CRUNCH",
+    "fitCategoryValue": 6,
+    "fitSubtype": "KNEELING_OBLIQUE_CABLE_CRUNCH",
+    "fitSubtypeValue": 31
   },
   {
     "exerciseId": "0138",
@@ -4164,7 +4523,11 @@
       "0138_1.jpg",
       "0138_2.jpg"
     ],
-    "trackingType": "reps"
+    "trackingType": "reps",
+    "fitCategory": "PUSH_UP",
+    "fitCategoryValue": 22,
+    "fitSubtype": "DECLINE_PUSH_UP",
+    "fitSubtypeValue": 13
   },
   {
     "exerciseId": "0139",
@@ -4199,7 +4562,11 @@
       "0139_1.jpg",
       "0139_2.jpg"
     ],
-    "trackingType": "reps"
+    "trackingType": "reps",
+    "fitCategory": "CRUNCH",
+    "fitCategoryValue": 6,
+    "fitSubtype": "REVERSE_CRUNCH",
+    "fitSubtypeValue": 46
   },
   {
     "exerciseId": "0140",
@@ -4243,7 +4610,11 @@
       "0140_1.jpg",
       "0140_2.jpg"
     ],
-    "trackingType": "weight"
+    "trackingType": "weight",
+    "fitCategory": "BENCH_PRESS",
+    "fitCategoryValue": 0,
+    "fitSubtype": null,
+    "fitSubtypeValue": null
   },
   {
     "exerciseId": "0141",
@@ -4287,7 +4658,11 @@
       "0141_1.jpg",
       "0141_2.jpg"
     ],
-    "trackingType": "weight"
+    "trackingType": "weight",
+    "fitCategory": "TRICEPS_EXTENSION",
+    "fitCategoryValue": 30,
+    "fitSubtype": null,
+    "fitSubtypeValue": null
   },
   {
     "exerciseId": "0142",
@@ -4330,7 +4705,11 @@
       "0142_1.jpg",
       "0142_2.jpg"
     ],
-    "trackingType": "reps"
+    "trackingType": "reps",
+    "fitCategory": "TRICEPS_EXTENSION",
+    "fitCategoryValue": 30,
+    "fitSubtype": null,
+    "fitSubtypeValue": null
   },
   {
     "exerciseId": "0143",
@@ -4373,7 +4752,11 @@
       "0143_1.jpg",
       "0143_2.jpg"
     ],
-    "trackingType": "reps"
+    "trackingType": "reps",
+    "fitCategory": "TRICEPS_EXTENSION",
+    "fitCategoryValue": 30,
+    "fitSubtype": null,
+    "fitSubtypeValue": null
   },
   {
     "exerciseId": "0151",
@@ -4413,7 +4796,11 @@
       "0151_1.jpg",
       "0151_2.jpg"
     ],
-    "trackingType": "weight"
+    "trackingType": "weight",
+    "fitCategory": "CURL",
+    "fitCategoryValue": 7,
+    "fitSubtype": null,
+    "fitSubtypeValue": null
   },
   {
     "exerciseId": "0152",
@@ -4454,7 +4841,11 @@
       "0152_1.jpg",
       "0152_2.jpg"
     ],
-    "trackingType": "weight"
+    "trackingType": "weight",
+    "fitCategory": "CURL",
+    "fitCategoryValue": 7,
+    "fitSubtype": "DUMBBELL_HAMMER_CURL",
+    "fitSubtypeValue": 16
   },
   {
     "exerciseId": "0153",
@@ -4498,7 +4889,11 @@
       "0153_1.jpg",
       "0153_2.jpg"
     ],
-    "trackingType": "weight"
+    "trackingType": "weight",
+    "fitCategory": "BENCH_PRESS",
+    "fitCategoryValue": 0,
+    "fitSubtype": "DUMBBELL_BENCH_PRESS",
+    "fitSubtypeValue": 6
   },
   {
     "exerciseId": "0155",
@@ -4538,7 +4933,11 @@
       "0155_1.jpg",
       "0155_2.jpg"
     ],
-    "trackingType": "weight"
+    "trackingType": "weight",
+    "fitCategory": "CURL",
+    "fitCategoryValue": 7,
+    "fitSubtype": "DUMBBELL_HAMMER_CURL",
+    "fitSubtypeValue": 16
   },
   {
     "exerciseId": "0157",
@@ -4573,7 +4972,11 @@
       "0157_1.jpg",
       "0157_2.jpg"
     ],
-    "trackingType": "weight"
+    "trackingType": "weight",
+    "fitCategory": "FLYE",
+    "fitCategoryValue": 9,
+    "fitSubtype": "DUMBBELL_FLYE",
+    "fitSubtypeValue": 2
   },
   {
     "exerciseId": "0158",
@@ -4621,7 +5024,11 @@
       "0158_1.jpg",
       "0158_2.jpg"
     ],
-    "trackingType": "weight"
+    "trackingType": "weight",
+    "fitCategory": "ROW",
+    "fitCategoryValue": 23,
+    "fitSubtype": "DUMBBELL_ROW",
+    "fitSubtypeValue": 2
   },
   {
     "exerciseId": "0159",
@@ -4662,7 +5069,11 @@
       "0159_1.jpg",
       "0159_2.jpg"
     ],
-    "trackingType": "weight"
+    "trackingType": "weight",
+    "fitCategory": "LATERAL_RAISE",
+    "fitCategoryValue": 14,
+    "fitSubtype": "COMBO_SHOULDER_RAISE",
+    "fitSubtypeValue": 7
   },
   {
     "exerciseId": "0160",
@@ -4706,7 +5117,11 @@
       "0160_1.jpg",
       "0160_2.jpg"
     ],
-    "trackingType": "weight"
+    "trackingType": "weight",
+    "fitCategory": "LUNGE",
+    "fitCategoryValue": 17,
+    "fitSubtype": "DUMBBELL_LUNGE",
+    "fitSubtypeValue": 21
   },
   {
     "exerciseId": "0161",
@@ -4747,7 +5162,11 @@
       "0161_1.jpg",
       "0161_2.jpg"
     ],
-    "trackingType": "weight"
+    "trackingType": "weight",
+    "fitCategory": "LATERAL_RAISE",
+    "fitCategoryValue": 14,
+    "fitSubtype": "ONE_ARM_CABLE_LATERAL_RAISE",
+    "fitSubtypeValue": 14
   },
   {
     "exerciseId": "0162",
@@ -4783,7 +5202,11 @@
       "0162_1.jpg",
       "0162_2.jpg"
     ],
-    "trackingType": "weight"
+    "trackingType": "weight",
+    "fitCategory": "CURL",
+    "fitCategoryValue": 7,
+    "fitSubtype": "DUMBBELL_WRIST_CURL",
+    "fitSubtypeValue": 18
   },
   {
     "exerciseId": "0163",
@@ -4818,7 +5241,11 @@
       "0163_1.jpg",
       "0163_2.jpg"
     ],
-    "trackingType": "weight"
+    "trackingType": "weight",
+    "fitCategory": "LATERAL_RAISE",
+    "fitCategoryValue": 14,
+    "fitSubtype": null,
+    "fitSubtypeValue": null
   },
   {
     "exerciseId": "0164",
@@ -4854,7 +5281,11 @@
       "0164_1.jpg",
       "0164_2.jpg"
     ],
-    "trackingType": "weight"
+    "trackingType": "weight",
+    "fitCategory": "CURL",
+    "fitCategoryValue": 7,
+    "fitSubtype": "DUMBBELL_WRIST_CURL",
+    "fitSubtypeValue": 18
   },
   {
     "exerciseId": "0165",
@@ -4896,7 +5327,11 @@
       "0165_1.jpg",
       "0165_2.jpg"
     ],
-    "trackingType": "weight"
+    "trackingType": "weight",
+    "fitCategory": "SHOULDER_PRESS",
+    "fitCategoryValue": 24,
+    "fitSubtype": "SINGLE_ARM_DUMBBELL_SHOULDER_PRESS",
+    "fitSubtypeValue": 18
   },
   {
     "exerciseId": "0166",
@@ -4932,7 +5367,11 @@
       "0166_1.jpg",
       "0166_2.jpg"
     ],
-    "trackingType": "weight"
+    "trackingType": "weight",
+    "fitCategory": "TRICEPS_EXTENSION",
+    "fitCategoryValue": 30,
+    "fitSubtype": "SINGLE_ARM_DUMBBELL_OVERHEAD_TRICEPS_EXTENSION",
+    "fitSubtypeValue": 24
   },
   {
     "exerciseId": "0167",
@@ -4976,7 +5415,11 @@
       "0167_1.jpg",
       "0167_2.jpg"
     ],
-    "trackingType": "weight"
+    "trackingType": "weight",
+    "fitCategory": "ROW",
+    "fitCategoryValue": 23,
+    "fitSubtype": "ONE_LEGGED_DUMBBELL_ROW",
+    "fitSubtypeValue": 14
   },
   {
     "exerciseId": "0168",
@@ -5012,7 +5455,11 @@
       "0168_1.jpg",
       "0168_2.jpg"
     ],
-    "trackingType": "weight"
+    "trackingType": "weight",
+    "fitCategory": "CURL",
+    "fitCategoryValue": 7,
+    "fitSubtype": "INCLINE_DUMBBELL_BICEPS_CURL",
+    "fitSubtypeValue": 22
   },
   {
     "exerciseId": "0169",
@@ -5052,7 +5499,11 @@
       "0169_1.jpg",
       "0169_2.jpg"
     ],
-    "trackingType": "weight"
+    "trackingType": "weight",
+    "fitCategory": "LATERAL_RAISE",
+    "fitCategoryValue": 14,
+    "fitSubtype": "DUMBBELL_DIAGONAL_RAISE",
+    "fitSubtypeValue": 8
   },
   {
     "exerciseId": "0170",
@@ -5096,7 +5547,11 @@
       "0170_1.jpg",
       "0170_2.jpg"
     ],
-    "trackingType": "weight"
+    "trackingType": "weight",
+    "fitCategory": "LUNGE",
+    "fitCategoryValue": 17,
+    "fitSubtype": "DUMBBELL_LUNGE",
+    "fitSubtypeValue": 21
   },
   {
     "exerciseId": "0171",
@@ -5135,7 +5590,11 @@
       "0171_1.jpg",
       "0171_2.jpg"
     ],
-    "trackingType": "weight"
+    "trackingType": "weight",
+    "fitCategory": "LATERAL_RAISE",
+    "fitCategoryValue": 14,
+    "fitSubtype": "SCAPTION",
+    "fitSubtypeValue": 23
   },
   {
     "exerciseId": "0172",
@@ -5171,7 +5630,11 @@
       "0172_1.jpg",
       "0172_2.jpg"
     ],
-    "trackingType": "weight"
+    "trackingType": "weight",
+    "fitCategory": "CALF_RAISE",
+    "fitCategoryValue": 1,
+    "fitSubtype": "STANDING_DUMBBELL_CALF_RAISE",
+    "fitSubtypeValue": 20
   },
   {
     "exerciseId": "0173",
@@ -5213,7 +5676,11 @@
       "0173_1.jpg",
       "0173_2.jpg"
     ],
-    "trackingType": "weight"
+    "trackingType": "weight",
+    "fitCategory": "SHOULDER_PRESS",
+    "fitCategoryValue": 24,
+    "fitSubtype": "DUMBBELL_SHOULDER_PRESS",
+    "fitSubtypeValue": 24
   },
   {
     "exerciseId": "0174",
@@ -5247,7 +5714,11 @@
       "0174_1.jpg",
       "0174_2.jpg"
     ],
-    "trackingType": "weight"
+    "trackingType": "weight",
+    "fitCategory": "SHRUG",
+    "fitCategoryValue": 26,
+    "fitSubtype": "DUMBBELL_SHRUG",
+    "fitSubtypeValue": 5
   },
   {
     "exerciseId": "0175",
@@ -5281,7 +5752,11 @@
       "0175_1.jpg",
       "0175_2.jpg"
     ],
-    "trackingType": "weight"
+    "trackingType": "weight",
+    "fitCategory": "CORE",
+    "fitCategoryValue": 5,
+    "fitSubtype": "SIDE_BEND",
+    "fitSubtypeValue": 8
   },
   {
     "exerciseId": "0176",
@@ -5329,7 +5804,11 @@
       "0176_1.jpg",
       "0176_2.jpg"
     ],
-    "trackingType": "weight"
+    "trackingType": "weight",
+    "fitCategory": "SQUAT",
+    "fitCategoryValue": 28,
+    "fitSubtype": "DUMBBELL_SQUAT",
+    "fitSubtypeValue": 29
   },
   {
     "exerciseId": "0177",
@@ -5377,7 +5856,11 @@
       "0177_1.jpg",
       "0177_2.jpg"
     ],
-    "trackingType": "weight"
+    "trackingType": "weight",
+    "fitCategory": "SQUAT",
+    "fitCategoryValue": 28,
+    "fitSubtype": "DUMBBELL_SQUAT",
+    "fitSubtypeValue": 29
   },
   {
     "exerciseId": "0178",
@@ -5421,7 +5904,11 @@
       "0178_1.jpg",
       "0178_2.jpg"
     ],
-    "trackingType": "weight"
+    "trackingType": "weight",
+    "fitCategory": "SQUAT",
+    "fitCategoryValue": 28,
+    "fitSubtype": "DUMBBELL_STEP_UP",
+    "fitSubtypeValue": 32
   },
   {
     "exerciseId": "0180",
@@ -5456,7 +5943,11 @@
       "0180_1.jpg",
       "0180_2.jpg"
     ],
-    "trackingType": "weight"
+    "trackingType": "weight",
+    "fitCategory": "CURL",
+    "fitCategoryValue": 7,
+    "fitSubtype": "EZ_BAR_PREACHER_CURL",
+    "fitSubtypeValue": 19
   },
   {
     "exerciseId": "0181",
@@ -5496,7 +5987,11 @@
       "0181_1.jpg",
       "0181_2.jpg"
     ],
-    "trackingType": "weight"
+    "trackingType": "weight",
+    "fitCategory": "TRICEPS_EXTENSION",
+    "fitCategoryValue": 30,
+    "fitSubtype": null,
+    "fitSubtypeValue": null
   },
   {
     "exerciseId": "0182",
@@ -5529,7 +6024,11 @@
       "0182_1.jpg",
       "0182_2.jpg"
     ],
-    "trackingType": "reps"
+    "trackingType": "reps",
+    "fitCategory": "CRUNCH",
+    "fitCategoryValue": 6,
+    "fitSubtype": "BICYCLE_CRUNCH",
+    "fitSubtypeValue": 0
   },
   {
     "exerciseId": "0183",
@@ -5571,7 +6070,11 @@
       "0183_1.jpg",
       "0183_2.jpg"
     ],
-    "trackingType": "weight"
+    "trackingType": "weight",
+    "fitCategory": "LUNGE",
+    "fitCategoryValue": 17,
+    "fitSubtype": "REVERSE_LUNGE_WITH_REACH_BACK",
+    "fitSubtypeValue": 48
   },
   {
     "exerciseId": "0184",
@@ -5616,7 +6119,11 @@
       "0184_1.jpg",
       "0184_2.jpg"
     ],
-    "trackingType": "weight"
+    "trackingType": "weight",
+    "fitCategory": "ROW",
+    "fitCategoryValue": 23,
+    "fitSubtype": "CABLE_ROW_STANDING",
+    "fitSubtypeValue": 1
   },
   {
     "exerciseId": "0188",
@@ -5652,7 +6159,11 @@
       "0188_1.jpg",
       "0188_2.jpg"
     ],
-    "trackingType": "weight"
+    "trackingType": "weight",
+    "fitCategory": "SHOULDER_STABILITY",
+    "fitCategoryValue": 25,
+    "fitSubtype": "BAND_EXTERNAL_ROTATION",
+    "fitSubtypeValue": 1
   },
   {
     "exerciseId": "0189",
@@ -5687,7 +6198,11 @@
       "0189_1.jpg",
       "0189_2.jpg"
     ],
-    "trackingType": "weight"
+    "trackingType": "weight",
+    "fitCategory": "SHOULDER_STABILITY",
+    "fitCategoryValue": 25,
+    "fitSubtype": "BAND_EXTERNAL_ROTATION",
+    "fitSubtypeValue": 1
   },
   {
     "exerciseId": "0190",
@@ -5721,7 +6236,11 @@
       "0190_1.jpg",
       "0190_2.jpg"
     ],
-    "trackingType": "weight"
+    "trackingType": "weight",
+    "fitCategory": "SHOULDER_STABILITY",
+    "fitCategoryValue": 25,
+    "fitSubtype": "CABLE_EXTERNAL_ROTATION",
+    "fitSubtypeValue": 4
   },
   {
     "exerciseId": "0191",
@@ -5758,7 +6277,11 @@
       "0191_1.jpg",
       "0191_2.jpg"
     ],
-    "trackingType": "weight"
+    "trackingType": "weight",
+    "fitCategory": "ROW",
+    "fitCategoryValue": 23,
+    "fitSubtype": "FACE_PULL",
+    "fitSubtypeValue": 5
   },
   {
     "exerciseId": "0192",
@@ -5792,7 +6315,11 @@
       "0192_1.jpg",
       "0192_2.jpg"
     ],
-    "trackingType": "weight"
+    "trackingType": "weight",
+    "fitCategory": "CURL",
+    "fitCategoryValue": 7,
+    "fitSubtype": null,
+    "fitSubtypeValue": null
   },
   {
     "exerciseId": "0193",
@@ -5829,7 +6356,11 @@
       "0193_1.jpg",
       "0193_2.jpg"
     ],
-    "trackingType": "weight"
+    "trackingType": "weight",
+    "fitCategory": "FLYE",
+    "fitCategoryValue": 9,
+    "fitSubtype": null,
+    "fitSubtypeValue": null
   },
   {
     "exerciseId": "0194",
@@ -5864,7 +6395,11 @@
       "0194_1.jpg",
       "0194_2.jpg"
     ],
-    "trackingType": "reps"
+    "trackingType": "reps",
+    "fitCategory": "CORE",
+    "fitCategoryValue": 5,
+    "fitSubtype": "OPEN_KNEE_TUCKS",
+    "fitSubtypeValue": 21
   },
   {
     "exerciseId": "0195",
@@ -5898,7 +6433,11 @@
       "0195_1.jpg",
       "0195_2.jpg"
     ],
-    "trackingType": "reps"
+    "trackingType": "reps",
+    "fitCategory": "LEG_RAISE",
+    "fitCategoryValue": 16,
+    "fitSubtype": null,
+    "fitSubtypeValue": null
   },
   {
     "exerciseId": "0196",
@@ -5934,7 +6473,11 @@
       "0196_1.jpg",
       "0196_2.jpg"
     ],
-    "trackingType": "weight"
+    "trackingType": "weight",
+    "fitCategory": "CURL",
+    "fitCategoryValue": 7,
+    "fitSubtype": "INCLINE_DUMBBELL_BICEPS_CURL",
+    "fitSubtypeValue": 22
   },
   {
     "exerciseId": "0197",
@@ -5976,7 +6519,11 @@
       "0197_1.jpg",
       "0197_2.jpg"
     ],
-    "trackingType": "reps"
+    "trackingType": "reps",
+    "fitCategory": "CURL",
+    "fitCategoryValue": 7,
+    "fitSubtype": null,
+    "fitSubtypeValue": null
   },
   {
     "exerciseId": "0198",
@@ -6017,7 +6564,11 @@
       "0198_1.jpg",
       "0198_2.jpg"
     ],
-    "trackingType": "reps"
+    "trackingType": "reps",
+    "fitCategory": "CRUNCH",
+    "fitCategoryValue": 6,
+    "fitSubtype": "FLUTTER_KICKS",
+    "fitSubtypeValue": 13
   },
   {
     "exerciseId": "0199",
@@ -6063,7 +6614,11 @@
       "0199_1.jpg",
       "0199_2.jpg"
     ],
-    "trackingType": "reps"
+    "trackingType": "reps",
+    "fitCategory": "SQUAT",
+    "fitCategoryValue": 28,
+    "fitSubtype": null,
+    "fitSubtypeValue": null
   },
   {
     "exerciseId": "0200",
@@ -6100,7 +6655,11 @@
       "0200_1.jpg",
       "0200_2.jpg"
     ],
-    "trackingType": "reps"
+    "trackingType": "reps",
+    "fitCategory": "SIT_UP",
+    "fitCategoryValue": 27,
+    "fitSubtype": "SIT_UP",
+    "fitSubtypeValue": 37
   },
   {
     "exerciseId": "0201",
@@ -6146,7 +6705,11 @@
       "0201_1.jpg",
       "0201_2.jpg"
     ],
-    "trackingType": "weight"
+    "trackingType": "weight",
+    "fitCategory": "SQUAT",
+    "fitCategoryValue": 28,
+    "fitSubtype": "BARBELL_FRONT_SQUAT",
+    "fitSubtypeValue": 8
   },
   {
     "exerciseId": "0202",
@@ -6192,7 +6755,11 @@
       "0202_1.jpg",
       "0202_2.jpg"
     ],
-    "trackingType": "weight"
+    "trackingType": "weight",
+    "fitCategory": "SQUAT",
+    "fitCategoryValue": 28,
+    "fitSubtype": "BARBELL_FRONT_SQUAT",
+    "fitSubtypeValue": 8
   },
   {
     "exerciseId": "0203",
@@ -6227,7 +6794,11 @@
       "0203_1.jpg",
       "0203_2.jpg"
     ],
-    "trackingType": "weight"
+    "trackingType": "weight",
+    "fitCategory": "LATERAL_RAISE",
+    "fitCategoryValue": 14,
+    "fitSubtype": "CABLE_FRONT_RAISE",
+    "fitSubtypeValue": 5
   },
   {
     "exerciseId": "0204",
@@ -6261,7 +6832,11 @@
       "0204_1.jpg",
       "0204_2.jpg"
     ],
-    "trackingType": "weight"
+    "trackingType": "weight",
+    "fitCategory": "LATERAL_RAISE",
+    "fitCategoryValue": 14,
+    "fitSubtype": "FRONT_RAISE",
+    "fitSubtypeValue": 10
   },
   {
     "exerciseId": "0205",
@@ -6296,7 +6871,11 @@
       "0205_1.jpg",
       "0205_2.jpg"
     ],
-    "trackingType": "weight"
+    "trackingType": "weight",
+    "fitCategory": "LATERAL_RAISE",
+    "fitCategoryValue": 14,
+    "fitSubtype": "FRONT_RAISE",
+    "fitSubtypeValue": 10
   },
   {
     "exerciseId": "0206",
@@ -6330,7 +6909,11 @@
       "0206_1.jpg",
       "0206_2.jpg"
     ],
-    "trackingType": "weight"
+    "trackingType": "weight",
+    "fitCategory": "LATERAL_RAISE",
+    "fitCategoryValue": 14,
+    "fitSubtype": "FRONT_RAISE",
+    "fitSubtypeValue": 10
   },
   {
     "exerciseId": "0207",
@@ -6377,7 +6960,11 @@
       "0207_1.jpg",
       "0207_2.jpg"
     ],
-    "trackingType": "weight"
+    "trackingType": "weight",
+    "fitCategory": "LATERAL_RAISE",
+    "fitCategoryValue": 14,
+    "fitSubtype": "FRONT_RAISE",
+    "fitSubtypeValue": 10
   },
   {
     "exerciseId": "0208",
@@ -6422,7 +7009,11 @@
       "0208_1.jpg",
       "0208_2.jpg"
     ],
-    "trackingType": "weight"
+    "trackingType": "weight",
+    "fitCategory": "SQUAT",
+    "fitCategoryValue": 28,
+    "fitSubtype": "BARBELL_FRONT_SQUAT",
+    "fitSubtypeValue": 8
   },
   {
     "exerciseId": "0209",
@@ -6463,7 +7054,11 @@
       "0209_1.jpg",
       "0209_2.jpg"
     ],
-    "trackingType": "weight"
+    "trackingType": "weight",
+    "fitCategory": "SQUAT",
+    "fitCategoryValue": 28,
+    "fitSubtype": "KETTLEBELL_SQUAT",
+    "fitSubtypeValue": 38
   },
   {
     "exerciseId": "0210",
@@ -6497,7 +7092,11 @@
       "0210_1.jpg",
       "0210_2.jpg"
     ],
-    "trackingType": "weight"
+    "trackingType": "weight",
+    "fitCategory": "LATERAL_RAISE",
+    "fitCategoryValue": 14,
+    "fitSubtype": "FRONT_RAISE",
+    "fitSubtypeValue": 10
   },
   {
     "exerciseId": "0211",
@@ -6541,7 +7140,11 @@
       "0211_1.jpg",
       "0211_2.jpg"
     ],
-    "trackingType": "weight"
+    "trackingType": "weight",
+    "fitCategory": "PULL_UP",
+    "fitCategoryValue": 21,
+    "fitSubtype": "LAT_PULLDOWN",
+    "fitSubtypeValue": 13
   },
   {
     "exerciseId": "0212",
@@ -6586,7 +7189,11 @@
       "0212_1.jpg",
       "0212_2.jpg"
     ],
-    "trackingType": "reps"
+    "trackingType": "reps",
+    "fitCategory": "PULL_UP",
+    "fitCategoryValue": 21,
+    "fitSubtype": "CHIN_UP",
+    "fitSubtypeValue": 39
   },
   {
     "exerciseId": "0213",
@@ -6626,7 +7233,11 @@
       "0213_1.jpg",
       "0213_2.jpg"
     ],
-    "trackingType": "reps"
+    "trackingType": "reps",
+    "fitCategory": "TRICEPS_EXTENSION",
+    "fitCategoryValue": 30,
+    "fitSubtype": null,
+    "fitSubtypeValue": null
   },
   {
     "exerciseId": "0214",
@@ -6672,7 +7283,11 @@
       "0214_1.jpg",
       "0214_2.jpg"
     ],
-    "trackingType": "weight"
+    "trackingType": "weight",
+    "fitCategory": "SQUAT",
+    "fitCategoryValue": 28,
+    "fitSubtype": "GOBLET_SQUAT",
+    "fitSubtypeValue": 37
   },
   {
     "exerciseId": "0215",
@@ -6716,7 +7331,11 @@
       "0215_1.jpg",
       "0215_2.jpg"
     ],
-    "trackingType": "reps"
+    "trackingType": "reps",
+    "fitCategory": "PULL_UP",
+    "fitCategoryValue": 21,
+    "fitSubtype": "CHIN_UP",
+    "fitSubtypeValue": 39
   },
   {
     "exerciseId": "0216",
@@ -6763,7 +7382,11 @@
       "0216_1.jpg",
       "0216_2.jpg"
     ],
-    "trackingType": "weight"
+    "trackingType": "weight",
+    "fitCategory": "SQUAT",
+    "fitCategoryValue": 28,
+    "fitSubtype": "BARBELL_HACK_SQUAT",
+    "fitSubtypeValue": 9
   },
   {
     "exerciseId": "0217",
@@ -6798,7 +7421,11 @@
       "0217_1.jpg",
       "0217_2.jpg"
     ],
-    "trackingType": "weight"
+    "trackingType": "weight",
+    "fitCategory": "CURL",
+    "fitCategoryValue": 7,
+    "fitSubtype": "CABLE_HAMMER_CURL",
+    "fitSubtypeValue": 9
   },
   {
     "exerciseId": "0218",
@@ -6844,7 +7471,11 @@
       "0218_1.jpg",
       "0218_2.jpg"
     ],
-    "trackingType": "weight"
+    "trackingType": "weight",
+    "fitCategory": "BENCH_PRESS",
+    "fitCategoryValue": 0,
+    "fitSubtype": "DUMBBELL_BENCH_PRESS",
+    "fitSubtypeValue": 6
   },
   {
     "exerciseId": "0219",
@@ -6885,7 +7516,11 @@
       "0219_1.jpg",
       "0219_2.jpg"
     ],
-    "trackingType": "reps"
+    "trackingType": "reps",
+    "fitCategory": "PUSH_UP",
+    "fitCategoryValue": 22,
+    "fitSubtype": "HANDSTAND_PUSH_UP",
+    "fitSubtypeValue": 25
   },
   {
     "exerciseId": "0220",
@@ -6919,7 +7554,11 @@
       "0220_1.jpg",
       "0220_2.jpg"
     ],
-    "trackingType": "reps"
+    "trackingType": "reps",
+    "fitCategory": "LEG_RAISE",
+    "fitCategoryValue": 16,
+    "fitSubtype": null,
+    "fitSubtypeValue": null
   },
   {
     "exerciseId": "0221",
@@ -6954,7 +7593,11 @@
       "0221_1.jpg",
       "0221_2.jpg"
     ],
-    "trackingType": "reps"
+    "trackingType": "reps",
+    "fitCategory": "CORE",
+    "fitCategoryValue": 5,
+    "fitSubtype": null,
+    "fitSubtypeValue": null
   },
   {
     "exerciseId": "0222",
@@ -6988,7 +7631,11 @@
       "0222_1.jpg",
       "0222_2.jpg"
     ],
-    "trackingType": "weight"
+    "trackingType": "weight",
+    "fitCategory": "CURL",
+    "fitCategoryValue": 7,
+    "fitSubtype": "CABLE_BICEPS_CURL",
+    "fitSubtypeValue": 8
   },
   {
     "exerciseId": "0223",
@@ -7028,7 +7675,11 @@
       "0223_1.jpg",
       "0223_2.jpg"
     ],
-    "trackingType": "weight"
+    "trackingType": "weight",
+    "fitCategory": "HYPEREXTENSION",
+    "fitCategoryValue": 13,
+    "fitSubtype": null,
+    "fitSubtypeValue": null
   },
   {
     "exerciseId": "0224",
@@ -7062,7 +7713,11 @@
       "0224_1.jpg",
       "0224_2.jpg"
     ],
-    "trackingType": "weight"
+    "trackingType": "weight",
+    "fitCategory": "LEG_RAISE",
+    "fitCategoryValue": 16,
+    "fitSubtype": null,
+    "fitSubtypeValue": null
   },
   {
     "exerciseId": "0225",
@@ -7106,7 +7761,11 @@
       "0225_1.jpg",
       "0225_2.jpg"
     ],
-    "trackingType": "weight"
+    "trackingType": "weight",
+    "fitCategory": "HYPEREXTENSION",
+    "fitCategoryValue": 13,
+    "fitSubtype": null,
+    "fitSubtypeValue": null
   },
   {
     "exerciseId": "0226",
@@ -7149,7 +7808,11 @@
       "0226_1.jpg",
       "0226_2.jpg"
     ],
-    "trackingType": "reps"
+    "trackingType": "reps",
+    "fitCategory": "HYPEREXTENSION",
+    "fitCategoryValue": 13,
+    "fitSubtype": null,
+    "fitSubtypeValue": null
   },
   {
     "exerciseId": "0227",
@@ -7191,7 +7854,11 @@
       "0227_1.jpg",
       "0227_2.jpg"
     ],
-    "trackingType": "weight"
+    "trackingType": "weight",
+    "fitCategory": "TRICEPS_EXTENSION",
+    "fitCategoryValue": 30,
+    "fitSubtype": "INCLINE_EZ_BAR_LYING_TRICEPS_EXTENSION",
+    "fitSubtypeValue": 11
   },
   {
     "exerciseId": "0228",
@@ -7237,7 +7904,11 @@
       "0228_1.jpg",
       "0228_2.jpg"
     ],
-    "trackingType": "weight"
+    "trackingType": "weight",
+    "fitCategory": "ROW",
+    "fitCategoryValue": 23,
+    "fitSubtype": null,
+    "fitSubtypeValue": null
   },
   {
     "exerciseId": "0229",
@@ -7279,7 +7950,11 @@
       "0229_1.jpg",
       "0229_2.jpg"
     ],
-    "trackingType": "weight"
+    "trackingType": "weight",
+    "fitCategory": "BENCH_PRESS",
+    "fitCategoryValue": 0,
+    "fitSubtype": "SINGLE_ARM_CABLE_CHEST_PRESS",
+    "fitSubtypeValue": 20
   },
   {
     "exerciseId": "0230",
@@ -7321,7 +7996,11 @@
       "0230_1.jpg",
       "0230_2.jpg"
     ],
-    "trackingType": "weight"
+    "trackingType": "weight",
+    "fitCategory": "FLYE",
+    "fitCategoryValue": 9,
+    "fitSubtype": "INCLINE_REVERSE_FLYE",
+    "fitSubtypeValue": 11
   },
   {
     "exerciseId": "0231",
@@ -7367,7 +8046,11 @@
       "0231_1.jpg",
       "0231_2.jpg"
     ],
-    "trackingType": "weight"
+    "trackingType": "weight",
+    "fitCategory": "BENCH_PRESS",
+    "fitCategoryValue": 0,
+    "fitSubtype": "INCLINE_DUMBBELL_BENCH_PRESS",
+    "fitSubtypeValue": 9
   },
   {
     "exerciseId": "0232",
@@ -7401,7 +8084,11 @@
       "0232_1.jpg",
       "0232_2.jpg"
     ],
-    "trackingType": "weight"
+    "trackingType": "weight",
+    "fitCategory": "CURL",
+    "fitCategoryValue": 7,
+    "fitSubtype": "INCLINE_DUMBBELL_BICEPS_CURL",
+    "fitSubtypeValue": 22
   },
   {
     "exerciseId": "0233",
@@ -7443,7 +8130,11 @@
       "0233_1.jpg",
       "0233_2.jpg"
     ],
-    "trackingType": "weight"
+    "trackingType": "weight",
+    "fitCategory": "FLYE",
+    "fitCategoryValue": 9,
+    "fitSubtype": "INCLINE_DUMBBELL_FLYE",
+    "fitSubtypeValue": 3
   },
   {
     "exerciseId": "0235",
@@ -7489,7 +8180,11 @@
       "0235_1.jpg",
       "0235_2.jpg"
     ],
-    "trackingType": "weight"
+    "trackingType": "weight",
+    "fitCategory": "BENCH_PRESS",
+    "fitCategoryValue": 0,
+    "fitSubtype": "INCLINE_DUMBBELL_BENCH_PRESS",
+    "fitSubtypeValue": 9
   },
   {
     "exerciseId": "0236",
@@ -7522,7 +8217,11 @@
       "0236_1.jpg",
       "0236_2.jpg"
     ],
-    "trackingType": "weight"
+    "trackingType": "weight",
+    "fitCategory": "CURL",
+    "fitCategoryValue": 7,
+    "fitSubtype": "CABLE_HAMMER_CURL",
+    "fitSubtypeValue": 9
   },
   {
     "exerciseId": "0237",
@@ -7557,7 +8256,11 @@
       "0237_1.jpg",
       "0237_2.jpg"
     ],
-    "trackingType": "weight"
+    "trackingType": "weight",
+    "fitCategory": "CURL",
+    "fitCategoryValue": 7,
+    "fitSubtype": "INCLINE_DUMBBELL_BICEPS_CURL",
+    "fitSubtypeValue": 22
   },
   {
     "exerciseId": "0239",
@@ -7601,7 +8304,11 @@
       "0239_1.jpg",
       "0239_2.jpg"
     ],
-    "trackingType": "reps"
+    "trackingType": "reps",
+    "fitCategory": "PUSH_UP",
+    "fitCategoryValue": 22,
+    "fitSubtype": "INCLINE_PUSH_UP",
+    "fitSubtypeValue": 27
   },
   {
     "exerciseId": "0240",
@@ -7648,7 +8355,11 @@
       "0240_1.jpg",
       "0240_2.jpg"
     ],
-    "trackingType": "reps"
+    "trackingType": "reps",
+    "fitCategory": "PUSH_UP",
+    "fitCategoryValue": 22,
+    "fitSubtype": "INCLINE_PUSH_UP",
+    "fitSubtypeValue": 27
   },
   {
     "exerciseId": "0241",
@@ -7695,7 +8406,11 @@
       "0241_1.jpg",
       "0241_2.jpg"
     ],
-    "trackingType": "reps"
+    "trackingType": "reps",
+    "fitCategory": "PUSH_UP",
+    "fitCategoryValue": 22,
+    "fitSubtype": "INCLINE_PUSH_UP",
+    "fitSubtypeValue": 27
   },
   {
     "exerciseId": "0242",
@@ -7742,7 +8457,11 @@
       "0242_1.jpg",
       "0242_2.jpg"
     ],
-    "trackingType": "reps"
+    "trackingType": "reps",
+    "fitCategory": "PUSH_UP",
+    "fitCategoryValue": 22,
+    "fitSubtype": "WIDE_GRIP_PUSH_UP",
+    "fitSubtypeValue": 85
   },
   {
     "exerciseId": "0243",
@@ -7777,7 +8496,11 @@
       "0243_1.jpg",
       "0243_2.jpg"
     ],
-    "trackingType": "weight"
+    "trackingType": "weight",
+    "fitCategory": "SHOULDER_STABILITY",
+    "fitCategoryValue": 25,
+    "fitSubtype": "BAND_INTERNAL_ROTATION",
+    "fitSubtypeValue": 2
   },
   {
     "exerciseId": "0244",
@@ -7818,7 +8541,11 @@
       "0244_1.jpg",
       "0244_2.jpg"
     ],
-    "trackingType": "weight"
+    "trackingType": "weight",
+    "fitCategory": "PULL_UP",
+    "fitCategoryValue": 21,
+    "fitSubtype": "PULL_UP",
+    "fitSubtypeValue": 38
   },
   {
     "exerciseId": "0251",
@@ -7852,7 +8579,11 @@
       "0251_1.jpg",
       "0251_2.jpg"
     ],
-    "trackingType": "reps"
+    "trackingType": "reps",
+    "fitCategory": "SIT_UP",
+    "fitCategoryValue": 27,
+    "fitSubtype": "SIT_UP",
+    "fitSubtypeValue": 37
   },
   {
     "exerciseId": "0252",
@@ -7886,7 +8617,11 @@
       "0252_1.jpg",
       "0252_2.jpg"
     ],
-    "trackingType": "reps"
+    "trackingType": "reps",
+    "fitCategory": "SIT_UP",
+    "fitCategoryValue": 27,
+    "fitSubtype": "SIT_UP",
+    "fitSubtypeValue": 37
   },
   {
     "exerciseId": "0253",
@@ -7938,7 +8673,11 @@
       "0253_1.jpg",
       "0253_2.jpg"
     ],
-    "trackingType": "weight"
+    "trackingType": "weight",
+    "fitCategory": "SQUAT",
+    "fitCategoryValue": 28,
+    "fitSubtype": null,
+    "fitSubtypeValue": null
   },
   {
     "exerciseId": "0254",
@@ -7977,7 +8716,11 @@
       "0254_1.jpg",
       "0254_2.jpg"
     ],
-    "trackingType": "weight"
+    "trackingType": "weight",
+    "fitCategory": "SHOULDER_PRESS",
+    "fitCategoryValue": 24,
+    "fitSubtype": "ARNOLD_PRESS",
+    "fitSubtypeValue": 1
   },
   {
     "exerciseId": "0256",
@@ -8018,7 +8761,11 @@
       "0256_1.jpg",
       "0256_2.jpg"
     ],
-    "trackingType": "weight"
+    "trackingType": "weight",
+    "fitCategory": "CORE",
+    "fitCategoryValue": 5,
+    "fitSubtype": null,
+    "fitSubtypeValue": null
   },
   {
     "exerciseId": "0258",
@@ -8060,7 +8807,11 @@
       "0258_1.jpg",
       "0258_2.jpg"
     ],
-    "trackingType": "weight"
+    "trackingType": "weight",
+    "fitCategory": "DEADLIFT",
+    "fitCategoryValue": 8,
+    "fitSubtype": "ONE_ARM_ONE_LEG_DEADLIFT",
+    "fitSubtypeValue": 6
   },
   {
     "exerciseId": "0260",
@@ -8100,7 +8851,11 @@
       "0260_1.jpg",
       "0260_2.jpg"
     ],
-    "trackingType": "weight"
+    "trackingType": "weight",
+    "fitCategory": "CORE",
+    "fitCategoryValue": 5,
+    "fitSubtype": null,
+    "fitSubtypeValue": null
   },
   {
     "exerciseId": "0261",
@@ -8147,7 +8902,11 @@
       "0261_1.jpg",
       "0261_2.jpg"
     ],
-    "trackingType": "weight"
+    "trackingType": "weight",
+    "fitCategory": "SQUAT",
+    "fitCategoryValue": 28,
+    "fitSubtype": "KETTLEBELL_SQUAT",
+    "fitSubtypeValue": 38
   },
   {
     "exerciseId": "0262",
@@ -8186,7 +8945,11 @@
       "0262_1.jpg",
       "0262_2.jpg"
     ],
-    "trackingType": "weight"
+    "trackingType": "weight",
+    "fitCategory": "SHOULDER_PRESS",
+    "fitCategoryValue": 24,
+    "fitSubtype": "INVERTED_SHOULDER_PRESS",
+    "fitSubtypeValue": 11
   },
   {
     "exerciseId": "0263",
@@ -8225,7 +8988,11 @@
       "0263_1.jpg",
       "0263_2.jpg"
     ],
-    "trackingType": "weight"
+    "trackingType": "weight",
+    "fitCategory": "SHOULDER_PRESS",
+    "fitCategoryValue": 24,
+    "fitSubtype": "INVERTED_SHOULDER_PRESS",
+    "fitSubtypeValue": 11
   },
   {
     "exerciseId": "0264",
@@ -8272,7 +9039,11 @@
       "0264_1.jpg",
       "0264_2.jpg"
     ],
-    "trackingType": "weight"
+    "trackingType": "weight",
+    "fitCategory": "DEADLIFT",
+    "fitCategoryValue": 8,
+    "fitSubtype": "SUMO_DEADLIFT_HIGH_PULL",
+    "fitSubtypeValue": 16
   },
   {
     "exerciseId": "0265",
@@ -8315,7 +9086,11 @@
       "0265_1.jpg",
       "0265_2.jpg"
     ],
-    "trackingType": "weight"
+    "trackingType": "weight",
+    "fitCategory": "SQUAT",
+    "fitCategoryValue": 28,
+    "fitSubtype": null,
+    "fitSubtypeValue": null
   },
   {
     "exerciseId": "0269",
@@ -8371,7 +9146,11 @@
       "0269_1.jpg",
       "0269_2.jpg"
     ],
-    "trackingType": "reps"
+    "trackingType": "reps",
+    "fitCategory": "LATERAL_RAISE",
+    "fitCategoryValue": 14,
+    "fitSubtype": "MUSCLE_UP",
+    "fitSubtypeValue": 13
   },
   {
     "exerciseId": "0270",
@@ -8406,7 +9185,11 @@
       "0270_1.jpg",
       "0270_2.jpg"
     ],
-    "trackingType": "weight"
+    "trackingType": "weight",
+    "fitCategory": "LEG_RAISE",
+    "fitCategoryValue": 16,
+    "fitSubtype": null,
+    "fitSubtypeValue": null
   },
   {
     "exerciseId": "0271",
@@ -8445,7 +9228,11 @@
       "0271_1.jpg",
       "0271_2.jpg"
     ],
-    "trackingType": "weight"
+    "trackingType": "weight",
+    "fitCategory": "CRUNCH",
+    "fitCategoryValue": 6,
+    "fitSubtype": "KNEELING_OBLIQUE_CABLE_CRUNCH",
+    "fitSubtypeValue": 31
   },
   {
     "exerciseId": "0272",
@@ -8482,7 +9269,11 @@
       "0272_1.jpg",
       "0272_2.jpg"
     ],
-    "trackingType": "weight"
+    "trackingType": "weight",
+    "fitCategory": "TRICEPS_EXTENSION",
+    "fitCategoryValue": 30,
+    "fitSubtype": "CABLE_LYING_TRICEPS_EXTENSION",
+    "fitSubtypeValue": 4
   },
   {
     "exerciseId": "0273",
@@ -8524,7 +9315,11 @@
       "0273_1.jpg",
       "0273_2.jpg"
     ],
-    "trackingType": "weight"
+    "trackingType": "weight",
+    "fitCategory": "ROW",
+    "fitCategoryValue": 23,
+    "fitSubtype": null,
+    "fitSubtypeValue": null
   },
   {
     "exerciseId": "0274",
@@ -8567,7 +9362,11 @@
       "0274_1.jpg",
       "0274_2.jpg"
     ],
-    "trackingType": "weight"
+    "trackingType": "weight",
+    "fitCategory": "ROW",
+    "fitCategoryValue": 23,
+    "fitSubtype": "ONE_ARM_BENT_OVER_ROW",
+    "fitSubtypeValue": 13
   },
   {
     "exerciseId": "0275",
@@ -8614,7 +9413,11 @@
       "0275_1.jpg",
       "0275_2.jpg"
     ],
-    "trackingType": "weight"
+    "trackingType": "weight",
+    "fitCategory": "SHOULDER_PRESS",
+    "fitCategoryValue": 24,
+    "fitSubtype": null,
+    "fitSubtypeValue": null
   },
   {
     "exerciseId": "0276",
@@ -8668,7 +9471,11 @@
       "0276_1.jpg",
       "0276_2.jpg"
     ],
-    "trackingType": "weight"
+    "trackingType": "weight",
+    "fitCategory": "SHOULDER_PRESS",
+    "fitCategoryValue": 24,
+    "fitSubtype": null,
+    "fitSubtypeValue": null
   },
   {
     "exerciseId": "0277",
@@ -8702,7 +9509,11 @@
       "0277_1.jpg",
       "0277_2.jpg"
     ],
-    "trackingType": "weight"
+    "trackingType": "weight",
+    "fitCategory": "LATERAL_RAISE",
+    "fitCategoryValue": 14,
+    "fitSubtype": null,
+    "fitSubtypeValue": null
   },
   {
     "exerciseId": "0278",
@@ -8736,7 +9547,11 @@
       "0278_1.jpg",
       "0278_2.jpg"
     ],
-    "trackingType": "weight"
+    "trackingType": "weight",
+    "fitCategory": "SQUAT",
+    "fitCategoryValue": 28,
+    "fitSubtype": null,
+    "fitSubtypeValue": null
   },
   {
     "exerciseId": "0279",
@@ -8777,7 +9592,11 @@
       "0279_1.jpg",
       "0279_2.jpg"
     ],
-    "trackingType": "reps"
+    "trackingType": "reps",
+    "fitCategory": "LEG_RAISE",
+    "fitCategoryValue": 16,
+    "fitSubtype": null,
+    "fitSubtypeValue": null
   },
   {
     "exerciseId": "0280",
@@ -8822,7 +9641,11 @@
       "0280_1.jpg",
       "0280_2.jpg"
     ],
-    "trackingType": "weight"
+    "trackingType": "weight",
+    "fitCategory": "SQUAT",
+    "fitCategoryValue": 28,
+    "fitSubtype": "LEG_PRESS",
+    "fitSubtypeValue": 0
   },
   {
     "exerciseId": "0281",
@@ -8856,7 +9679,11 @@
       "0281_1.jpg",
       "0281_2.jpg"
     ],
-    "trackingType": "reps"
+    "trackingType": "reps",
+    "fitCategory": "CORE",
+    "fitCategoryValue": 5,
+    "fitSubtype": "OPEN_KNEE_TUCKS",
+    "fitSubtypeValue": 21
   },
   {
     "exerciseId": "0282",
@@ -8898,7 +9725,11 @@
       "0282_1.jpg",
       "0282_2.jpg"
     ],
-    "trackingType": "weight"
+    "trackingType": "weight",
+    "fitCategory": "BENCH_PRESS",
+    "fitCategoryValue": 0,
+    "fitSubtype": "BARBELL_FLOOR_PRESS",
+    "fitSubtypeValue": 3
   },
   {
     "exerciseId": "0283",
@@ -8941,7 +9772,11 @@
       "0283_1.jpg",
       "0283_2.jpg"
     ],
-    "trackingType": "weight"
+    "trackingType": "weight",
+    "fitCategory": "BENCH_PRESS",
+    "fitCategoryValue": 0,
+    "fitSubtype": "SMITH_MACHINE_BENCH_PRESS",
+    "fitSubtypeValue": 22
   },
   {
     "exerciseId": "0284",
@@ -8981,7 +9816,11 @@
       "0284_1.jpg",
       "0284_2.jpg"
     ],
-    "trackingType": "weight"
+    "trackingType": "weight",
+    "fitCategory": "DEADLIFT",
+    "fitCategoryValue": 8,
+    "fitSubtype": null,
+    "fitSubtypeValue": null
   },
   {
     "exerciseId": "0285",
@@ -9023,7 +9862,11 @@
       "0285_1.jpg",
       "0285_2.jpg"
     ],
-    "trackingType": "weight"
+    "trackingType": "weight",
+    "fitCategory": "BENCH_PRESS",
+    "fitCategoryValue": 0,
+    "fitSubtype": null,
+    "fitSubtypeValue": null
   },
   {
     "exerciseId": "0286",
@@ -9063,7 +9906,11 @@
       "0286_1.jpg",
       "0286_2.jpg"
     ],
-    "trackingType": "weight"
+    "trackingType": "weight",
+    "fitCategory": "ROW",
+    "fitCategoryValue": 23,
+    "fitSubtype": null,
+    "fitSubtypeValue": null
   },
   {
     "exerciseId": "0287",
@@ -9105,7 +9952,11 @@
       "0287_1.jpg",
       "0287_2.jpg"
     ],
-    "trackingType": "weight"
+    "trackingType": "weight",
+    "fitCategory": "BENCH_PRESS",
+    "fitCategoryValue": 0,
+    "fitSubtype": "INCLINE_SMITH_MACHINE_BENCH_PRESS",
+    "fitSubtypeValue": 10
   },
   {
     "exerciseId": "0288",
@@ -9147,7 +9998,11 @@
       "0288_1.jpg",
       "0288_2.jpg"
     ],
-    "trackingType": "weight"
+    "trackingType": "weight",
+    "fitCategory": "ROW",
+    "fitCategoryValue": 23,
+    "fitSubtype": "ROW",
+    "fitSubtypeValue": 36
   },
   {
     "exerciseId": "0289",
@@ -9186,7 +10041,11 @@
       "0289_1.jpg",
       "0289_2.jpg"
     ],
-    "trackingType": "weight"
+    "trackingType": "weight",
+    "fitCategory": "SHOULDER_PRESS",
+    "fitCategoryValue": 24,
+    "fitSubtype": "INVERTED_SHOULDER_PRESS",
+    "fitSubtypeValue": 11
   },
   {
     "exerciseId": "0290",
@@ -9227,7 +10086,11 @@
       "0290_1.jpg",
       "0290_2.jpg"
     ],
-    "trackingType": "weight"
+    "trackingType": "weight",
+    "fitCategory": "SHRUG",
+    "fitCategoryValue": 26,
+    "fitSubtype": "BEHIND_THE_BACK_SMITH_MACHINE_SHRUG",
+    "fitSubtypeValue": 3
   },
   {
     "exerciseId": "0292",
@@ -9267,7 +10130,11 @@
       "0292_1.jpg",
       "0292_2.jpg"
     ],
-    "trackingType": "weight"
+    "trackingType": "weight",
+    "fitCategory": "FLYE",
+    "fitCategoryValue": 9,
+    "fitSubtype": "CABLE_CROSSOVER",
+    "fitSubtypeValue": 0
   },
   {
     "exerciseId": "0293",
@@ -9303,7 +10170,11 @@
       "0293_1.jpg",
       "0293_2.jpg"
     ],
-    "trackingType": "weight"
+    "trackingType": "weight",
+    "fitCategory": "TRICEPS_EXTENSION",
+    "fitCategoryValue": 30,
+    "fitSubtype": "CABLE_LYING_TRICEPS_EXTENSION",
+    "fitSubtypeValue": 4
   },
   {
     "exerciseId": "0294",
@@ -9349,7 +10220,11 @@
       "0294_1.jpg",
       "0294_2.jpg"
     ],
-    "trackingType": "weight"
+    "trackingType": "weight",
+    "fitCategory": "ROW",
+    "fitCategoryValue": 23,
+    "fitSubtype": null,
+    "fitSubtypeValue": null
   },
   {
     "exerciseId": "0295",
@@ -9394,7 +10269,11 @@
       "0295_1.jpg",
       "0295_2.jpg"
     ],
-    "trackingType": "weight"
+    "trackingType": "weight",
+    "fitCategory": "LUNGE",
+    "fitCategoryValue": 17,
+    "fitSubtype": null,
+    "fitSubtypeValue": null
   },
   {
     "exerciseId": "0296",
@@ -9438,7 +10317,11 @@
       "0296_1.jpg",
       "0296_2.jpg"
     ],
-    "trackingType": "weight"
+    "trackingType": "weight",
+    "fitCategory": "LUNGE",
+    "fitCategoryValue": 17,
+    "fitSubtype": null,
+    "fitSubtypeValue": null
   },
   {
     "exerciseId": "0297",
@@ -9474,7 +10357,11 @@
       "0297_1.jpg",
       "0297_2.jpg"
     ],
-    "trackingType": "weight"
+    "trackingType": "weight",
+    "fitCategory": "CURL",
+    "fitCategoryValue": 7,
+    "fitSubtype": "LYING_CONCENTRATION_CABLE_CURL",
+    "fitSubtypeValue": 25
   },
   {
     "exerciseId": "0298",
@@ -9519,7 +10406,11 @@
       "0298_1.jpg",
       "0298_2.jpg"
     ],
-    "trackingType": "weight"
+    "trackingType": "weight",
+    "fitCategory": "ROW",
+    "fitCategoryValue": 23,
+    "fitSubtype": "BARBELL_ROW",
+    "fitSubtypeValue": 45
   },
   {
     "exerciseId": "0299",
@@ -9556,7 +10447,11 @@
       "0299_1.jpg",
       "0299_2.jpg"
     ],
-    "trackingType": "weight"
+    "trackingType": "weight",
+    "fitCategory": "CURL",
+    "fitCategoryValue": 7,
+    "fitSubtype": "LYING_CONCENTRATION_CABLE_CURL",
+    "fitSubtypeValue": 25
   },
   {
     "exerciseId": "0300",
@@ -9591,7 +10486,11 @@
       "0300_1.jpg",
       "0300_2.jpg"
     ],
-    "trackingType": "weight"
+    "trackingType": "weight",
+    "fitCategory": "TRICEPS_EXTENSION",
+    "fitCategoryValue": 30,
+    "fitSubtype": "LYING_EZ_BAR_TRICEPS_EXTENSION",
+    "fitSubtypeValue": 13
   },
   {
     "exerciseId": "0301",
@@ -9626,7 +10525,11 @@
       "0301_1.jpg",
       "0301_2.jpg"
     ],
-    "trackingType": "weight"
+    "trackingType": "weight",
+    "fitCategory": "TRICEPS_EXTENSION",
+    "fitCategoryValue": 30,
+    "fitSubtype": null,
+    "fitSubtypeValue": null
   },
   {
     "exerciseId": "0302",
@@ -9669,75 +10572,11 @@
       "0302_1.jpg",
       "0302_2.jpg"
     ],
-    "trackingType": "weight"
-  },
-  {
-    "exerciseId": "0303",
-    "name": "Face Down Neck Resistance",
-    "muscleGroupsPrimary": [
-      "neck"
-    ],
-    "muscleGroupsSecondary": [],
-    "specificMusclesPrimary": [
-      "Neck"
-    ],
-    "specificMusclesSecondary": [],
-    "anatomicalRegionsPrimary": [
-      "Neck"
-    ],
-    "anatomicalRegionsSecondary": [],
-    "splitCategory": "Pull",
-    "upperLower": "Upper",
-    "force": "pull",
-    "mechanic": "isolation",
-    "equipment": "other",
-    "level": "intermediate",
-    "exerciseType": "strength",
-    "instructions": [
-      "Lie face down with your whole body straight on a flat bench while holding a weight plate behind your head. Tip: You will need to position yourself so that your shoulders are slightly above the end of a flat bench in order for the upper chest, neck and face to be off the bench. This will be your starting position.",
-      "While keeping the plate secure on the back of your head slowly lower your head (as in saying \"yes\") as you breathe in.",
-      "Raise your head back up to the starting position in a semi-circular motion as you breathe out. Hold the contraction for a second.",
-      "Repeat for the recommended amount of repetitions."
-    ],
-    "images": [
-      "0303_1.jpg",
-      "0303_2.jpg"
-    ],
-    "trackingType": "weight"
-  },
-  {
-    "exerciseId": "0304",
-    "name": "Face Up Neck Resistance",
-    "muscleGroupsPrimary": [
-      "neck"
-    ],
-    "muscleGroupsSecondary": [],
-    "specificMusclesPrimary": [
-      "Neck"
-    ],
-    "specificMusclesSecondary": [],
-    "anatomicalRegionsPrimary": [
-      "Neck"
-    ],
-    "anatomicalRegionsSecondary": [],
-    "splitCategory": "Pull",
-    "upperLower": "Upper",
-    "force": "pull",
-    "mechanic": "isolation",
-    "equipment": "other",
-    "level": "intermediate",
-    "exerciseType": "strength",
-    "instructions": [
-      "Lie face up with your whole body straight on a flat bench while holding a weight plate on top of your forehead. Tip: You will need to position yourself so that your shoulders are slightly above the end of a flat bench in order for the traps, neck and head to be off the bench. This will be your starting position.",
-      "While keeping the plate secure on your forehead slowly lower your head back in a semi-circular motion as you breathe in.",
-      "Raise your head back up to the starting position in a semi-circular motion as you breathe out. Hold the contraction for a second.",
-      "Repeat for the recommended amount of repetitions."
-    ],
-    "images": [
-      "0304_1.jpg",
-      "0304_2.jpg"
-    ],
-    "trackingType": "weight"
+    "trackingType": "weight",
+    "fitCategory": "TRICEPS_EXTENSION",
+    "fitCategoryValue": 30,
+    "fitSubtype": "DUMBBELL_LYING_TRICEPS_EXTENSION",
+    "fitSubtypeValue": 7
   },
   {
     "exerciseId": "0305",
@@ -9771,7 +10610,11 @@
       "0305_1.jpg",
       "0305_2.jpg"
     ],
-    "trackingType": "weight"
+    "trackingType": "weight",
+    "fitCategory": "CURL",
+    "fitCategoryValue": 7,
+    "fitSubtype": null,
+    "fitSubtypeValue": null
   },
   {
     "exerciseId": "0306",
@@ -9805,7 +10648,11 @@
       "0306_1.jpg",
       "0306_2.jpg"
     ],
-    "trackingType": "weight"
+    "trackingType": "weight",
+    "fitCategory": "LEG_CURL",
+    "fitCategoryValue": 15,
+    "fitSubtype": "LEG_CURL",
+    "fitSubtypeValue": 0
   },
   {
     "exerciseId": "0307",
@@ -9851,7 +10698,11 @@
       "0307_1.jpg",
       "0307_2.jpg"
     ],
-    "trackingType": "weight"
+    "trackingType": "weight",
+    "fitCategory": "SQUAT",
+    "fitCategoryValue": 28,
+    "fitSubtype": null,
+    "fitSubtypeValue": null
   },
   {
     "exerciseId": "0308",
@@ -9886,7 +10737,11 @@
       "0308_1.jpg",
       "0308_2.jpg"
     ],
-    "trackingType": "weight"
+    "trackingType": "weight",
+    "fitCategory": "LATERAL_RAISE",
+    "fitCategoryValue": 14,
+    "fitSubtype": "ONE_ARM_CABLE_LATERAL_RAISE",
+    "fitSubtypeValue": 14
   },
   {
     "exerciseId": "0309",
@@ -9921,7 +10776,11 @@
       "0309_1.jpg",
       "0309_2.jpg"
     ],
-    "trackingType": "weight"
+    "trackingType": "weight",
+    "fitCategory": "LATERAL_RAISE",
+    "fitCategoryValue": 14,
+    "fitSubtype": "LYING_DUMBBELL_RAISE",
+    "fitSubtypeValue": 12
   },
   {
     "exerciseId": "0310",
@@ -9956,7 +10815,11 @@
       "0310_1.jpg",
       "0310_2.jpg"
     ],
-    "trackingType": "weight"
+    "trackingType": "weight",
+    "fitCategory": "CURL",
+    "fitCategoryValue": 7,
+    "fitSubtype": null,
+    "fitSubtypeValue": null
   },
   {
     "exerciseId": "0311",
@@ -10001,7 +10864,11 @@
       "0311_1.jpg",
       "0311_2.jpg"
     ],
-    "trackingType": "weight"
+    "trackingType": "weight",
+    "fitCategory": "ROW",
+    "fitCategoryValue": 23,
+    "fitSubtype": "T_BAR_ROW",
+    "fitSubtypeValue": 28
   },
   {
     "exerciseId": "0312",
@@ -10036,7 +10903,11 @@
       "0312_1.jpg",
       "0312_2.jpg"
     ],
-    "trackingType": "weight"
+    "trackingType": "weight",
+    "fitCategory": "TRICEPS_EXTENSION",
+    "fitCategoryValue": 30,
+    "fitSubtype": "TRICEPS_PRESS",
+    "fitSubtypeValue": 42
   },
   {
     "exerciseId": "0313",
@@ -10082,7 +10953,11 @@
       "0313_1.jpg",
       "0313_2.jpg"
     ],
-    "trackingType": "weight"
+    "trackingType": "weight",
+    "fitCategory": "BENCH_PRESS",
+    "fitCategoryValue": 0,
+    "fitSubtype": "SMITH_MACHINE_BENCH_PRESS",
+    "fitSubtypeValue": 22
   },
   {
     "exerciseId": "0314",
@@ -10116,7 +10991,11 @@
       "0314_1.jpg",
       "0314_2.jpg"
     ],
-    "trackingType": "weight"
+    "trackingType": "weight",
+    "fitCategory": "CURL",
+    "fitCategoryValue": 7,
+    "fitSubtype": null,
+    "fitSubtypeValue": null
   },
   {
     "exerciseId": "0315",
@@ -10151,7 +11030,11 @@
       "0315_1.jpg",
       "0315_2.jpg"
     ],
-    "trackingType": "weight"
+    "trackingType": "weight",
+    "fitCategory": "CURL",
+    "fitCategoryValue": 7,
+    "fitSubtype": null,
+    "fitSubtypeValue": null
   },
   {
     "exerciseId": "0316",
@@ -10192,7 +11075,11 @@
       "0316_1.jpg",
       "0316_2.jpg"
     ],
-    "trackingType": "weight"
+    "trackingType": "weight",
+    "fitCategory": "SHOULDER_PRESS",
+    "fitCategoryValue": 24,
+    "fitSubtype": "INVERTED_SHOULDER_PRESS",
+    "fitSubtypeValue": 11
   },
   {
     "exerciseId": "0317",
@@ -10226,7 +11113,11 @@
       "0317_1.jpg",
       "0317_2.jpg"
     ],
-    "trackingType": "weight"
+    "trackingType": "weight",
+    "fitCategory": "TRICEPS_EXTENSION",
+    "fitCategoryValue": 30,
+    "fitSubtype": "TRICEPS_EXTENSION_ON_FLOOR",
+    "fitSubtypeValue": 38
   },
   {
     "exerciseId": "0318",
@@ -10260,7 +11151,11 @@
       "0318_1.jpg",
       "0318_2.jpg"
     ],
-    "trackingType": "weight"
+    "trackingType": "weight",
+    "fitCategory": "SHRUG",
+    "fitCategoryValue": 26,
+    "fitSubtype": "BEHIND_THE_BACK_SHRUG",
+    "fitSubtypeValue": 18
   },
   {
     "exerciseId": "0319",
@@ -10304,7 +11199,11 @@
       "0319_1.jpg",
       "0319_2.jpg"
     ],
-    "trackingType": "reps"
+    "trackingType": "reps",
+    "fitCategory": "PULL_UP",
+    "fitCategoryValue": 21,
+    "fitSubtype": "MIXED_GRIP_PULL_UP",
+    "fitSubtypeValue": 16
   },
   {
     "exerciseId": "0321",
@@ -10359,7 +11258,11 @@
       "0321_1.jpg",
       "0321_2.jpg"
     ],
-    "trackingType": "reps"
+    "trackingType": "reps",
+    "fitCategory": "LATERAL_RAISE",
+    "fitCategoryValue": 14,
+    "fitSubtype": "MUSCLE_UP",
+    "fitSubtypeValue": 13
   },
   {
     "exerciseId": "0322",
@@ -10406,7 +11309,11 @@
       "0322_1.jpg",
       "0322_2.jpg"
     ],
-    "trackingType": "weight"
+    "trackingType": "weight",
+    "fitCategory": "SQUAT",
+    "fitCategoryValue": 28,
+    "fitSubtype": "BARBELL_HACK_SQUAT",
+    "fitSubtypeValue": 9
   },
   {
     "exerciseId": "0323",
@@ -10451,7 +11358,11 @@
       "0323_1.jpg",
       "0323_2.jpg"
     ],
-    "trackingType": "weight"
+    "trackingType": "weight",
+    "fitCategory": "SQUAT",
+    "fitCategoryValue": 28,
+    "fitSubtype": "LEG_PRESS",
+    "fitSubtypeValue": 0
   },
   {
     "exerciseId": "0324",
@@ -10500,7 +11411,11 @@
       "0324_1.jpg",
       "0324_2.jpg"
     ],
-    "trackingType": "weight"
+    "trackingType": "weight",
+    "fitCategory": "SQUAT",
+    "fitCategoryValue": 28,
+    "fitSubtype": null,
+    "fitSubtypeValue": null
   },
   {
     "exerciseId": "0325",
@@ -10545,7 +11460,11 @@
       "0325_1.jpg",
       "0325_2.jpg"
     ],
-    "trackingType": "reps"
+    "trackingType": "reps",
+    "fitCategory": "CURL",
+    "fitCategoryValue": 7,
+    "fitSubtype": null,
+    "fitSubtypeValue": null
   },
   {
     "exerciseId": "0326",
@@ -10589,7 +11508,11 @@
       "0326_1.jpg",
       "0326_2.jpg"
     ],
-    "trackingType": "weight"
+    "trackingType": "weight",
+    "fitCategory": "BENCH_PRESS",
+    "fitCategoryValue": 0,
+    "fitSubtype": "BARBELL_BENCH_PRESS",
+    "fitSubtypeValue": 1
   },
   {
     "exerciseId": "0327",
@@ -10626,7 +11549,11 @@
       "0327_1.jpg",
       "0327_2.jpg"
     ],
-    "trackingType": "reps"
+    "trackingType": "reps",
+    "fitCategory": "CRUNCH",
+    "fitCategoryValue": 6,
+    "fitSubtype": "KNEELING_OBLIQUE_CABLE_CRUNCH",
+    "fitSubtypeValue": 31
   },
   {
     "exerciseId": "0329",
@@ -10674,7 +11601,11 @@
       "0329_1.jpg",
       "0329_2.jpg"
     ],
-    "trackingType": "weight"
+    "trackingType": "weight",
+    "fitCategory": "PULL_UP",
+    "fitCategoryValue": 21,
+    "fitSubtype": "CHIN_UP",
+    "fitSubtypeValue": 39
   },
   {
     "exerciseId": "0330",
@@ -10720,7 +11651,11 @@
       "0330_1.jpg",
       "0330_2.jpg"
     ],
-    "trackingType": "weight"
+    "trackingType": "weight",
+    "fitCategory": "BENCH_PRESS",
+    "fitCategoryValue": 0,
+    "fitSubtype": "SINGLE_ARM_DUMBBELL_BENCH_PRESS",
+    "fitSubtypeValue": 21
   },
   {
     "exerciseId": "0331",
@@ -10755,7 +11690,11 @@
       "0331_1.jpg",
       "0331_2.jpg"
     ],
-    "trackingType": "weight"
+    "trackingType": "weight",
+    "fitCategory": "CURL",
+    "fitCategoryValue": 7,
+    "fitSubtype": "ONE_ARM_PREACHER_CURL",
+    "fitSubtypeValue": 26
   },
   {
     "exerciseId": "0332",
@@ -10801,7 +11740,11 @@
       "0332_1.jpg",
       "0332_2.jpg"
     ],
-    "trackingType": "weight"
+    "trackingType": "weight",
+    "fitCategory": "BENCH_PRESS",
+    "fitCategoryValue": 0,
+    "fitSubtype": "ONE_ARM_FLOOR_PRESS",
+    "fitSubtypeValue": 15
   },
   {
     "exerciseId": "0333",
@@ -10844,7 +11787,11 @@
       "0333_1.jpg",
       "0333_2.jpg"
     ],
-    "trackingType": "weight"
+    "trackingType": "weight",
+    "fitCategory": "PULL_UP",
+    "fitCategoryValue": 21,
+    "fitSubtype": "LAT_PULLDOWN",
+    "fitSubtypeValue": 13
   },
   {
     "exerciseId": "0334",
@@ -10880,7 +11827,11 @@
       "0334_1.jpg",
       "0334_2.jpg"
     ],
-    "trackingType": "weight"
+    "trackingType": "weight",
+    "fitCategory": "TRICEPS_EXTENSION",
+    "fitCategoryValue": 30,
+    "fitSubtype": "DUMBBELL_LYING_TRICEPS_EXTENSION",
+    "fitSubtypeValue": 7
   },
   {
     "exerciseId": "0335",
@@ -10917,7 +11868,11 @@
       "0335_1.jpg",
       "0335_2.jpg"
     ],
-    "trackingType": "weight"
+    "trackingType": "weight",
+    "fitCategory": "TRICEPS_EXTENSION",
+    "fitCategoryValue": 30,
+    "fitSubtype": "DUMBBELL_LYING_TRICEPS_EXTENSION",
+    "fitSubtypeValue": 7
   },
   {
     "exerciseId": "0336",
@@ -10964,7 +11919,11 @@
       "0336_1.jpg",
       "0336_2.jpg"
     ],
-    "trackingType": "weight"
+    "trackingType": "weight",
+    "fitCategory": "SQUAT",
+    "fitCategoryValue": 28,
+    "fitSubtype": "DUMBBELL_SPLIT_SQUAT",
+    "fitSubtypeValue": 28
   },
   {
     "exerciseId": "0337",
@@ -11013,7 +11972,11 @@
       "0337_1.jpg",
       "0337_2.jpg"
     ],
-    "trackingType": "weight"
+    "trackingType": "weight",
+    "fitCategory": "ROW",
+    "fitCategoryValue": 23,
+    "fitSubtype": "ONE_LEGGED_DUMBBELL_ROW",
+    "fitSubtypeValue": 14
   },
   {
     "exerciseId": "0338",
@@ -11049,7 +12012,11 @@
       "0338_1.jpg",
       "0338_2.jpg"
     ],
-    "trackingType": "weight"
+    "trackingType": "weight",
+    "fitCategory": "FLYE",
+    "fitCategoryValue": 9,
+    "fitSubtype": "DUMBBELL_FLYE",
+    "fitSubtypeValue": 2
   },
   {
     "exerciseId": "0340",
@@ -11085,7 +12052,11 @@
       "0340_1.jpg",
       "0340_2.jpg"
     ],
-    "trackingType": "weight"
+    "trackingType": "weight",
+    "fitCategory": "LATERAL_RAISE",
+    "fitCategoryValue": 14,
+    "fitSubtype": null,
+    "fitSubtypeValue": null
   },
   {
     "exerciseId": "0343",
@@ -11124,7 +12095,11 @@
       "0343_1.jpg",
       "0343_2.jpg"
     ],
-    "trackingType": "weight"
+    "trackingType": "weight",
+    "fitCategory": "BENCH_PRESS",
+    "fitCategoryValue": 0,
+    "fitSubtype": "ONE_ARM_FLOOR_PRESS",
+    "fitSubtypeValue": 15
   },
   {
     "exerciseId": "0348",
@@ -11164,7 +12139,11 @@
       "0348_1.jpg",
       "0348_2.jpg"
     ],
-    "trackingType": "weight"
+    "trackingType": "weight",
+    "fitCategory": "ROW",
+    "fitCategoryValue": 23,
+    "fitSubtype": "KETTLEBELL_ROW",
+    "fitSubtypeValue": 9
   },
   {
     "exerciseId": "0352",
@@ -11207,7 +12186,11 @@
       "0352_1.jpg",
       "0352_2.jpg"
     ],
-    "trackingType": "weight"
+    "trackingType": "weight",
+    "fitCategory": "HIP_SWING",
+    "fitCategoryValue": 12,
+    "fitSubtype": null,
+    "fitSubtypeValue": null
   },
   {
     "exerciseId": "0353",
@@ -11251,7 +12234,11 @@
       "0353_1.jpg",
       "0353_2.jpg"
     ],
-    "trackingType": "weight"
+    "trackingType": "weight",
+    "fitCategory": "ROW",
+    "fitCategoryValue": 23,
+    "fitSubtype": "ONE_ARM_BENT_OVER_ROW",
+    "fitSubtypeValue": 13
   },
   {
     "exerciseId": "0356",
@@ -11297,7 +12284,11 @@
       "0356_1.jpg",
       "0356_2.jpg"
     ],
-    "trackingType": "weight"
+    "trackingType": "weight",
+    "fitCategory": "SQUAT",
+    "fitCategoryValue": 28,
+    "fitSubtype": null,
+    "fitSubtypeValue": null
   },
   {
     "exerciseId": "0357",
@@ -11351,7 +12342,11 @@
       "0357_1.jpg",
       "0357_2.jpg"
     ],
-    "trackingType": "weight"
+    "trackingType": "weight",
+    "fitCategory": "DEADLIFT",
+    "fitCategoryValue": 8,
+    "fitSubtype": "ONE_ARM_ONE_LEG_DEADLIFT",
+    "fitSubtypeValue": 6
   },
   {
     "exerciseId": "0358",
@@ -11387,7 +12382,11 @@
       "0358_1.jpg",
       "0358_2.jpg"
     ],
-    "trackingType": "weight"
+    "trackingType": "weight",
+    "fitCategory": "LATERAL_RAISE",
+    "fitCategoryValue": 14,
+    "fitSubtype": "ONE_ARM_CABLE_LATERAL_RAISE",
+    "fitSubtypeValue": 14
   },
   {
     "exerciseId": "0359",
@@ -11429,7 +12428,11 @@
       "0359_1.jpg",
       "0359_2.jpg"
     ],
-    "trackingType": "weight"
+    "trackingType": "weight",
+    "fitCategory": "TRICEPS_EXTENSION",
+    "fitCategoryValue": 30,
+    "fitSubtype": "CABLE_KICKBACK",
+    "fitSubtypeValue": 3
   },
   {
     "exerciseId": "0361",
@@ -11475,7 +12478,11 @@
       "0361_1.jpg",
       "0361_2.jpg"
     ],
-    "trackingType": "weight"
+    "trackingType": "weight",
+    "fitCategory": "CORE",
+    "fitCategoryValue": 5,
+    "fitSubtype": null,
+    "fitSubtypeValue": null
   },
   {
     "exerciseId": "0362",
@@ -11511,7 +12518,11 @@
       "0362_1.jpg",
       "0362_2.jpg"
     ],
-    "trackingType": "weight"
+    "trackingType": "weight",
+    "fitCategory": "CURL",
+    "fitCategoryValue": 7,
+    "fitSubtype": "CABLE_BICEPS_CURL",
+    "fitSubtypeValue": 8
   },
   {
     "exerciseId": "0365",
@@ -11548,7 +12559,11 @@
       "0365_1.jpg",
       "0365_2.jpg"
     ],
-    "trackingType": "weight"
+    "trackingType": "weight",
+    "fitCategory": "CURL",
+    "fitCategoryValue": 7,
+    "fitSubtype": "DUMBBELL_REVERSE_WRIST_CURL",
+    "fitSubtypeValue": 17
   },
   {
     "exerciseId": "0366",
@@ -11585,7 +12600,11 @@
       "0366_1.jpg",
       "0366_2.jpg"
     ],
-    "trackingType": "weight"
+    "trackingType": "weight",
+    "fitCategory": "CURL",
+    "fitCategoryValue": 7,
+    "fitSubtype": "BARBELL_REVERSE_WRIST_CURL",
+    "fitSubtypeValue": 4
   },
   {
     "exerciseId": "0367",
@@ -11622,7 +12641,11 @@
       "0367_1.jpg",
       "0367_2.jpg"
     ],
-    "trackingType": "weight"
+    "trackingType": "weight",
+    "fitCategory": "CURL",
+    "fitCategoryValue": 7,
+    "fitSubtype": "BARBELL_WRIST_CURL",
+    "fitSubtypeValue": 5
   },
   {
     "exerciseId": "0368",
@@ -11659,7 +12682,11 @@
       "0368_1.jpg",
       "0368_2.jpg"
     ],
-    "trackingType": "weight"
+    "trackingType": "weight",
+    "fitCategory": "CURL",
+    "fitCategoryValue": 7,
+    "fitSubtype": "DUMBBELL_WRIST_CURL",
+    "fitSubtypeValue": 18
   },
   {
     "exerciseId": "0369",
@@ -11702,7 +12729,11 @@
       "0369_1.jpg",
       "0369_2.jpg"
     ],
-    "trackingType": "reps"
+    "trackingType": "reps",
+    "fitCategory": "TRICEPS_EXTENSION",
+    "fitCategoryValue": 30,
+    "fitSubtype": null,
+    "fitSubtypeValue": null
   },
   {
     "exerciseId": "0371",
@@ -11734,7 +12765,11 @@
       "0371_1.jpg",
       "0371_2.jpg"
     ],
-    "trackingType": "time"
+    "trackingType": "time",
+    "fitCategory": "PLANK",
+    "fitCategoryValue": 19,
+    "fitSubtype": "PLANK",
+    "fitSubtypeValue": 43
   },
   {
     "exerciseId": "0372",
@@ -11769,7 +12804,11 @@
       "0372_1.jpg",
       "0372_2.jpg"
     ],
-    "trackingType": "weight"
+    "trackingType": "weight",
+    "fitCategory": "CURL",
+    "fitCategoryValue": 7,
+    "fitSubtype": "PLATE_PINCH_CURL",
+    "fitSubtypeValue": 27
   },
   {
     "exerciseId": "0373",
@@ -11804,7 +12843,11 @@
       "0373_1.jpg",
       "0373_2.jpg"
     ],
-    "trackingType": "weight"
+    "trackingType": "weight",
+    "fitCategory": "CORE",
+    "fitCategoryValue": 5,
+    "fitSubtype": "RUSSIAN_TWIST",
+    "fitSubtypeValue": 46
   },
   {
     "exerciseId": "0379",
@@ -11839,7 +12882,11 @@
       "0379_1.jpg",
       "0379_2.jpg"
     ],
-    "trackingType": "weight"
+    "trackingType": "weight",
+    "fitCategory": "CURL",
+    "fitCategoryValue": 7,
+    "fitSubtype": "PREACHER_CURL_WITH_CABLE",
+    "fitSubtypeValue": 28
   },
   {
     "exerciseId": "0380",
@@ -11879,7 +12926,11 @@
       "0380_1.jpg",
       "0380_2.jpg"
     ],
-    "trackingType": "weight"
+    "trackingType": "weight",
+    "fitCategory": "CURL",
+    "fitCategoryValue": 7,
+    "fitSubtype": "CABLE_HAMMER_CURL",
+    "fitSubtypeValue": 9
   },
   {
     "exerciseId": "0381",
@@ -11925,7 +12976,11 @@
       "0381_1.jpg",
       "0381_2.jpg"
     ],
-    "trackingType": "weight"
+    "trackingType": "weight",
+    "fitCategory": "SIT_UP",
+    "fitCategoryValue": 27,
+    "fitSubtype": "SIT_UP",
+    "fitSubtypeValue": 37
   },
   {
     "exerciseId": "0384",
@@ -11969,7 +13024,11 @@
       "0384_1.jpg",
       "0384_2.jpg"
     ],
-    "trackingType": "reps"
+    "trackingType": "reps",
+    "fitCategory": "PULL_UP",
+    "fitCategoryValue": 21,
+    "fitSubtype": "PULL_UP",
+    "fitSubtypeValue": 38
   },
   {
     "exerciseId": "0386",
@@ -12015,7 +13074,11 @@
       "0386_1.jpg",
       "0386_2.jpg"
     ],
-    "trackingType": "reps"
+    "trackingType": "reps",
+    "fitCategory": "PUSH_UP",
+    "fitCategoryValue": 22,
+    "fitSubtype": "WIDE_HANDS_PUSH_UP",
+    "fitSubtypeValue": 69
   },
   {
     "exerciseId": "0387",
@@ -12058,7 +13121,11 @@
       "0387_1.jpg",
       "0387_2.jpg"
     ],
-    "trackingType": "reps"
+    "trackingType": "reps",
+    "fitCategory": "PUSH_UP",
+    "fitCategoryValue": 22,
+    "fitSubtype": "CLOSE_HANDS_PUSH_UP",
+    "fitSubtypeValue": 11
   },
   {
     "exerciseId": "0388",
@@ -12102,7 +13169,11 @@
       "0388_1.jpg",
       "0388_2.jpg"
     ],
-    "trackingType": "reps"
+    "trackingType": "reps",
+    "fitCategory": "PUSH_UP",
+    "fitCategoryValue": 22,
+    "fitSubtype": "FEET_ELEVATED_SIDE_TO_SIDE_PUSH_UP",
+    "fitSubtypeValue": 21
   },
   {
     "exerciseId": "0390",
@@ -12145,7 +13216,11 @@
       "0390_1.jpg",
       "0390_2.jpg"
     ],
-    "trackingType": "reps"
+    "trackingType": "reps",
+    "fitCategory": "PUSH_UP",
+    "fitCategoryValue": 22,
+    "fitSubtype": "PUSH_UP",
+    "fitSubtypeValue": 77
   },
   {
     "exerciseId": "0392",
@@ -12185,7 +13260,11 @@
       "0392_1.jpg",
       "0392_2.jpg"
     ],
-    "trackingType": "weight"
+    "trackingType": "weight",
+    "fitCategory": "CURL",
+    "fitCategoryValue": 7,
+    "fitSubtype": "BARBELL_REVERSE_WRIST_CURL",
+    "fitSubtypeValue": 4
   },
   {
     "exerciseId": "0393",
@@ -12226,7 +13305,11 @@
       "0393_1.jpg",
       "0393_2.jpg"
     ],
-    "trackingType": "weight"
+    "trackingType": "weight",
+    "fitCategory": "CURL",
+    "fitCategoryValue": 7,
+    "fitSubtype": "BARBELL_REVERSE_WRIST_CURL",
+    "fitSubtypeValue": 4
   },
   {
     "exerciseId": "0394",
@@ -12266,7 +13349,11 @@
       "0394_1.jpg",
       "0394_2.jpg"
     ],
-    "trackingType": "weight"
+    "trackingType": "weight",
+    "fitCategory": "CURL",
+    "fitCategoryValue": 7,
+    "fitSubtype": "CABLE_BICEPS_CURL",
+    "fitSubtypeValue": 8
   },
   {
     "exerciseId": "0395",
@@ -12301,7 +13388,11 @@
       "0395_1.jpg",
       "0395_2.jpg"
     ],
-    "trackingType": "reps"
+    "trackingType": "reps",
+    "fitCategory": "CRUNCH",
+    "fitCategoryValue": 6,
+    "fitSubtype": "REVERSE_CRUNCH",
+    "fitSubtypeValue": 46
   },
   {
     "exerciseId": "0396",
@@ -12337,7 +13428,11 @@
       "0396_1.jpg",
       "0396_2.jpg"
     ],
-    "trackingType": "weight"
+    "trackingType": "weight",
+    "fitCategory": "FLYE",
+    "fitCategoryValue": 9,
+    "fitSubtype": "INCLINE_REVERSE_FLYE",
+    "fitSubtypeValue": 11
   },
   {
     "exerciseId": "0399",
@@ -12372,7 +13467,11 @@
       "0399_1.jpg",
       "0399_2.jpg"
     ],
-    "trackingType": "weight"
+    "trackingType": "weight",
+    "fitCategory": "TRICEPS_EXTENSION",
+    "fitCategoryValue": 30,
+    "fitSubtype": "REVERSE_GRIP_TRICEPS_PRESSDOWN",
+    "fitSubtypeValue": 18
   },
   {
     "exerciseId": "0400",
@@ -12415,7 +13514,11 @@
       "0400_1.jpg",
       "0400_2.jpg"
     ],
-    "trackingType": "weight"
+    "trackingType": "weight",
+    "fitCategory": "HYPEREXTENSION",
+    "fitCategoryValue": 13,
+    "fitSubtype": "BENT_KNEE_REVERSE_HYPEREXTENSION",
+    "fitSubtypeValue": 4
   },
   {
     "exerciseId": "0401",
@@ -12449,7 +13552,11 @@
       "0401_1.jpg",
       "0401_2.jpg"
     ],
-    "trackingType": "weight"
+    "trackingType": "weight",
+    "fitCategory": "FLYE",
+    "fitCategoryValue": 9,
+    "fitSubtype": "INCLINE_REVERSE_FLYE",
+    "fitSubtypeValue": 11
   },
   {
     "exerciseId": "0402",
@@ -12490,7 +13597,11 @@
       "0402_1.jpg",
       "0402_2.jpg"
     ],
-    "trackingType": "weight"
+    "trackingType": "weight",
+    "fitCategory": "CURL",
+    "fitCategoryValue": 7,
+    "fitSubtype": "PLATE_PINCH_CURL",
+    "fitSubtypeValue": 27
   },
   {
     "exerciseId": "0404",
@@ -12533,7 +13644,11 @@
       "0404_1.jpg",
       "0404_2.jpg"
     ],
-    "trackingType": "weight"
+    "trackingType": "weight",
+    "fitCategory": "TRICEPS_EXTENSION",
+    "fitCategoryValue": 30,
+    "fitSubtype": null,
+    "fitSubtypeValue": null
   },
   {
     "exerciseId": "0405",
@@ -12571,7 +13686,11 @@
       "0405_1.jpg",
       "0405_2.jpg"
     ],
-    "trackingType": "weight"
+    "trackingType": "weight",
+    "fitCategory": "CALF_RAISE",
+    "fitCategoryValue": 1,
+    "fitSubtype": "STANDING_CALF_RAISE",
+    "fitSubtypeValue": 18
   },
   {
     "exerciseId": "0407",
@@ -12617,7 +13736,11 @@
       "0407_1.jpg",
       "0407_2.jpg"
     ],
-    "trackingType": "weight"
+    "trackingType": "weight",
+    "fitCategory": "DEADLIFT",
+    "fitCategoryValue": 8,
+    "fitSubtype": "ROMANIAN_DEADLIFT",
+    "fitSubtypeValue": 23
   },
   {
     "exerciseId": "0409",
@@ -12652,7 +13775,11 @@
       "0409_1.jpg",
       "0409_2.jpg"
     ],
-    "trackingType": "weight"
+    "trackingType": "weight",
+    "fitCategory": "CRUNCH",
+    "fitCategoryValue": 6,
+    "fitSubtype": null,
+    "fitSubtypeValue": null
   },
   {
     "exerciseId": "0410",
@@ -12686,7 +13813,11 @@
       "0410_1.jpg",
       "0410_2.jpg"
     ],
-    "trackingType": "weight"
+    "trackingType": "weight",
+    "fitCategory": "PULL_UP",
+    "fitCategoryValue": 21,
+    "fitSubtype": null,
+    "fitSubtypeValue": null
   },
   {
     "exerciseId": "0411",
@@ -12727,7 +13858,11 @@
       "0411_1.jpg",
       "0411_2.jpg"
     ],
-    "trackingType": "reps"
+    "trackingType": "reps",
+    "fitCategory": "CORE",
+    "fitCategoryValue": 5,
+    "fitSubtype": "RUSSIAN_TWIST",
+    "fitSubtypeValue": 46
   },
   {
     "exerciseId": "0412",
@@ -12768,7 +13903,11 @@
       "0412_1.jpg",
       "0412_2.jpg"
     ],
-    "trackingType": "weight"
+    "trackingType": "weight",
+    "fitCategory": "PULL_UP",
+    "fitCategoryValue": 21,
+    "fitSubtype": "PULL_UP",
+    "fitSubtypeValue": 38
   },
   {
     "exerciseId": "0414",
@@ -12809,7 +13948,11 @@
       "0414_1.jpg",
       "0414_2.jpg"
     ],
-    "trackingType": "weight"
+    "trackingType": "weight",
+    "fitCategory": "SHOULDER_PRESS",
+    "fitCategoryValue": 24,
+    "fitSubtype": "SEATED_BARBELL_SHOULDER_PRESS",
+    "fitSubtypeValue": 16
   },
   {
     "exerciseId": "0415",
@@ -12845,7 +13988,11 @@
       "0415_1.jpg",
       "0415_2.jpg"
     ],
-    "trackingType": "weight"
+    "trackingType": "weight",
+    "fitCategory": "CORE",
+    "fitCategoryValue": 5,
+    "fitSubtype": "RUSSIAN_TWIST",
+    "fitSubtypeValue": 46
   },
   {
     "exerciseId": "0417",
@@ -12881,7 +14028,11 @@
       "0417_1.jpg",
       "0417_2.jpg"
     ],
-    "trackingType": "weight"
+    "trackingType": "weight",
+    "fitCategory": "LATERAL_RAISE",
+    "fitCategoryValue": 14,
+    "fitSubtype": "SEATED_REAR_LATERAL_RAISE",
+    "fitSubtypeValue": 25
   },
   {
     "exerciseId": "0419",
@@ -12928,7 +14079,11 @@
       "0419_1.jpg",
       "0419_2.jpg"
     ],
-    "trackingType": "weight"
+    "trackingType": "weight",
+    "fitCategory": "ROW",
+    "fitCategoryValue": 23,
+    "fitSubtype": "SEATED_CABLE_ROW",
+    "fitSubtypeValue": 18
   },
   {
     "exerciseId": "0420",
@@ -12968,7 +14123,11 @@
       "0420_1.jpg",
       "0420_2.jpg"
     ],
-    "trackingType": "weight"
+    "trackingType": "weight",
+    "fitCategory": "SHOULDER_PRESS",
+    "fitCategoryValue": 24,
+    "fitSubtype": "INVERTED_SHOULDER_PRESS",
+    "fitSubtypeValue": 11
   },
   {
     "exerciseId": "0421",
@@ -13004,7 +14163,11 @@
       "0421_1.jpg",
       "0421_2.jpg"
     ],
-    "trackingType": "weight"
+    "trackingType": "weight",
+    "fitCategory": "CALF_RAISE",
+    "fitCategoryValue": 1,
+    "fitSubtype": "SEATED_CALF_RAISE",
+    "fitSubtypeValue": 6
   },
   {
     "exerciseId": "0422",
@@ -13039,7 +14202,11 @@
       "0422_1.jpg",
       "0422_2.jpg"
     ],
-    "trackingType": "weight"
+    "trackingType": "weight",
+    "fitCategory": "CURL",
+    "fitCategoryValue": 7,
+    "fitSubtype": "BARBELL_BICEPS_CURL",
+    "fitSubtypeValue": 3
   },
   {
     "exerciseId": "0423",
@@ -13074,7 +14241,11 @@
       "0423_1.jpg",
       "0423_2.jpg"
     ],
-    "trackingType": "weight"
+    "trackingType": "weight",
+    "fitCategory": "CURL",
+    "fitCategoryValue": 7,
+    "fitSubtype": "SEATED_DUMBBELL_BICEPS_CURL",
+    "fitSubtypeValue": 33
   },
   {
     "exerciseId": "0424",
@@ -13110,7 +14281,11 @@
       "0424_1.jpg",
       "0424_2.jpg"
     ],
-    "trackingType": "weight"
+    "trackingType": "weight",
+    "fitCategory": "CURL",
+    "fitCategoryValue": 7,
+    "fitSubtype": "SEATED_DUMBBELL_BICEPS_CURL",
+    "fitSubtypeValue": 33
   },
   {
     "exerciseId": "0425",
@@ -13147,7 +14322,11 @@
       "0425_1.jpg",
       "0425_2.jpg"
     ],
-    "trackingType": "weight"
+    "trackingType": "weight",
+    "fitCategory": "CURL",
+    "fitCategoryValue": 7,
+    "fitSubtype": "DUMBBELL_REVERSE_WRIST_CURL",
+    "fitSubtypeValue": 17
   },
   {
     "exerciseId": "0426",
@@ -13184,7 +14363,11 @@
       "0426_1.jpg",
       "0426_2.jpg"
     ],
-    "trackingType": "weight"
+    "trackingType": "weight",
+    "fitCategory": "CURL",
+    "fitCategoryValue": 7,
+    "fitSubtype": "DUMBBELL_WRIST_CURL",
+    "fitSubtypeValue": 18
   },
   {
     "exerciseId": "0427",
@@ -13226,7 +14409,11 @@
       "0427_1.jpg",
       "0427_2.jpg"
     ],
-    "trackingType": "weight"
+    "trackingType": "weight",
+    "fitCategory": "SHOULDER_PRESS",
+    "fitCategoryValue": 24,
+    "fitSubtype": "SEATED_DUMBBELL_SHOULDER_PRESS",
+    "fitSubtypeValue": 17
   },
   {
     "exerciseId": "0430",
@@ -13261,7 +14448,11 @@
       "0430_1.jpg",
       "0430_2.jpg"
     ],
-    "trackingType": "weight"
+    "trackingType": "weight",
+    "fitCategory": "LEG_CURL",
+    "fitCategoryValue": 15,
+    "fitSubtype": "LEG_CURL",
+    "fitSubtypeValue": 0
   },
   {
     "exerciseId": "0431",
@@ -13295,7 +14486,11 @@
       "0431_1.jpg",
       "0431_2.jpg"
     ],
-    "trackingType": "reps"
+    "trackingType": "reps",
+    "fitCategory": "CORE",
+    "fitCategoryValue": 5,
+    "fitSubtype": "OPEN_KNEE_TUCKS",
+    "fitSubtypeValue": 21
   },
   {
     "exerciseId": "0434",
@@ -13342,7 +14537,11 @@
       "0434_1.jpg",
       "0434_2.jpg"
     ],
-    "trackingType": "weight"
+    "trackingType": "weight",
+    "fitCategory": "ROW",
+    "fitCategoryValue": 23,
+    "fitSubtype": "SEATED_CABLE_ROW",
+    "fitSubtypeValue": 18
   },
   {
     "exerciseId": "0435",
@@ -13377,7 +14576,11 @@
       "0435_1.jpg",
       "0435_2.jpg"
     ],
-    "trackingType": "weight"
+    "trackingType": "weight",
+    "fitCategory": "CURL",
+    "fitCategoryValue": 7,
+    "fitSubtype": "BARBELL_WRIST_CURL",
+    "fitSubtypeValue": 5
   },
   {
     "exerciseId": "0436",
@@ -13412,7 +14615,11 @@
       "0436_1.jpg",
       "0436_2.jpg"
     ],
-    "trackingType": "weight"
+    "trackingType": "weight",
+    "fitCategory": "CURL",
+    "fitCategoryValue": 7,
+    "fitSubtype": "BARBELL_REVERSE_WRIST_CURL",
+    "fitSubtypeValue": 4
   },
   {
     "exerciseId": "0437",
@@ -13446,7 +14653,11 @@
       "0437_1.jpg",
       "0437_2.jpg"
     ],
-    "trackingType": "weight"
+    "trackingType": "weight",
+    "fitCategory": "LATERAL_RAISE",
+    "fitCategoryValue": 14,
+    "fitSubtype": "SEATED_LATERAL_RAISE",
+    "fitSubtypeValue": 24
   },
   {
     "exerciseId": "0438",
@@ -13480,7 +14691,11 @@
       "0438_1.jpg",
       "0438_2.jpg"
     ],
-    "trackingType": "weight"
+    "trackingType": "weight",
+    "fitCategory": "TRICEPS_EXTENSION",
+    "fitCategoryValue": 30,
+    "fitSubtype": "TRICEPS_PRESS",
+    "fitSubtypeValue": 42
   },
   {
     "exerciseId": "0445",
@@ -13514,7 +14729,11 @@
       "0445_1.jpg",
       "0445_2.jpg"
     ],
-    "trackingType": "weight"
+    "trackingType": "weight",
+    "fitCategory": "LATERAL_RAISE",
+    "fitCategoryValue": 14,
+    "fitSubtype": null,
+    "fitSubtypeValue": null
   },
   {
     "exerciseId": "0446",
@@ -13556,7 +14775,11 @@
       "0446_1.jpg",
       "0446_2.jpg"
     ],
-    "trackingType": "weight"
+    "trackingType": "weight",
+    "fitCategory": "LATERAL_RAISE",
+    "fitCategoryValue": 14,
+    "fitSubtype": "FRONT_RAISE",
+    "fitSubtypeValue": 10
   },
   {
     "exerciseId": "0447",
@@ -13607,7 +14830,11 @@
       "0447_1.jpg",
       "0447_2.jpg"
     ],
-    "trackingType": "weight"
+    "trackingType": "weight",
+    "fitCategory": "PULL_UP",
+    "fitCategoryValue": 21,
+    "fitSubtype": "PULL_UP",
+    "fitSubtypeValue": 38
   },
   {
     "exerciseId": "0448",
@@ -13649,7 +14876,11 @@
       "0448_1.jpg",
       "0448_2.jpg"
     ],
-    "trackingType": "weight"
+    "trackingType": "weight",
+    "fitCategory": "LATERAL_RAISE",
+    "fitCategoryValue": 14,
+    "fitSubtype": "DUMBBELL_DIAGONAL_RAISE",
+    "fitSubtypeValue": 8
   },
   {
     "exerciseId": "0452",
@@ -13692,7 +14923,11 @@
       "0452_1.jpg",
       "0452_2.jpg"
     ],
-    "trackingType": "reps"
+    "trackingType": "reps",
+    "fitCategory": "PUSH_UP",
+    "fitCategoryValue": 22,
+    "fitSubtype": "ONE_ARM_PUSH_UP",
+    "fitSubtypeValue": 38
   },
   {
     "exerciseId": "0454",
@@ -13726,7 +14961,11 @@
       "0454_1.jpg",
       "0454_2.jpg"
     ],
-    "trackingType": "weight"
+    "trackingType": "weight",
+    "fitCategory": "SQUAT",
+    "fitCategoryValue": 28,
+    "fitSubtype": null,
+    "fitSubtypeValue": null
   },
   {
     "exerciseId": "0455",
@@ -13761,7 +15000,11 @@
       "0455_1.jpg",
       "0455_2.jpg"
     ],
-    "trackingType": "reps"
+    "trackingType": "reps",
+    "fitCategory": "SIT_UP",
+    "fitCategoryValue": 27,
+    "fitSubtype": "SIT_UP",
+    "fitSubtypeValue": 37
   },
   {
     "exerciseId": "0460",
@@ -13803,7 +15046,11 @@
       "0460_1.jpg",
       "0460_2.jpg"
     ],
-    "trackingType": "weight"
+    "trackingType": "weight",
+    "fitCategory": "LATERAL_RAISE",
+    "fitCategoryValue": 14,
+    "fitSubtype": "COMBO_SHOULDER_RAISE",
+    "fitSubtypeValue": 7
   },
   {
     "exerciseId": "0461",
@@ -13844,7 +15091,11 @@
       "0461_1.jpg",
       "0461_2.jpg"
     ],
-    "trackingType": "weight"
+    "trackingType": "weight",
+    "fitCategory": "SHRUG",
+    "fitCategoryValue": 26,
+    "fitSubtype": null,
+    "fitSubtypeValue": null
   },
   {
     "exerciseId": "0462",
@@ -13888,7 +15139,11 @@
       "0462_1.jpg",
       "0462_2.jpg"
     ],
-    "trackingType": "weight"
+    "trackingType": "weight",
+    "fitCategory": "BENCH_PRESS",
+    "fitCategoryValue": 0,
+    "fitSubtype": "SMITH_MACHINE_BENCH_PRESS",
+    "fitSubtypeValue": 22
   },
   {
     "exerciseId": "0463",
@@ -13936,7 +15191,11 @@
       "0463_1.jpg",
       "0463_2.jpg"
     ],
-    "trackingType": "weight"
+    "trackingType": "weight",
+    "fitCategory": "ROW",
+    "fitCategoryValue": 23,
+    "fitSubtype": "BENT_OVER_ROW_WITH_DUMBELL",
+    "fitSubtypeValue": 47
   },
   {
     "exerciseId": "0464",
@@ -13971,7 +15230,11 @@
       "0464_1.jpg",
       "0464_2.jpg"
     ],
-    "trackingType": "weight"
+    "trackingType": "weight",
+    "fitCategory": "CALF_RAISE",
+    "fitCategoryValue": 1,
+    "fitSubtype": "_3_WAY_CALF_RAISE",
+    "fitSubtypeValue": 0
   },
   {
     "exerciseId": "0466",
@@ -14015,7 +15278,11 @@
       "0466_1.jpg",
       "0466_2.jpg"
     ],
-    "trackingType": "weight"
+    "trackingType": "weight",
+    "fitCategory": "BENCH_PRESS",
+    "fitCategoryValue": 0,
+    "fitSubtype": "SMITH_MACHINE_BENCH_PRESS",
+    "fitSubtypeValue": 22
   },
   {
     "exerciseId": "0469",
@@ -14059,7 +15326,11 @@
       "0469_1.jpg",
       "0469_2.jpg"
     ],
-    "trackingType": "weight"
+    "trackingType": "weight",
+    "fitCategory": "BENCH_PRESS",
+    "fitCategoryValue": 0,
+    "fitSubtype": "INCLINE_SMITH_MACHINE_BENCH_PRESS",
+    "fitSubtypeValue": 10
   },
   {
     "exerciseId": "0472",
@@ -14100,7 +15371,11 @@
       "0472_1.jpg",
       "0472_2.jpg"
     ],
-    "trackingType": "weight"
+    "trackingType": "weight",
+    "fitCategory": "SHOULDER_PRESS",
+    "fitCategoryValue": 24,
+    "fitSubtype": "INVERTED_SHOULDER_PRESS",
+    "fitSubtypeValue": 11
   },
   {
     "exerciseId": "0473",
@@ -14145,7 +15420,11 @@
       "0473_1.jpg",
       "0473_2.jpg"
     ],
-    "trackingType": "weight"
+    "trackingType": "weight",
+    "fitCategory": "SQUAT",
+    "fitCategoryValue": 28,
+    "fitSubtype": "PISTOL_SQUAT",
+    "fitSubtypeValue": 47
   },
   {
     "exerciseId": "0475",
@@ -14194,7 +15473,11 @@
       "0475_1.jpg",
       "0475_2.jpg"
     ],
-    "trackingType": "weight"
+    "trackingType": "weight",
+    "fitCategory": "SQUAT",
+    "fitCategoryValue": 28,
+    "fitSubtype": null,
+    "fitSubtypeValue": null
   },
   {
     "exerciseId": "0477",
@@ -14241,7 +15524,11 @@
       "0477_1.jpg",
       "0477_2.jpg"
     ],
-    "trackingType": "weight"
+    "trackingType": "weight",
+    "fitCategory": "ROW",
+    "fitCategoryValue": 23,
+    "fitSubtype": null,
+    "fitSubtypeValue": null
   },
   {
     "exerciseId": "0478",
@@ -14288,7 +15575,11 @@
       "0478_1.jpg",
       "0478_2.jpg"
     ],
-    "trackingType": "weight"
+    "trackingType": "weight",
+    "fitCategory": "SQUAT",
+    "fitCategoryValue": 28,
+    "fitSubtype": null,
+    "fitSubtypeValue": null
   },
   {
     "exerciseId": "0484",
@@ -14325,7 +15616,11 @@
       "0484_1.jpg",
       "0484_2.jpg"
     ],
-    "trackingType": "weight"
+    "trackingType": "weight",
+    "fitCategory": "CURL",
+    "fitCategoryValue": 7,
+    "fitSubtype": null,
+    "fitSubtypeValue": null
   },
   {
     "exerciseId": "0485",
@@ -14367,7 +15662,11 @@
       "0485_1.jpg",
       "0485_2.jpg"
     ],
-    "trackingType": "weight"
+    "trackingType": "weight",
+    "fitCategory": "SQUAT",
+    "fitCategoryValue": 28,
+    "fitSubtype": "DUMBBELL_SQUAT",
+    "fitSubtypeValue": 29
   },
   {
     "exerciseId": "0489",
@@ -14407,7 +15706,11 @@
       "0489_1.jpg",
       "0489_2.jpg"
     ],
-    "trackingType": "weight"
+    "trackingType": "weight",
+    "fitCategory": "SHOULDER_PRESS",
+    "fitCategoryValue": 24,
+    "fitSubtype": "DUMBBELL_SHOULDER_PRESS",
+    "fitSubtypeValue": 24
   },
   {
     "exerciseId": "0490",
@@ -14443,7 +15746,11 @@
       "0490_1.jpg",
       "0490_2.jpg"
     ],
-    "trackingType": "weight"
+    "trackingType": "weight",
+    "fitCategory": "CALF_RAISE",
+    "fitCategoryValue": 1,
+    "fitSubtype": "STANDING_BARBELL_CALF_RAISE",
+    "fitSubtypeValue": 17
   },
   {
     "exerciseId": "0494",
@@ -14477,7 +15784,11 @@
       "0494_1.jpg",
       "0494_2.jpg"
     ],
-    "trackingType": "weight"
+    "trackingType": "weight",
+    "fitCategory": "CURL",
+    "fitCategoryValue": 7,
+    "fitSubtype": "CABLE_BICEPS_CURL",
+    "fitSubtypeValue": 8
   },
   {
     "exerciseId": "0496",
@@ -14520,7 +15831,11 @@
       "0496_1.jpg",
       "0496_2.jpg"
     ],
-    "trackingType": "weight"
+    "trackingType": "weight",
+    "fitCategory": "BENCH_PRESS",
+    "fitCategoryValue": 0,
+    "fitSubtype": "SINGLE_ARM_CABLE_CHEST_PRESS",
+    "fitSubtypeValue": 20
   },
   {
     "exerciseId": "0499",
@@ -14555,7 +15870,11 @@
       "0499_1.jpg",
       "0499_2.jpg"
     ],
-    "trackingType": "weight"
+    "trackingType": "weight",
+    "fitCategory": "CALF_RAISE",
+    "fitCategoryValue": 1,
+    "fitSubtype": "_3_WAY_CALF_RAISE",
+    "fitSubtypeValue": 0
   },
   {
     "exerciseId": "0501",
@@ -14589,7 +15908,11 @@
       "0501_1.jpg",
       "0501_2.jpg"
     ],
-    "trackingType": "weight"
+    "trackingType": "weight",
+    "fitCategory": "CALF_RAISE",
+    "fitCategoryValue": 1,
+    "fitSubtype": "STANDING_DUMBBELL_CALF_RAISE",
+    "fitSubtypeValue": 20
   },
   {
     "exerciseId": "0502",
@@ -14628,7 +15951,11 @@
       "0502_1.jpg",
       "0502_2.jpg"
     ],
-    "trackingType": "weight"
+    "trackingType": "weight",
+    "fitCategory": "SHOULDER_PRESS",
+    "fitCategoryValue": 24,
+    "fitSubtype": "DUMBBELL_SHOULDER_PRESS",
+    "fitSubtypeValue": 24
   },
   {
     "exerciseId": "0503",
@@ -14668,7 +15995,11 @@
       "0503_1.jpg",
       "0503_2.jpg"
     ],
-    "trackingType": "weight"
+    "trackingType": "weight",
+    "fitCategory": "CURL",
+    "fitCategoryValue": 7,
+    "fitSubtype": "DUMBBELL_REVERSE_WRIST_CURL",
+    "fitSubtypeValue": 17
   },
   {
     "exerciseId": "0505",
@@ -14703,7 +16034,11 @@
       "0505_1.jpg",
       "0505_2.jpg"
     ],
-    "trackingType": "weight"
+    "trackingType": "weight",
+    "fitCategory": "TRICEPS_EXTENSION",
+    "fitCategoryValue": 30,
+    "fitSubtype": "DUMBBELL_LYING_TRICEPS_EXTENSION",
+    "fitSubtypeValue": 7
   },
   {
     "exerciseId": "0506",
@@ -14746,7 +16081,11 @@
       "0506_1.jpg",
       "0506_2.jpg"
     ],
-    "trackingType": "weight"
+    "trackingType": "weight",
+    "fitCategory": "ROW",
+    "fitCategoryValue": 23,
+    "fitSubtype": "DUMBBELL_ROW",
+    "fitSubtypeValue": 2
   },
   {
     "exerciseId": "0508",
@@ -14783,7 +16122,11 @@
       "0508_1.jpg",
       "0508_2.jpg"
     ],
-    "trackingType": "weight"
+    "trackingType": "weight",
+    "fitCategory": "CURL",
+    "fitCategoryValue": 7,
+    "fitSubtype": "STANDING_DUMBBELL_BICEPS_CURL",
+    "fitSubtypeValue": 37
   },
   {
     "exerciseId": "0510",
@@ -14825,7 +16168,11 @@
       "0510_1.jpg",
       "0510_2.jpg"
     ],
-    "trackingType": "weight"
+    "trackingType": "weight",
+    "fitCategory": "LATERAL_RAISE",
+    "fitCategoryValue": 14,
+    "fitSubtype": null,
+    "fitSubtypeValue": null
   },
   {
     "exerciseId": "0512",
@@ -14867,7 +16214,11 @@
       "0512_1.jpg",
       "0512_2.jpg"
     ],
-    "trackingType": "weight"
+    "trackingType": "weight",
+    "fitCategory": "SHOULDER_PRESS",
+    "fitCategoryValue": 24,
+    "fitSubtype": "BARBELL_SHOULDER_PRESS",
+    "fitSubtypeValue": 4
   },
   {
     "exerciseId": "0513",
@@ -14907,7 +16258,11 @@
       "0513_1.jpg",
       "0513_2.jpg"
     ],
-    "trackingType": "weight"
+    "trackingType": "weight",
+    "fitCategory": "CURL",
+    "fitCategoryValue": 7,
+    "fitSubtype": null,
+    "fitSubtypeValue": null
   },
   {
     "exerciseId": "0514",
@@ -14943,7 +16298,11 @@
       "0514_1.jpg",
       "0514_2.jpg"
     ],
-    "trackingType": "weight"
+    "trackingType": "weight",
+    "fitCategory": "CURL",
+    "fitCategoryValue": 7,
+    "fitSubtype": "BEHIND_THE_BACK_ONE_ARM_CABLE_CURL",
+    "fitSubtypeValue": 7
   },
   {
     "exerciseId": "0523",
@@ -14984,7 +16343,11 @@
       "0523_1.jpg",
       "0523_2.jpg"
     ],
-    "trackingType": "reps"
+    "trackingType": "reps",
+    "fitCategory": "LEG_RAISE",
+    "fitCategoryValue": 16,
+    "fitSubtype": null,
+    "fitSubtypeValue": null
   },
   {
     "exerciseId": "0524",
@@ -15028,7 +16391,11 @@
       "0524_1.jpg",
       "0524_2.jpg"
     ],
-    "trackingType": "weight"
+    "trackingType": "weight",
+    "fitCategory": "LEG_CURL",
+    "fitCategoryValue": 15,
+    "fitSubtype": "BAR_GOOD_MORNING",
+    "fitSubtypeValue": 13
   },
   {
     "exerciseId": "0525",
@@ -15072,7 +16439,11 @@
       "0525_1.jpg",
       "0525_2.jpg"
     ],
-    "trackingType": "weight"
+    "trackingType": "weight",
+    "fitCategory": "DEADLIFT",
+    "fitCategoryValue": 8,
+    "fitSubtype": "BARBELL_DEADLIFT",
+    "fitSubtypeValue": 0
   },
   {
     "exerciseId": "0526",
@@ -15116,7 +16487,11 @@
       "0526_1.jpg",
       "0526_2.jpg"
     ],
-    "trackingType": "weight"
+    "trackingType": "weight",
+    "fitCategory": "DEADLIFT",
+    "fitCategoryValue": 8,
+    "fitSubtype": "DUMBBELL_DEADLIFT",
+    "fitSubtypeValue": 2
   },
   {
     "exerciseId": "0530",
@@ -15151,7 +16526,11 @@
       "0530_1.jpg",
       "0530_2.jpg"
     ],
-    "trackingType": "weight"
+    "trackingType": "weight",
+    "fitCategory": "PULL_UP",
+    "fitCategoryValue": 21,
+    "fitSubtype": "STRAIGHT_ARM_PULLDOWN",
+    "fitSubtypeValue": 20
   },
   {
     "exerciseId": "0539",
@@ -15191,7 +16570,11 @@
       "0539_1.jpg",
       "0539_2.jpg"
     ],
-    "trackingType": "weight"
+    "trackingType": "weight",
+    "fitCategory": "HIP_STABILITY",
+    "fitCategoryValue": 11,
+    "fitSubtype": null,
+    "fitSubtypeValue": null
   },
   {
     "exerciseId": "0540",
@@ -15233,7 +16616,11 @@
       "0540_1.jpg",
       "0540_2.jpg"
     ],
-    "trackingType": "weight"
+    "trackingType": "weight",
+    "fitCategory": "HIP_STABILITY",
+    "fitCategoryValue": 11,
+    "fitSubtype": null,
+    "fitSubtypeValue": null
   },
   {
     "exerciseId": "0541",
@@ -15275,7 +16662,11 @@
       "0541_1.jpg",
       "0541_2.jpg"
     ],
-    "trackingType": "weight"
+    "trackingType": "weight",
+    "fitCategory": "DEADLIFT",
+    "fitCategoryValue": 8,
+    "fitSubtype": "TRAP_BAR_DEADLIFT",
+    "fitSubtypeValue": 17
   },
   {
     "exerciseId": "0542",
@@ -15309,7 +16700,11 @@
       "0542_1.jpg",
       "0542_2.jpg"
     ],
-    "trackingType": "weight"
+    "trackingType": "weight",
+    "fitCategory": "TRICEPS_EXTENSION",
+    "fitCategoryValue": 30,
+    "fitSubtype": "DUMBBELL_KICKBACK",
+    "fitSubtypeValue": 6
   },
   {
     "exerciseId": "0543",
@@ -15343,7 +16738,11 @@
       "0543_1.jpg",
       "0543_2.jpg"
     ],
-    "trackingType": "weight"
+    "trackingType": "weight",
+    "fitCategory": "TRICEPS_EXTENSION",
+    "fitCategoryValue": 30,
+    "fitSubtype": "CABLE_OVERHEAD_TRICEPS_EXTENSION",
+    "fitSubtypeValue": 5
   },
   {
     "exerciseId": "0544",
@@ -15378,7 +16777,11 @@
       "0544_1.jpg",
       "0544_2.jpg"
     ],
-    "trackingType": "weight"
+    "trackingType": "weight",
+    "fitCategory": "TRICEPS_EXTENSION",
+    "fitCategoryValue": 30,
+    "fitSubtype": null,
+    "fitSubtypeValue": null
   },
   {
     "exerciseId": "0545",
@@ -15413,7 +16816,11 @@
       "0545_1.jpg",
       "0545_2.jpg"
     ],
-    "trackingType": "weight"
+    "trackingType": "weight",
+    "fitCategory": "TRICEPS_EXTENSION",
+    "fitCategoryValue": 30,
+    "fitSubtype": null,
+    "fitSubtypeValue": null
   },
   {
     "exerciseId": "0546",
@@ -15448,7 +16855,11 @@
       "0546_1.jpg",
       "0546_2.jpg"
     ],
-    "trackingType": "weight"
+    "trackingType": "weight",
+    "fitCategory": "TRICEPS_EXTENSION",
+    "fitCategoryValue": 30,
+    "fitSubtype": null,
+    "fitSubtypeValue": null
   },
   {
     "exerciseId": "0553",
@@ -15496,7 +16907,11 @@
       "0553_1.jpg",
       "0553_2.jpg"
     ],
-    "trackingType": "weight"
+    "trackingType": "weight",
+    "fitCategory": "PULL_UP",
+    "fitCategoryValue": 21,
+    "fitSubtype": "REVERSE_GRIP_PULLDOWN",
+    "fitSubtypeValue": 18
   },
   {
     "exerciseId": "0554",
@@ -15536,7 +16951,11 @@
       "0554_1.jpg",
       "0554_2.jpg"
     ],
-    "trackingType": "weight"
+    "trackingType": "weight",
+    "fitCategory": "ROW",
+    "fitCategoryValue": 23,
+    "fitSubtype": "BARBELL_ROW",
+    "fitSubtypeValue": 45
   },
   {
     "exerciseId": "0555",
@@ -15576,7 +16995,11 @@
       "0555_1.jpg",
       "0555_2.jpg"
     ],
-    "trackingType": "weight"
+    "trackingType": "weight",
+    "fitCategory": "ROW",
+    "fitCategoryValue": 23,
+    "fitSubtype": "CABLE_ROW_STANDING",
+    "fitSubtypeValue": 1
   },
   {
     "exerciseId": "0556",
@@ -15616,7 +17039,11 @@
       "0556_1.jpg",
       "0556_2.jpg"
     ],
-    "trackingType": "weight"
+    "trackingType": "weight",
+    "fitCategory": "ROW",
+    "fitCategoryValue": 23,
+    "fitSubtype": null,
+    "fitSubtypeValue": null
   },
   {
     "exerciseId": "0557",
@@ -15664,7 +17091,11 @@
       "0557_1.jpg",
       "0557_2.jpg"
     ],
-    "trackingType": "weight"
+    "trackingType": "weight",
+    "fitCategory": "PULL_UP",
+    "fitCategoryValue": 21,
+    "fitSubtype": null,
+    "fitSubtypeValue": null
   },
   {
     "exerciseId": "0558",
@@ -15711,7 +17142,11 @@
       "0558_1.jpg",
       "0558_2.jpg"
     ],
-    "trackingType": "reps"
+    "trackingType": "reps",
+    "fitCategory": "PULL_UP",
+    "fitCategoryValue": 21,
+    "fitSubtype": "PULL_UP",
+    "fitSubtypeValue": 38
   },
   {
     "exerciseId": "0561",
@@ -15755,7 +17190,11 @@
       "0561_1.jpg",
       "0561_2.jpg"
     ],
-    "trackingType": "weight"
+    "trackingType": "weight",
+    "fitCategory": "TRICEPS_EXTENSION",
+    "fitCategoryValue": 30,
+    "fitSubtype": "WEIGHTED_BENCH_DIP",
+    "fitSubtypeValue": 1
   },
   {
     "exerciseId": "0564",
@@ -15798,7 +17237,11 @@
       "0564_1.jpg",
       "0564_2.jpg"
     ],
-    "trackingType": "weight"
+    "trackingType": "weight",
+    "fitCategory": "PULL_UP",
+    "fitCategoryValue": 21,
+    "fitSubtype": "WEIGHTED_PULL_UP",
+    "fitSubtypeValue": 24
   },
   {
     "exerciseId": "0568",
@@ -15847,7 +17290,11 @@
       "0568_1.jpg",
       "0568_2.jpg"
     ],
-    "trackingType": "weight"
+    "trackingType": "weight",
+    "fitCategory": "SQUAT",
+    "fitCategoryValue": 28,
+    "fitSubtype": "WIDE_STANCE_BARBELL_SQUAT",
+    "fitSubtypeValue": 84
   },
   {
     "exerciseId": "0569",
@@ -15890,7 +17337,11 @@
       "0569_1.jpg",
       "0569_2.jpg"
     ],
-    "trackingType": "weight"
+    "trackingType": "weight",
+    "fitCategory": "BENCH_PRESS",
+    "fitCategoryValue": 0,
+    "fitSubtype": "WIDE_GRIP_BARBELL_BENCH_PRESS",
+    "fitSubtypeValue": 25
   },
   {
     "exerciseId": "0570",
@@ -15933,7 +17384,11 @@
       "0570_1.jpg",
       "0570_2.jpg"
     ],
-    "trackingType": "weight"
+    "trackingType": "weight",
+    "fitCategory": "BENCH_PRESS",
+    "fitCategoryValue": 0,
+    "fitSubtype": "WIDE_GRIP_BARBELL_BENCH_PRESS",
+    "fitSubtypeValue": 25
   },
   {
     "exerciseId": "0572",
@@ -15981,7 +17436,11 @@
       "0572_1.jpg",
       "0572_2.jpg"
     ],
-    "trackingType": "weight"
+    "trackingType": "weight",
+    "fitCategory": "PULL_UP",
+    "fitCategoryValue": 21,
+    "fitSubtype": "WIDE_GRIP_LAT_PULLDOWN",
+    "fitSubtypeValue": 25
   },
   {
     "exerciseId": "0573",
@@ -16029,7 +17488,11 @@
       "0573_1.jpg",
       "0573_2.jpg"
     ],
-    "trackingType": "weight"
+    "trackingType": "weight",
+    "fitCategory": "PULL_UP",
+    "fitCategoryValue": 21,
+    "fitSubtype": "LAT_PULLDOWN",
+    "fitSubtypeValue": 13
   },
   {
     "exerciseId": "0577",
@@ -16070,7 +17533,11 @@
       "0577_1.jpg",
       "0577_2.jpg"
     ],
-    "trackingType": "weight"
+    "trackingType": "weight",
+    "fitCategory": "CURL",
+    "fitCategoryValue": 7,
+    "fitSubtype": null,
+    "fitSubtypeValue": null
   },
   {
     "exerciseId": "0579",
@@ -16116,7 +17583,11 @@
       "0579_1.jpg",
       "0579_2.jpg"
     ],
-    "trackingType": "weight"
+    "trackingType": "weight",
+    "fitCategory": "SQUAT",
+    "fitCategoryValue": 28,
+    "fitSubtype": "ZERCHER_SQUAT",
+    "fitSubtypeValue": 86
   },
   {
     "exerciseId": "0580",
@@ -16160,7 +17631,11 @@
       "0580_1.jpg",
       "0580_2.jpg"
     ],
-    "trackingType": "weight"
+    "trackingType": "weight",
+    "fitCategory": "CURL",
+    "fitCategoryValue": 7,
+    "fitSubtype": "STANDING_ZOTTMAN_BICEPS_CURL",
+    "fitSubtypeValue": 45
   },
   {
     "exerciseId": "0581",
@@ -16202,6 +17677,10 @@
       "0581_1.jpg",
       "0581_2.jpg"
     ],
-    "trackingType": "weight"
+    "trackingType": "weight",
+    "fitCategory": "CURL",
+    "fitCategoryValue": 7,
+    "fitSubtype": "PREACHER_CURL_WITH_CABLE",
+    "fitSubtypeValue": 28
   }
 ]

@@ -27,4 +27,8 @@ public class Exercise {
     public String image1;
     public String image2;
     public String trackingType;
+    public String fitCategory;
+    public Integer fitCategoryValue;
+    public String fitSubtype;
+    public Integer fitSubtypeValue;
 }

@@ -1,8 +1,15 @@
 package net.jpalayoor.muscletracker.ui.record;
 
+import android.Manifest;
+import android.content.ContentValues;
 import android.content.Context;
 import android.content.SharedPreferences;
+import android.content.pm.PackageManager;
+import android.net.Uri;
+import android.os.Build;
 import android.os.Bundle;
+import android.os.Environment;
+import android.provider.MediaStore;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuInflater;
@@ -11,9 +18,13 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
+import androidx.activity.result.ActivityResultLauncher;
+import androidx.activity.result.contract.ActivityResultContracts;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.core.content.ContextCompat;
 import androidx.core.view.MenuProvider;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProvider;
@@ -23,13 +34,36 @@ import com.google.android.material.dialog.MaterialAlertDialogBuilder;
 
 import net.jpalayoor.muscletracker.R;
 import net.jpalayoor.muscletracker.data.SetLogWithName;
+import net.jpalayoor.muscletracker.data.WorkoutSession;
+import net.jpalayoor.muscletracker.util.FitFileGenerator;
 
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.OutputStream;
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.List;
 import java.util.Locale;
 import java.util.Objects;
 
 public class SessionDetailFragment extends Fragment {
+    private List<SetLogWithName> currentSets;
+    private WorkoutSession currentSession;
+    private File pendingFitFile;
+    private String pendingFitName;
+
+    private final ActivityResultLauncher<String> requestStoragePermission =
+            registerForActivityResult(new ActivityResultContracts.RequestPermission(), granted -> {
+                if (granted && pendingFitFile != null) {
+                    saveFitToDownloads(pendingFitFile, pendingFitName);
+                } else {
+                    Toast.makeText(requireContext(), "Storage permission needed to save the file", Toast.LENGTH_LONG).show();
+                }
+            });
+
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container,
@@ -67,6 +101,7 @@ public class SessionDetailFragment extends Fragment {
 
         viewModel.loadSession(sessionId, savedOrder);
         viewModel.getSession().observe(getViewLifecycleOwner(), ws -> {
+            currentSession = ws;
             SimpleDateFormat sdf = new SimpleDateFormat("MMM d yyyy, hh:mm aa", Locale.getDefault());
             String date = "Date: " + sdf.format(new Date(ws.startTime));
             String duration = "Duration: ";
@@ -88,6 +123,7 @@ public class SessionDetailFragment extends Fragment {
         });
 
         viewModel.getSets().observe(getViewLifecycleOwner(), logSets -> {
+            currentSets = logSets;
             int reps = viewModel.getTotalReps(logSets);
             float volume = viewModel.getTotalVolume(logSets);
             textSessionDetailReps.setText(String.valueOf(reps));
@@ -162,11 +198,67 @@ public class SessionDetailFragment extends Fragment {
                     return true;
                 }
                 else if (menuItem.getItemId() == R.id.action_share_session) {
-                    // future feature
+                    if (currentSession != null && currentSession.endTime != null && currentSets != null) {
+                        try {
+                            File tempFile = new File(requireContext().getCacheDir(), "workout.fit");
+                            FitFileGenerator.generate(tempFile, currentSession.startTime, currentSession.endTime, currentSets);
+                            saveFitToDownloads(tempFile, "workout_" + currentSession.id + ".fit");
+                        } catch (Exception e) {
+                            Toast.makeText(requireContext(), "FIT generation failed: " + e.getMessage(), Toast.LENGTH_LONG).show();
+                        }
+                    }
                     return true;
                 }
                 return false;
             }
         }, getViewLifecycleOwner());
+    }
+
+    private void saveFitToDownloads(File sourceFile, String displayName) {
+        if (Build.VERSION.SDK_INT >= 29) {
+            ContentValues values = new ContentValues();
+            values.put(MediaStore.Downloads.DISPLAY_NAME, displayName);
+            values.put(MediaStore.Downloads.MIME_TYPE, "application/octet-stream");
+            values.put(MediaStore.Downloads.RELATIVE_PATH, Environment.DIRECTORY_DOWNLOADS);
+
+            Uri uri = requireContext().getContentResolver()
+                    .insert(MediaStore.Downloads.EXTERNAL_CONTENT_URI, values);
+            if (uri == null) {
+                Toast.makeText(requireContext(), "Could not create file in Downloads", Toast.LENGTH_LONG).show();
+                return;
+            }
+            try (OutputStream os = requireContext().getContentResolver().openOutputStream(uri);
+                 FileInputStream fis = new FileInputStream(sourceFile)) {
+                copyStream(fis, os);
+                Toast.makeText(requireContext(), "Saved to Downloads", Toast.LENGTH_SHORT).show();
+            } catch (IOException e) {
+                Toast.makeText(requireContext(), "Failed to save file", Toast.LENGTH_LONG).show();
+            }
+        } else {
+            if (ContextCompat.checkSelfPermission(requireContext(), Manifest.permission.WRITE_EXTERNAL_STORAGE)
+                    != PackageManager.PERMISSION_GRANTED) {
+                pendingFitFile = sourceFile;
+                pendingFitName = displayName;
+                requestStoragePermission.launch(Manifest.permission.WRITE_EXTERNAL_STORAGE);
+                return;
+            }
+            File downloadsDir = Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOWNLOADS);
+            File destFile = new File(downloadsDir, displayName);
+            try (FileOutputStream fos = new FileOutputStream(destFile);
+                 FileInputStream fis = new FileInputStream(sourceFile)) {
+                copyStream(fis, fos);
+                Toast.makeText(requireContext(), "Saved to Downloads", Toast.LENGTH_SHORT).show();
+            } catch (IOException e) {
+                Toast.makeText(requireContext(), "Failed to save file", Toast.LENGTH_LONG).show();
+            }
+        }
+    }
+
+    private void copyStream(InputStream is, OutputStream os) throws IOException {
+        byte[] buffer = new byte[1024];
+        int length;
+        while ((length = is.read(buffer)) != -1) {
+            os.write(buffer, 0, length);
+        }
     }
 }

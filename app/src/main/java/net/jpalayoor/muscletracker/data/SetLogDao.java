@@ -38,6 +38,8 @@ public interface SetLogDao {
             "set_log.reps AS reps, " +
             "set_log.setNumber AS setNumber, " +
             "exercises.trackingType AS trackingType, " +
+            "exercises.fitCategoryValue AS fitCategoryValue, " +
+            "exercises.fitSubtypeValue AS fitSubtypeValue, " +
             "set_log.durationSeconds AS durationSeconds, " +
             "((CASE exercises.trackingType WHEN 'reps' THEN set_log.reps WHEN 'time' THEN set_log.durationSeconds ELSE set_log.weight END) " +
             "= (SELECT MAX(CASE exercises.trackingType WHEN 'reps' THEN sl3.reps WHEN 'time' THEN sl3.durationSeconds ELSE sl3.weight END) " +
@@ -63,6 +65,8 @@ public interface SetLogDao {
             "set_log.reps AS reps, " +
             "set_log.setNumber AS setNumber, " +
             "exercises.trackingType AS trackingType, " +
+            "exercises.fitCategoryValue AS fitCategoryValue, " +
+            "exercises.fitSubtypeValue AS fitSubtypeValue, " +
             "set_log.durationSeconds AS durationSeconds, " +
             "((CASE exercises.trackingType WHEN 'reps' THEN set_log.reps WHEN 'time' THEN set_log.durationSeconds ELSE set_log.weight END) " +
             "= (SELECT MAX(CASE exercises.trackingType WHEN 'reps' THEN sl3.reps WHEN 'time' THEN sl3.durationSeconds ELSE sl3.weight END) " +

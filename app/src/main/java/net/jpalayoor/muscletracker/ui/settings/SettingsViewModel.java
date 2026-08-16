@@ -90,12 +90,13 @@ public class SettingsViewModel extends AndroidViewModel {
                         .append(s.endTime != null ? s.endTime : "").append("\n");
             }
 
-            sb.append("\n#LOGS\n").append("id,sessionId,exerciseId,weight,reps,setNumber,timestamp\n");
+            sb.append("\n#LOGS\n").append("id,sessionId,exerciseId,weight,reps,setNumber,timestamp,durationSeconds\n");
             for (SetLog l : logs) {
                 sb.append(l.id).append(",").append(l.sessionId).append(",")
                         .append(l.exerciseId).append(",").append(l.weight).append(",")
                         .append(l.reps).append(",").append(l.setNumber).append(",")
-                        .append(l.timestamp).append("\n");
+                        .append(l.timestamp).append(",")
+                        .append(l.durationSeconds != null ? l.durationSeconds : "").append("\n");
             }
 
             exportCsv.postValue(sb.toString());
@@ -205,6 +206,8 @@ public class SettingsViewModel extends AndroidViewModel {
                                 log.reps = Integer.parseInt(fields.get(4));
                                 log.setNumber = Integer.parseInt(fields.get(5));
                                 log.timestamp = Long.parseLong(fields.get(6));
+                                String durationStr = fields.get(7);
+                                log.durationSeconds = durationStr.isEmpty() ? null : Integer.parseInt(durationStr);
                                 db.setLogDao().insert(log);
                                 break;
                             }

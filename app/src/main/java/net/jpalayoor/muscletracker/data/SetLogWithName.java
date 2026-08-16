@@ -10,4 +10,6 @@ public class SetLogWithName {
     public boolean isPR;
     public String trackingType;
     public Integer durationSeconds;
+    public Integer fitCategoryValue;
+    public Integer fitSubtypeValue;
 }

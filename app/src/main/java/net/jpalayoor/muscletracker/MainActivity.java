@@ -199,6 +199,10 @@ public class MainActivity extends AppCompatActivity {
             ex.image2 = images.length() > 1 ? images.getString(1) : null;
 
             ex.trackingType = safeString(obj, "trackingType");
+            ex.fitCategory = safeString(obj, "fitCategory");
+            ex.fitCategoryValue = obj.isNull("fitCategoryValue") ? null : obj.getInt("fitCategoryValue");
+            ex.fitSubtype = safeString(obj, "fitSubtype");
+            ex.fitSubtypeValue = obj.isNull("fitSubtypeValue") ? null : obj.getInt("fitSubtypeValue");
 
             result.add(ex);
         }

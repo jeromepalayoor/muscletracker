@@ -44,6 +44,7 @@ dependencies {
     implementation("androidx.navigation:navigation-fragment:2.9.8")
     implementation("androidx.navigation:navigation-ui:2.9.8")
     implementation("androidx.room:room-runtime:2.8.4")
+    implementation("com.garmin:fit:21.213.0")
     annotationProcessor("androidx.room:room-compiler:2.8.4")
     testImplementation("junit:junit:4.13.2")
     androidTestImplementation("androidx.test.ext:junit:1.3.0")
