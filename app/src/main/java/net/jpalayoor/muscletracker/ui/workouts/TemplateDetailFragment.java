@@ -23,6 +23,8 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.google.android.material.dialog.MaterialAlertDialogBuilder;
+import com.google.android.material.textfield.TextInputEditText;
+import com.google.android.material.textfield.TextInputLayout;
 
 import net.jpalayoor.muscletracker.R;
 import net.jpalayoor.muscletracker.data.TemplateExerciseWithName;
@@ -107,15 +109,17 @@ public class TemplateDetailFragment extends Fragment {
         activity.getSupportActionBar().setCustomView(customTitleView);
 
         titleText.setOnClickListener(v -> {
-            EditText input = new EditText(requireContext());
-            input.setText(templateName);
-            input.setSelection(input.getText().length());
+            TextInputLayout inputLayout = (TextInputLayout) LayoutInflater.from(requireContext())
+                    .inflate(R.layout.dialog_add_template, null);
+            TextInputEditText editText = inputLayout.findViewById(R.id.editTemplateName);
+            editText.setText(templateName);
+            editText.setSelection(editText.getText().length());
 
             new MaterialAlertDialogBuilder(requireContext())
                     .setTitle("Rename workout")
-                    .setView(input)
+                    .setView(inputLayout)
                     .setPositiveButton("Save", (dialog, which) -> {
-                        String newName = input.getText().toString().trim();
+                        String newName = editText.getText().toString().trim();
                         if (!newName.isEmpty()) {
                             templateName = newName;
                             titleText.setText(newName);
@@ -156,5 +160,15 @@ public class TemplateDetailFragment extends Fragment {
                 return false;
             }
         }, getViewLifecycleOwner());
+    }
+
+    @Override
+    public void onDestroyView() {
+        super.onDestroyView();
+        AppCompatActivity activity = (AppCompatActivity) requireActivity();
+        if (activity.getSupportActionBar() != null) {
+            activity.getSupportActionBar().setDisplayShowCustomEnabled(false);
+            activity.getSupportActionBar().setDisplayShowTitleEnabled(true);
+        }
     }
 }
