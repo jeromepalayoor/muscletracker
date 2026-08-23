@@ -7,6 +7,8 @@ import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.EditText;
+import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -29,6 +31,7 @@ import java.util.Objects;
 
 public class TemplateDetailFragment extends Fragment {
     private int templateId;
+    private String templateName;
     private TemplateExerciseAdapter adapter;
     private TemplateDetailViewModel viewModel;
 
@@ -92,8 +95,36 @@ public class TemplateDetailFragment extends Fragment {
             });
         }
 
-        String templateName = getArguments() != null ? getArguments().getString("templateName") : "";
-        Objects.requireNonNull(((AppCompatActivity) requireActivity()).getSupportActionBar()).setTitle(templateName);
+        templateName = getArguments() != null ? getArguments().getString("templateName") : "";
+
+        View customTitleView = LayoutInflater.from(requireContext()).inflate(R.layout.actionbar_editable_title, null);
+        TextView titleText = customTitleView.findViewById(R.id.customTitleText);
+        titleText.setText(templateName);
+
+        AppCompatActivity activity = (AppCompatActivity) requireActivity();
+        Objects.requireNonNull(activity.getSupportActionBar()).setDisplayShowTitleEnabled(false);
+        activity.getSupportActionBar().setDisplayShowCustomEnabled(true);
+        activity.getSupportActionBar().setCustomView(customTitleView);
+
+        titleText.setOnClickListener(v -> {
+            EditText input = new EditText(requireContext());
+            input.setText(templateName);
+            input.setSelection(input.getText().length());
+
+            new MaterialAlertDialogBuilder(requireContext())
+                    .setTitle("Rename workout")
+                    .setView(input)
+                    .setPositiveButton("Save", (dialog, which) -> {
+                        String newName = input.getText().toString().trim();
+                        if (!newName.isEmpty()) {
+                            templateName = newName;
+                            titleText.setText(newName);
+                            workoutsViewModel.renameTemplate(templateId, newName);
+                        }
+                    })
+                    .setNegativeButton("Cancel", null)
+                    .show();
+        });
 
         requireActivity().addMenuProvider(new MenuProvider() {
             @Override

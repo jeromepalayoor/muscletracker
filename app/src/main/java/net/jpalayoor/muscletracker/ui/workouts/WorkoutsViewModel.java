@@ -38,6 +38,10 @@ public class WorkoutsViewModel extends AndroidViewModel {
         });
     }
 
+    public void renameTemplate(int templateId, String newName) {
+        executor.execute(() -> db.workoutTemplateDao().updateName(templateId, newName));
+    }
+
     public void deleteTemplate(int templateId) {
         executor.execute(() -> {
             db.templateExerciseDao().deleteAllForTemplate(templateId);

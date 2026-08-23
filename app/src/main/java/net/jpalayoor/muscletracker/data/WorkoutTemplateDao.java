@@ -44,4 +44,7 @@ public interface WorkoutTemplateDao {
 
     @Query("SELECT * FROM workout_template")
     List<WorkoutTemplate> getAll();
+
+    @Query("UPDATE workout_template SET name = :name WHERE id = :id")
+    void updateName(int id, String name);
 }
