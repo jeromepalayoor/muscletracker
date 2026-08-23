@@ -47,4 +47,7 @@ public interface WorkoutTemplateDao {
 
     @Query("UPDATE workout_template SET name = :name WHERE id = :id")
     void updateName(int id, String name);
+
+    @Query("SELECT * FROM workout_template WHERE id = :id")
+    LiveData<WorkoutTemplate> getByIdLive(int id);
 }

@@ -97,16 +97,20 @@ public class TemplateDetailFragment extends Fragment {
             });
         }
 
-        templateName = getArguments() != null ? getArguments().getString("templateName") : "";
-
         View customTitleView = LayoutInflater.from(requireContext()).inflate(R.layout.actionbar_editable_title, null);
         TextView titleText = customTitleView.findViewById(R.id.customTitleText);
-        titleText.setText(templateName);
 
         AppCompatActivity activity = (AppCompatActivity) requireActivity();
         Objects.requireNonNull(activity.getSupportActionBar()).setDisplayShowTitleEnabled(false);
         activity.getSupportActionBar().setDisplayShowCustomEnabled(true);
         activity.getSupportActionBar().setCustomView(customTitleView);
+
+        viewModel.getTemplate(templateId).observe(getViewLifecycleOwner(), template -> {
+            if (template != null) {
+                templateName = template.name;
+                titleText.setText(templateName);
+            }
+        });
 
         titleText.setOnClickListener(v -> {
             TextInputLayout inputLayout = (TextInputLayout) LayoutInflater.from(requireContext())

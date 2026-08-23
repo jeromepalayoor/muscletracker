@@ -9,6 +9,7 @@ import androidx.lifecycle.LiveData;
 import net.jpalayoor.muscletracker.data.AppDatabase;
 import net.jpalayoor.muscletracker.data.TemplateExercise;
 import net.jpalayoor.muscletracker.data.TemplateExerciseWithName;
+import net.jpalayoor.muscletracker.data.WorkoutTemplate;
 
 import java.util.List;
 import java.util.Set;
@@ -23,6 +24,10 @@ public class TemplateDetailViewModel extends AndroidViewModel {
     public TemplateDetailViewModel(@NonNull Application application) {
         super(application);
         db = AppDatabase.getInstance(application);
+    }
+
+    public LiveData<WorkoutTemplate> getTemplate(int templateId) {
+        return db.workoutTemplateDao().getByIdLive(templateId);
     }
 
     public LiveData<List<TemplateExerciseWithName>> getExercisesForTemplate(int templateId) {
