@@ -1,8 +1,10 @@
 package net.jpalayoor.muscletracker.ui.record;
 
 import android.Manifest;
+import android.content.ActivityNotFoundException;
 import android.content.ContentValues;
 import android.content.Context;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.pm.PackageManager;
 import android.net.Uri;
@@ -203,6 +205,18 @@ public class SessionDetailFragment extends Fragment {
                             File tempFile = new File(requireContext().getCacheDir(), "workout.fit");
                             FitFileGenerator.generate(tempFile, currentSession.startTime, currentSession.endTime, currentSets);
                             saveFitToDownloads(tempFile, "workout_" + currentSession.id + ".fit");
+                            Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse("https://www.strava.com/upload/select"));
+                            intent.setPackage("com.android.chrome");
+                            try {
+                                startActivity(intent);
+                            } catch (ActivityNotFoundException e) {
+                                intent.setPackage(null);
+                                try {
+                                    startActivity(intent);
+                                } catch (ActivityNotFoundException e2) {
+                                    Toast.makeText(requireContext(), "No browser found to open Strava upload", Toast.LENGTH_LONG).show();
+                                }
+                            }
                         } catch (Exception e) {
                             Toast.makeText(requireContext(), "FIT generation failed: " + e.getMessage(), Toast.LENGTH_LONG).show();
                         }
