@@ -129,6 +129,10 @@
         <action
             android:id="@+id/action_live_session_to_detail"
             app:destination="@+id/navigation_session_detail"/>
+
+        <action
+            android:id="@+id/action_live_session_to_exercise_picker"
+            app:destination="@+id/navigation_exercise_picker"/>
     </fragment>
 
     <fragment

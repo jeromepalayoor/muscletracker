@@ -7,6 +7,7 @@ import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.activity.OnBackPressedCallback;
@@ -31,6 +32,8 @@ import java.util.Objects;
 public class LiveSessionFragment extends Fragment {
     private int sessionId;
     private int setCount;
+    private int cachedTemplateId = -1;
+    private LiveSessionViewModel viewModel;
 
     @Nullable
     @Override
@@ -43,7 +46,7 @@ public class LiveSessionFragment extends Fragment {
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
-        LiveSessionViewModel viewModel = new ViewModelProvider(this).get(LiveSessionViewModel.class);
+        viewModel = new ViewModelProvider(this).get(LiveSessionViewModel.class);
 
         sessionId = getArguments() != null ? getArguments().getInt("sessionId") : -1;
 
@@ -59,7 +62,8 @@ public class LiveSessionFragment extends Fragment {
         recyclerView.setAdapter(adapter);
 
         viewModel.getSessionExercises().observe(getViewLifecycleOwner(), adapter::setItems);
-        viewModel.loadExercisesForSession(sessionId);
+        viewModel.getTemplateId().observe(getViewLifecycleOwner(), id -> cachedTemplateId = id);
+
         viewModel.getWorkoutEnded().observe(getViewLifecycleOwner(), ended -> {
             if (ended) {
                 Bundle args = new Bundle();
@@ -77,6 +81,15 @@ public class LiveSessionFragment extends Fragment {
 
         viewModel.getLoggedSets(sessionId).observe(getViewLifecycleOwner(), sets -> {
             setCount = sets.size();
+        });
+
+        TextView textAddExercise = view.findViewById(R.id.textAddExercise);
+        textAddExercise.setOnClickListener(v -> {
+            if (cachedTemplateId == -1) return;
+            Bundle args = new Bundle();
+            args.putInt("templateId", cachedTemplateId);
+            args.putString("templateName", "");
+            Navigation.findNavController(view).navigate(R.id.action_live_session_to_exercise_picker, args);
         });
 
         requireActivity().addMenuProvider(new MenuProvider() {
@@ -123,5 +136,13 @@ public class LiveSessionFragment extends Fragment {
                         .show();
             }
         });
+    }
+
+    @Override
+    public void onResume() {
+        super.onResume();
+        if (sessionId != -1) {
+            viewModel.loadExercisesForSession(sessionId);
+        }
     }
 }

@@ -22,6 +22,7 @@ public class LiveSessionViewModel extends AndroidViewModel {
     private final MutableLiveData<List<LiveSessionExercise>> sessionExercises = new MutableLiveData<>();
     private final MutableLiveData<Boolean> workoutEnded = new MutableLiveData<>();
     private final MutableLiveData<String> sessionName = new MutableLiveData<>();
+    private final MutableLiveData<Integer> templateId = new MutableLiveData<>();
 
     public LiveSessionViewModel(@NonNull Application application) {
         super(application);
@@ -50,6 +51,10 @@ public class LiveSessionViewModel extends AndroidViewModel {
         return sessionName;
     }
 
+    public LiveData<Integer> getTemplateId() {
+        return templateId;
+    }
+
     public LiveData<List<SetLog>> getLoggedSets(int sessionId) {
         return db.setLogDao().getAllForSessionLive(sessionId);
     }
@@ -65,6 +70,7 @@ public class LiveSessionViewModel extends AndroidViewModel {
                 List<LiveSessionExercise> exercises = db.templateExerciseDao().getExercisesWithSetCounts(session.templateId, sessionId);
                 sessionExercises.postValue(exercises);
                 sessionName.postValue(session.templateName + " Session");
+                templateId.postValue(session.templateId);
             }
         });
     }
