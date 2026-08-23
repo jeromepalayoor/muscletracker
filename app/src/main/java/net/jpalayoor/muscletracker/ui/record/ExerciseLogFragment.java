@@ -38,9 +38,9 @@ public class ExerciseLogFragment extends Fragment {
     private TextView textRestTimer;
     private LinearLayout rowRestTimer;
     private Double suggestedWeight;
-    private List<SetLog> currentLoggedSets = new ArrayList<>();
     private String currentTrackingType = "weight";
     private SetLog currentPrevSet;
+    private List<SetLog> currentSets = new ArrayList<>();
     private TextView textLogPrevious;
     private String savedUnit;
 
@@ -104,6 +104,35 @@ public class ExerciseLogFragment extends Fragment {
         textLogPrevious.setText(previous);
     }
 
+    private void renderLoggedSets(LinearLayout loggedSetsContainer, String savedUnit) {
+        loggedSetsContainer.removeAllViews();
+        for (SetLog log : currentSets) {
+            View row = LayoutInflater.from(requireContext()).inflate(R.layout.item_logged_set, loggedSetsContainer, false);
+            ((TextView) row.findViewById(R.id.textSetNumber)).setText(getString(R.string.set_number_format, log.setNumber + 1));
+
+            TextView textSetWeight = row.findViewById(R.id.textSetWeight);
+            TextView textSetReps = row.findViewById(R.id.textSetReps);
+
+            if ("reps".equals(currentTrackingType)) {
+                textSetWeight.setVisibility(View.GONE);
+                textSetReps.setText(getString(R.string.reps_format, log.reps));
+            } else if ("time".equals(currentTrackingType)) {
+                textSetWeight.setVisibility(View.GONE);
+                int dur = log.durationSeconds != null ? log.durationSeconds : 0;
+                textSetReps.setText(formatElapsedTime(dur));
+            } else {
+                textSetWeight.setVisibility(View.VISIBLE);
+                if (savedUnit.equals("kg")) {
+                    textSetWeight.setText(getString(R.string.weight_kg_format, log.weight));
+                } else {
+                    textSetWeight.setText(getString(R.string.weight_lb_format, log.weight * 2.2));
+                }
+                textSetReps.setText(getString(R.string.reps_format, log.reps));
+            }
+            loggedSetsContainer.addView(row);
+        }
+    }
+
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
@@ -147,6 +176,7 @@ public class ExerciseLogFragment extends Fragment {
             groupReps.setVisibility("reps".equals(currentTrackingType) ? View.VISIBLE : View.GONE);
             groupTime.setVisibility("time".equals(currentTrackingType) ? View.VISIBLE : View.GONE);
             updatePreviousText();
+            renderLoggedSets(loggedSetsContainer, savedUnit);
         });
 
         viewModel.getPreviousSet().observe(getViewLifecycleOwner(), prev -> {
@@ -159,34 +189,8 @@ public class ExerciseLogFragment extends Fragment {
         editWeight.setHint(savedUnit.equals("kg") ? getString(R.string.weight_kg_text) : getString(R.string.weight_lb_text));
 
         viewModel.getLoggedSets(sessionId, exerciseId).observe(getViewLifecycleOwner(), sets -> {
-            loggedSetsContainer.removeAllViews();
-            currentLoggedSets = sets;
-            for (SetLog log : sets) {
-                View row = LayoutInflater.from(requireContext()).inflate(R.layout.item_logged_set, loggedSetsContainer, false);
-                ((TextView) row.findViewById(R.id.textSetNumber)).setText(getString(R.string.set_number_format, log.setNumber + 1));
-
-                TextView textSetWeight = row.findViewById(R.id.textSetWeight);
-                TextView textSetReps = row.findViewById(R.id.textSetReps);
-
-                if ("reps".equals(currentTrackingType)) {
-                    textSetWeight.setVisibility(View.GONE);
-                    textSetReps.setText(getString(R.string.reps_format, log.reps));
-                } else if ("time".equals(currentTrackingType)) {
-                    textSetWeight.setVisibility(View.GONE);
-                    int dur = log.durationSeconds != null ? log.durationSeconds : 0;
-                    textSetReps.setText(formatElapsedTime(dur));
-                } else {
-                    textSetWeight.setVisibility(View.VISIBLE);
-                    if (savedUnit.equals("kg")) {
-                        textSetWeight.setText(getString(R.string.weight_kg_format, log.weight));
-                    } else {
-                        textSetWeight.setText(getString(R.string.weight_lb_format, log.weight * 2.2));
-                    }
-                    textSetReps.setText(getString(R.string.reps_format, log.reps));
-                }
-
-                loggedSetsContainer.addView(row);
-            }
+            currentSets = sets;
+            renderLoggedSets(loggedSetsContainer, savedUnit);
         });
 
         viewModel.getSuggestedWeight().observe(getViewLifecycleOwner(), weight -> {
@@ -268,8 +272,8 @@ public class ExerciseLogFragment extends Fragment {
         });
 
         undoText.setOnClickListener(v -> {
-            if (!currentLoggedSets.isEmpty()) {
-                SetLog last = currentLoggedSets.get(currentLoggedSets.size() - 1);
+            if (!currentSets.isEmpty()) {
+                SetLog last = currentSets.get(currentSets.size() - 1);
                 viewModel.deleteSet(last.id);
             }
         });
