@@ -49,7 +49,9 @@ public class TemplateDetailFragment extends Fragment {
         viewModel = new ViewModelProvider(this).get(TemplateDetailViewModel.class);
         WorkoutsViewModel workoutsViewModel = new ViewModelProvider(this).get(WorkoutsViewModel.class);
         adapter = new TemplateExerciseAdapter(templateExercise -> {
-            // click handling — later wave, reusing ExerciseDetailFragment
+            Bundle args = new Bundle();
+            args.putString("exerciseId", templateExercise.exerciseId);
+            Navigation.findNavController(view).navigate(R.id.action_template_detail_to_exercise_detail, args);
         });
 
         RecyclerView recyclerView = view.findViewById(R.id.recyclerTemplateExercises);

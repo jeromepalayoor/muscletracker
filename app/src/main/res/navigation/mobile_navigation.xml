@@ -91,6 +91,10 @@
         <action
             android:id="@+id/action_template_detail_to_exercise_picker"
             app:destination="@id/navigation_exercise_picker" />
+
+        <action
+            android:id="@+id/action_template_detail_to_exercise_detail"
+            app:destination="@id/navigation_exercise_detail" />
     </fragment>
 
     <fragment
