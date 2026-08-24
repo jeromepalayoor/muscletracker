@@ -6,7 +6,6 @@
     <string name="title_exercises">Exercises</string>
     <string name="title_settings">Settings</string>
     <string name="exercise_image">Exercise image</string>
-    <string name="plus_sign">+</string>
     <string name="template_name_hint">Template name</string>
     <string name="search_exercises_hint">Search Exercises</string>
     <string name="add_text">Add</string>
@@ -30,9 +29,6 @@
     <string name="instructions_text">Instructions</string>
     <string name="stats_text">Stats</string>
     <string name="arrow_text">arrow</string>
-    <string name="max_weight_empty_text">Max Weight: -</string>
-    <string name="max_volume_empty_text">Max Volume: -</string>
-    <string name="estimated_one_rep_max_empty_text">Estimated One Rep Max: -</string>
     <string name="past_sets_text">Past Sets</string>
     <string name="sets_text">Sets:</string>
     <string name="volume_text">Volume</string>
@@ -42,7 +38,6 @@
     <string name="start_new_workout_session_text">Start new Workout Session</string>
     <string name="past_session_text">Past sessions</string>
     <string name="no_sessions_recorded_yet_text">No Sessions Recorded Yet!</string>
-    <string name="exercises_text">Exercises</string>
     <string name="zero_sets_text">0 Sets</string>
     <string name="undo_last_set_text">Undo Last Set</string>
     <string name="no_workout_templates_created_text">No Workout Templates Created</string>
