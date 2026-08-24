@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Muscle Tracker</title>
+    <style>
+        :root {
+          --black: #000000;
+          --white: #FFFFFF;
+          --card: #F2F2F2;
+          --text-secondary: #6B6B6B;
+          --border: #E0E0E0;
+        }
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body {
+          font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+          background: var(--white);
+          color: var(--black);
+          line-height: 1.6;
+        }
+        .hero {
+          background: var(--black);
+          padding: 64px 24px 56px;
+          text-align: center;
+        }
+        .hero svg {
+          width: 88px;
+          height: 88px;
+          margin-bottom: 20px;
+        }
+        .hero h1 {
+          color: var(--white);
+          font-size: 32px;
+          font-weight: 800;
+          letter-spacing: -0.5px;
+          margin-bottom: 10px;
+        }
+        .hero p {
+          color: #B0B0B0;
+          font-size: 16px;
+          max-width: 440px;
+          margin: 0 auto;
+        }
+        .container {
+          max-width: 600px;
+          margin: 0 auto;
+          padding: 40px 24px;
+        }
+        .features {
+          display: grid;
+          grid-template-columns: 1fr 1fr;
+          gap: 14px;
+          margin-bottom: 36px;
+        }
+        .feature {
+          background: var(--card);
+          border-radius: 14px;
+          padding: 20px;
+        }
+        .feature .num {
+          display: inline-flex;
+          align-items: center;
+          justify-content: center;
+          width: 24px;
+          height: 24px;
+          background: var(--black);
+          color: var(--white);
+          font-size: 12px;
+          font-weight: 700;
+          border-radius: 6px;
+          margin-bottom: 12px;
+        }
+        .feature h3 {
+          font-size: 15px;
+          font-weight: 700;
+          margin-bottom: 6px;
+        }
+        .feature p {
+          font-size: 13px;
+          color: var(--text-secondary);
+        }
+        .links {
+          display: flex;
+          flex-direction: column;
+          gap: 12px;
+          margin-bottom: 40px;
+        }
+        .links a {
+          display: block;
+          text-align: center;
+          padding: 15px;
+          border-radius: 12px;
+          text-decoration: none;
+          font-weight: 700;
+          font-size: 14px;
+        }
+        .links a.primary {
+          background: var(--black);
+          color: var(--white);
+        }
+        .links a.secondary {
+          background: var(--white);
+          color: var(--black);
+          border: 2px solid var(--black);
+        }
+        footer {
+          text-align: center;
+          padding: 24px;
+          color: var(--text-secondary);
+          font-size: 12px;
+          border-top: 1px solid var(--border);
+        }
+    </style>
+</head>
+<body>
+
+<div class="hero">
+    <svg viewBox="0 0 108 108" xmlns="http://www.w3.org/2000/svg">
+        <path fill="#FFFFFF" d="M43,51 L65,51 L65,57 L43,57 Z" />
+        <path fill="#FFFFFF" d="M35,38 L39,38 A5,5 0 0 1 44,43 L44,65 A5,5 0 0 1 39,70 L35,70 A5,5 0 0 1 30,65 L30,43 A5,5 0 0 1 35,38 Z" />
+        <path fill="#FFFFFF" d="M69,38 L73,38 A5,5 0 0 1 78,43 L78,65 A5,5 0 0 1 73,70 L69,70 A5,5 0 0 1 64,65 L64,43 A5,5 0 0 1 69,38 Z" />
+        <path fill="#FFFFFF" d="M26,45 L28,45 A3,3 0 0 1 31,48 L31,60 A3,3 0 0 1 28,63 L26,63 A3,3 0 0 1 23,60 L23,48 A3,3 0 0 1 26,45 Z" />
+        <path fill="#FFFFFF" d="M80,45 L82,45 A3,3 0 0 1 85,48 L85,60 A3,3 0 0 1 82,63 L80,63 A3,3 0 0 1 77,60 L77,48 A3,3 0 0 1 80,45 Z" />
+    </svg>
+    <h1>Muscle Tracker</h1>
+    <p>A workout tracker for lifters who actually want to see their progress — log sets, track real PRs, and export straight to Strava.</p>
+</div>
+
+<div class="container">
+
+    <div class="features">
+        <div class="feature">
+            <span class="num">01</span>
+            <h3>100% Local</h3>
+            <p>Your training data never leaves your device. No accounts, no cloud, no tracking.</p>
+        </div>
+        <div class="feature">
+            <span class="num">02</span>
+            <h3>3 ways to log</h3>
+            <p>Weight and reps, reps alone, or a live stopwatch for timed holds like planks.</p>
+        </div>
+        <div class="feature">
+            <span class="num">03</span>
+            <h3>Real PR detection</h3>
+            <p>Estimated one-rep max with a proper strength formula, tracked by weight, reps, or time.</p>
+        </div>
+        <div class="feature">
+            <span class="num">04</span>
+            <h3>Strava ready</h3>
+            <p>Generate a real .fit file from any session and upload it straight to Strava.</p>
+        </div>
+    </div>
+
+    <div class="links">
+        <a href="privacy.html" class="secondary">Privacy Policy</a>
+    </div>
+
+</div>
+
+<footer>
+    Made by jpalayoor — © 2026 Muscle Tracker
+</footer>
+
+</body>
+</html>

@@ -2,7 +2,7 @@
 
 A workout tracker built for lifters who actually want to see their progress — log weight-based sets, bodyweight reps, or timed holds, get real PR detection with a proper strength-estimation formula, and export any session straight to Strava.
 
-Website: [https://muscletracker.jpalayoor.com/](https://moneytracker.jpalayoor.com/)
+Website: [https://muscletracker.jpalayoor.com/](https://muscletracker.jpalayoor.com/)
 
 ## Features
 
