@@ -56,8 +56,11 @@ public class ExercisePickerAdapter extends RecyclerView.Adapter<ExercisePickerAd
 
         holder.checkbox.setOnCheckedChangeListener(null);
 
+        boolean isSelected = added.contains(exercise.exerciseId) || selectedIds.contains(exercise.exerciseId);
         holder.checkbox.setEnabled(!added.contains(exercise.exerciseId));
-        holder.checkbox.setChecked(added.contains(exercise.exerciseId));
+        holder.checkbox.setChecked(isSelected);
+        holder.textName.setTextColor(resolveThemeColor(holder.itemView.getContext(),
+                isSelected ? android.R.attr.textColorPrimary : android.R.attr.textColorSecondary));
 
         holder.checkbox.setOnCheckedChangeListener((buttonView, isChecked) -> {
             if (isChecked) {
