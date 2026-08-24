@@ -92,9 +92,7 @@ public class ExerciseLogViewModel extends AndroidViewModel {
     }
 
     public void deleteSet(int id) {
-        executor.execute(() -> {
-            db.setLogDao().deleteById(id);
-        });
+        executor.execute(() -> db.setLogDao().deleteById(id));
     }
 
     public LiveData<Double> getSuggestedWeight() {

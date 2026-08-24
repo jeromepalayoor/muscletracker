@@ -267,9 +267,8 @@ public class ExerciseLogFragment extends Fragment {
             rowRestTimer.setVisibility(View.GONE);
         });
 
-        btnFinishExercise.setOnClickListener(v -> {
-            Navigation.findNavController(view).popBackStack();
-        });
+        btnFinishExercise.setOnClickListener(v ->
+                Navigation.findNavController(view).popBackStack());
 
         undoText.setOnClickListener(v -> {
             if (!currentSets.isEmpty()) {

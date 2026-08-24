@@ -7,8 +7,6 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 
-import com.google.android.material.bottomnavigation.BottomNavigationView;
-
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
@@ -73,7 +71,6 @@ public class MainActivity extends AppCompatActivity {
             }
         }).start();
 
-        BottomNavigationView navView = findViewById(R.id.nav_view);
         appBarConfiguration = new AppBarConfiguration.Builder(
                 R.id.navigation_home, R.id.navigation_workouts, R.id.navigation_record,
                 R.id.navigation_exercises, R.id.navigation_settings)

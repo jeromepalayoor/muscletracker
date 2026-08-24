@@ -33,7 +33,7 @@ public class HomeViewModel extends AndroidViewModel {
     private WorkoutTemplate suggestedTemplate;
     private final MutableLiveData<Long> newSessionId = new MutableLiveData<>();
     private final MutableLiveData<Map<Integer, List<Integer>>> sessionsByDay = new MutableLiveData<>();
-    private final MutableLiveData<Map<Integer, String>> sessionDetails = new MutableLiveData<Map<Integer, String>>();
+    private final MutableLiveData<Map<Integer, String>> sessionDetails = new MutableLiveData<>();
 
     public HomeViewModel(@NonNull Application application) {
         super(application);
@@ -93,11 +93,7 @@ public class HomeViewModel extends AndroidViewModel {
             for (WorkoutSession session : sessions) {
                 cal.setTimeInMillis(session.startTime);
                 int day = cal.get(Calendar.DAY_OF_MONTH);
-
-                if (!grouped.containsKey(day)) {
-                    grouped.put(day, new ArrayList<>());
-                }
-                grouped.get(day).add(session.id);
+                grouped.computeIfAbsent(day, k -> new ArrayList<>()).add(session.id);
                 SimpleDateFormat sdf = new SimpleDateFormat("HH:mm", Locale.getDefault());
                 String time = sdf.format(session.startTime);
                 sessionDetail.put(session.id, session.templateName + " at " + time);

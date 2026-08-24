@@ -95,7 +95,7 @@ public class TemplateDetailFragment extends Fragment {
             });
         }
 
-        View customTitleView = LayoutInflater.from(requireContext()).inflate(R.layout.actionbar_editable_title, null);
+        View customTitleView = LayoutInflater.from(requireContext()).inflate(R.layout.actionbar_editable_title, (ViewGroup) view, false);
         TextView titleText = customTitleView.findViewById(R.id.customTitleText);
 
         AppCompatActivity activity = (AppCompatActivity) requireActivity();
@@ -115,7 +115,7 @@ public class TemplateDetailFragment extends Fragment {
                     .inflate(R.layout.dialog_add_template, null);
             TextInputEditText editText = inputLayout.findViewById(R.id.editTemplateName);
             editText.setText(templateName);
-            editText.setSelection(editText.getText().length());
+            editText.setSelection(editText.getText() != null ? editText.getText().length() : 0);
 
             new MaterialAlertDialogBuilder(requireContext())
                     .setTitle("Rename workout")

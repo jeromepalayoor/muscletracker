@@ -18,7 +18,6 @@ import com.garmin.fit.SubSport;
 
 import net.jpalayoor.muscletracker.data.SetLogWithName;
 
-import java.io.IOException;
 import java.util.Date;
 import java.util.List;
 import java.util.TimeZone;
@@ -26,7 +25,7 @@ import java.util.TimeZone;
 public class FitFileGenerator {
 
     public static void generate(java.io.File outputFile, long startTimeMillis, long endTimeMillis,
-                                List<SetLogWithName> sets) throws IOException {
+                                List<SetLogWithName> sets) {
         FileEncoder encoder = new FileEncoder(outputFile, Fit.ProtocolVersion.V2_0);
 
         DateTime startTime = new DateTime(new Date(startTimeMillis));

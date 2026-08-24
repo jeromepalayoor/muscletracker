@@ -56,8 +56,6 @@ public class TemplateDetailViewModel extends AndroidViewModel {
     }
 
     public void deleteById(int id) {
-        executor.execute(() -> {
-            db.templateExerciseDao().deleteById(id);
-        });
+        executor.execute(() -> db.templateExerciseDao().deleteById(id));
     }
 }

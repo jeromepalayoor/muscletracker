@@ -79,9 +79,7 @@ public class LiveSessionFragment extends Fragment {
                 Objects.requireNonNull(((AppCompatActivity) requireActivity())
                         .getSupportActionBar()).setTitle(name));
 
-        viewModel.getLoggedSets(sessionId).observe(getViewLifecycleOwner(), sets -> {
-            setCount = sets.size();
-        });
+        viewModel.getLoggedSets(sessionId).observe(getViewLifecycleOwner(), sets -> setCount = sets.size());
 
         TextView textAddExercise = view.findViewById(R.id.textAddExercise);
         textAddExercise.setOnClickListener(v -> {
@@ -107,9 +105,7 @@ public class LiveSessionFragment extends Fragment {
                     }
                     new MaterialAlertDialogBuilder(requireContext())
                             .setTitle("End workout?")
-                            .setPositiveButton("Yes", (dialog, which) -> {
-                                viewModel.endWorkout(sessionId);
-                            })
+                            .setPositiveButton("Yes", (dialog, which) -> viewModel.endWorkout(sessionId))
                             .setNegativeButton("No", null)
                             .show();
                     return true;

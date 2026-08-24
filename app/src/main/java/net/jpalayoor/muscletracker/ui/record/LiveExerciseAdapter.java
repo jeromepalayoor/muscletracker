@@ -32,10 +32,6 @@ public class LiveExerciseAdapter extends RecyclerView.Adapter<LiveExerciseAdapte
         notifyDataSetChanged();
     }
 
-    public List<LiveSessionExercise> getItems() {
-        return this.templateExerciseWithNames;
-    }
-
     @NonNull
     @Override
     public LiveExerciseViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
