@@ -1,6 +1,5 @@
 package net.jpalayoor.muscletracker.ui.record;
 
-import android.annotation.SuppressLint;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -45,7 +44,6 @@ public class LiveExerciseAdapter extends RecyclerView.Adapter<LiveExerciseAdapte
         return new LiveExerciseViewHolder(view);
     }
 
-    @SuppressLint("ClickableViewAccessibility")
     @Override
     public void onBindViewHolder(@NonNull LiveExerciseViewHolder holder, int position) {
         LiveSessionExercise templateExerciseWithName = templateExerciseWithNames.get(position);

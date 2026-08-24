@@ -243,6 +243,10 @@ public class SessionDetailFragment extends Fragment {
             }
             try (OutputStream os = requireContext().getContentResolver().openOutputStream(uri);
                  FileInputStream fis = new FileInputStream(sourceFile)) {
+                if (os == null) {
+                    Toast.makeText(requireContext(), "Could not open file for writing", Toast.LENGTH_LONG).show();
+                    return;
+                }
                 copyStream(fis, os);
                 Toast.makeText(requireContext(), "Saved to Downloads", Toast.LENGTH_SHORT).show();
             } catch (IOException e) {
